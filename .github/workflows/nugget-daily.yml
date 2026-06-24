@@ -32,8 +32,8 @@ jobs:
       SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
       SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      # Override to claude-haiku-4-5 here (or as a secret/var) to cut extraction cost ~3x.
-      EXTRACT_MODEL: claude-sonnet-4-6
+      # Cheapest default. Change to claude-sonnet-4-6 for sharper nuggets (~3x cost).
+      EXTRACT_MODEL: claude-haiku-4-5
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

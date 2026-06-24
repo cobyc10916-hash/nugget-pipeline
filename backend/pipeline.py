@@ -232,9 +232,9 @@ SCHEMA = {
             }}},
     }}
 
-# Sonnet 4.6 by default: best nugget quality for judging the PoC, still under the cost ceiling at
-# PoC volume (~$13/mo at 5/day). Set EXTRACT_MODEL=claude-haiku-4-5 to cut cost ~3x once trusted.
-EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-sonnet-4-6")
+# Haiku 4.5 by default: cheapest (~$4.50/mo at 5/day). For sharper nuggets, set
+# EXTRACT_MODEL=claude-sonnet-4-6 (~$13/mo at 5/day, still under the cost ceiling).
+EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-haiku-4-5")
 
 def extract(title, channel, text):
     import anthropic
