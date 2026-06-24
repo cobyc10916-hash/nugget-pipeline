@@ -172,6 +172,8 @@ def monitored_channels():
             out.append({"channel_id": ch["channel_id"], "name": ch["name"], "area": area})
     return out
 
+CHANNEL_ID_BY_NAME = {c["name"]: c["channel_id"] for c in monitored_channels()}
+
 ONLY_YEAR = 2026  # hard rule: every video pulled (daily or backfill) must be published in 2026
 
 def discover_recent(hours=24, limit=5):
@@ -344,8 +346,13 @@ def write_video(client, q, data):
     # The channel's curated vertical is AUTHORITATIVE for the feed filter (we hand-sorted every
     # channel into ai/build/str). Gemini's per-video guess is only a fallback for un-tagged sources.
     area = q.get("interest_area") or data.get("interest_area") or "other"
+    # Set channel_id (and ensure the channels row exists, to satisfy the FK) so per-channel
+    # ranking boosts in taste_weights actually apply to this and all future uploads.
+    cid = CHANNEL_ID_BY_NAME.get(q.get("found_via"))
+    if cid:
+        client.table("channels").upsert({"channel_id": cid, "name": q.get("found_via")}, on_conflict="channel_id").execute()
     client.table("videos").upsert({
-        "video_id": vid, "title": q["title"], "channel_name": q.get("found_via"),
+        "video_id": vid, "title": q["title"], "channel_name": q.get("found_via"), "channel_id": cid,
         "url": f"https://www.youtube.com/watch?v={vid}",
         "thumbnail_url": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
         "duration_s": q.get("duration_s"), "views_at_fetch": q.get("raw_views"),
