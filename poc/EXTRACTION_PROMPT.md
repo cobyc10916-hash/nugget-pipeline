@@ -96,6 +96,14 @@ before the reader swipes into the nuggets):
 **STYLE — hard rules (apply to gist, cover_bullets, hook, context, payload):**
 - **NEVER use an em dash (—).** Use a colon, comma, period, or parentheses instead. This is absolute.
 - Plain, direct, middle-school-readable language. No filler, no hype.
+- **NEVER narrate the host generically.** Do not write "a creator", "the creator", "the speaker",
+  "the host", "the author", "this video", or "the video" as the subject. State the insight DIRECTLY
+  about its real subject, or name the person/company if their identity matters. The gist especially:
+  lead with the finding, not the act of making the video.
+  - BAD:  "A creator battle-tests Sakana's Fugu against Opus 4.8 and finds it ties but costs more."
+  - GOOD: "Sakana's Fugu Ultra ties Opus 4.8 on quality but costs 5x more and runs 4.5x slower."
+  - BAD:  "The speaker explains how to set minimum stays."  GOOD: "Set minimum stays from the length
+    of the high-demand run."
 
 ---
 
