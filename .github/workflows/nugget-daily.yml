@@ -32,8 +32,10 @@ jobs:
       SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
       SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      # Cheapest default. Change to claude-sonnet-4-6 for sharper nuggets (~3x cost).
-      EXTRACT_MODEL: claude-haiku-4-5
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      # Extractor. gemini-3.1-flash-lite = strong + reliable, ~3x cheaper than Haiku. Levers:
+      #   gemini-2.5-flash-lite (cheapest, when not throttled) | claude-haiku-4-5 | claude-sonnet-4-6
+      EXTRACT_MODEL: gemini-3.1-flash-lite
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

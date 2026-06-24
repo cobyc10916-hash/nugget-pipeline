@@ -244,20 +244,82 @@ SCHEMA = {
             }}},
     }}
 
-# Haiku 4.5 by default: cheapest (~$4.50/mo at 5/day). For sharper nuggets, set
-# EXTRACT_MODEL=claude-sonnet-4-6 (~$13/mo at 5/day, still under the cost ceiling).
-EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-haiku-4-5")
+# Default = Gemini 3.1 Flash-Lite: strong judgment, reliable capacity, ~$0.004/video (still ~3x
+# cheaper than Haiku). Levers:
+#   EXTRACT_MODEL=gemini-2.5-flash-lite   -> cheapest (~$0.0012/video) WHEN not capacity-throttled
+#   EXTRACT_MODEL=claude-haiku-4-5         -> back to Anthropic
+#   EXTRACT_MODEL=claude-sonnet-4-6        -> Anthropic, top quality
+# A "gemini*" model routes to Google (needs GEMINI_API_KEY); anything else routes to Anthropic.
+EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "gemini-3.1-flash-lite")
+GEMINI_KEY = os.environ.get("GEMINI_API_KEY")
+USER_MSG = "TITLE: {t}\nCHANNEL: {c}\nTRANSCRIPT:\n{x}"
+
+def _gemini_schema(s):
+    """Convert our strict JSON-Schema to Gemini's responseSchema dialect: drop additionalProperties,
+    and rewrite {"type":["string","null"]} as {"type":"string","nullable":true}."""
+    if isinstance(s, dict):
+        out = {}
+        for k, v in s.items():
+            if k == "additionalProperties":
+                continue
+            if k == "type" and isinstance(v, list):
+                out["type"] = next(t for t in v if t != "null")
+                if "null" in v:
+                    out["nullable"] = True
+            else:
+                out[k] = _gemini_schema(v)
+        return out
+    if isinstance(s, list):
+        return [_gemini_schema(x) for x in s]
+    return s
+
+GEMINI_SCHEMA = _gemini_schema(SCHEMA)
 
 def extract(title, channel, text):
+    if EXTRACT_MODEL.startswith("gemini"):
+        return _extract_gemini(title, channel, text)
+    return _extract_anthropic(title, channel, text)
+
+def _extract_anthropic(title, channel, text):
     import anthropic
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     msg = client.messages.create(
         model=EXTRACT_MODEL, max_tokens=8000,
         system=[{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
         output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
-        messages=[{"role": "user", "content": f"TITLE: {title}\nCHANNEL: {channel}\nTRANSCRIPT:\n{text}"}],
+        messages=[{"role": "user", "content": USER_MSG.format(t=title, c=channel, x=text)}],
     )
     return json.loads(next(b.text for b in msg.content if b.type == "text"))
+
+def _extract_gemini(title, channel, text):
+    import requests
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{EXTRACT_MODEL}:generateContent"
+    body = {
+        "systemInstruction": {"parts": [{"text": SYSTEM}]},
+        "contents": [{"role": "user", "parts": [{"text": USER_MSG.format(t=title, c=channel, x=text)}]}],
+        "generationConfig": {
+            "responseMimeType": "application/json",
+            "responseSchema": GEMINI_SCHEMA,
+            "maxOutputTokens": 8192,
+            "temperature": 0.4,
+        },
+    }
+    # Flash-Lite gets transient 503 "high demand" / 429 spikes; retry with backoff.
+    last = ""
+    for attempt in range(6):
+        r = requests.post(url, params={"key": GEMINI_KEY}, json=body, timeout=120)
+        if r.status_code == 200:
+            cand = r.json()["candidates"][0]
+            txt = "".join(p.get("text", "") for p in cand.get("content", {}).get("parts", []))
+            if not txt:
+                raise RuntimeError(f"gemini empty (finishReason={cand.get('finishReason')})")
+            return json.loads(txt)
+        last = f"{r.status_code}: {r.text[:140]}"
+        if r.status_code in (429, 500, 503):
+            time.sleep(2 * (attempt + 1) ** 2)  # 2, 8, 18, 32, 50s
+            continue
+        break
+    raise RuntimeError(f"gemini failed after retries -> {last}")
 
 # ---------------- write ----------------
 def write_video(client, q, data):
@@ -329,10 +391,11 @@ def taste_digest():
 def _process_pending(client, limit):
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
-    if not ANTHROPIC_KEY:
-        print(f"[run] {len(pending)} pending. No ANTHROPIC_API_KEY -> extraction skipped "
-              f"(run extraction via the Max routine in PROMPT.md instead).")
+    need_key = GEMINI_KEY if EXTRACT_MODEL.startswith("gemini") else ANTHROPIC_KEY
+    if not need_key:
+        print(f"[run] {len(pending)} pending. Missing API key for EXTRACT_MODEL={EXTRACT_MODEL} -> extraction skipped.")
         return 0
+    print(f"[run] extracting with {EXTRACT_MODEL}")
     total = 0
     print(f"[run] processing {len(pending)} pending: " + ", ".join(f"{q['video_id']}({q.get('found_via','?')})" for q in pending))
     def work(q):
