@@ -16,7 +16,7 @@ Where we are and exactly how to resume. No secrets in this file (repo is public)
 ## BACKFILL: Max-grind loop (how to resume)
 **Goal:** extract older 2026 videos to give the feed depth. ~1,500-2,000 total across all channels. We do NOT have to finish all of it; prioritize the thin verticals.
 
-**Backlog list:** `backend/backfill_2026.json` — array of `{video_id, title, channel, area, published}` for 2026 videos per channel (enumerated via `yt-dlp --break-match-filters "upload_date>=20260101"`). NOTE: the first enumeration covered the AI channels; re-run the enumerator (below) to refresh/extend, especially for build + STR.
+**Backlog list:** `backend/backfill_2026.json` — array of `{video_id, title, channel, area, published}`, **1,372 videos enumerated across all 57 channels** (AI 694, build 374, STR 304), via `yt-dlp --break-match-filters "upload_date>=20260101"`. Complete as of 2026-06-24.
 
 **Progress tracking:** the `videos` table IS the tracker. A backlog video is "done" if its `video_id` is already in `videos`. Exclude those each batch.
 
