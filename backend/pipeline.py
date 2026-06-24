@@ -94,19 +94,31 @@ def rss(channel_id, max_n=6):
     return [{"video_id": v, "title": t, "channel_id": channel_id} for v, t in zip(ids, titles)]
 
 def channel_recent(channel_id, name):
-    """Newest uploads from a channel via its RSS feed (with published timestamps). Proxied on
-    cloud runners (YouTube throttles datacenter IPs); direct when no proxy is configured."""
+    """Newest uploads from a channel via its RSS feed (with published timestamps). Tries a DIRECT
+    fetch first (YouTube RSS rarely IP-blocks, even from datacenters), then the Webshare proxy as a
+    fallback. Prints the reason and returns [] only if BOTH fail, so failures are never silent."""
     import requests
-    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=30, proxies=RPROXIES)
-    out = []
-    for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
-        vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
-        title = re.search(r"<media:title>([^<]+)</media:title>", e)
-        pub = re.search(r"<published>([^<]+)</published>", e)
-        if vid and pub:
-            out.append({"video_id": vid.group(1), "title": title.group(1) if title else "",
-                        "channel": name, "published": pub.group(1)})
-    return out
+    url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
+    attempts = [("direct", None)] + ([("proxy", RPROXIES)] if RPROXIES else [])
+    last = "no attempt"
+    for how, proxies in attempts:
+        try:
+            r = requests.get(url, timeout=30, proxies=proxies)
+            if r.status_code == 200 and "<yt:videoId>" in r.text:
+                out = []
+                for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
+                    vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
+                    title = re.search(r"<media:title>([^<]+)</media:title>", e)
+                    pub = re.search(r"<published>([^<]+)</published>", e)
+                    if vid and pub:
+                        out.append({"video_id": vid.group(1), "title": title.group(1) if title else "",
+                                    "channel": name, "published": pub.group(1)})
+                return out
+            last = f"{how} status={r.status_code} bytes={len(r.text)}"
+        except Exception as ex:
+            last = f"{how} {type(ex).__name__}: {str(ex)[:80]}"
+    print(f"  [rss] {name}: FAILED ({last})")
+    return []
 
 def published_date(vid):
     """Best-effort upload date (YYYY-MM-DD) via yt-dlp; None on failure (proxy-aware)."""
@@ -322,18 +334,22 @@ def _process_pending(client, limit):
               f"(run extraction via the Max routine in PROMPT.md instead).")
         return 0
     total = 0
+    print(f"[run] processing {len(pending)} pending: " + ", ".join(f"{q['video_id']}({q.get('found_via','?')})" for q in pending))
     def work(q):
         nonlocal total
         try:
             txt = transcript(q["video_id"])
-        except Exception:
+        except Exception as e:
+            print(f"  [transcript] {q['video_id']} FAILED: {type(e).__name__}: {str(e)[:120]}")
             client.table("discovery_queue").update({"status": "no_captions"}).eq("video_id", q["video_id"]).execute()
             return
         try:
             data = extract(q["title"], q.get("found_via", ""), txt)
-            total += write_video(client, q, data)
+            n = write_video(client, q, data)
+            total += n
+            print(f"  [ok] {q['video_id']} ({q.get('found_via','?')}): {n} nuggets")
         except Exception as e:
-            print(f"  ! {q['video_id']}: {str(e)[:80]}")
+            print(f"  ! {q['video_id']}: {type(e).__name__}: {str(e)[:120]}")
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(work, pending))
     print(f"[run] extracted ~{total} nuggets from {len(pending)} videos")
