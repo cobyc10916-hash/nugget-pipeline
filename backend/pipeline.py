@@ -35,6 +35,9 @@ except Exception:
 WS_USER = os.environ.get("WEBSHARE_PROXY_USERNAME")
 WS_PASS = os.environ.get("WEBSHARE_PROXY_PASSWORD")
 PROXY = f"http://{WS_USER}-rotate:{WS_PASS}@p.webshare.io:80" if WS_USER and WS_PASS else None
+# Route plain HTTP discovery (RSS) through the proxy too: cloud runners (GitHub Actions
+# Azure IPs) get throttled/blocked by YouTube otherwise. None locally falls back to direct.
+RPROXIES = {"http": PROXY, "https": PROXY} if PROXY else None
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY")
@@ -85,15 +88,16 @@ def search(query, _retry=True):
 def rss(channel_id, max_n=6):
     import xml.etree.ElementTree as ET
     import requests
-    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=20)
+    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=30, proxies=RPROXIES)
     ids = re.findall(r"<yt:videoId>([^<]+)</yt:videoId>", r.text)[:max_n]
     titles = re.findall(r"<media:title>([^<]+)</media:title>", r.text)[:max_n]
     return [{"video_id": v, "title": t, "channel_id": channel_id} for v, t in zip(ids, titles)]
 
 def channel_recent(channel_id, name):
-    """Newest uploads from a channel via its RSS feed (with published timestamps). No proxy needed."""
+    """Newest uploads from a channel via its RSS feed (with published timestamps). Proxied on
+    cloud runners (YouTube throttles datacenter IPs); direct when no proxy is configured."""
     import requests
-    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=20)
+    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=30, proxies=RPROXIES)
     out = []
     for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
         vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
@@ -228,11 +232,15 @@ SCHEMA = {
             }}},
     }}
 
+# Sonnet 4.6 by default: best nugget quality for judging the PoC, still under the cost ceiling at
+# PoC volume (~$13/mo at 5/day). Set EXTRACT_MODEL=claude-haiku-4-5 to cut cost ~3x once trusted.
+EXTRACT_MODEL = os.environ.get("EXTRACT_MODEL", "claude-sonnet-4-6")
+
 def extract(title, channel, text):
     import anthropic
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     msg = client.messages.create(
-        model="claude-haiku-4-5", max_tokens=4000,
+        model=EXTRACT_MODEL, max_tokens=8000,
         system=[{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
         output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
         messages=[{"role": "user", "content": f"TITLE: {title}\nCHANNEL: {channel}\nTRANSCRIPT:\n{text}"}],
@@ -272,7 +280,7 @@ def embed_new(anon_key=None):
     """Generate embeddings for any nuggets missing them (server-side gte-small edge function).
     Safe to call repeatedly; processes a small batch per call. Look-alike suppression depends on this."""
     import requests
-    key = anon_key or os.environ.get("SUPABASE_ANON_KEY")
+    key = anon_key or os.environ.get("SUPABASE_ANON_KEY") or SUPABASE_KEY  # service key is a valid bearer
     if not (SUPABASE_URL and key):
         return
     url = f"{SUPABASE_URL}/functions/v1/embed-nuggets"

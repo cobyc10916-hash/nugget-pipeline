@@ -1,0 +1,48 @@
+name: NUGGET daily pull
+
+# Runs in GitHub's cloud (your laptop can be closed). Pulls the newest reputable-AI-channel
+# uploads, fetches transcripts via the Webshare proxy, extracts nuggets, and writes them to the
+# Supabase feed. Free for this public repo. All creds come from repo Settings -> Secrets.
+
+on:
+  schedule:
+    # 12:00 UTC = 7:00 AM US Central (CDT). GitHub cron is UTC and does NOT shift for daylight
+    # saving, so in winter (CST) this fires at 6:00 AM. Edit the hour below to re-pin it.
+    - cron: "0 12 * * *"
+  workflow_dispatch:        # adds a "Run workflow" button so you can fire it on demand
+    inputs:
+      limit:
+        description: "How many videos to pull"
+        default: "5"
+      hours:
+        description: "Look-back window in hours"
+        default: "24"
+
+concurrency:
+  group: nugget-daily       # never let two runs overlap
+  cancel-in-progress: false
+
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      WEBSHARE_PROXY_USERNAME: ${{ secrets.WEBSHARE_PROXY_USERNAME }}
+      WEBSHARE_PROXY_PASSWORD: ${{ secrets.WEBSHARE_PROXY_PASSWORD }}
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      # Override to claude-haiku-4-5 here (or as a secret/var) to cut extraction cost ~3x.
+      EXTRACT_MODEL: claude-sonnet-4-6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Pull, extract, write to feed
+        run: |
+          python backend/pipeline.py recent \
+            --limit "${{ github.event.inputs.limit || '5' }}" \
+            --hours "${{ github.event.inputs.hours || '24' }}"
