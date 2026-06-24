@@ -6,9 +6,11 @@ name: NUGGET daily pull
 
 on:
   schedule:
-    # 3x/day, UTC (GitHub cron does NOT shift for daylight saving). In summer (CDT, UTC-5):
+    # 5x/day, UTC (GitHub cron does NOT shift for daylight saving). In summer (CDT, UTC-5):
     - cron: "0 11 * * *"   # 6:00 AM Central
+    - cron: "0 14 * * *"   # 9:00 AM Central
     - cron: "0 17 * * *"   # 12:00 PM Central
+    - cron: "0 20 * * *"   # 3:00 PM Central
     - cron: "0 23 * * *"   # 6:00 PM Central
   workflow_dispatch:        # adds a "Run workflow" button so you can fire it on demand
     inputs:
