@@ -1,0 +1,77 @@
+{
+  "ok": [
+    {
+      "video_id": "Ffh9OeJ7yxw",
+      "title": "800+ hours of Learning Claude Code in 8 minutes (2026 tutorial / unknown tricks / newest model)",
+      "channel": "Edmund Yong",
+      "channel_id": "UCuKVsDS3oVzTuNjnQ79pEEg",
+      "views": 860986,
+      "duration": 481.0,
+      "bucket": "ai"
+    },
+    {
+      "video_id": "DNGxMX7ym44",
+      "title": "Claude Code NEW Sub Agents in 7 Minutes",
+      "channel": "Developers Digest",
+      "channel_id": "UCuE6iwZKgGz8s6kznBRI9LQ",
+      "views": 252633,
+      "duration": 414.0,
+      "bucket": "ai"
+    },
+    {
+      "video_id": "FwOTs4UxQS4",
+      "title": "AI Agents, Clearly Explained",
+      "channel": "Jeff Su",
+      "channel_id": "UCwAnu01qlnVg1Ai2AbtTMaA",
+      "views": 4519644,
+      "duration": 609.0,
+      "bucket": "ai"
+    },
+    {
+      "video_id": "BZ2nSULolKI",
+      "title": "The One-Person Business Model (How To Productize Yourself)",
+      "channel": "Dan Koe",
+      "channel_id": "UCWXYDYv5STLk-zoxMP2I1Lw",
+      "views": 1269883,
+      "duration": 1787.0,
+      "bucket": "build"
+    },
+    {
+      "video_id": "hyYCn_kAngI",
+      "title": "How to Get Your First Customers | Startup School",
+      "channel": "Y Combinator",
+      "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg",
+      "views": 626094,
+      "duration": 1374.0,
+      "bucket": "build"
+    },
+    {
+      "video_id": "vT6qh72wCZk",
+      "title": "The (Overdue) Collapse Of Short Term Rentals",
+      "channel": "How Money Works",
+      "channel_id": "UCkCGANrihzExmu9QiqZpPlQ",
+      "views": 3958872,
+      "duration": 800.0,
+      "bucket": "str"
+    },
+    {
+      "video_id": "zKAGPwVQ7lk",
+      "title": "My 4 Most Powerful STR Pricing Tricks (copy these)  ",
+      "channel": "Sean Rakidzich",
+      "channel_id": "UCvwmrPfn8ff-rTlc9YoH7Bg",
+      "views": 58516,
+      "duration": 836.0,
+      "bucket": "str"
+    },
+    {
+      "video_id": "TOQtJch3kGk",
+      "title": "How To Build A $10M AI App In Literally 30 Seconds (this is insane)",
+      "channel": "My First Million",
+      "channel_id": "UCyaN6mg5u8Cjy2ZI4ikWaug",
+      "views": 1009344,
+      "duration": 4164.0,
+      "bucket": "podcast"
+    }
+  ],
+  "failed": []
+}

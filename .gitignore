@@ -1,0 +1,20 @@
+# the PWA has its own repo + huge node_modules
+app/
+
+# secrets + local state
+**/.env
+.env
+backend/state/
+backend/.venv/
+.venv/
+
+# python caches
+**/__pycache__/
+*.pyc
+*.pyo
+
+# os
+**/.DS_Store
+
+# bulky seed sql (the routine doesn't need it)
+backend/seed/seed.sql

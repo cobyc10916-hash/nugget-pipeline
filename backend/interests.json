@@ -1,0 +1,59 @@
+{
+  "_comment": "Discovery corpus for NUGGET. Heavily AI-weighted, plus building/entrepreneurship and short-term rental. Educational only. The pipeline searches each query (relevance, view+duration filtered) and RSS-pulls promoted channels. Edit freely; the Discovery-Coverage eval-loop tunes it.",
+  "filters": { "min_views": 15000, "min_duration_s": 360, "max_duration_s": 9000 },
+  "areas": {
+    "ai": {
+      "weight": 0.5,
+      "queries": [
+        "claude code agentic workflow", "claude code tips advanced", "AI coding agents tutorial",
+        "building AI agents from scratch", "AI agent architecture explained", "MCP model context protocol tutorial",
+        "RAG system build tutorial", "prompt engineering advanced techniques", "cursor AI workflow",
+        "AI app build with replit", "vibe coding tutorial", "LLM application development",
+        "AI automation n8n workflow", "fine tuning vs RAG", "vector database tutorial",
+        "AI agents for business automation", "build SaaS with AI", "AI engineering best practices",
+        "context engineering LLM", "evals for LLM applications", "AI coding productivity",
+        "open source LLM local", "matt pocock typescript ai", "anthropic claude api tutorial",
+        "AI startup ideas 2026", "agentic AI explained", "AI workflow automation tools"
+      ]
+    },
+    "build": {
+      "weight": 0.3,
+      "queries": [
+        "one person business how to", "solopreneur systems", "bootstrapped saas growth",
+        "get first customers startup", "go to market strategy b2b", "pricing strategy saas",
+        "distribution over product", "productized service business", "indie hacker build in public",
+        "cold email b2b sales", "founder sales tactics", "naval almanack leverage",
+        "alex hormozi offers", "y combinator startup advice", "lean startup customer development",
+        "micro saas ideas", "newsletter business model", "build audience from zero"
+      ]
+    },
+    "str": {
+      "weight": 0.2,
+      "queries": [
+        "short term rental market analysis", "airbnb pricing strategy", "str revenue management",
+        "airbnb automation tools", "short term rental investing analysis", "str market selection data",
+        "airbnb dynamic pricing pricelabs", "vacation rental operations systems", "str data analysis",
+        "airbnb occupancy optimization", "short term rental regulations", "str underwriting deal analysis"
+      ]
+    }
+  },
+  "promoted_channels": [
+    { "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg", "name": "Y Combinator" }
+  ],
+  "_ai_channels_comment": "Reputable AI channels — the recency pull (discover_recent) draws newest uploads from these.",
+  "ai_channels": [
+    { "channel_id": "UCawZsQWqfGSbCI5yjkdVkTA", "name": "Matthew Berman" },
+    { "channel_id": "UCNJ1Ymd5yFuUPtn21xtRbbw", "name": "AI Explained" },
+    { "channel_id": "UChpleBmo18P08aKCIgti38g", "name": "Matt Wolfe" },
+    { "channel_id": "UC55ODQSvARtgSyc8ThfiepQ", "name": "Sam Witteveen" },
+    { "channel_id": "UC_x36zCEGilGpB1m-V4gmjg", "name": "IndyDevDan" },
+    { "channel_id": "UCMwVTLZIRRUyyVrkjDpn4pA", "name": "Cole Medin" },
+    { "channel_id": "UCqcbQf6yw5KzRoDDcZ_wBSw", "name": "Wes Roth" },
+    { "channel_id": "UCbfYPyITQ-7l4upoX8nvctg", "name": "Two Minute Papers" },
+    { "channel_id": "UCpV_X0VrL8-jg3t6wYGS-1g", "name": "1littlecoder" },
+    { "channel_id": "UC6r0JH23PKZfogSwn2Q-oMw", "name": "bycloud" },
+    { "channel_id": "UCrXSVX9a1mj8l0CMLwKgMVw", "name": "AI Jason" },
+    { "channel_id": "UCHhYXsLBEVVnbvsq57n1MTQ", "name": "The AI Advantage" },
+    { "channel_id": "UC0m81bQuthaQZmFbXEY9QSw", "name": "AICodeKing" }
+  ]
+}

@@ -1,0 +1,892 @@
+{
+  "video_id": "DNGxMX7ym44",
+  "title": "Claude Code NEW Sub Agents in 7 Minutes",
+  "channel": "Developers Digest",
+  "channel_id": "UCuE6iwZKgGz8s6kznBRI9LQ",
+  "views": 252633,
+  "duration": 414.0,
+  "bucket": "ai",
+  "transcript_segments": [
+    {
+      "t": 0,
+      "text": "Anthropic has just released sub agents"
+    },
+    {
+      "t": 2,
+      "text": "for cloud code. What the feature allows"
+    },
+    {
+      "t": 5,
+      "text": "you to do is essentially create your own"
+    },
+    {
+      "t": 7,
+      "text": "team of specialized AI agents for"
+    },
+    {
+      "t": 9,
+      "text": "different aspects of your development"
+    },
+    {
+      "t": 11,
+      "text": "workflow. You can equip each agent that"
+    },
+    {
+      "t": 13,
+      "text": "operates independently with its own"
+    },
+    {
+      "t": 15,
+      "text": "context and expertise as well as their"
+    },
+    {
+      "t": 17,
+      "text": "respective MCP tools or system prompt."
+    },
+    {
+      "t": 20,
+      "text": "This lets you delegate specific"
+    },
+    {
+      "t": 22,
+      "text": "workflows like code reviews, debugging"
+    },
+    {
+      "t": 24,
+      "text": "or testing to dedicated AI specialists"
+    },
+    {
+      "t": 27,
+      "text": "that you defined while keeping the"
+    },
+    {
+      "t": 29,
+      "text": "conversation focused on the big picture."
+    },
+    {
+      "t": 31,
+      "text": "Now, in this video, I'm going to show"
+    },
+    {
+      "t": 32,
+      "text": "you how you can set up sub agents as"
+    },
+    {
+      "t": 34,
+      "text": "well as how you can think about"
+    },
+    {
+      "t": 35,
+      "text": "potentially leveraging within building"
+    },
+    {
+      "t": 37,
+      "text": "out your application. Let's dive in."
+    },
+    {
+      "t": 39,
+      "text": "Once you're within Cloud Code, all that"
+    },
+    {
+      "t": 40,
+      "text": "you need to do to create new agents is"
+    },
+    {
+      "t": 42,
+      "text": "you can forward slash agents. Once"
+    },
+    {
+      "t": 44,
+      "text": "you're within there, you can create a"
+    },
+    {
+      "t": 45,
+      "text": "new agent. You can specify whether the"
+    },
+    {
+      "t": 47,
+      "text": "agent is going to live within the"
+    },
+    {
+      "t": 48,
+      "text": "project or whether it's going to be"
+    },
+    {
+      "t": 50,
+      "text": "globally on your machine where you can"
+    },
+    {
+      "t": 51,
+      "text": "access it within any project. And then"
+    },
+    {
+      "t": 53,
+      "text": "from there you can either manually"
+    },
+    {
+      "t": 54,
+      "text": "configure or generate with claude the"
+    },
+    {
+      "t": 57,
+      "text": "agent that you want to create. In this"
+    },
+    {
+      "t": 58,
+      "text": "case I'm going to say I want to create a"
+    },
+    {
+      "t": 60,
+      "text": "front-end engineer that is an expert in"
+    },
+    {
+      "t": 62,
+      "text": "nex.js tailwind as well as shadui. What"
+    },
+    {
+      "t": 65,
+      "text": "it's going to do is it's going to"
+    },
+    {
+      "t": 66,
+      "text": "generate a markdown file that we can go"
+    },
+    {
+      "t": 68,
+      "text": "and we can iterate on as we build out"
+    },
+    {
+      "t": 70,
+      "text": "that agent. And the really great thing"
+    },
+    {
+      "t": 72,
+      "text": "with this is we can specify which tools"
+    },
+    {
+      "t": 74,
+      "text": "that we want to give the agent access"
+    },
+    {
+      "t": 76,
+      "text": "to. We have all of the core cloud code"
+    },
+    {
+      "t": 78,
+      "text": "functions like being able to list out"
+    },
+    {
+      "t": 80,
+      "text": "the different files within a directory,"
+    },
+    {
+      "t": 82,
+      "text": "read or edit files, all of the different"
+    },
+    {
+      "t": 84,
+      "text": "features that you're probably familiar"
+    },
+    {
+      "t": 86,
+      "text": "with. Additionally, if you do have any"
+    },
+    {
+      "t": 88,
+      "text": "MCP servers, we are going to be able to"
+    },
+    {
+      "t": 89,
+      "text": "leverage those within the agent. And"
+    },
+    {
+      "t": 91,
+      "text": "within here, you can go and turn on or"
+    },
+    {
+      "t": 93,
+      "text": "off all of the different whether it's"
+    },
+    {
+      "t": 95,
+      "text": "MCP tools or the core functionality that"
+    },
+    {
+      "t": 97,
+      "text": "you want to give the agent access to."
+    },
+    {
+      "t": 99,
+      "text": "Now, for this particular agent, I'm"
+    },
+    {
+      "t": 100,
+      "text": "going to give it access to everything."
+    },
+    {
+      "t": 102,
+      "text": "Where this is helpful is you can specify"
+    },
+    {
+      "t": 104,
+      "text": "to have a backend agent that might have"
+    },
+    {
+      "t": 105,
+      "text": "access to read your database and run SQL"
+    },
+    {
+      "t": 108,
+      "text": "commands and potentially read the logs"
+    },
+    {
+      "t": 111,
+      "text": "of your infrastructure or whatever it"
+    },
+    {
+      "t": 112,
+      "text": "might be. Whereas on the front end,"
+    },
+    {
+      "t": 114,
+      "text": "maybe it has access to a whole host of"
+    },
+    {
+      "t": 116,
+      "text": "different tools. And additionally, what"
+    },
+    {
+      "t": 118,
+      "text": "you can do is let's say you're using a"
+    },
+    {
+      "t": 119,
+      "text": "brand new front-end framework or"
+    },
+    {
+      "t": 121,
+      "text": "something and the documentation isn't in"
+    },
+    {
+      "t": 123,
+      "text": "the training data of the LLM. You can"
+    },
+    {
+      "t": 125,
+      "text": "specify it to leverage different MCP"
+    },
+    {
+      "t": 127,
+      "text": "tools to actually retrieve the relevant"
+    },
+    {
+      "t": 129,
+      "text": "information. Within here, I'm going to"
+    },
+    {
+      "t": 130,
+      "text": "specify the color of the agent. So, we"
+    },
+    {
+      "t": 132,
+      "text": "have our Nex.js Tailwind Shad CN UI"
+    },
+    {
+      "t": 135,
+      "text": "engineer. And we can also change the"
+    },
+    {
+      "t": 137,
+      "text": "title as well as anything within this"
+    },
+    {
+      "t": 139,
+      "text": "markdown. The structure in terms of the"
+    },
+    {
+      "t": 141,
+      "text": "markdown, we have the name, we have the"
+    },
+    {
+      "t": 142,
+      "text": "location where it's going to be relative"
+    },
+    {
+      "t": 144,
+      "text": "to our directory. We have all of the"
+    },
+    {
+      "t": 146,
+      "text": "different tools that will be listed out"
+    },
+    {
+      "t": 147,
+      "text": "here. They're going to be comma"
+    },
+    {
+      "t": 148,
+      "text": "separated or if we're leveraging all the"
+    },
+    {
+      "t": 150,
+      "text": "tools, we'll just say all tools. Then we"
+    },
+    {
+      "t": 152,
+      "text": "have the description in terms of how"
+    },
+    {
+      "t": 154,
+      "text": "cloud code will actually invoke this"
+    },
+    {
+      "t": 156,
+      "text": "agent. We have use this agent when you"
+    },
+    {
+      "t": 158,
+      "text": "need to build, modify, debug front-end"
+    },
+    {
+      "t": 160,
+      "text": "components and applications using"
+    },
+    {
+      "t": 162,
+      "text": "Nex.js, Tailwind, so on and so forth."
+    },
+    {
+      "t": 164,
+      "text": "And then finally, the system prompts."
+    },
+    {
+      "t": 166,
+      "text": "This is where it's really powerful"
+    },
+    {
+      "t": 167,
+      "text": "because you'll be able to add to this"
+    },
+    {
+      "t": 168,
+      "text": "over time the different biases of what"
+    },
+    {
+      "t": 171,
+      "text": "things you like to leverage or not like"
+    },
+    {
+      "t": 172,
+      "text": "to leverage. If there are certain quirks"
+    },
+    {
+      "t": 174,
+      "text": "different models are doing that you"
+    },
+    {
+      "t": 176,
+      "text": "don't particularly like, like maybe you"
+    },
+    {
+      "t": 178,
+      "text": "don't like the linear gradients or the"
+    },
+    {
+      "t": 180,
+      "text": "thick fonts or all of the different"
+    },
+    {
+      "t": 182,
+      "text": "emojis, you can specify all of those"
+    },
+    {
+      "t": 184,
+      "text": "different aspects within the system"
+    },
+    {
+      "t": 185,
+      "text": "prompt. And just to show you what it"
+    },
+    {
+      "t": 186,
+      "text": "looks like, we're going to have a hidden"
+    },
+    {
+      "t": 188,
+      "text": "directory called.cloud. And then within"
+    },
+    {
+      "t": 190,
+      "text": "that directory, we're going to have our"
+    },
+    {
+      "t": 192,
+      "text": "agents. This is going to be where all of"
+    },
+    {
+      "t": 193,
+      "text": "that relevant context for each agent"
+    },
+    {
+      "t": 195,
+      "text": "that you set up live. Okay. So now I'm"
+    },
+    {
+      "t": 196,
+      "text": "going to go ahead and I'm going to"
+    },
+    {
+      "t": 198,
+      "text": "create a new research agent. Again, I'm"
+    },
+    {
+      "t": 200,
+      "text": "just going to specify this within the"
+    },
+    {
+      "t": 201,
+      "text": "root of our directory. I'm going to say"
+    },
+    {
+      "t": 203,
+      "text": "you are an expert web researcher that's"
+    },
+    {
+      "t": 205,
+      "text": "going to be able to search the web."
+    },
+    {
+      "t": 207,
+      "text": "You're great at googling different"
+    },
+    {
+      "t": 208,
+      "text": "things, but you're also really good at"
+    },
+    {
+      "t": 210,
+      "text": "finding the relevant information on"
+    },
+    {
+      "t": 212,
+      "text": "particular web pages. And then for this"
+    },
+    {
+      "t": 215,
+      "text": "agent, I'm going to specify to give it"
+    },
+    {
+      "t": 216,
+      "text": "access to scrape different web pages,"
+    },
+    {
+      "t": 218,
+      "text": "map the different URLs from web pages,"
+    },
+    {
+      "t": 220,
+      "text": "and then finally also search different"
+    },
+    {
+      "t": 222,
+      "text": "queries from the web. And then finally,"
+    },
+    {
+      "t": 224,
+      "text": "just to show you the markdown file, we"
+    },
+    {
+      "t": 225,
+      "text": "have the name within here. We have again"
+    },
+    {
+      "t": 226,
+      "text": "the location. And this is going to be"
+    },
+    {
+      "t": 228,
+      "text": "what it looks like when you break up all"
+    },
+    {
+      "t": 229,
+      "text": "of those different tools. And the nice"
+    },
+    {
+      "t": 231,
+      "text": "thing with Claude is you can also even"
+    },
+    {
+      "t": 233,
+      "text": "specify to Claude to say, \"Hey, update"
+    },
+    {
+      "t": 236,
+      "text": "this even within just the chat"
+    },
+    {
+      "t": 237,
+      "text": "interface.\" You can do that directly"
+    },
+    {
+      "t": 239,
+      "text": "from Claude and it will be able to find"
+    },
+    {
+      "t": 241,
+      "text": "that agents directory and make the"
+    },
+    {
+      "t": 243,
+      "text": "relevant updates that you're asking."
+    },
+    {
+      "t": 244,
+      "text": "Now, I'm going to say I want to build"
+    },
+    {
+      "t": 245,
+      "text": "out a SAS landing page. I want a pricing"
+    },
+    {
+      "t": 248,
+      "text": "table as well as an FAQ. But"
+    },
+    {
+      "t": 250,
+      "text": "specifically, what I want to have in the"
+    },
+    {
+      "t": 252,
+      "text": "main area of the website is I want to"
+    },
+    {
+      "t": 254,
+      "text": "research the top five AI news stories"
+    },
+    {
+      "t": 257,
+      "text": "from July 2025. I think first before we"
+    },
+    {
+      "t": 260,
+      "text": "actually start building out the website,"
+    },
+    {
+      "t": 262,
+      "text": "let's just research the web and find the"
+    },
+    {
+      "t": 264,
+      "text": "relevant details. I'm going to go ahead"
+    },
+    {
+      "t": 266,
+      "text": "and kick off that task. Now, the first"
+    },
+    {
+      "t": 267,
+      "text": "thing that Claude is going to do is it's"
+    },
+    {
+      "t": 269,
+      "text": "going to break down what we asked for"
+    },
+    {
+      "t": 271,
+      "text": "into a to-do list. It's going to"
+    },
+    {
+      "t": 273,
+      "text": "research all of the different stories."
+    },
+    {
+      "t": 275,
+      "text": "Then here we can see the query that it's"
+    },
+    {
+      "t": 277,
+      "text": "generated for us. It gathered all of the"
+    },
+    {
+      "t": 279,
+      "text": "relevant research. We see great, I've"
+    },
+    {
+      "t": 281,
+      "text": "got the research complete, and now we're"
+    },
+    {
+      "t": 282,
+      "text": "moving on to the next.js process. And"
+    },
+    {
+      "t": 284,
+      "text": "what's really great with this is we're"
+    },
+    {
+      "t": 286,
+      "text": "going to be able to define project"
+    },
+    {
+      "t": 288,
+      "text": "specific agents. We can have global"
+    },
+    {
+      "t": 290,
+      "text": "agents that are just helpful for things"
+    },
+    {
+      "t": 292,
+      "text": "we use across different projects. We're"
+    },
+    {
+      "t": 294,
+      "text": "going to be able to spawn off a ton of"
+    },
+    {
+      "t": 296,
+      "text": "different agents. And I think this is"
+    },
+    {
+      "t": 298,
+      "text": "going to be interesting over the coming"
+    },
+    {
+      "t": 299,
+      "text": "weeks just to see how different people"
+    },
+    {
+      "t": 301,
+      "text": "leverage this and the creative use cases"
+    },
+    {
+      "t": 303,
+      "text": "in terms of actually creating almost"
+    },
+    {
+      "t": 305,
+      "text": "like a mini workforce of the different"
+    },
+    {
+      "t": 307,
+      "text": "things that we want to accomplish within"
+    },
+    {
+      "t": 309,
+      "text": "Claude. Now, another interesting use"
+    },
+    {
+      "t": 311,
+      "text": "case for cloud code is you could set"
+    },
+    {
+      "t": 313,
+      "text": "this up to access a ton of different MCP"
+    },
+    {
+      "t": 316,
+      "text": "servers that aren't necessarily even"
+    },
+    {
+      "t": 317,
+      "text": "coding related. Say for instance, if you"
+    },
+    {
+      "t": 319,
+      "text": "want to hook it up to Gmail or linear or"
+    },
+    {
+      "t": 321,
+      "text": "a Canva MCP, you're going to be able to"
+    },
+    {
+      "t": 323,
+      "text": "have a ton of different capabilities."
+    },
+    {
+      "t": 326,
+      "text": "And instead of trying to squeeze in"
+    },
+    {
+      "t": 327,
+      "text": "within just one system prompt all of the"
+    },
+    {
+      "t": 330,
+      "text": "different facets of how your application"
+    },
+    {
+      "t": 332,
+      "text": "works and what to do and not to do and"
+    },
+    {
+      "t": 334,
+      "text": "all of that, instead of that, what we"
+    },
+    {
+      "t": 336,
+      "text": "can do is we can just give very poignant"
+    },
+    {
+      "t": 338,
+      "text": "instructions to each of these respective"
+    },
+    {
+      "t": 340,
+      "text": "agents. We can tell it what to do, what"
+    },
+    {
+      "t": 342,
+      "text": "not to do, and we can just engineer that"
+    },
+    {
+      "t": 344,
+      "text": "context to be very relevant for what we"
+    },
+    {
+      "t": 347,
+      "text": "want each of those agents to do. And"
+    },
+    {
+      "t": 348,
+      "text": "what's really great with how the agents"
+    },
+    {
+      "t": 350,
+      "text": "are set up is they're within markdown"
+    },
+    {
+      "t": 351,
+      "text": "files. You're going to be able to take"
+    },
+    {
+      "t": 353,
+      "text": "that context. They're very portable. you"
+    },
+    {
+      "t": 355,
+      "text": "can commit them to your repo. It's going"
+    },
+    {
+      "t": 357,
+      "text": "to be really interesting to see how"
+    },
+    {
+      "t": 358,
+      "text": "different people leverage these over the"
+    },
+    {
+      "t": 360,
+      "text": "coming weeks. So here's the starting"
+    },
+    {
+      "t": 362,
+      "text": "point of the landing page. So we have a"
+    },
+    {
+      "t": 364,
+      "text": "simple Nex.js application. We have some"
+    },
+    {
+      "t": 366,
+      "text": "pricing here. We have our FAQs that are"
+    },
+    {
+      "t": 368,
+      "text": "functional. But additionally on the"
+    },
+    {
+      "t": 370,
+      "text": "outset of our application, we ask for it"
+    },
+    {
+      "t": 372,
+      "text": "to search for up-to-date information."
+    },
+    {
+      "t": 374,
+      "text": "Within here, we see five different"
+    },
+    {
+      "t": 376,
+      "text": "relevant AI stories. Meta is 300 million"
+    },
+    {
+      "t": 378,
+      "text": "talent war things like GBT5 is coming"
+    },
+    {
+      "t": 380,
+      "text": "next month. All of those different"
+    },
+    {
+      "t": 382,
+      "text": "pieces were leveraged from actually"
+    },
+    {
+      "t": 384,
+      "text": "searching the internet and using that as"
+    },
+    {
+      "t": 386,
+      "text": "context to feed in to what ultimately"
+    },
+    {
+      "t": 389,
+      "text": "built out this application for us. I"
+    },
+    {
+      "t": 391,
+      "text": "just wanted to do a really quick one"
+    },
+    {
+      "t": 392,
+      "text": "showing you how you can leverage cloud"
+    },
+    {
+      "t": 394,
+      "text": "code. It is super exciting just to think"
+    },
+    {
+      "t": 397,
+      "text": "about how we can leverage these"
+    },
+    {
+      "t": 398,
+      "text": "different agents, especially now that we"
+    },
+    {
+      "t": 400,
+      "text": "can equip it with different MCP tools"
+    },
+    {
+      "t": 402,
+      "text": "and specify the relevant context for all"
+    },
+    {
+      "t": 404,
+      "text": "of those different agents. Let me know"
+    },
+    {
+      "t": 406,
+      "text": "the overall structure of the different"
+    },
+    {
+      "t": 408,
+      "text": "agents that you're going to be setting"
+    },
+    {
+      "t": 409,
+      "text": "up within Claude Code. If you found this"
+    },
+    {
+      "t": 410,
+      "text": "video useful, please comment, share, and"
+    },
+    {
+      "t": 412,
+      "text": "subscribe."
+    }
+  ],
+  "transcript_chars": 8441
+}

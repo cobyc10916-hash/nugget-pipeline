@@ -1,0 +1,1004 @@
+{
+  "video_id": "FwOTs4UxQS4",
+  "title": "AI Agents, Clearly Explained",
+  "channel": "Jeff Su",
+  "channel_id": "UCwAnu01qlnVg1Ai2AbtTMaA",
+  "views": 4519644,
+  "duration": 609.0,
+  "bucket": "ai",
+  "transcript_segments": [
+    {
+      "t": 4,
+      "text": "AI. AI. AI. AI. AI."
+    },
+    {
+      "t": 8,
+      "text": "AI. You know, more agentic. Agentic"
+    },
+    {
+      "t": 11,
+      "text": "capabilities. An AI agent. Agents."
+    },
+    {
+      "t": 13,
+      "text": "Agentic workflows. Agents. Agents."
+    },
+    {
+      "t": 15,
+      "text": "Agent. Agent. Agent. Agent. Agentic."
+    },
+    {
+      "t": 19,
+      "text": "All right. Most explanations of AI"
+    },
+    {
+      "t": 21,
+      "text": "agents is either too technical or too"
+    },
+    {
+      "t": 24,
+      "text": "basic. This video is meant for people"
+    },
+    {
+      "t": 26,
+      "text": "like myself. You have zero technical"
+    },
+    {
+      "t": 28,
+      "text": "background, but you use AI tools"
+    },
+    {
+      "t": 31,
+      "text": "regularly and you want to learn just"
+    },
+    {
+      "t": 34,
+      "text": "enough about AI agents to see how it"
+    },
+    {
+      "t": 36,
+      "text": "affects you. In this video, we'll follow"
+    },
+    {
+      "t": 39,
+      "text": "a simple one, two, three learning path"
+    },
+    {
+      "t": 42,
+      "text": "by building on concepts you already"
+    },
+    {
+      "t": 44,
+      "text": "understand like chatbt and then moving"
+    },
+    {
+      "t": 47,
+      "text": "on to AI workflows and then finally AI"
+    },
+    {
+      "t": 50,
+      "text": "agents. All the while using examples you"
+    },
+    {
+      "t": 53,
+      "text": "will actually encounter in real life."
+    },
+    {
+      "t": 55,
+      "text": "And believe me when I tell you those"
+    },
+    {
+      "t": 57,
+      "text": "intimidating terms you see everywhere"
+    },
+    {
+      "t": 59,
+      "text": "like rag, rag, or react, they're a lot"
+    },
+    {
+      "t": 62,
+      "text": "simpler than you think. Let's get"
+    },
+    {
+      "t": 64,
+      "text": "started. Kicking things off at level"
+    },
+    {
+      "t": 66,
+      "text": "one, large language models. Popular AI"
+    },
+    {
+      "t": 68,
+      "text": "chatbots like CHBT, Google Gemini, and"
+    },
+    {
+      "t": 71,
+      "text": "Claude are applications built on top of"
+    },
+    {
+      "t": 74,
+      "text": "large language models, LLMs, and they're"
+    },
+    {
+      "t": 77,
+      "text": "fantastic at generating and editing"
+    },
+    {
+      "t": 79,
+      "text": "text. Here's a simple visualization."
+    },
+    {
+      "t": 82,
+      "text": "You, the human, provides an input and"
+    },
+    {
+      "t": 84,
+      "text": "the LLM produces an output based on its"
+    },
+    {
+      "t": 88,
+      "text": "training data. For example, if I were to"
+    },
+    {
+      "t": 89,
+      "text": "ask Chachi BT to draft an email"
+    },
+    {
+      "t": 91,
+      "text": "requesting a coffee chat, my prompt is"
+    },
+    {
+      "t": 94,
+      "text": "the input and the resulting email that's"
+    },
+    {
+      "t": 96,
+      "text": "way more polite than I would ever be in"
+    },
+    {
+      "t": 98,
+      "text": "real life is the output. So far so good,"
+    },
+    {
+      "t": 101,
+      "text": "right? Simple stuff. But what if I asked"
+    },
+    {
+      "t": 103,
+      "text": "Chachi BT when my next coffee chat is?"
+    },
+    {
+      "t": 107,
+      "text": "Even without seeing the response, both"
+    },
+    {
+      "t": 109,
+      "text": "you and I know Chachi PT is gonna fail"
+    },
+    {
+      "t": 112,
+      "text": "because it doesn't know that"
+    },
+    {
+      "t": 114,
+      "text": "information. It doesn't have access to"
+    },
+    {
+      "t": 116,
+      "text": "my calendar. This highlights two key"
+    },
+    {
+      "t": 118,
+      "text": "traits of large language models. First,"
+    },
+    {
+      "t": 121,
+      "text": "despite being trained on vast amounts of"
+    },
+    {
+      "t": 123,
+      "text": "data, they have limited knowledge of"
+    },
+    {
+      "t": 125,
+      "text": "proprietary information like our"
+    },
+    {
+      "t": 127,
+      "text": "personal information or internal company"
+    },
+    {
+      "t": 129,
+      "text": "data. Second, LLMs are passive. They"
+    },
+    {
+      "t": 133,
+      "text": "wait for our prompt and then respond."
+    },
+    {
+      "t": 135,
+      "text": "Right? Keep these two traits in mind"
+    },
+    {
+      "t": 137,
+      "text": "moving forward. Moving to level two, AI"
+    },
+    {
+      "t": 139,
+      "text": "workflows. Let's build on our example."
+    },
+    {
+      "t": 142,
+      "text": "What if I, a human, told the LM, \"Every"
+    },
+    {
+      "t": 145,
+      "text": "time I ask about a personal event,"
+    },
+    {
+      "t": 147,
+      "text": "perform a search query and fetch data"
+    },
+    {
+      "t": 149,
+      "text": "from my Google calendar before providing"
+    },
+    {
+      "t": 152,
+      "text": "a response.\" With this logic"
+    },
+    {
+      "t": 153,
+      "text": "implemented, the next time I ask, \"When"
+    },
+    {
+      "t": 156,
+      "text": "is my coffee chat with Elon Husky?\" I'll"
+    },
+    {
+      "t": 158,
+      "text": "get the correct answer because the LLM"
+    },
+    {
+      "t": 160,
+      "text": "will now first go into my Google"
+    },
+    {
+      "t": 163,
+      "text": "calendar to find that information. But"
+    },
+    {
+      "t": 166,
+      "text": "here's where it gets tricky. What if my"
+    },
+    {
+      "t": 168,
+      "text": "next follow-up question is, \"What will"
+    },
+    {
+      "t": 170,
+      "text": "the weather be like that day?\" The LM"
+    },
+    {
+      "t": 173,
+      "text": "will now fail at answering the query"
+    },
+    {
+      "t": 175,
+      "text": "because the path we told the LM to"
+    },
+    {
+      "t": 177,
+      "text": "follow is to always search my Google"
+    },
+    {
+      "t": 180,
+      "text": "calendar, which does not have"
+    },
+    {
+      "t": 182,
+      "text": "information about the weather. This is a"
+    },
+    {
+      "t": 185,
+      "text": "fundamental trait of AI workflows. They"
+    },
+    {
+      "t": 187,
+      "text": "can only follow predefined paths set by"
+    },
+    {
+      "t": 191,
+      "text": "humans. And if you want to get"
+    },
+    {
+      "t": 193,
+      "text": "technical, this path is also called the"
+    },
+    {
+      "t": 195,
+      "text": "control logic. Pushing my example"
+    },
+    {
+      "t": 198,
+      "text": "further, what if I added more steps into"
+    },
+    {
+      "t": 200,
+      "text": "the workflow by allowing the LM to"
+    },
+    {
+      "t": 202,
+      "text": "access the weather via an API and then"
+    },
+    {
+      "t": 204,
+      "text": "just for fun use a text to audio model"
+    },
+    {
+      "t": 207,
+      "text": "to speak the answer. The weather"
+    },
+    {
+      "t": 209,
+      "text": "forecast for seeing Elon Husky is sunny"
+    },
+    {
+      "t": 212,
+      "text": "with a chance of being a good boy."
+    },
+    {
+      "t": 214,
+      "text": "Here's the thing. No matter how many"
+    },
+    {
+      "t": 216,
+      "text": "steps we add, this is still just an AI"
+    },
+    {
+      "t": 219,
+      "text": "workflow. Even if there were hundreds or"
+    },
+    {
+      "t": 222,
+      "text": "thousands of steps, if a human is the"
+    },
+    {
+      "t": 225,
+      "text": "decision maker, there is no AI agent"
+    },
+    {
+      "t": 228,
+      "text": "involvement. Pro tip: retrieval"
+    },
+    {
+      "t": 230,
+      "text": "augmented generation or rag is a fancy"
+    },
+    {
+      "t": 233,
+      "text": "term that's thrown around a lot. In"
+    },
+    {
+      "t": 235,
+      "text": "simple terms, rag is a process that"
+    },
+    {
+      "t": 236,
+      "text": "helps AI models look things up before"
+    },
+    {
+      "t": 239,
+      "text": "they answer, like accessing my calendar"
+    },
+    {
+      "t": 241,
+      "text": "or the weather service. Essentially, Rag"
+    },
+    {
+      "t": 243,
+      "text": "is just a type of AI workflow. By the"
+    },
+    {
+      "t": 246,
+      "text": "way, I have a free AI toolkit that cuts"
+    },
+    {
+      "t": 248,
+      "text": "through the noise and helps you master"
+    },
+    {
+      "t": 249,
+      "text": "essential AI tools and workflows. I'll"
+    },
+    {
+      "t": 251,
+      "text": "leave a link to that down below. Here's"
+    },
+    {
+      "t": 253,
+      "text": "a real world example. Following Helena"
+    },
+    {
+      "t": 255,
+      "text": "Louu's amazing tutorial, I created a"
+    },
+    {
+      "t": 257,
+      "text": "simple AI workflow using make.com. Here"
+    },
+    {
+      "t": 260,
+      "text": "you can see that first I'm using Google"
+    },
+    {
+      "t": 262,
+      "text": "Sheets to do something. Specifically,"
+    },
+    {
+      "t": 263,
+      "text": "I'm compiling links to news articles in"
+    },
+    {
+      "t": 266,
+      "text": "a Google sheet. And this is that Google"
+    },
+    {
+      "t": 268,
+      "text": "sheet. Second, I'm using Perplexity to"
+    },
+    {
+      "t": 271,
+      "text": "summarize those news articles. Then"
+    },
+    {
+      "t": 274,
+      "text": "using Claude and using a prompt that I"
+    },
+    {
+      "t": 277,
+      "text": "wrote, I'm asking Claude to draft a"
+    },
+    {
+      "t": 279,
+      "text": "LinkedIn and Instagram post. Finally, I"
+    },
+    {
+      "t": 282,
+      "text": "can schedule this to run automatically"
+    },
+    {
+      "t": 285,
+      "text": "every day at 8 a.m. As you can see, this"
+    },
+    {
+      "t": 287,
+      "text": "is an AI workflow because it follows a"
+    },
+    {
+      "t": 289,
+      "text": "predefined path set by me. Step one, you"
+    },
+    {
+      "t": 293,
+      "text": "do this. Step two, you do this. Step"
+    },
+    {
+      "t": 295,
+      "text": "three, you do this. And finally,"
+    },
+    {
+      "t": 298,
+      "text": "remember to run daily at 8 am. One last"
+    },
+    {
+      "t": 300,
+      "text": "thing, if I test this workflow and I"
+    },
+    {
+      "t": 302,
+      "text": "don't like the final output of the"
+    },
+    {
+      "t": 306,
+      "text": "LinkedIn post, for example, as you can"
+    },
+    {
+      "t": 308,
+      "text": "see right here, uh, it's not funny"
+    },
+    {
+      "t": 310,
+      "text": "enough and I'm naturally hilarious,"
+    },
+    {
+      "t": 312,
+      "text": "right? I'd have to manually go back and"
+    },
+    {
+      "t": 316,
+      "text": "rewrite the prompt for Claude. Okay? And"
+    },
+    {
+      "t": 320,
+      "text": "this trial and error iteration is"
+    },
+    {
+      "t": 323,
+      "text": "currently being done by me, a human. So"
+    },
+    {
+      "t": 326,
+      "text": "keep that in mind moving forward. All"
+    },
+    {
+      "t": 327,
+      "text": "right, level three, AI agents."
+    },
+    {
+      "t": 329,
+      "text": "Continuing the make.com example, let's"
+    },
+    {
+      "t": 332,
+      "text": "break down what I've been doing so far"
+    },
+    {
+      "t": 333,
+      "text": "as the human decision maker. With the"
+    },
+    {
+      "t": 336,
+      "text": "goal of creating social media posts"
+    },
+    {
+      "t": 338,
+      "text": "based off of news articles, I need to do"
+    },
+    {
+      "t": 340,
+      "text": "two things. First, reason or think about"
+    },
+    {
+      "t": 343,
+      "text": "the best approach. I need to first"
+    },
+    {
+      "t": 345,
+      "text": "compile the news articles, then"
+    },
+    {
+      "t": 346,
+      "text": "summarize them, then write the final"
+    },
+    {
+      "t": 348,
+      "text": "posts. Second, take action using tools."
+    },
+    {
+      "t": 351,
+      "text": "I need to find and link to those news"
+    },
+    {
+      "t": 354,
+      "text": "articles in Google Sheets. Use"
+    },
+    {
+      "t": 356,
+      "text": "Perplexity for real-time summarization"
+    },
+    {
+      "t": 358,
+      "text": "and then claw for copyrightiting. So,"
+    },
+    {
+      "t": 360,
+      "text": "and this is the most important sentence"
+    },
+    {
+      "t": 362,
+      "text": "in this entire video. The one massive"
+    },
+    {
+      "t": 365,
+      "text": "change that has to happen in order for"
+    },
+    {
+      "t": 367,
+      "text": "this AI workflow to become an AI agent"
+    },
+    {
+      "t": 370,
+      "text": "is for me, the human decision maker, to"
+    },
+    {
+      "t": 373,
+      "text": "be replaced by an LLM. In other words,"
+    },
+    {
+      "t": 376,
+      "text": "the AI agent must reason. What's the"
+    },
+    {
+      "t": 379,
+      "text": "most efficient way to compile these news"
+    },
+    {
+      "t": 381,
+      "text": "articles? Should I copy and paste each"
+    },
+    {
+      "t": 383,
+      "text": "article into a word document? No, it's"
+    },
+    {
+      "t": 385,
+      "text": "probably easier to compile links to"
+    },
+    {
+      "t": 386,
+      "text": "those articles and then use another tool"
+    },
+    {
+      "t": 388,
+      "text": "to fetch the data. Yes, that makes more"
+    },
+    {
+      "t": 391,
+      "text": "sense. The AI agent must act, aka do"
+    },
+    {
+      "t": 394,
+      "text": "things via tools. Should I use Microsoft"
+    },
+    {
+      "t": 397,
+      "text": "Word to compile links? No. Inserting"
+    },
+    {
+      "t": 399,
+      "text": "links directly into rows is way more"
+    },
+    {
+      "t": 401,
+      "text": "efficient. What about Excel? M. So the"
+    },
+    {
+      "t": 404,
+      "text": "user has already connected their Google"
+    },
+    {
+      "t": 405,
+      "text": "account with make.com. So Google Sheets"
+    },
+    {
+      "t": 407,
+      "text": "is a better option. Pro tip. Because of"
+    },
+    {
+      "t": 410,
+      "text": "this, the most common configuration for"
+    },
+    {
+      "t": 412,
+      "text": "AI agents is the react framework. All AI"
+    },
+    {
+      "t": 415,
+      "text": "agents must reason and act. So"
+    },
+    {
+      "t": 419,
+      "text": "react. Sounds simple once we break it"
+    },
+    {
+      "t": 422,
+      "text": "down, right? A third key trait of AI"
+    },
+    {
+      "t": 424,
+      "text": "agents is their ability to iterate."
+    },
+    {
+      "t": 426,
+      "text": "Remember when I had to manually rewrite"
+    },
+    {
+      "t": 428,
+      "text": "the prompt to make the LinkedIn post"
+    },
+    {
+      "t": 430,
+      "text": "funnier? I, the human, probably need to"
+    },
+    {
+      "t": 433,
+      "text": "repeat this iterative process a few"
+    },
+    {
+      "t": 435,
+      "text": "times to get something I'm happy with,"
+    },
+    {
+      "t": 437,
+      "text": "right? An AI agent will be able to do"
+    },
+    {
+      "t": 440,
+      "text": "the same thing autonomously. In our"
+    },
+    {
+      "t": 443,
+      "text": "example, the AI agent would autonomously"
+    },
+    {
+      "t": 445,
+      "text": "add in another LM to critique its own"
+    },
+    {
+      "t": 448,
+      "text": "output. Okay, I've drafted V1 of a"
+    },
+    {
+      "t": 451,
+      "text": "LinkedIn post. How do I make sure it's"
+    },
+    {
+      "t": 452,
+      "text": "good? Oh, I know. I'll add another step"
+    },
+    {
+      "t": 454,
+      "text": "where an LM will critique the post based"
+    },
+    {
+      "t": 457,
+      "text": "on LinkedIn best practices. And let's"
+    },
+    {
+      "t": 459,
+      "text": "repeat this until the best practices"
+    },
+    {
+      "t": 460,
+      "text": "criteria are all met. And after a few"
+    },
+    {
+      "t": 463,
+      "text": "cycles of that, we have the final"
+    },
+    {
+      "t": 465,
+      "text": "output. That was a hypothetical example."
+    },
+    {
+      "t": 468,
+      "text": "So let's move on to a real world AI"
+    },
+    {
+      "t": 470,
+      "text": "agent example. Andrew is a preeeminent"
+    },
+    {
+      "t": 473,
+      "text": "figure in AI and he created this demo"
+    },
+    {
+      "t": 476,
+      "text": "website that illustrates how an AI agent"
+    },
+    {
+      "t": 479,
+      "text": "works. I'll link the full video down"
+    },
+    {
+      "t": 480,
+      "text": "below, but when I search for a keyword"
+    },
+    {
+      "t": 483,
+      "text": "like skier, enter the AI vision agent in"
+    },
+    {
+      "t": 488,
+      "text": "the background is first reasoning what a"
+    },
+    {
+      "t": 490,
+      "text": "skier looks like. A person on skis going"
+    },
+    {
+      "t": 493,
+      "text": "really fast in snow, for example, right?"
+    },
+    {
+      "t": 494,
+      "text": "I'm not sure. And then it's acting by"
+    },
+    {
+      "t": 498,
+      "text": "looking at clips in video footage,"
+    },
+    {
+      "t": 502,
+      "text": "trying to identify what it thinks a"
+    },
+    {
+      "t": 505,
+      "text": "skier is, indexing that clip, and then"
+    },
+    {
+      "t": 509,
+      "text": "returning that clip to us. Although this"
+    },
+    {
+      "t": 512,
+      "text": "might not feel impressive, remember that"
+    },
+    {
+      "t": 514,
+      "text": "an AI agent did all that instead of a"
+    },
+    {
+      "t": 517,
+      "text": "human reviewing the footage beforehand,"
+    },
+    {
+      "t": 520,
+      "text": "manually identifying the skier, and"
+    },
+    {
+      "t": 522,
+      "text": "adding tags like skier, mountain, ski,"
+    },
+    {
+      "t": 525,
+      "text": "snow. The programming is obviously a lot"
+    },
+    {
+      "t": 528,
+      "text": "more technical and complicated than what"
+    },
+    {
+      "t": 530,
+      "text": "we see in the front end, but that's the"
+    },
+    {
+      "t": 532,
+      "text": "point of this demo, right? The average"
+    },
+    {
+      "t": 534,
+      "text": "user like myself wants a simple app that"
+    },
+    {
+      "t": 537,
+      "text": "just works without me having to"
+    },
+    {
+      "t": 539,
+      "text": "understand what's going on in the back"
+    },
+    {
+      "t": 540,
+      "text": "end. Speaking of examples, I'm also"
+    },
+    {
+      "t": 542,
+      "text": "building my very own basic AI agent"
+    },
+    {
+      "t": 545,
+      "text": "using Nan. So, let me know in the"
+    },
+    {
+      "t": 547,
+      "text": "comments what type of AI agent you'd"
+    },
+    {
+      "t": 549,
+      "text": "like me to make a tutorial on next. To"
+    },
+    {
+      "t": 551,
+      "text": "wrap up, here's a simplified"
+    },
+    {
+      "t": 553,
+      "text": "visualization of the three levels we"
+    },
+    {
+      "t": 555,
+      "text": "covered today. Level one, we provide an"
+    },
+    {
+      "t": 557,
+      "text": "input and the LM responds with an"
+    },
+    {
+      "t": 560,
+      "text": "output. Easy. Level two, for AI"
+    },
+    {
+      "t": 562,
+      "text": "workflows, we provide an input and tell"
+    },
+    {
+      "t": 565,
+      "text": "the LM to follow a predefined path that"
+    },
+    {
+      "t": 567,
+      "text": "may involve in retrieving information"
+    },
+    {
+      "t": 569,
+      "text": "from external tools. The key trait here"
+    },
+    {
+      "t": 572,
+      "text": "is that the human programs a path for LM"
+    },
+    {
+      "t": 575,
+      "text": "to follow. Level three, the AI agent"
+    },
+    {
+      "t": 578,
+      "text": "receives a goal and the LM performs"
+    },
+    {
+      "t": 580,
+      "text": "reasoning to determine how best to"
+    },
+    {
+      "t": 582,
+      "text": "achieve the goal, takes action using"
+    },
+    {
+      "t": 584,
+      "text": "tools to produce an interim result,"
+    },
+    {
+      "t": 587,
+      "text": "observes that interim result, and"
+    },
+    {
+      "t": 589,
+      "text": "decides whether iterations are required,"
+    },
+    {
+      "t": 592,
+      "text": "and produces a final output that"
+    },
+    {
+      "t": 594,
+      "text": "achieves the initial goal. The key trait"
+    },
+    {
+      "t": 596,
+      "text": "here is that the LLM is a decision maker"
+    },
+    {
+      "t": 599,
+      "text": "in the workflow. If you found this"
+    },
+    {
+      "t": 601,
+      "text": "helpful, you might want to learn how to"
+    },
+    {
+      "t": 602,
+      "text": "build a prompts database in Notion. See"
+    },
+    {
+      "t": 604,
+      "text": "you on the next video. In the"
+    },
+    {
+      "t": 606,
+      "text": "meantime, have a great one."
+    }
+  ],
+  "transcript_chars": 9375
+}

@@ -1,0 +1,2676 @@
+{
+  "video_id": "hyYCn_kAngI",
+  "title": "How to Get Your First Customers | Startup School",
+  "channel": "Y Combinator",
+  "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg",
+  "views": 626094,
+  "duration": 1374.0,
+  "bucket": "build",
+  "transcript_segments": [
+    {
+      "t": 2,
+      "text": "foreign"
+    },
+    {
+      "t": 3,
+      "text": "[Music]"
+    },
+    {
+      "t": 10,
+      "text": "School my name is Gustav and I'm a group"
+    },
+    {
+      "t": 13,
+      "text": "partner here at y combinator today I'm"
+    },
+    {
+      "t": 15,
+      "text": "going to talk about how to go from"
+    },
+    {
+      "t": 17,
+      "text": "talking to users"
+    },
+    {
+      "t": 19,
+      "text": "getting your first customers here's what"
+    },
+    {
+      "t": 21,
+      "text": "I plan to cover today one what does it"
+    },
+    {
+      "t": 23,
+      "text": "mean to do things that don't scale and"
+    },
+    {
+      "t": 25,
+      "text": "why is this mindset so so important at"
+    },
+    {
+      "t": 27,
+      "text": "this stage of your company two how to do"
+    },
+    {
+      "t": 30,
+      "text": "sales I'll make the argument the founder"
+    },
+    {
+      "t": 32,
+      "text": "should be the ones doing sales in the"
+    },
+    {
+      "t": 34,
+      "text": "beginning then we'll cover some sales"
+    },
+    {
+      "t": 36,
+      "text": "funnel information and then why is it so"
+    },
+    {
+      "t": 38,
+      "text": "important to charge for your product and"
+    },
+    {
+      "t": 40,
+      "text": "finally we'll learn how you work your"
+    },
+    {
+      "t": 42,
+      "text": "way backwards from your goals and why"
+    },
+    {
+      "t": 43,
+      "text": "that's important I hope you've read this"
+    },
+    {
+      "t": 45,
+      "text": "article or this essay the most important"
+    },
+    {
+      "t": 48,
+      "text": "essay ever written about the very early"
+    },
+    {
+      "t": 50,
+      "text": "stage of startups is do things that"
+    },
+    {
+      "t": 52,
+      "text": "don't scale by Paul Graham Paul is the"
+    },
+    {
+      "t": 55,
+      "text": "co-founder of Y commner he published"
+    },
+    {
+      "t": 57,
+      "text": "this essay about the early days of"
+    },
+    {
+      "t": 58,
+      "text": "Airbnb Airbnb is perhaps the best"
+    },
+    {
+      "t": 61,
+      "text": "example of a successful YC company who"
+    },
+    {
+      "t": 63,
+      "text": "got their feet off the ground this way"
+    },
+    {
+      "t": 65,
+      "text": "many Founders who never worked for a"
+    },
+    {
+      "t": 67,
+      "text": "startup or an early stage company"
+    },
+    {
+      "t": 70,
+      "text": "incorrectly believe that all you need to"
+    },
+    {
+      "t": 73,
+      "text": "succeed is a good product and growth"
+    },
+    {
+      "t": 75,
+      "text": "will take care of itself this is not the"
+    },
+    {
+      "t": 77,
+      "text": "case the truth is that good product is"
+    },
+    {
+      "t": 80,
+      "text": "very rarely built in isolation but"
+    },
+    {
+      "t": 82,
+      "text": "together with your customers and as a"
+    },
+    {
+      "t": 84,
+      "text": "result it's not actually that good when"
+    },
+    {
+      "t": 86,
+      "text": "you show it to your first customers set"
+    },
+    {
+      "t": 88,
+      "text": "this another way"
+    },
+    {
+      "t": 89,
+      "text": "startups don't take off by themselves"
+    },
+    {
+      "t": 92,
+      "text": "startup takes off because Founders make"
+    },
+    {
+      "t": 94,
+      "text": "them take off and you have to manually"
+    },
+    {
+      "t": 96,
+      "text": "recruit your customers it's not enough"
+    },
+    {
+      "t": 98,
+      "text": "to push a button on an advertising"
+    },
+    {
+      "t": 100,
+      "text": "Network this is uncomfortable and"
+    },
+    {
+      "t": 101,
+      "text": "Founders continuously find many ways to"
+    },
+    {
+      "t": 104,
+      "text": "avoid doing this the most common way is"
+    },
+    {
+      "t": 106,
+      "text": "believing that you can recruit people by"
+    },
+    {
+      "t": 108,
+      "text": "just writing more code or doing more"
+    },
+    {
+      "t": 110,
+      "text": "work on your machine or your robot or"
+    },
+    {
+      "t": 113,
+      "text": "whatever you're building I know this"
+    },
+    {
+      "t": 114,
+      "text": "from my experience of YC that this"
+    },
+    {
+      "t": 116,
+      "text": "actually don't work so why am I talking"
+    },
+    {
+      "t": 118,
+      "text": "about this right now learning the"
+    },
+    {
+      "t": 120,
+      "text": "tactics of sales is just one side of"
+    },
+    {
+      "t": 123,
+      "text": "this uh of of this learning the most"
+    },
+    {
+      "t": 127,
+      "text": "important side is just really realizing"
+    },
+    {
+      "t": 129,
+      "text": "that it comes down to you it's not just"
+    },
+    {
+      "t": 132,
+      "text": "knowing exactly how to do sales in"
+    },
+    {
+      "t": 134,
+      "text": "theory but actually doing it and"
+    },
+    {
+      "t": 136,
+      "text": "actually wanting to succeed another"
+    },
+    {
+      "t": 137,
+      "text": "great visualization is what's called a"
+    },
+    {
+      "t": 140,
+      "text": "startup curve this was initially drawn"
+    },
+    {
+      "t": 141,
+      "text": "by YC found program and then labeled by"
+    },
+    {
+      "t": 143,
+      "text": "Trevor Blackwell and you've probably"
+    },
+    {
+      "t": 145,
+      "text": "seen this curve before most companies go"
+    },
+    {
+      "t": 148,
+      "text": "through something like this it's kind of"
+    },
+    {
+      "t": 150,
+      "text": "like a timeline for startups here's how"
+    },
+    {
+      "t": 152,
+      "text": "it goes first you launch these days most"
+    },
+    {
+      "t": 155,
+      "text": "companies don't launch on TechCrunch but"
+    },
+    {
+      "t": 157,
+      "text": "probably on product hunt or Hacker News"
+    },
+    {
+      "t": 159,
+      "text": "or some other internet board the launch"
+    },
+    {
+      "t": 161,
+      "text": "energy that you get from this launch"
+    },
+    {
+      "t": 163,
+      "text": "eventually starts wearing off as early"
+    },
+    {
+      "t": 165,
+      "text": "adopters are looking out for something"
+    },
+    {
+      "t": 167,
+      "text": "new if you don't have instant High"
+    },
+    {
+      "t": 169,
+      "text": "retention nobody does for what you are"
+    },
+    {
+      "t": 172,
+      "text": "building then you'll enter the through"
+    },
+    {
+      "t": 173,
+      "text": "of Sorrow this can take a long time and"
+    },
+    {
+      "t": 176,
+      "text": "many companies die during this stage"
+    },
+    {
+      "t": 178,
+      "text": "they just give up and don't move fast"
+    },
+    {
+      "t": 181,
+      "text": "enough with testing new things some"
+    },
+    {
+      "t": 183,
+      "text": "startups do move fast enough and release"
+    },
+    {
+      "t": 185,
+      "text": "new improvements of their product"
+    },
+    {
+      "t": 186,
+      "text": "they'll listen to users and they improve"
+    },
+    {
+      "t": 189,
+      "text": "many still don't get anywhere further"
+    },
+    {
+      "t": 191,
+      "text": "and becomes victims of the crash of"
+    },
+    {
+      "t": 193,
+      "text": "ineptitude it's the founders to stay the"
+    },
+    {
+      "t": 195,
+      "text": "course and don't give up that reaches"
+    },
+    {
+      "t": 197,
+      "text": "the Wiggles of false hope and eventually"
+    },
+    {
+      "t": 199,
+      "text": "the promised land of crack Market fit"
+    },
+    {
+      "t": 200,
+      "text": "the learnings we draw from the start"
+    },
+    {
+      "t": 202,
+      "text": "curve is that every moment in the early"
+    },
+    {
+      "t": 204,
+      "text": "days of startups the founders are the"
+    },
+    {
+      "t": 207,
+      "text": "ones that make the difference between"
+    },
+    {
+      "t": 208,
+      "text": "success and failures if you are in the"
+    },
+    {
+      "t": 211,
+      "text": "wrong Market"
+    },
+    {
+      "t": 212,
+      "text": "it's the founders that switch to a new"
+    },
+    {
+      "t": 214,
+      "text": "one and if you don't know how to do"
+    },
+    {
+      "t": 215,
+      "text": "sales it's the founders who learn so you"
+    },
+    {
+      "t": 218,
+      "text": "have to really want it otherwise this"
+    },
+    {
+      "t": 220,
+      "text": "won't work all right let's talk about"
+    },
+    {
+      "t": 222,
+      "text": "sales and how to do sales first Founders"
+    },
+    {
+      "t": 225,
+      "text": "should learn how to do sales you should"
+    },
+    {
+      "t": 227,
+      "text": "learn how to do sales because you'll"
+    },
+    {
+      "t": 229,
+      "text": "need to learn to know your customer"
+    },
+    {
+      "t": 231,
+      "text": "talking to customers and sales are"
+    },
+    {
+      "t": 233,
+      "text": "effectively different sides of the same"
+    },
+    {
+      "t": 234,
+      "text": "coin and the same reasons Founders can't"
+    },
+    {
+      "t": 237,
+      "text": "understand what to build they don't"
+    },
+    {
+      "t": 238,
+      "text": "understand what the problem is you don't"
+    },
+    {
+      "t": 240,
+      "text": "know how to sell unless you know your"
+    },
+    {
+      "t": 242,
+      "text": "customers two learning how to do sales"
+    },
+    {
+      "t": 244,
+      "text": "actually gives you full control of your"
+    },
+    {
+      "t": 247,
+      "text": "destiny as a startup just like you can't"
+    },
+    {
+      "t": 249,
+      "text": "Outsource engineering sales has to be"
+    },
+    {
+      "t": 252,
+      "text": "part of the DNA of the founders"
+    },
+    {
+      "t": 253,
+      "text": "sometimes you just have to learn it as a"
+    },
+    {
+      "t": 255,
+      "text": "result you should not hire a sales team"
+    },
+    {
+      "t": 257,
+      "text": "until you know how to do sales yourself"
+    },
+    {
+      "t": 259,
+      "text": "only then will you know what good looks"
+    },
+    {
+      "t": 262,
+      "text": "like you also can't do sales if you"
+    },
+    {
+      "t": 264,
+      "text": "practice bad and you won't know if the"
+    },
+    {
+      "t": 267,
+      "text": "product is bad unless you've had some"
+    },
+    {
+      "t": 268,
+      "text": "effort in trying to sell it first if you"
+    },
+    {
+      "t": 270,
+      "text": "don't know how to sell don't worry you"
+    },
+    {
+      "t": 272,
+      "text": "you can learn it's probably the easiest"
+    },
+    {
+      "t": 274,
+      "text": "job to learn in startup if you know the"
+    },
+    {
+      "t": 276,
+      "text": "problem you're solving if you know"
+    },
+    {
+      "t": 278,
+      "text": "you're product intimately if you know"
+    },
+    {
+      "t": 280,
+      "text": "the market you are an expert in the eyes"
+    },
+    {
+      "t": 283,
+      "text": "of the customer they will want to hear"
+    },
+    {
+      "t": 285,
+      "text": "what you have to say finally a love for"
+    },
+    {
+      "t": 288,
+      "text": "solving customer problems is really"
+    },
+    {
+      "t": 290,
+      "text": "infectious if you're really passionate"
+    },
+    {
+      "t": 292,
+      "text": "about solving this problem they will be"
+    },
+    {
+      "t": 294,
+      "text": "able to tell if you don't believe me"
+    },
+    {
+      "t": 296,
+      "text": "here are some examples of Founders who"
+    },
+    {
+      "t": 298,
+      "text": "took on the sales job and learned to get"
+    },
+    {
+      "t": 300,
+      "text": "really good at it so Tony from doordash"
+    },
+    {
+      "t": 302,
+      "text": "matild from front Tracy from plangrid"
+    },
+    {
+      "t": 306,
+      "text": "and Steve Jobs let's get straight into"
+    },
+    {
+      "t": 308,
+      "text": "an example so these are the brex"
+    },
+    {
+      "t": 309,
+      "text": "founders Pedro and henrique when brex"
+    },
+    {
+      "t": 312,
+      "text": "was in wycomner in Winter of 2017 they"
+    },
+    {
+      "t": 315,
+      "text": "recruit the first 10 customers directly"
+    },
+    {
+      "t": 317,
+      "text": "from the YC batch June YC you have the"
+    },
+    {
+      "t": 319,
+      "text": "benefit of being around other startups"
+    },
+    {
+      "t": 321,
+      "text": "I.E potential customers the brex"
+    },
+    {
+      "t": 323,
+      "text": "founders asked themselves what would the"
+    },
+    {
+      "t": 325,
+      "text": "minimum product look like that they can"
+    },
+    {
+      "t": 326,
+      "text": "build to be useful to other startups and"
+    },
+    {
+      "t": 329,
+      "text": "then they went with strain straight into"
+    },
+    {
+      "t": 331,
+      "text": "signing up those customers the first"
+    },
+    {
+      "t": 332,
+      "text": "version was very very simple customers"
+    },
+    {
+      "t": 335,
+      "text": "just had a virtual credit card and"
+    },
+    {
+      "t": 336,
+      "text": "Enrique from brex actively onboarded"
+    },
+    {
+      "t": 338,
+      "text": "everyone of the customers himself of"
+    },
+    {
+      "t": 341,
+      "text": "course they could have waited until they"
+    },
+    {
+      "t": 342,
+      "text": "had a full-blown product a website a"
+    },
+    {
+      "t": 345,
+      "text": "Mobile app all of those things but they"
+    },
+    {
+      "t": 347,
+      "text": "decided to get going when they have"
+    },
+    {
+      "t": 348,
+      "text": "something that was really useful this is"
+    },
+    {
+      "t": 350,
+      "text": "how their first physical card looked"
+    },
+    {
+      "t": 352,
+      "text": "like this before they had this card they"
+    },
+    {
+      "t": 354,
+      "text": "just had a virtual card Rex reached out"
+    },
+    {
+      "t": 356,
+      "text": "to the their YC batch and otherwise the"
+    },
+    {
+      "t": 358,
+      "text": "companies and this is the email that"
+    },
+    {
+      "t": 360,
+      "text": "they sent I'm just going to read a brief"
+    },
+    {
+      "t": 361,
+      "text": "portion of it hey guys we're opening up"
+    },
+    {
+      "t": 363,
+      "text": "our beta for winter 17 batch friends"
+    },
+    {
+      "t": 366,
+      "text": "with the 10 spots for beta users 10 spot"
+    },
+    {
+      "t": 369,
+      "text": "this sounds like there's a limited spot"
+    },
+    {
+      "t": 370,
+      "text": "so I should take actions brex is a"
+    },
+    {
+      "t": 372,
+      "text": "corporate credit card focused on"
+    },
+    {
+      "t": 373,
+      "text": "technology companies that's me perfect"
+    },
+    {
+      "t": 376,
+      "text": "you're actually writing the email"
+    },
+    {
+      "t": 377,
+      "text": "directly towards your customers we don't"
+    },
+    {
+      "t": 380,
+      "text": "require a personal guarantee it can"
+    },
+    {
+      "t": 381,
+      "text": "underwrite startups who just got started"
+    },
+    {
+      "t": 383,
+      "text": "this was the value prop most other"
+    },
+    {
+      "t": 386,
+      "text": "alternatives to brex did not have"
+    },
+    {
+      "t": 388,
+      "text": "something like this so how much does it"
+    },
+    {
+      "t": 389,
+      "text": "cost it's free the merchants are paying"
+    },
+    {
+      "t": 392,
+      "text": "us so there's zero Annual fees this"
+    },
+    {
+      "t": 394,
+      "text": "seems like a no-brainer I would argue"
+    },
+    {
+      "t": 395,
+      "text": "that this email is probably a little bit"
+    },
+    {
+      "t": 397,
+      "text": "too long but it did work so let's talk"
+    },
+    {
+      "t": 400,
+      "text": "about how to write a great sales email"
+    },
+    {
+      "t": 402,
+      "text": "so first it should be short Max 6 to 8"
+    },
+    {
+      "t": 405,
+      "text": "sentences the brexit sample on the"
+    },
+    {
+      "t": 407,
+      "text": "previous slide is probably too long it"
+    },
+    {
+      "t": 409,
+      "text": "still worked but probably too long"
+    },
+    {
+      "t": 411,
+      "text": "people don't have time to read long"
+    },
+    {
+      "t": 412,
+      "text": "emails if you're coming out of Academia"
+    },
+    {
+      "t": 415,
+      "text": "your culture is going to be very"
+    },
+    {
+      "t": 416,
+      "text": "different you write very long emails but"
+    },
+    {
+      "t": 418,
+      "text": "in the world of sales you want to get to"
+    },
+    {
+      "t": 420,
+      "text": "the point and be brief as much as you"
+    },
+    {
+      "t": 422,
+      "text": "can two you want to make sure you have"
+    },
+    {
+      "t": 424,
+      "text": "clear language no jargon no buzzwords"
+    },
+    {
+      "t": 427,
+      "text": "just say exactly what you do and how it"
+    },
+    {
+      "t": 430,
+      "text": "works and then three address the problem"
+    },
+    {
+      "t": 432,
+      "text": "that the potential customer is having"
+    },
+    {
+      "t": 434,
+      "text": "four do not use any HTML formatting"
+    },
+    {
+      "t": 437,
+      "text": "write your email in plain text only like"
+    },
+    {
+      "t": 439,
+      "text": "you would written it to a friend say you"
+    },
+    {
+      "t": 441,
+      "text": "are the founder of the company who makes"
+    },
+    {
+      "t": 442,
+      "text": "this product many people forget to do"
+    },
+    {
+      "t": 444,
+      "text": "this describe why you and your team are"
+    },
+    {
+      "t": 447,
+      "text": "impressive include social proof and"
+    },
+    {
+      "t": 449,
+      "text": "remember to show not tell don't say"
+    },
+    {
+      "t": 451,
+      "text": "you're an expert don't say how many"
+    },
+    {
+      "t": 453,
+      "text": "years that you have been an expert if"
+    },
+    {
+      "t": 455,
+      "text": "you're in the YC match if you worked at"
+    },
+    {
+      "t": 457,
+      "text": "impressive companies in the past those"
+    },
+    {
+      "t": 459,
+      "text": "are other piece of social proof that you"
+    },
+    {
+      "t": 461,
+      "text": "can include you won't include a couple"
+    },
+    {
+      "t": 462,
+      "text": "of these ones so that the reader knows"
+    },
+    {
+      "t": 466,
+      "text": "the source and even if they don't know"
+    },
+    {
+      "t": 467,
+      "text": "you gives assign you some authority six"
+    },
+    {
+      "t": 470,
+      "text": "you want to include a link to your"
+    },
+    {
+      "t": 472,
+      "text": "website the website needs to be simple"
+    },
+    {
+      "t": 474,
+      "text": "you have to have information about the"
+    },
+    {
+      "t": 476,
+      "text": "product the website should not have a"
+    },
+    {
+      "t": 479,
+      "text": "lot of drawings or sort of like paid for"
+    },
+    {
+      "t": 481,
+      "text": "graphics you should just have"
+    },
+    {
+      "t": 483,
+      "text": "screenshots from your product and"
+    },
+    {
+      "t": 485,
+      "text": "bullets about what your product does"
+    },
+    {
+      "t": 487,
+      "text": "sometimes it works to send a short video"
+    },
+    {
+      "t": 489,
+      "text": "a YouTube video that you can embed in"
+    },
+    {
+      "t": 490,
+      "text": "the email that's very easy for the"
+    },
+    {
+      "t": 492,
+      "text": "receiver to click on and View and I've"
+    },
+    {
+      "t": 495,
+      "text": "even seen people using gifs now those"
+    },
+    {
+      "t": 497,
+      "text": "videos and those gifs needs to get to"
+    },
+    {
+      "t": 498,
+      "text": "the point right away because the the"
+    },
+    {
+      "t": 500,
+      "text": "receiver is kind of intimately familiar"
+    },
+    {
+      "t": 502,
+      "text": "with the problem but not really have"
+    },
+    {
+      "t": 504,
+      "text": "time to watch two or three or four"
+    },
+    {
+      "t": 506,
+      "text": "minutes of a potential solution and then"
+    },
+    {
+      "t": 507,
+      "text": "finally you want to include and ask for"
+    },
+    {
+      "t": 510,
+      "text": "a call or a meeting or a self-serve"
+    },
+    {
+      "t": 512,
+      "text": "whether whatever is appropriate for your"
+    },
+    {
+      "t": 513,
+      "text": "company but there needs to be a call to"
+    },
+    {
+      "t": 516,
+      "text": "action in the email that you're sending"
+    },
+    {
+      "t": 517,
+      "text": "all right let's talk about the sales"
+    },
+    {
+      "t": 519,
+      "text": "funnel the concept of sales funnels is"
+    },
+    {
+      "t": 521,
+      "text": "really quite easy I think people get"
+    },
+    {
+      "t": 523,
+      "text": "confused by the language the sales"
+    },
+    {
+      "t": 525,
+      "text": "people are using so I try to simplify it"
+    },
+    {
+      "t": 527,
+      "text": "here on the left hand side I call it the"
+    },
+    {
+      "t": 529,
+      "text": "founder speak on the right hand side I"
+    },
+    {
+      "t": 531,
+      "text": "call it the sales speak these are not"
+    },
+    {
+      "t": 533,
+      "text": "going to be perfectly mapping but you"
+    },
+    {
+      "t": 534,
+      "text": "get the idea so first you want to make a"
+    },
+    {
+      "t": 538,
+      "text": "list of customers you plan to reach out"
+    },
+    {
+      "t": 539,
+      "text": "to in sales it's called prospecting or"
+    },
+    {
+      "t": 542,
+      "text": "lead generation we'll just call it make"
+    },
+    {
+      "t": 543,
+      "text": "it the list and you can use Google"
+    },
+    {
+      "t": 545,
+      "text": "spreadsheets or something like that to"
+    },
+    {
+      "t": 547,
+      "text": "make this list then we want to send them"
+    },
+    {
+      "t": 549,
+      "text": "an email or a LinkedIn message or add"
+    },
+    {
+      "t": 551,
+      "text": "them on LinkedIn or whatever is the"
+    },
+    {
+      "t": 552,
+      "text": "appropriate way to contact these people"
+    },
+    {
+      "t": 554,
+      "text": "after that you want to schedule and run"
+    },
+    {
+      "t": 556,
+      "text": "a demo or a meeting from that response"
+    },
+    {
+      "t": 558,
+      "text": "to the email and then you want to talk"
+    },
+    {
+      "t": 559,
+      "text": "pricing and then finally close them as a"
+    },
+    {
+      "t": 561,
+      "text": "customer the last thing which you should"
+    },
+    {
+      "t": 563,
+      "text": "not forget is after you've closed them"
+    },
+    {
+      "t": 564,
+      "text": "you still need to onboard them to make"
+    },
+    {
+      "t": 566,
+      "text": "sure that they start using your product"
+    },
+    {
+      "t": 568,
+      "text": "if this is successful and you have good"
+    },
+    {
+      "t": 570,
+      "text": "retention that could lead to long-term"
+    },
+    {
+      "t": 572,
+      "text": "Revenue if you forget the last step then"
+    },
+    {
+      "t": 574,
+      "text": "you will have lots of churn because"
+    },
+    {
+      "t": 576,
+      "text": "people don't actually know how to use"
+    },
+    {
+      "t": 577,
+      "text": "your product and this is common with"
+    },
+    {
+      "t": 578,
+      "text": "early products because they are not easy"
+    },
+    {
+      "t": 580,
+      "text": "to onboard in the beginning this is not"
+    },
+    {
+      "t": 583,
+      "text": "something you spend a lot of time"
+    },
+    {
+      "t": 584,
+      "text": "optimizing so make sure that you do the"
+    },
+    {
+      "t": 586,
+      "text": "onboarding as part of this process if"
+    },
+    {
+      "t": 588,
+      "text": "you go back to the Google spreadsheets"
+    },
+    {
+      "t": 589,
+      "text": "that I'm that I'm making that I'm"
+    },
+    {
+      "t": 591,
+      "text": "putting in all the information you"
+    },
+    {
+      "t": 593,
+      "text": "should start simple but you should have"
+    },
+    {
+      "t": 594,
+      "text": "some Columns of things that you're"
+    },
+    {
+      "t": 596,
+      "text": "tracking so industry uh the company the"
+    },
+    {
+      "t": 599,
+      "text": "title the name the email maybe the"
+    },
+    {
+      "t": 602,
+      "text": "LinkedIn this could be enough to start"
+    },
+    {
+      "t": 604,
+      "text": "with a lot of CRM software comes with"
+    },
+    {
+      "t": 606,
+      "text": "these categories so these columns it's"
+    },
+    {
+      "t": 609,
+      "text": "pretty good idea to kind of use a simple"
+    },
+    {
+      "t": 611,
+      "text": "CRM software"
+    },
+    {
+      "t": 613,
+      "text": "um to kind of accomplish the same goal"
+    },
+    {
+      "t": 614,
+      "text": "but the key thing here is doing this"
+    },
+    {
+      "t": 616,
+      "text": "work up front and I've seen a lot of YC"
+    },
+    {
+      "t": 619,
+      "text": "Founders that when they are getting to a"
+    },
+    {
+      "t": 621,
+      "text": "thousand of these they're like oh this"
+    },
+    {
+      "t": 623,
+      "text": "is a very simple task I can actually"
+    },
+    {
+      "t": 624,
+      "text": "Outsource this and I think that can work"
+    },
+    {
+      "t": 626,
+      "text": "if you know exactly what it is you're"
+    },
+    {
+      "t": 629,
+      "text": "Outsourcing storing all this information"
+    },
+    {
+      "t": 630,
+      "text": "is going to be helpful for you in the"
+    },
+    {
+      "t": 632,
+      "text": "future now I made my list I understand"
+    },
+    {
+      "t": 635,
+      "text": "this the sales funnel so who should I be"
+    },
+    {
+      "t": 637,
+      "text": "going after and how should I be"
+    },
+    {
+      "t": 639,
+      "text": "prioritizing as I'm doing the Outreach"
+    },
+    {
+      "t": 641,
+      "text": "here's my most important advice when it"
+    },
+    {
+      "t": 643,
+      "text": "comes to sales your first customers"
+    },
+    {
+      "t": 644,
+      "text": "should be your easiest this is not the"
+    },
+    {
+      "t": 647,
+      "text": "time to bite off the hardest one"
+    },
+    {
+      "t": 649,
+      "text": "focus on the easiest ones what I mean by"
+    },
+    {
+      "t": 651,
+      "text": "that is you should try to do sales"
+    },
+    {
+      "t": 653,
+      "text": "make the sales processes easy for you as"
+    },
+    {
+      "t": 656,
+      "text": "you possibly can startups don't really"
+    },
+    {
+      "t": 658,
+      "text": "have time to chase every lead there's a"
+    },
+    {
+      "t": 660,
+      "text": "lot of leads out there you you don't"
+    },
+    {
+      "t": 662,
+      "text": "have to pick all of them you really"
+    },
+    {
+      "t": 664,
+      "text": "don't you're so early you can pick only"
+    },
+    {
+      "t": 666,
+      "text": "the ones that are the most likely to"
+    },
+    {
+      "t": 668,
+      "text": "close the best way to do this I have a"
+    },
+    {
+      "t": 669,
+      "text": "big pipeline where that means a lot of"
+    },
+    {
+      "t": 672,
+      "text": "people that you're emailing are"
+    },
+    {
+      "t": 673,
+      "text": "potential customers and then as you're"
+    },
+    {
+      "t": 675,
+      "text": "getting responses and you're getting to"
+    },
+    {
+      "t": 677,
+      "text": "meetings start prioritizing those who"
+    },
+    {
+      "t": 679,
+      "text": "are the most likely to close you can"
+    },
+    {
+      "t": 681,
+      "text": "probably tell from their answers to your"
+    },
+    {
+      "t": 683,
+      "text": "qualifying questions during the sales"
+    },
+    {
+      "t": 685,
+      "text": "call"
+    },
+    {
+      "t": 686,
+      "text": "avoid those who are moving slow and"
+    },
+    {
+      "t": 689,
+      "text": "don't be afraid of letting customers go"
+    },
+    {
+      "t": 691,
+      "text": "don't be afraid of letting customers go"
+    },
+    {
+      "t": 693,
+      "text": "what I mean by that is that if someone"
+    },
+    {
+      "t": 694,
+      "text": "is dragging you along two or three calls"
+    },
+    {
+      "t": 696,
+      "text": "you can always be like it's been great"
+    },
+    {
+      "t": 698,
+      "text": "getting to know you"
+    },
+    {
+      "t": 699,
+      "text": "um and I've learned a lot but"
+    },
+    {
+      "t": 701,
+      "text": "um we should talk again in six months"
+    },
+    {
+      "t": 703,
+      "text": "that's totally fine to say two"
+    },
+    {
+      "t": 706,
+      "text": "selling to people you know is going to"
+    },
+    {
+      "t": 708,
+      "text": "be easy to selling to strangers so you"
+    },
+    {
+      "t": 710,
+      "text": "should take advantage of your network"
+    },
+    {
+      "t": 712,
+      "text": "three selling to startups is the easiest"
+    },
+    {
+      "t": 715,
+      "text": "category and I've I've learned this On"
+    },
+    {
+      "t": 717,
+      "text": "and On Again with YC company"
+    },
+    {
+      "t": 719,
+      "text": "specifically the ones that sell software"
+    },
+    {
+      "t": 722,
+      "text": "it just turns out that bigger companies"
+    },
+    {
+      "t": 724,
+      "text": "have more bureaucracy more processes"
+    },
+    {
+      "t": 727,
+      "text": "they even have a specific Department"
+    },
+    {
+      "t": 729,
+      "text": "that is in charge of negotiating with"
+    },
+    {
+      "t": 731,
+      "text": "you and that takes a long time and"
+    },
+    {
+      "t": 733,
+      "text": "startups don't have any of these things"
+    },
+    {
+      "t": 735,
+      "text": "because they don't have time to create"
+    },
+    {
+      "t": 736,
+      "text": "these things but it's not a priority for"
+    },
+    {
+      "t": 738,
+      "text": "them"
+    },
+    {
+      "t": 738,
+      "text": "so startups have short decision-making"
+    },
+    {
+      "t": 740,
+      "text": "lines you can often find that the"
+    },
+    {
+      "t": 742,
+      "text": "decision maker right away as you do in"
+    },
+    {
+      "t": 744,
+      "text": "the Outreach and you don't have to go"
+    },
+    {
+      "t": 746,
+      "text": "through a difficult process that's why"
+    },
+    {
+      "t": 749,
+      "text": "startups are easier and that's why we"
+    },
+    {
+      "t": 751,
+      "text": "recommend most companies to sell to"
+    },
+    {
+      "t": 752,
+      "text": "startups at least leads me to the fourth"
+    },
+    {
+      "t": 755,
+      "text": "Point most people are not early adopters"
+    },
+    {
+      "t": 759,
+      "text": "and I keep saying this to the white"
+    },
+    {
+      "t": 761,
+      "text": "companies I work with all the time the"
+    },
+    {
+      "t": 763,
+      "text": "reason you have to sell send hundreds of"
+    },
+    {
+      "t": 765,
+      "text": "emails is not that most of those people"
+    },
+    {
+      "t": 767,
+      "text": "get really upset and be like I can't"
+    },
+    {
+      "t": 769,
+      "text": "believe you emailed me like I really"
+    },
+    {
+      "t": 771,
+      "text": "love this alternative product by hate"
+    },
+    {
+      "t": 772,
+      "text": "your product that's not what's going on"
+    },
+    {
+      "t": 774,
+      "text": "most people they email are just be like"
+    },
+    {
+      "t": 776,
+      "text": "archive they just don't care they're not"
+    },
+    {
+      "t": 779,
+      "text": "going to try a new product that comes in"
+    },
+    {
+      "t": 781,
+      "text": "through your LinkedIn or your email and"
+    },
+    {
+      "t": 783,
+      "text": "they might not be the people that try a"
+    },
+    {
+      "t": 785,
+      "text": "new product at all in their career"
+    },
+    {
+      "t": 786,
+      "text": "that's most people some other people I"
+    },
+    {
+      "t": 789,
+      "text": "remember being one of those people when"
+    },
+    {
+      "t": 790,
+      "text": "I worked at Airbnb I would love when"
+    },
+    {
+      "t": 792,
+      "text": "founders emailed me with new new"
+    },
+    {
+      "t": 793,
+      "text": "products and I would be the one signing"
+    },
+    {
+      "t": 795,
+      "text": "up for them so"
+    },
+    {
+      "t": 798,
+      "text": "when I worked Airbnb and you were a"
+    },
+    {
+      "t": 800,
+      "text": "startup email me was great I am an early"
+    },
+    {
+      "t": 801,
+      "text": "adopter I love trying new things I don't"
+    },
+    {
+      "t": 804,
+      "text": "mind the risk of trying new things so"
+    },
+    {
+      "t": 806,
+      "text": "for every outbound uh to an average"
+    },
+    {
+      "t": 808,
+      "text": "company that you send you will mostly"
+    },
+    {
+      "t": 811,
+      "text": "like most likely on the average outbound"
+    },
+    {
+      "t": 813,
+      "text": "average email average LinkedIn reach"
+    },
+    {
+      "t": 815,
+      "text": "someone who is not an early adopter to"
+    },
+    {
+      "t": 817,
+      "text": "reach early adopters you just have to"
+    },
+    {
+      "t": 819,
+      "text": "send more out by messages because then"
+    },
+    {
+      "t": 822,
+      "text": "you don't have time to convince anybody"
+    },
+    {
+      "t": 824,
+      "text": "to become an early adopter you have to"
+    },
+    {
+      "t": 826,
+      "text": "find Aero adopters and just go for them"
+    },
+    {
+      "t": 827,
+      "text": "early on don't worry about everybody"
+    },
+    {
+      "t": 829,
+      "text": "else you just don't have time to"
+    },
+    {
+      "t": 830,
+      "text": "convince them let's talk about charging"
+    },
+    {
+      "t": 832,
+      "text": "it's attractive for you as a founder and"
+    },
+    {
+      "t": 835,
+      "text": "for your company to offer your product"
+    },
+    {
+      "t": 837,
+      "text": "for free offer free trials or unpaid"
+    },
+    {
+      "t": 840,
+      "text": "pilots and these things come in many"
+    },
+    {
+      "t": 843,
+      "text": "shapes and forms however if you don't"
+    },
+    {
+      "t": 845,
+      "text": "charge your customers they are not a"
+    },
+    {
+      "t": 848,
+      "text": "customer and you don't have a company"
+    },
+    {
+      "t": 850,
+      "text": "customers paying you money is a great"
+    },
+    {
+      "t": 853,
+      "text": "sign that you're providing them real"
+    },
+    {
+      "t": 855,
+      "text": "value"
+    },
+    {
+      "t": 856,
+      "text": "so you should resist the fear of getting"
+    },
+    {
+      "t": 858,
+      "text": "a no because of price"
+    },
+    {
+      "t": 860,
+      "text": "instead of figuring out what the price"
+    },
+    {
+      "t": 862,
+      "text": "should be if they don't want to pay and"
+    },
+    {
+      "t": 865,
+      "text": "you learn this during the qualification"
+    },
+    {
+      "t": 866,
+      "text": "process in the first call or the first"
+    },
+    {
+      "t": 868,
+      "text": "meeting"
+    },
+    {
+      "t": 869,
+      "text": "if they don't want to pay that's a great"
+    },
+    {
+      "t": 872,
+      "text": "sign that you should move on to the next"
+    },
+    {
+      "t": 874,
+      "text": "customer"
+    },
+    {
+      "t": 875,
+      "text": "again fire the ones who seem like"
+    },
+    {
+      "t": 877,
+      "text": "they're not good fit move on to the next"
+    },
+    {
+      "t": 879,
+      "text": "customers"
+    },
+    {
+      "t": 881,
+      "text": "free trials are common for consumers but"
+    },
+    {
+      "t": 884,
+      "text": "if you thought about it most consumer"
+    },
+    {
+      "t": 886,
+      "text": "free trials ask for the credit card up"
+    },
+    {
+      "t": 888,
+      "text": "front and then we forget and then we pay"
+    },
+    {
+      "t": 890,
+      "text": "anyway"
+    },
+    {
+      "t": 891,
+      "text": "that's because that actually works the"
+    },
+    {
+      "t": 893,
+      "text": "best the bdb version of this"
+    },
+    {
+      "t": 896,
+      "text": "is a better one than a free trial is a"
+    },
+    {
+      "t": 898,
+      "text": "money back guarantee so we charge you if"
+    },
+    {
+      "t": 902,
+      "text": "you're not happy you can get the money"
+    },
+    {
+      "t": 904,
+      "text": "back in 30 days so 60 days"
+    },
+    {
+      "t": 906,
+      "text": "um or even better you have the ability"
+    },
+    {
+      "t": 907,
+      "text": "to opt out from the annual contract you"
+    },
+    {
+      "t": 909,
+      "text": "just pay for one month instead of the"
+    },
+    {
+      "t": 911,
+      "text": "annual fee but you should not offer free"
+    },
+    {
+      "t": 913,
+      "text": "trials in B2B sales go for a money back"
+    },
+    {
+      "t": 915,
+      "text": "guarantee and go for the ability to opt"
+    },
+    {
+      "t": 917,
+      "text": "out instead increasing your price until"
+    },
+    {
+      "t": 920,
+      "text": "your customers are complaining but still"
+    },
+    {
+      "t": 922,
+      "text": "paying is the right way to go all right"
+    },
+    {
+      "t": 924,
+      "text": "let's talk about the thing that most"
+    },
+    {
+      "t": 927,
+      "text": "Founders get wrong I've seen as many"
+    },
+    {
+      "t": 928,
+      "text": "times but there are a few things that"
+    },
+    {
+      "t": 929,
+      "text": "most wanted to get wrong and this is one"
+    },
+    {
+      "t": 931,
+      "text": "of them working backwards from your goal"
+    },
+    {
+      "t": 934,
+      "text": "with your sales funnel in order to work"
+    },
+    {
+      "t": 936,
+      "text": "your way backwards from a goal of say"
+    },
+    {
+      "t": 938,
+      "text": "two signed customers you have to"
+    },
+    {
+      "t": 940,
+      "text": "understand that each step in the sales"
+    },
+    {
+      "t": 942,
+      "text": "funnel is going to have a drop-off when"
+    },
+    {
+      "t": 945,
+      "text": "you haven't started sales yet you don't"
+    },
+    {
+      "t": 947,
+      "text": "know what these draft off percentages"
+    },
+    {
+      "t": 949,
+      "text": "are maybe you haven't done a lot of"
+    },
+    {
+      "t": 951,
+      "text": "sales before you don't know what you're"
+    },
+    {
+      "t": 952,
+      "text": "not good at maybe you're really good at"
+    },
+    {
+      "t": 954,
+      "text": "sending emails but really bad at closing"
+    },
+    {
+      "t": 956,
+      "text": "or vice versa you don't know that so as"
+    },
+    {
+      "t": 959,
+      "text": "you're sending these outbound emails you"
+    },
+    {
+      "t": 961,
+      "text": "need to take notes and start tracking"
+    },
+    {
+      "t": 964,
+      "text": "all of these conversions in this example"
+    },
+    {
+      "t": 966,
+      "text": "I'm sending 500 Outreach emails or"
+    },
+    {
+      "t": 968,
+      "text": "LinkedIn messages I have a 50 open rate"
+    },
+    {
+      "t": 971,
+      "text": "that means 250 people will open the"
+    },
+    {
+      "t": 973,
+      "text": "email five percent will respond that's"
+    },
+    {
+      "t": 975,
+      "text": "about 20 potential customers 50 of those"
+    },
+    {
+      "t": 978,
+      "text": "will convert to demo from the response"
+    },
+    {
+      "t": 980,
+      "text": "which means I'm doing 10 demos that's"
+    },
+    {
+      "t": 983,
+      "text": "pretty good but I'm not that good at"
+    },
+    {
+      "t": 984,
+      "text": "doing demos only two end up becoming"
+    },
+    {
+      "t": 986,
+      "text": "customers from the demos that's 20 I bet"
+    },
+    {
+      "t": 990,
+      "text": "you most of you don't even track this"
+    },
+    {
+      "t": 991,
+      "text": "data but you should if you track this"
+    },
+    {
+      "t": 993,
+      "text": "data you will have some idea of how long"
+    },
+    {
+      "t": 996,
+      "text": "it will take to get to 10 paying"
+    },
+    {
+      "t": 997,
+      "text": "customers if you don't track this it's"
+    },
+    {
+      "t": 999,
+      "text": "very hard for someone to give you"
+    },
+    {
+      "t": 1000,
+      "text": "feedback of what's working and not"
+    },
+    {
+      "t": 1001,
+      "text": "working right it's just like when you're"
+    },
+    {
+      "t": 1004,
+      "text": "launching a new product you want to have"
+    },
+    {
+      "t": 1005,
+      "text": "some metrics and some user data to be"
+    },
+    {
+      "t": 1007,
+      "text": "able to tell if it's working when you're"
+    },
+    {
+      "t": 1009,
+      "text": "doing sales you want to have this data"
+    },
+    {
+      "t": 1011,
+      "text": "if you have this data people will be"
+    },
+    {
+      "t": 1012,
+      "text": "able to give you feedback on what what"
+    },
+    {
+      "t": 1014,
+      "text": "you're good at and what you need to get"
+    },
+    {
+      "t": 1015,
+      "text": "get better at my advice is to use a"
+    },
+    {
+      "t": 1017,
+      "text": "simple sales CRM software that tracks"
+    },
+    {
+      "t": 1019,
+      "text": "these conversion rates automatically"
+    },
+    {
+      "t": 1021,
+      "text": "let's look at the same second example"
+    },
+    {
+      "t": 1023,
+      "text": "this is how it looks like for most"
+    },
+    {
+      "t": 1024,
+      "text": "startups even the ones that I work with"
+    },
+    {
+      "t": 1026,
+      "text": "in the batch in the second example I'm"
+    },
+    {
+      "t": 1028,
+      "text": "sending 100 Outreach email it feels like"
+    },
+    {
+      "t": 1030,
+      "text": "a lot to me if I keep the conversion"
+    },
+    {
+      "t": 1032,
+      "text": "rates constant from the previous example"
+    },
+    {
+      "t": 1033,
+      "text": "I actually end up with zero customers"
+    },
+    {
+      "t": 1035,
+      "text": "and the conclusion the founders draw"
+    },
+    {
+      "t": 1037,
+      "text": "after this is that sales is not working"
+    },
+    {
+      "t": 1039,
+      "text": "for me and I should just do marketing or"
+    },
+    {
+      "t": 1041,
+      "text": "SEO or something else or referrals or"
+    },
+    {
+      "t": 1043,
+      "text": "something that sounds attractive this is"
+    },
+    {
+      "t": 1045,
+      "text": "simply wrong you don't have the data to"
+    },
+    {
+      "t": 1046,
+      "text": "make that call you did not do enough"
+    },
+    {
+      "t": 1048,
+      "text": "Outreach to actually get to correct"
+    },
+    {
+      "t": 1050,
+      "text": "conversion rate percentages in your"
+    },
+    {
+      "t": 1052,
+      "text": "sales funnel so the answer here is you"
+    },
+    {
+      "t": 1054,
+      "text": "sent a few minutes too few emails you"
+    },
+    {
+      "t": 1056,
+      "text": "don't have the data you can't draw the"
+    },
+    {
+      "t": 1058,
+      "text": "conclusion that sales is not working"
+    },
+    {
+      "t": 1059,
+      "text": "even though you have serial customers"
+    },
+    {
+      "t": 1061,
+      "text": "and this is the mistake that funders do"
+    },
+    {
+      "t": 1063,
+      "text": "on and on and on again so to summarize"
+    },
+    {
+      "t": 1065,
+      "text": "what I just went through here you don't"
+    },
+    {
+      "t": 1067,
+      "text": "know your sales conversion rate that's"
+    },
+    {
+      "t": 1069,
+      "text": "why you need a CRM to keep track of it"
+    },
+    {
+      "t": 1071,
+      "text": "two because you don't know who is an"
+    },
+    {
+      "t": 1074,
+      "text": "early adopter you have a lot of drop off"
+    },
+    {
+      "t": 1076,
+      "text": "in the outbound sales that makes up on"
+    },
+    {
+      "t": 1078,
+      "text": "sales ultimately a numbers game and"
+    },
+    {
+      "t": 1080,
+      "text": "successful startups we like this and"
+    },
+    {
+      "t": 1082,
+      "text": "internalize this three you cannot close"
+    },
+    {
+      "t": 1084,
+      "text": "five customers from 10 leads it's not"
+    },
+    {
+      "t": 1086,
+      "text": "possible you need a lot more app on than"
+    },
+    {
+      "t": 1088,
+      "text": "that a lot more and unfortunately most"
+    },
+    {
+      "t": 1090,
+      "text": "finders don't work their way backwards"
+    },
+    {
+      "t": 1092,
+      "text": "from this sales funnel and they don't do"
+    },
+    {
+      "t": 1094,
+      "text": "this exercise and the result they don't"
+    },
+    {
+      "t": 1096,
+      "text": "succeed as sales and they don't really"
+    },
+    {
+      "t": 1098,
+      "text": "know why so a friend of mine from Airbnb"
+    },
+    {
+      "t": 1100,
+      "text": "Atlanta rashitzki he writes an excellent"
+    },
+    {
+      "t": 1102,
+      "text": "blog and he wrote a great blog post"
+    },
+    {
+      "t": 1104,
+      "text": "about how YC and a bunch of non-yc B2B"
+    },
+    {
+      "t": 1107,
+      "text": "startups"
+    },
+    {
+      "t": 1108,
+      "text": "um got their sales go to market strategy"
+    },
+    {
+      "t": 1111,
+      "text": "going I recommend reading this and other"
+    },
+    {
+      "t": 1113,
+      "text": "posts uh newsletter it's it's one of the"
+    },
+    {
+      "t": 1115,
+      "text": "best ones I've come across it has a lot"
+    },
+    {
+      "t": 1118,
+      "text": "of real data that he collected from real"
+    },
+    {
+      "t": 1120,
+      "text": "companies uh many of them being YC"
+    },
+    {
+      "t": 1122,
+      "text": "companies so in this example here in the"
+    },
+    {
+      "t": 1124,
+      "text": "second column Lenny is describing the"
+    },
+    {
+      "t": 1126,
+      "text": "initial sales motion of some of these"
+    },
+    {
+      "t": 1128,
+      "text": "companies as you can see some of the"
+    },
+    {
+      "t": 1130,
+      "text": "early ones like amplitude stripe front"
+    },
+    {
+      "t": 1132,
+      "text": "they were doing app on sales emails just"
+    },
+    {
+      "t": 1134,
+      "text": "like the one we described to get started"
+    },
+    {
+      "t": 1136,
+      "text": "those Founders were doing those sales"
+    },
+    {
+      "t": 1138,
+      "text": "emails as they get started some of the"
+    },
+    {
+      "t": 1140,
+      "text": "other ones was called Product LED"
+    },
+    {
+      "t": 1141,
+      "text": "product LED could mean something else"
+    },
+    {
+      "t": 1143,
+      "text": "than just doing up on sales but it"
+    },
+    {
+      "t": 1145,
+      "text": "doesn't mean having a big sales team and"
+    },
+    {
+      "t": 1148,
+      "text": "it usually does not mean doing marketing"
+    },
+    {
+      "t": 1150,
+      "text": "or SEO or something else practically it"
+    },
+    {
+      "t": 1152,
+      "text": "means something that the product itself"
+    },
+    {
+      "t": 1154,
+      "text": "is is sort of like driving the growth as"
+    },
+    {
+      "t": 1156,
+      "text": "you're running the demo"
+    },
+    {
+      "t": 1158,
+      "text": "um your goal is to close your first"
+    },
+    {
+      "t": 1159,
+      "text": "customers"
+    },
+    {
+      "t": 1160,
+      "text": "you want to ask a lot of questions up"
+    },
+    {
+      "t": 1162,
+      "text": "front in the demos and there's the"
+    },
+    {
+      "t": 1164,
+      "text": "founders who should do the demos because"
+    },
+    {
+      "t": 1166,
+      "text": "you are the one knowing the product and"
+    },
+    {
+      "t": 1168,
+      "text": "you know the customer pain points here"
+    },
+    {
+      "t": 1170,
+      "text": "are three examples of YC emails that led"
+    },
+    {
+      "t": 1174,
+      "text": "to customers so I'll let you guys look"
+    },
+    {
+      "t": 1176,
+      "text": "at the details of these afterwards but"
+    },
+    {
+      "t": 1178,
+      "text": "this is an app on email that led to uh"
+    },
+    {
+      "t": 1180,
+      "text": "72 000 a year contract this one LED is a"
+    },
+    {
+      "t": 1183,
+      "text": "very specific email that led to out"
+    },
+    {
+      "t": 1185,
+      "text": "Landing a goalie as a customer and this"
+    },
+    {
+      "t": 1187,
+      "text": "third example here is the one email the"
+    },
+    {
+      "t": 1189,
+      "text": "same email they got them 22 different"
+    },
+    {
+      "t": 1191,
+      "text": "customers all right I'm going to"
+    },
+    {
+      "t": 1193,
+      "text": "summarize this again the biggest"
+    },
+    {
+      "t": 1194,
+      "text": "mistakes that most finders do is they"
+    },
+    {
+      "t": 1196,
+      "text": "don't do enough Outreach because they"
+    },
+    {
+      "t": 1198,
+      "text": "don't work package from the goal"
+    },
+    {
+      "t": 1199,
+      "text": "believing that something else then sales"
+    },
+    {
+      "t": 1201,
+      "text": "is going to solve your sales problem"
+    },
+    {
+      "t": 1202,
+      "text": "Outsourcing sales is wrong you should do"
+    },
+    {
+      "t": 1205,
+      "text": "it yourself and you need to qualify your"
+    },
+    {
+      "t": 1207,
+      "text": "customers during your first call here"
+    },
+    {
+      "t": 1209,
+      "text": "are some of the tools I recommend so"
+    },
+    {
+      "t": 1210,
+      "text": "there are many many many tools this is"
+    },
+    {
+      "t": 1213,
+      "text": "perhaps one of the biggest categories of"
+    },
+    {
+      "t": 1215,
+      "text": "potential things you could use as you're"
+    },
+    {
+      "t": 1216,
+      "text": "doing sales but I recommend apollo.io"
+    },
+    {
+      "t": 1219,
+      "text": "close.com formerly called closed.io"
+    },
+    {
+      "t": 1222,
+      "text": "pipedrive or hunter.io these are great"
+    },
+    {
+      "t": 1224,
+      "text": "tools that you can use either as a"
+    },
+    {
+      "t": 1226,
+      "text": "simple sales CRM or Hunter you can use"
+    },
+    {
+      "t": 1229,
+      "text": "to get contacts or potential people to"
+    },
+    {
+      "t": 1232,
+      "text": "email from LinkedIn here are two"
+    },
+    {
+      "t": 1233,
+      "text": "additional resources if some people ask"
+    },
+    {
+      "t": 1234,
+      "text": "me for books usually there aren't good"
+    },
+    {
+      "t": 1236,
+      "text": "books but there is actually one that I"
+    },
+    {
+      "t": 1238,
+      "text": "come across I find really good it's"
+    },
+    {
+      "t": 1239,
+      "text": "called founding sales and then I also"
+    },
+    {
+      "t": 1241,
+      "text": "recommend lineage newsletter.com there"
+    },
+    {
+      "t": 1244,
+      "text": "are of course other ways that you can"
+    },
+    {
+      "t": 1245,
+      "text": "grow as a startup but the truth that"
+    },
+    {
+      "t": 1247,
+      "text": "I've learned is that even if you end up"
+    },
+    {
+      "t": 1250,
+      "text": "with say like Airbnb where the sources"
+    },
+    {
+      "t": 1253,
+      "text": "of growth is Word of Mouth Google search"
+    },
+    {
+      "t": 1256,
+      "text": "referrals Facebook advertising if those"
+    },
+    {
+      "t": 1260,
+      "text": "are the kind of end states of your"
+    },
+    {
+      "t": 1263,
+      "text": "growth strategy that's not how ambica"
+    },
+    {
+      "t": 1265,
+      "text": "started they didn't start by running"
+    },
+    {
+      "t": 1267,
+      "text": "Google sem or Google SEO"
+    },
+    {
+      "t": 1269,
+      "text": "the referral program did not bring in"
+    },
+    {
+      "t": 1270,
+      "text": "the first 2000 customers they did things"
+    },
+    {
+      "t": 1273,
+      "text": "that didn't scale and they looked"
+    },
+    {
+      "t": 1275,
+      "text": "different than the one they do at scale"
+    },
+    {
+      "t": 1277,
+      "text": "so a lot of companies are shorting"
+    },
+    {
+      "t": 1280,
+      "text": "straight into What's called the scalable"
+    },
+    {
+      "t": 1281,
+      "text": "growth channels the channels that"
+    },
+    {
+      "t": 1283,
+      "text": "they've heard work which is true at"
+    },
+    {
+      "t": 1285,
+      "text": "scale but that's not the same thing as"
+    },
+    {
+      "t": 1288,
+      "text": "when you're getting started so in this"
+    },
+    {
+      "t": 1290,
+      "text": "slide I'm outlining kind of like just a"
+    },
+    {
+      "t": 1293,
+      "text": "rough idea of like even if it turns out"
+    },
+    {
+      "t": 1295,
+      "text": "the Google sem and Google SEO is what's"
+    },
+    {
+      "t": 1297,
+      "text": "going to work at scale you need to find"
+    },
+    {
+      "t": 1299,
+      "text": "another place online where these people"
+    },
+    {
+      "t": 1301,
+      "text": "that you're going to reach through sem"
+    },
+    {
+      "t": 1302,
+      "text": "and SEO is identifying themselves online"
+    },
+    {
+      "t": 1304,
+      "text": "right and that might not be the same as"
+    },
+    {
+      "t": 1307,
+      "text": "Google if you're trying to go after sem"
+    },
+    {
+      "t": 1309,
+      "text": "which means search engine marketing it's"
+    },
+    {
+      "t": 1311,
+      "text": "going to be expensive probably because"
+    },
+    {
+      "t": 1313,
+      "text": "there's competition if you're going"
+    },
+    {
+      "t": 1314,
+      "text": "after SEO it's going to take a long time"
+    },
+    {
+      "t": 1316,
+      "text": "if your growth is say proc LED or"
+    },
+    {
+      "t": 1320,
+      "text": "virality referrals then personal"
+    },
+    {
+      "t": 1322,
+      "text": "networks selling through your personal"
+    },
+    {
+      "t": 1324,
+      "text": "Network to your co-workers is the way to"
+    },
+    {
+      "t": 1326,
+      "text": "get started of course if you're doing"
+    },
+    {
+      "t": 1327,
+      "text": "sales you should be doing sales it"
+    },
+    {
+      "t": 1329,
+      "text": "doesn't change very much like early"
+    },
+    {
+      "t": 1330,
+      "text": "stage sales to to large sales basically"
+    },
+    {
+      "t": 1333,
+      "text": "means all the things that I just"
+    },
+    {
+      "t": 1334,
+      "text": "described here"
+    },
+    {
+      "t": 1336,
+      "text": "done by 100 people in a sales team with"
+    },
+    {
+      "t": 1338,
+      "text": "more automation more tools more metrics"
+    },
+    {
+      "t": 1340,
+      "text": "but it's the same thing and if you"
+    },
+    {
+      "t": 1342,
+      "text": "practice setup to do online marketing"
+    },
+    {
+      "t": 1343,
+      "text": "it's not usually how most people start"
+    },
+    {
+      "t": 1345,
+      "text": "why because you can't really easily talk"
+    },
+    {
+      "t": 1349,
+      "text": "to people you can't learn from users if"
+    },
+    {
+      "t": 1352,
+      "text": "the first thousand or first-handed"
+    },
+    {
+      "t": 1353,
+      "text": "customers are brought in through Google"
+    },
+    {
+      "t": 1354,
+      "text": "and Facebook those people are not the"
+    },
+    {
+      "t": 1356,
+      "text": "kind of people that you can easily get"
+    },
+    {
+      "t": 1359,
+      "text": "on a 30 minute phone call with all right"
+    },
+    {
+      "t": 1361,
+      "text": "that's all I had today thank you"
+    },
+    {
+      "t": 1363,
+      "text": "everyone"
+    },
+    {
+      "t": 1366,
+      "text": "foreign"
+    },
+    {
+      "t": 1367,
+      "text": "[Music]"
+    }
+  ],
+  "transcript_chars": 24973
+}

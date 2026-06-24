@@ -1,0 +1,6 @@
+yt-dlp
+youtube-transcript-api
+requests
+python-dotenv
+anthropic
+supabase

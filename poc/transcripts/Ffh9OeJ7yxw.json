@@ -1,0 +1,984 @@
+{
+  "video_id": "Ffh9OeJ7yxw",
+  "title": "800+ hours of Learning Claude Code in 8 minutes (2026 tutorial / unknown tricks / newest model)",
+  "channel": "Edmund Yong",
+  "channel_id": "UCuKVsDS3oVzTuNjnQ79pEEg",
+  "views": 860986,
+  "duration": 481.0,
+  "bucket": "ai",
+  "transcript_segments": [
+    {
+      "t": 6,
+      "text": "After spending over 800 hours in Claude"
+    },
+    {
+      "t": 9,
+      "text": "code, I've discovered ways to actually"
+    },
+    {
+      "t": 10,
+      "text": "make this thing work for me, not against"
+    },
+    {
+      "t": 13,
+      "text": "me, especially at times when I need to"
+    },
+    {
+      "t": 14,
+      "text": "move fast as a solo developer. Whether"
+    },
+    {
+      "t": 16,
+      "text": "you're churning through tickets at a"
+    },
+    {
+      "t": 18,
+      "text": "corporate tech job or attempting to vibe"
+    },
+    {
+      "t": 20,
+      "text": "code your next 10k a month app, if"
+    },
+    {
+      "t": 22,
+      "text": "Claude has ever felt dumb to you at"
+    },
+    {
+      "t": 23,
+      "text": "times, then it's likely you're just"
+    },
+    {
+      "t": 24,
+      "text": "missing critical parts of the setup. In"
+    },
+    {
+      "t": 26,
+      "text": "this video, I'll walk you through my"
+    },
+    {
+      "t": 28,
+      "text": "private workflows, essential resources,"
+    },
+    {
+      "t": 30,
+      "text": "and teach you the six core features that"
+    },
+    {
+      "t": 32,
+      "text": "most developers are unaware of in Claude"
+    },
+    {
+      "t": 34,
+      "text": "code. So, by the end, you'll be shipping"
+    },
+    {
+      "t": 36,
+      "text": "faster with Claude instead of wasting"
+    },
+    {
+      "t": 37,
+      "text": "time fighting it. Before we dive into"
+    },
+    {
+      "t": 39,
+      "text": "the advanced workflows and hidden"
+    },
+    {
+      "t": 41,
+      "text": "tricks, let's make sure we quickly cover"
+    },
+    {
+      "t": 43,
+      "text": "the foundations. These three features"
+    },
+    {
+      "t": 45,
+      "text": "have saved me hours of repeating myself"
+    },
+    {
+      "t": 47,
+      "text": "to Claude every single session. When I"
+    },
+    {
+      "t": 49,
+      "text": "first started using Claude code, I found"
+    },
+    {
+      "t": 51,
+      "text": "myself repeating same instructions over"
+    },
+    {
+      "t": 53,
+      "text": "and over again. The easy solution is to"
+    },
+    {
+      "t": 55,
+      "text": "make use of Claude's memory feature."
+    },
+    {
+      "t": 57,
+      "text": "Press the hash key to quickly add some"
+    },
+    {
+      "t": 59,
+      "text": "instruction snippets to Claude's memory."
+    },
+    {
+      "t": 61,
+      "text": "You can decide whether you want to apply"
+    },
+    {
+      "t": 62,
+      "text": "these instructions locally to the"
+    },
+    {
+      "t": 64,
+      "text": "project or globally across all Claude"
+    },
+    {
+      "t": 66,
+      "text": "sessions. And you will see these"
+    },
+    {
+      "t": 67,
+      "text": "instructions get saved to the Claude.md"
+    },
+    {
+      "t": 70,
+      "text": "file. So, if you ever change your mind,"
+    },
+    {
+      "t": 71,
+      "text": "you can easily edit or remove them. I"
+    },
+    {
+      "t": 73,
+      "text": "also found myself typing the same"
+    },
+    {
+      "t": 75,
+      "text": "prompts to perform small repetitive"
+    },
+    {
+      "t": 77,
+      "text": "tasks like creating a new API endpoint"
+    },
+    {
+      "t": 80,
+      "text": "that correctly includes my customer to"
+    },
+    {
+      "t": 82,
+      "text": "wear with error handling and type"
+    },
+    {
+      "t": 83,
+      "text": "interfaces or running the TypeScript"
+    },
+    {
+      "t": 85,
+      "text": "lint command and fixing all errors"
+    },
+    {
+      "t": 87,
+      "text": "around the code base. This led me to"
+    },
+    {
+      "t": 89,
+      "text": "build my own library of custom commands"
+    },
+    {
+      "t": 91,
+      "text": "that I can easily call with a few"
+    },
+    {
+      "t": 92,
+      "text": "keystrokes. To create your first"
+    },
+    {
+      "t": 94,
+      "text": "command, just add a new commands"
+    },
+    {
+      "t": 96,
+      "text": "directory within your Claude folder and"
+    },
+    {
+      "t": 97,
+      "text": "then write out your command in a"
+    },
+    {
+      "t": 99,
+      "text": "markdown file. And as your command"
+    },
+    {
+      "t": 100,
+      "text": "library grows, you can sort them into"
+    },
+    {
+      "t": 102,
+      "text": "subdirectories to keep them organized"
+    },
+    {
+      "t": 104,
+      "text": "and easier to find. You can also make"
+    },
+    {
+      "t": 106,
+      "text": "commands accept arguments. This is what"
+    },
+    {
+      "t": 108,
+      "text": "allows commands to be more flexible and"
+    },
+    {
+      "t": 110,
+      "text": "reusable in different scenarios. So,"
+    },
+    {
+      "t": 112,
+      "text": "just be conscious of what you are"
+    },
+    {
+      "t": 113,
+      "text": "prompting to Claude over and over again,"
+    },
+    {
+      "t": 115,
+      "text": "then slowly build up your own command"
+    },
+    {
+      "t": 117,
+      "text": "library as you go. I've also used this"
+    },
+    {
+      "t": 119,
+      "text": "GitHub repo, which has a bunch of useful"
+    },
+    {
+      "t": 121,
+      "text": "commands that I use every day for"
+    },
+    {
+      "t": 123,
+      "text": "building. In the early days of building"
+    },
+    {
+      "t": 124,
+      "text": "with Claude code, one of my biggest"
+    },
+    {
+      "t": 126,
+      "text": "frustrations was making sure it"
+    },
+    {
+      "t": 128,
+      "text": "references the latest documentation when"
+    },
+    {
+      "t": 130,
+      "text": "building new features or debugging"
+    },
+    {
+      "t": 132,
+      "text": "errors, especially with frameworks and"
+    },
+    {
+      "t": 134,
+      "text": "libraries that are constantly being"
+    },
+    {
+      "t": 136,
+      "text": "updated. But as you know, AI assistants"
+    },
+    {
+      "t": 138,
+      "text": "are only as good as their training data."
+    },
+    {
+      "t": 140,
+      "text": "Enforcing it to use web search to fetch"
+    },
+    {
+      "t": 142,
+      "text": "the latest data wasn't reliable either."
+    },
+    {
+      "t": 144,
+      "text": "This is where MCP servers come in,"
+    },
+    {
+      "t": 146,
+      "text": "specifically one that I use every day"
+    },
+    {
+      "t": 148,
+      "text": "called Context Seven. It's essentially a"
+    },
+    {
+      "t": 150,
+      "text": "service that allows Claude to reference"
+    },
+    {
+      "t": 152,
+      "text": "the most up-to-date documentation for"
+    },
+    {
+      "t": 154,
+      "text": "the most popular coding libraries. And"
+    },
+    {
+      "t": 156,
+      "text": "this alone has saved me hours constantly"
+    },
+    {
+      "t": 158,
+      "text": "having to Google search and copy and"
+    },
+    {
+      "t": 160,
+      "text": "paste the latest docs into my prompts."
+    },
+    {
+      "t": 162,
+      "text": "Now, I can just rely on Context Seven as"
+    },
+    {
+      "t": 164,
+      "text": "a centralized source for when I need the"
+    },
+    {
+      "t": 166,
+      "text": "AI to reference any kind of"
+    },
+    {
+      "t": 168,
+      "text": "documentation. And to use it, you just"
+    },
+    {
+      "t": 170,
+      "text": "have to add two words into your prompt,"
+    },
+    {
+      "t": 172,
+      "text": "use Context Seven, and Claude will"
+    },
+    {
+      "t": 174,
+      "text": "automatically call the server to fetch"
+    },
+    {
+      "t": 176,
+      "text": "the latest docs whenever it needs to."
+    },
+    {
+      "t": 177,
+      "text": "And you might be asking, what exactly"
+    },
+    {
+      "t": 179,
+      "text": "are MCP servers? To explain it simply,"
+    },
+    {
+      "t": 182,
+      "text": "just think of it as a way to connect AI"
+    },
+    {
+      "t": 183,
+      "text": "agents to external tools and services."
+    },
+    {
+      "t": 186,
+      "text": "And this just gives the AI more"
+    },
+    {
+      "t": 188,
+      "text": "capabilities for its tasks, like"
+    },
+    {
+      "t": 190,
+      "text": "connecting to a database, calling a"
+    },
+    {
+      "t": 192,
+      "text": "custom API, or executing code on some"
+    },
+    {
+      "t": 195,
+      "text": "remote server. If you would like to know"
+    },
+    {
+      "t": 196,
+      "text": "where I browse for MCP servers, here are"
+    },
+    {
+      "t": 198,
+      "text": "some great repos that I recommend"
+    },
+    {
+      "t": 200,
+      "text": "checking out. Some other MCP servers"
+    },
+    {
+      "t": 202,
+      "text": "that I use regularly are Superbase to"
+    },
+    {
+      "t": 204,
+      "text": "allow Claude to query data directly from"
+    },
+    {
+      "t": 206,
+      "text": "my app's database, apply migrations, or"
+    },
+    {
+      "t": 209,
+      "text": "create new tables for any new features I"
+    },
+    {
+      "t": 211,
+      "text": "am building. The Chrome DevTools and"
+    },
+    {
+      "t": 213,
+      "text": "Playwright MCP, which gives Claude the"
+    },
+    {
+      "t": 215,
+      "text": "ability to autonomously debug and test"
+    },
+    {
+      "t": 217,
+      "text": "issues on the front end by letting it"
+    },
+    {
+      "t": 219,
+      "text": "control the browser and inspect the DOM"
+    },
+    {
+      "t": 221,
+      "text": "and console logs. I also use the Stripe"
+    },
+    {
+      "t": 223,
+      "text": "MCP for when I build something that"
+    },
+    {
+      "t": 225,
+      "text": "touches the payment side of my app. And"
+    },
+    {
+      "t": 226,
+      "text": "also the Vercel MCP for when I need to"
+    },
+    {
+      "t": 229,
+      "text": "look up the latest documentation or make"
+    },
+    {
+      "t": 231,
+      "text": "changes to my project settings. As a"
+    },
+    {
+      "t": 233,
+      "text": "solo developer, my process for building"
+    },
+    {
+      "t": 235,
+      "text": "new features used to look something like"
+    },
+    {
+      "t": 237,
+      "text": "this. Create the front end UI"
+    },
+    {
+      "t": 238,
+      "text": "components, write the API endpoints, and"
+    },
+    {
+      "t": 241,
+      "text": "run some database migrations. This"
+    },
+    {
+      "t": 243,
+      "text": "approach wasn't bad, but it just meant I"
+    },
+    {
+      "t": 244,
+      "text": "had to do things in a very sequential"
+    },
+    {
+      "t": 246,
+      "text": "order, which wasn't very efficient. But"
+    },
+    {
+      "t": 248,
+      "text": "ever since I discovered how to properly"
+    },
+    {
+      "t": 250,
+      "text": "use Claude's sub-agents to do work in"
+    },
+    {
+      "t": 252,
+      "text": "parallel, I've been able to build and"
+    },
+    {
+      "t": 253,
+      "text": "ship features in a fraction of the time."
+    },
+    {
+      "t": 255,
+      "text": "Firstly, what are sub-agents? They are"
+    },
+    {
+      "t": 257,
+      "text": "isolated Claude instances that can work"
+    },
+    {
+      "t": 260,
+      "text": "in parallel with each other and feed"
+    },
+    {
+      "t": 261,
+      "text": "crucial information back to the main"
+    },
+    {
+      "t": 263,
+      "text": "orchestrator agent once it has finished"
+    },
+    {
+      "t": 265,
+      "text": "the task. In simple terms, using"
+    },
+    {
+      "t": 267,
+      "text": "sub-agents will greatly help reduce any"
+    },
+    {
+      "t": 269,
+      "text": "pollution to the main context window"
+    },
+    {
+      "t": 271,
+      "text": "because each sub-agent will get its own"
+    },
+    {
+      "t": 273,
+      "text": "context window, system prompt, and tool"
+    },
+    {
+      "t": 275,
+      "text": "use permissions. So, they are great for"
+    },
+    {
+      "t": 277,
+      "text": "offloading smaller and more specific"
+    },
+    {
+      "t": 279,
+      "text": "tasks. But what I see people doing with"
+    },
+    {
+      "t": 281,
+      "text": "sub-agents is they assign them to act as"
+    },
+    {
+      "t": 283,
+      "text": "specific roles, like a front end"
+    },
+    {
+      "t": 285,
+      "text": "developer, a UI/UX designer, or a"
+    },
+    {
+      "t": 287,
+      "text": "product manager. And I can tell you, I"
+    },
+    {
+      "t": 289,
+      "text": "spent a good couple of hours trying to"
+    },
+    {
+      "t": 290,
+      "text": "work with agents this way, and the"
+    },
+    {
+      "t": 292,
+      "text": "results were pretty bad compared to just"
+    },
+    {
+      "t": 294,
+      "text": "using Claude code with no agent-specific"
+    },
+    {
+      "t": 296,
+      "text": "instructions. Personally, I don't think"
+    },
+    {
+      "t": 298,
+      "text": "sub-agents are at a point yet where you"
+    },
+    {
+      "t": 300,
+      "text": "can assign them specific roles and rely"
+    },
+    {
+      "t": 302,
+      "text": "on them to brainstorm and work"
+    },
+    {
+      "t": 303,
+      "text": "autonomously like a real human would."
+    },
+    {
+      "t": 305,
+      "text": "But that's okay, they still save me a"
+    },
+    {
+      "t": 307,
+      "text": "lot of time and effort on tasks it's"
+    },
+    {
+      "t": 309,
+      "text": "actually good at. What has worked really"
+    },
+    {
+      "t": 311,
+      "text": "well for me is to define sub-agents for"
+    },
+    {
+      "t": 313,
+      "text": "tasks, not roles, like cleaning up and"
+    },
+    {
+      "t": 315,
+      "text": "optimizing the code it's just written,"
+    },
+    {
+      "t": 317,
+      "text": "generating documentation, or gathering"
+    },
+    {
+      "t": 320,
+      "text": "research data from the web. For example,"
+    },
+    {
+      "t": 322,
+      "text": "one of the sub-agents I use regularly is"
+    },
+    {
+      "t": 324,
+      "text": "this one that reviews the UI/UX of my"
+    },
+    {
+      "t": 326,
+      "text": "app. It connects to the Playwright MCP"
+    },
+    {
+      "t": 328,
+      "text": "server and inspects the UI components of"
+    },
+    {
+      "t": 330,
+      "text": "my web app in the browser. And it gives"
+    },
+    {
+      "t": 332,
+      "text": "feedback based on the design and"
+    },
+    {
+      "t": 334,
+      "text": "usability of the UI components. I think"
+    },
+    {
+      "t": 336,
+      "text": "this is the best way to make use of"
+    },
+    {
+      "t": 338,
+      "text": "sub-agents because it handles work that"
+    },
+    {
+      "t": 340,
+      "text": "would have previously taken up precious"
+    },
+    {
+      "t": 342,
+      "text": "context tokens from the main agent, and"
+    },
+    {
+      "t": 344,
+      "text": "it just helps to maintain a high quality"
+    },
+    {
+      "t": 346,
+      "text": "of the overall output. To create a"
+    },
+    {
+      "t": 347,
+      "text": "sub-agent, use the {slash} agents"
+    },
+    {
+      "t": 349,
+      "text": "command, select create a new agent,"
+    },
+    {
+      "t": 351,
+      "text": "choose project or personal, select"
+    },
+    {
+      "t": 353,
+      "text": "generate with Claude, then describe the"
+    },
+    {
+      "t": 355,
+      "text": "sub-agent's task in natural language."
+    },
+    {
+      "t": 357,
+      "text": "Customize the tool use permissions and"
+    },
+    {
+      "t": 359,
+      "text": "then save. And to invoke an agent, just"
+    },
+    {
+      "t": 362,
+      "text": "use natural language or the {at} symbol"
+    },
+    {
+      "t": 364,
+      "text": "to directly call the sub-agent within"
+    },
+    {
+      "t": 366,
+      "text": "your prompt. Now that I've told you all"
+    },
+    {
+      "t": 367,
+      "text": "about {slash} commands, sub-agents, and"
+    },
+    {
+      "t": 370,
+      "text": "MCP servers, you might be put off by the"
+    },
+    {
+      "t": 372,
+      "text": "thought of having to set up all these"
+    },
+    {
+      "t": 373,
+      "text": "tools manually for your own projects."
+    },
+    {
+      "t": 376,
+      "text": "Well, luckily, Anthropic recently"
+    },
+    {
+      "t": 377,
+      "text": "released a new feature called plugins,"
+    },
+    {
+      "t": 379,
+      "text": "which allows users to bundle up their"
+    },
+    {
+      "t": 381,
+      "text": "setups into a single package. So, you"
+    },
+    {
+      "t": 383,
+      "text": "can literally clone a Claude power"
+    },
+    {
+      "t": 385,
+      "text": "user's entire workflow with a single"
+    },
+    {
+      "t": 387,
+      "text": "command. And if you're curious about my"
+    },
+    {
+      "t": 389,
+      "text": "personal setup, I've published my own"
+    },
+    {
+      "t": 390,
+      "text": "plugin marketplace, which you can add by"
+    },
+    {
+      "t": 392,
+      "text": "running this command. From there, just"
+    },
+    {
+      "t": 394,
+      "text": "pick and choose which plugins you would"
+    },
+    {
+      "t": 396,
+      "text": "like to install. Feel free to add only"
+    },
+    {
+      "t": 398,
+      "text": "what you need. I want to talk about the"
+    },
+    {
+      "t": 399,
+      "text": "mindset and expectations I've adopted"
+    },
+    {
+      "t": 402,
+      "text": "when working with AI to build apps."
+    },
+    {
+      "t": 404,
+      "text": "Because after spending hundreds of hours"
+    },
+    {
+      "t": 406,
+      "text": "of trial and error using AI to help with"
+    },
+    {
+      "t": 408,
+      "text": "coding tasks, I found these are the"
+    },
+    {
+      "t": 410,
+      "text": "things that have given me the biggest"
+    },
+    {
+      "t": 411,
+      "text": "productivity boost. Garbage in equals"
+    },
+    {
+      "t": 414,
+      "text": "garbage out. If you can't write a prompt"
+    },
+    {
+      "t": 415,
+      "text": "that clearly instructs the AI on what to"
+    },
+    {
+      "t": 417,
+      "text": "do, then you don't actually know what"
+    },
+    {
+      "t": 419,
+      "text": "you want. And the AI definitely won't"
+    },
+    {
+      "t": 421,
+      "text": "either. I found learning some basic"
+    },
+    {
+      "t": 423,
+      "text": "prompt engineering has forced me to"
+    },
+    {
+      "t": 424,
+      "text": "break down my problems into smaller"
+    },
+    {
+      "t": 426,
+      "text": "pieces, which also clarifies my own"
+    },
+    {
+      "t": 428,
+      "text": "thoughts in the process. Or, if the idea"
+    },
+    {
+      "t": 430,
+      "text": "is still vague in my mind, I will use"
+    },
+    {
+      "t": 432,
+      "text": "Claude's plan mode to have a quick Q&A"
+    },
+    {
+      "t": 434,
+      "text": "session and make it ask me clarifying"
+    },
+    {
+      "t": 436,
+      "text": "questions so we can be on the same page"
+    },
+    {
+      "t": 439,
+      "text": "before I let it write any code. AI"
+    },
+    {
+      "t": 441,
+      "text": "generates code, but humans own it."
+    },
+    {
+      "t": 443,
+      "text": "Before pushing to production, just start"
+    },
+    {
+      "t": 445,
+      "text": "a new session with the AI asking it to"
+    },
+    {
+      "t": 447,
+      "text": "review the code on the files it's"
+    },
+    {
+      "t": 448,
+      "text": "recently touched. Don't let the AI make"
+    },
+    {
+      "t": 450,
+      "text": "you lazy about the fundamentals like"
+    },
+    {
+      "t": 452,
+      "text": "security, performance, or error handling"
+    },
+    {
+      "t": 455,
+      "text": "because given enough time, if you keep"
+    },
+    {
+      "t": 456,
+      "text": "ignoring these things, it will"
+    },
+    {
+      "t": 458,
+      "text": "eventually lead to vulnerabilities and"
+    },
+    {
+      "t": 460,
+      "text": "bugs if you don't constantly review it."
+    },
+    {
+      "t": 462,
+      "text": "Speed means nothing if your app is buggy"
+    },
+    {
+      "t": 464,
+      "text": "or insecure. So, these have been my top"
+    },
+    {
+      "t": 466,
+      "text": "tips for getting the most out of Claude"
+    },
+    {
+      "t": 468,
+      "text": "code when building apps as a solo"
+    },
+    {
+      "t": 470,
+      "text": "developer. Let me know what you think"
+    },
+    {
+      "t": 471,
+      "text": "and I'll see you in the next one."
+    },
+    {
+      "t": 473,
+      "text": "Bye-bye."
+    }
+  ],
+  "transcript_chars": 9253
+}

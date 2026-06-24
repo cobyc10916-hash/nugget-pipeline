@@ -1,0 +1,8140 @@
+{
+  "video_id": "TOQtJch3kGk",
+  "title": "How To Build A $10M AI App In Literally 30 Seconds (this is insane)",
+  "channel": "My First Million",
+  "channel_id": "UCyaN6mg5u8Cjy2ZI4ikWaug",
+  "views": 1009344,
+  "duration": 4164.0,
+  "bucket": "podcast",
+  "transcript_segments": [
+    {
+      "t": 0,
+      "text": "This is the first AI agent thing that"
+    },
+    {
+      "t": 3,
+      "text": "has I been a mind-blowing moment for me"
+    },
+    {
+      "t": 5,
+      "text": "where I am not a programmer. I am not a"
+    },
+    {
+      "t": 7,
+      "text": "coder, but I can now create software."
+    },
+    {
+      "t": 10,
+      "text": "Well, that's insane. There are apps"
+    },
+    {
+      "t": 13,
+      "text": "built on Replit agent that otherwise"
+    },
+    {
+      "t": 15,
+      "text": "would take probably $100,000 of"
+    },
+    {
+      "t": 17,
+      "text": "developer time. And you can build it"
+    },
+    {
+      "t": 20,
+      "text": "like in you know $25 paid to Replit."
+    },
+    {
+      "t": 23,
+      "text": "It's pretty wild how fast these"
+    },
+    {
+      "t": 25,
+      "text": "companies are scaling. I don't think in"
+    },
+    {
+      "t": 26,
+      "text": "the history of Silicon Valley we've seen"
+    },
+    {
+      "t": 28,
+      "text": "anything like that even in the like web"
+    },
+    {
+      "t": 30,
+      "text": "2.0 era. So what is like a fast ramp for"
+    },
+    {
+      "t": 32,
+      "text": "an AI company? What's impressive that"
+    },
+    {
+      "t": 34,
+      "text": "kind of broke the frame of what how long"
+    },
+    {
+      "t": 36,
+      "text": "things would take? So I I would say"
+    },
+    {
+      "t": 38,
+      "text": "reaching 10 million in 3 to 4 months."
+    },
+    {
+      "t": 42,
+      "text": "ARR Oh my god."
+    },
+    {
+      "t": 46,
+      "text": "Can I ask a blunt crude question? How"
+    },
+    {
+      "t": 48,
+      "text": "can I use your software to become a"
+    },
+    {
+      "t": 50,
+      "text": "billionaire?"
+    },
+    {
+      "t": 51,
+      "text": "I would say building"
+    },
+    {
+      "t": 62,
+      "text": "Okay, so uh how do we want to start"
+    },
+    {
+      "t": 64,
+      "text": "this? So Amjad, you um"
+    },
+    {
+      "t": 66,
+      "text": "you're awesome. So you have you're today"
+    },
+    {
+      "t": 69,
+      "text": "in a position that I think a lot of"
+    },
+    {
+      "t": 71,
+      "text": "people want to be in. You have you're"
+    },
+    {
+      "t": 72,
+      "text": "doing the Silicon Valley dream. You had"
+    },
+    {
+      "t": 73,
+      "text": "this idea, you go through YC, you've now"
+    },
+    {
+      "t": 76,
+      "text": "raised hundreds of millions of dollars,"
+    },
+    {
+      "t": 78,
+      "text": "you're valued at a you know billion"
+    },
+    {
+      "t": 79,
+      "text": "dollar valuation. So that's today."
+    },
+    {
+      "t": 83,
+      "text": "But then the cool thing about your story"
+    },
+    {
+      "t": 85,
+      "text": "is it"
+    },
+    {
+      "t": 86,
+      "text": "that didn't seem likely, you know, 10"
+    },
+    {
+      "t": 88,
+      "text": "years ago. It is a very unlikely success"
+    },
+    {
+      "t": 91,
+      "text": "story. And yeah, you went through YC,"
+    },
+    {
+      "t": 93,
+      "text": "but you were rejected a bunch of times."
+    },
+    {
+      "t": 95,
+      "text": "Like yeah, you're in Silicon Valley now,"
+    },
+    {
+      "t": 97,
+      "text": "but you started off coding in an"
+    },
+    {
+      "t": 98,
+      "text": "internet cafe in Jordan. That's what's"
+    },
+    {
+      "t": 100,
+      "text": "interesting to me and uh we asked you"
+    },
+    {
+      "t": 101,
+      "text": "beforehand. We're like, \"Hey, what"
+    },
+    {
+      "t": 103,
+      "text": "killer stories could you come on the"
+    },
+    {
+      "t": 104,
+      "text": "podcast and tell?\" And you go you wrote"
+    },
+    {
+      "t": 106,
+      "text": "this. So I'm going to read it word for"
+    },
+    {
+      "t": 107,
+      "text": "word and then I want you to tell us the"
+    },
+    {
+      "t": 108,
+      "text": "story. You go, \"Rejected four times and"
+    },
+    {
+      "t": 110,
+      "text": "Rick Rolling into YC, raising tons of"
+    },
+    {
+      "t": 113,
+      "text": "money and meeting amazing billionaires.\""
+    },
+    {
+      "t": 114,
+      "text": "So let's do the first part. \"Rejected"
+    },
+    {
+      "t": 116,
+      "text": "four times and Rick Rolling into YC.\""
+    },
+    {
+      "t": 117,
+      "text": "Can you tell the story?"
+    },
+    {
+      "t": 119,
+      "text": "Yeah, so uh I left my"
+    },
+    {
+      "t": 122,
+      "text": "uh job at at Facebook in uh 202016."
+    },
+    {
+      "t": 127,
+      "text": "And you know, Replit has been a side"
+    },
+    {
+      "t": 130,
+      "text": "project for a while and it's been it's"
+    },
+    {
+      "t": 132,
+      "text": "been growing. I've been working on it"
+    },
+    {
+      "t": 134,
+      "text": "like nights and weekends. It grew to to"
+    },
+    {
+      "t": 136,
+      "text": "a point where the like server cost was"
+    },
+    {
+      "t": 138,
+      "text": "meaningful and I was like, \"Okay, you"
+    },
+    {
+      "t": 140,
+      "text": "know, I have to I guess I have to start"
+    },
+    {
+      "t": 142,
+      "text": "a company around it.\" And so I went to"
+    },
+    {
+      "t": 145,
+      "text": "my manager at Facebook and I was like,"
+    },
+    {
+      "t": 146,
+      "text": "\"Look, I have this side project. Can we"
+    },
+    {
+      "t": 147,
+      "text": "make it like somehow a project at at"
+    },
+    {
+      "t": 150,
+      "text": "Facebook?\" And we looked into that. I"
+    },
+    {
+      "t": 152,
+      "text": "sent Zuck an email at the time and he he"
+    },
+    {
+      "t": 154,
+      "text": "ignored me. Like, \"Okay, I get I guess I"
+    },
+    {
+      "t": 156,
+      "text": "have to start I guess I have to start a"
+    },
+    {
+      "t": 159,
+      "text": "company.\""
+    },
+    {
+      "t": 160,
+      "text": "And so yeah, I quit I quit my job, um"
+    },
+    {
+      "t": 162,
+      "text": "applied to YC the first time. We did the"
+    },
+    {
+      "t": 165,
+      "text": "whole thing. We did the the form and the"
+    },
+    {
+      "t": 167,
+      "text": "video and and all of that. And we didn't"
+    },
+    {
+      "t": 170,
+      "text": "even get a get a call or anything like"
+    },
+    {
+      "t": 173,
+      "text": "that. It was it was just like we got the"
+    },
+    {
+      "t": 174,
+      "text": "rejection"
+    },
+    {
+      "t": 176,
+      "text": "uh letter. And so I was like, \"Okay, you"
+    },
+    {
+      "t": 179,
+      "text": "know, I have to uh Facebook stock some"
+    },
+    {
+      "t": 182,
+      "text": "savings. I sold the Facebook stock. I"
+    },
+    {
+      "t": 185,
+      "text": "put like half of it in Bitcoin and then"
+    },
+    {
+      "t": 187,
+      "text": "half of it into into the company or like"
+    },
+    {
+      "t": 190,
+      "text": "just just for us to kind of live and How"
+    },
+    {
+      "t": 192,
+      "text": "much money was that?"
+    },
+    {
+      "t": 193,
+      "text": "It was like 70k or or something like"
+    },
+    {
+      "t": 196,
+      "text": "that. What was the original uh product"
+    },
+    {
+      "t": 199,
+      "text": "for of Replit?"
+    },
+    {
+      "t": 200,
+      "text": "So it was basically an editor and a"
+    },
+    {
+      "t": 203,
+      "text": "console. You could type code there and"
+    },
+    {
+      "t": 206,
+      "text": "you can run it. You can switch a"
+    },
+    {
+      "t": 207,
+      "text": "language and that's it. By the way, Sam,"
+    },
+    {
+      "t": 209,
+      "text": "have you ever used Replit? I was using"
+    },
+    {
+      "t": 211,
+      "text": "it today before this. It's magical. And"
+    },
+    {
+      "t": 213,
+      "text": "also your tweets describing what it is"
+    },
+    {
+      "t": 215,
+      "text": "like for example your doctor saying"
+    },
+    {
+      "t": 218,
+      "text": "you know, he wants me to track my sleep."
+    },
+    {
+      "t": 219,
+      "text": "So I just uploaded the PDF that he"
+    },
+    {
+      "t": 221,
+      "text": "wanted me to fill up fill out into"
+    },
+    {
+      "t": 222,
+      "text": "Replit and it made an application so I"
+    },
+    {
+      "t": 224,
+      "text": "can upload it much easier. Yeah, it's"
+    },
+    {
+      "t": 226,
+      "text": "like pretty magical. Sean, are you able"
+    },
+    {
+      "t": 228,
+      "text": "to use it? It's definitely out of my"
+    },
+    {
+      "t": 229,
+      "text": "league still."
+    },
+    {
+      "t": 230,
+      "text": "Both me and Sam have joked around"
+    },
+    {
+      "t": 231,
+      "text": "because we both"
+    },
+    {
+      "t": 233,
+      "text": "have maybe five or six times false"
+    },
+    {
+      "t": 235,
+      "text": "started of like, \"I'm going to learn to"
+    },
+    {
+      "t": 237,
+      "text": "code this summer.\" It's like a New"
+    },
+    {
+      "t": 238,
+      "text": "Year's resolution thing where you just"
+    },
+    {
+      "t": 240,
+      "text": "keep saying you're going to do it. You"
+    },
+    {
+      "t": 241,
+      "text": "you do 20% of it, and you give up."
+    },
+    {
+      "t": 244,
+      "text": "Uh you know, we buy the the Udemy"
+    },
+    {
+      "t": 246,
+      "text": "course, learn Python the hard way. Then"
+    },
+    {
+      "t": 248,
+      "text": "you start doing it. And then nothing"
+    },
+    {
+      "t": 250,
+      "text": "really ever stuck. And one of the"
+    },
+    {
+      "t": 250,
+      "text": "biggest problems was that nobody really"
+    },
+    {
+      "t": 253,
+      "text": "talks about this. You think learning to"
+    },
+    {
+      "t": 254,
+      "text": "code is like learning Spanish, like"
+    },
+    {
+      "t": 255,
+      "text": "learning a language. You're like, \"Okay,"
+    },
+    {
+      "t": 257,
+      "text": "so how do I need to say the thing?\" But"
+    },
+    {
+      "t": 259,
+      "text": "before you can even do that, it's like,"
+    },
+    {
+      "t": 261,
+      "text": "\"Oh, I'm supposed to download this"
+    },
+    {
+      "t": 262,
+      "text": "program. So I need to download an"
+    },
+    {
+      "t": 264,
+      "text": "editor. And then I need to download all"
+    },
+    {
+      "t": 265,
+      "text": "these packages to be able to use them.\""
+    },
+    {
+      "t": 267,
+      "text": "And then you need to and it's like just"
+    },
+    {
+      "t": 269,
+      "text": "setting up the environment is so goddamn"
+    },
+    {
+      "t": 271,
+      "text": "confusing to a beginner that you don't"
+    },
+    {
+      "t": 274,
+      "text": "even get to do the the part where you"
+    },
+    {
+      "t": 275,
+      "text": "actually write the code and and be able"
+    },
+    {
+      "t": 277,
+      "text": "to run and then it's like, \"Oh, how do I"
+    },
+    {
+      "t": 278,
+      "text": "run the code? I got to host it"
+    },
+    {
+      "t": 279,
+      "text": "somewhere. Now I got to learn how to do"
+    },
+    {
+      "t": 280,
+      "text": "hosting and server What is that?\" And so"
+    },
+    {
+      "t": 283,
+      "text": "there's all these things around that"
+    },
+    {
+      "t": 284,
+      "text": "that were confusing. Replit solved all"
+    },
+    {
+      "t": 285,
+      "text": "of that, which was amazing. And I"
+    },
+    {
+      "t": 287,
+      "text": "actually did your like 100 days of"
+    },
+    {
+      "t": 288,
+      "text": "learning to code. Like it's actually"
+    },
+    {
+      "t": 290,
+      "text": "made it really easy. You know, if I"
+    },
+    {
+      "t": 291,
+      "text": "didn't have kids, I would just be doing"
+    },
+    {
+      "t": 292,
+      "text": "a lot more because it's you you solved"
+    },
+    {
+      "t": 294,
+      "text": "that problem for me. And I know I'm"
+    },
+    {
+      "t": 297,
+      "text": "asking you about the YC rejection. I"
+    },
+    {
+      "t": 298,
+      "text": "want to come back to that, but to give"
+    },
+    {
+      "t": 300,
+      "text": "Sam maybe a little more of the context,"
+    },
+    {
+      "t": 302,
+      "text": "I think correct me if I'm wrong, maybe"
+    },
+    {
+      "t": 304,
+      "text": "I'm making this up. I think the reason"
+    },
+    {
+      "t": 305,
+      "text": "you wanted to have this kind of like"
+    },
+    {
+      "t": 307,
+      "text": "online editor, online environment where"
+    },
+    {
+      "t": 309,
+      "text": "it's all hosted there was because"
+    },
+    {
+      "t": 311,
+      "text": "when you were younger, you were living"
+    },
+    {
+      "t": 313,
+      "text": "in Jordan and it I guess you used to go"
+    },
+    {
+      "t": 315,
+      "text": "try to learn to code out of an internet"
+    },
+    {
+      "t": 317,
+      "text": "or go try to code out of an internet"
+    },
+    {
+      "t": 318,
+      "text": "cafe, but that means every time you go,"
+    },
+    {
+      "t": 320,
+      "text": "you have to set everything up for the"
+    },
+    {
+      "t": 321,
+      "text": "first time because it's not your it's"
+    },
+    {
+      "t": 323,
+      "text": "not your home base, not your home"
+    },
+    {
+      "t": 324,
+      "text": "computer where you set it up once and"
+    },
+    {
+      "t": 326,
+      "text": "it's there. Is that true? Is that why"
+    },
+    {
+      "t": 328,
+      "text": "you have you felt the problem like 10x"
+    },
+    {
+      "t": 330,
+      "text": "what a normal person would feel? Yeah,"
+    },
+    {
+      "t": 332,
+      "text": "basically like every time I wanted to do"
+    },
+    {
+      "t": 334,
+      "text": "a little homework, I have to like spend"
+    },
+    {
+      "t": 336,
+      "text": "an hour setting up the environment. That"
+    },
+    {
+      "t": 339,
+      "text": "yeah, at the time the web was moving so"
+    },
+    {
+      "t": 341,
+      "text": "fast until we had Google Docs and we had"
+    },
+    {
+      "t": 343,
+      "text": "Gmail. We had this you know, client-side"
+    },
+    {
+      "t": 346,
+      "text": "JavaScript application sort of"
+    },
+    {
+      "t": 347,
+      "text": "revolution. Uh and I'm like, \"Okay, you"
+    },
+    {
+      "t": 350,
+      "text": "know, why can't I type code into the"
+    },
+    {
+      "t": 352,
+      "text": "browser and run it?\" And I started"
+    },
+    {
+      "t": 355,
+      "text": "looking around and turns out like nobody"
+    },
+    {
+      "t": 358,
+      "text": "solved this problem."
+    },
+    {
+      "t": 360,
+      "text": "There were some experiments and it was"
+    },
+    {
+      "t": 363,
+      "text": "kind of crazy to me because uh it was"
+    },
+    {
+      "t": 365,
+      "text": "almost like you know, finding a $100"
+    },
+    {
+      "t": 368,
+      "text": "bill in uh New York Grand Central"
+    },
+    {
+      "t": 370,
+      "text": "Station, right? Like it's like, \"Oh, I"
+    },
+    {
+      "t": 372,
+      "text": "found an idea that nobody's paying"
+    },
+    {
+      "t": 374,
+      "text": "attention to.\" And is that true cuz cuz"
+    },
+    {
+      "t": 377,
+      "text": "it's kind of crazy. You know, the world"
+    },
+    {
+      "t": 378,
+      "text": "is big. A lot there's a lot of"
+    },
+    {
+      "t": 380,
+      "text": "programmer."
+    },
+    {
+      "t": 380,
+      "text": "That seems like an obvious thing. I"
+    },
+    {
+      "t": 381,
+      "text": "mean, I'm a total outsider. So my"
+    },
+    {
+      "t": 383,
+      "text": "question is like was there some"
+    },
+    {
+      "t": 385,
+      "text": "technical challenge to that cuz that"
+    },
+    {
+      "t": 386,
+      "text": "seems like I I I I guess it's easy to"
+    },
+    {
+      "t": 388,
+      "text": "say things that are successful are"
+    },
+    {
+      "t": 390,
+      "text": "obvious like it is looking back, but"
+    },
+    {
+      "t": 391,
+      "text": "like Yeah. Yeah, that seems like a very"
+    },
+    {
+      "t": 393,
+      "text": "two things, right? There's the technical"
+    },
+    {
+      "t": 395,
+      "text": "challenge of being able to make this all"
+    },
+    {
+      "t": 396,
+      "text": "work in a browser, right? That that was"
+    },
+    {
+      "t": 397,
+      "text": "that was not obvious. But then this"
+    },
+    {
+      "t": 399,
+      "text": "seems like the second thing was I keep"
+    },
+    {
+      "t": 401,
+      "text": "going back to the internet cafe thing"
+    },
+    {
+      "t": 402,
+      "text": "because it's sort of like the hardship"
+    },
+    {
+      "t": 405,
+      "text": "made the problems like"
+    },
+    {
+      "t": 408,
+      "text": "unavoidable to you. Right."
+    },
+    {
+      "t": 409,
+      "text": "Whereas anybody else who learns to code,"
+    },
+    {
+      "t": 411,
+      "text": "if you're just doing it at home in"
+    },
+    {
+      "t": 412,
+      "text": "America in your in your computer, you"
+    },
+    {
+      "t": 414,
+      "text": "might do that setting up once. Maybe you"
+    },
+    {
+      "t": 415,
+      "text": "have a a little bit of the problem, but"
+    },
+    {
+      "t": 417,
+      "text": "you're not running into it face-first"
+    },
+    {
+      "t": 419,
+      "text": "every day as if you were if you were"
+    },
+    {
+      "t": 422,
+      "text": "working out of internet cafe. Yeah,"
+    },
+    {
+      "t": 424,
+      "text": "absolutely right. I mean, you know, Paul"
+    },
+    {
+      "t": 426,
+      "text": "Graham talks about it all the time. It's"
+    },
+    {
+      "t": 428,
+      "text": "like, you know, the best startups are"
+    },
+    {
+      "t": 430,
+      "text": "you know, solving your your own problem."
+    },
+    {
+      "t": 432,
+      "text": "And I felt that problem really deeply"
+    },
+    {
+      "t": 435,
+      "text": "and I started working on it. I"
+    },
+    {
+      "t": 436,
+      "text": "discovered why it's hard. Well, it's"
+    },
+    {
+      "t": 439,
+      "text": "it's hard to run different languages in"
+    },
+    {
+      "t": 441,
+      "text": "the browser. You can run JavaScript, but"
+    },
+    {
+      "t": 442,
+      "text": "you can't run Python for example. So we"
+    },
+    {
+      "t": 445,
+      "text": "started writing interpreters, uh writing"
+    },
+    {
+      "t": 447,
+      "text": "compilers to to to run on on JavaScript."
+    },
+    {
+      "t": 450,
+      "text": "And then in uh you know, it took us a"
+    },
+    {
+      "t": 452,
+      "text": "couple of years, had like few languages"
+    },
+    {
+      "t": 454,
+      "text": "running. It was like pretty rough"
+    },
+    {
+      "t": 456,
+      "text": "prototype, but people started using it."
+    },
+    {
+      "t": 458,
+      "text": "My friends and people at school and I'm"
+    },
+    {
+      "t": 460,
+      "text": "like, \"Okay, this idea has legs.\" And so"
+    },
+    {
+      "t": 462,
+      "text": "let me work on it more. And then 20 uh"
+    },
+    {
+      "t": 465,
+      "text": "11 uh had a breakthrough."
+    },
+    {
+      "t": 468,
+      "text": "And the breakthrough was we were the"
+    },
+    {
+      "t": 470,
+      "text": "first to compile Python, Ruby, a bunch"
+    },
+    {
+      "t": 473,
+      "text": "of languages to JavaScript and run them"
+    },
+    {
+      "t": 476,
+      "text": "straight in the into the browser. And"
+    },
+    {
+      "t": 478,
+      "text": "that went super viral. Like So we"
+    },
+    {
+      "t": 480,
+      "text": "open-sourced it. We put it up uh in like"
+    },
+    {
+      "t": 483,
+      "text": "on Hacker News. And that was my first"
+    },
+    {
+      "t": 486,
+      "text": "experience of like going viral on the"
+    },
+    {
+      "t": 487,
+      "text": "internet, which is I I was like, \"Oh my"
+    },
+    {
+      "t": 489,
+      "text": "god, this is this is like an amazing"
+    },
+    {
+      "t": 492,
+      "text": "rush.\" And I still feel that rush. Yeah."
+    },
+    {
+      "t": 494,
+      "text": "Can you put that in context for a non"
+    },
+    {
+      "t": 496,
+      "text": "non-engineer?"
+    },
+    {
+      "t": 497,
+      "text": "Is the thing you guys did is it on a"
+    },
+    {
+      "t": 499,
+      "text": "scale of like one to Satoshi Nakamoto"
+    },
+    {
+      "t": 503,
+      "text": "solving the like double spend problem?"
+    },
+    {
+      "t": 504,
+      "text": "Like how hard of an invention was that"
+    },
+    {
+      "t": 506,
+      "text": "or"
+    },
+    {
+      "t": 507,
+      "text": "like the nerdiest analogy you ever could"
+    },
+    {
+      "t": 509,
+      "text": "have came up with. That's what I'm here"
+    },
+    {
+      "t": 511,
+      "text": "for. So like was it was it genius or was"
+    },
+    {
+      "t": 513,
+      "text": "it just that nobody had taken an as much"
+    },
+    {
+      "t": 515,
+      "text": "time as it would take to do that? Like"
+    },
+    {
+      "t": 517,
+      "text": "where was that breakthrough? How do you"
+    },
+    {
+      "t": 519,
+      "text": "would how would you describe that"
+    },
+    {
+      "t": 520,
+      "text": "breakthrough? Uh it's definitely not on"
+    },
+    {
+      "t": 522,
+      "text": "the order of like the double double"
+    },
+    {
+      "t": 524,
+      "text": "spend problem where it's like a"
+    },
+    {
+      "t": 526,
+      "text": "fundamental"
+    },
+    {
+      "t": 528,
+      "text": "in invention. It was like"
+    },
+    {
+      "t": 530,
+      "text": "you know, pushing like a"
+    },
+    {
+      "t": 533,
+      "text": "huge rock bolt like up a up a mountain."
+    },
+    {
+      "t": 537,
+      "text": "It took so much grit and"
+    },
+    {
+      "t": 541,
+      "text": "and just obsession to be able to hack"
+    },
+    {
+      "t": 545,
+      "text": "the browser in order to run"
+    },
+    {
+      "t": 548,
+      "text": "things that the browser wasn't"
+    },
+    {
+      "t": 551,
+      "text": "uh uh supposed to run. Wasn't designed"
+    },
+    {
+      "t": 553,
+      "text": "to run."
+    },
+    {
+      "t": 554,
+      "text": "And so I would say it is solving"
+    },
+    {
+      "t": 557,
+      "text": "hundreds of problems as opposed to"
+    },
+    {
+      "t": 559,
+      "text": "solving like you know, one one invention"
+    },
+    {
+      "t": 562,
+      "text": "uh which is"
+    },
+    {
+      "t": 562,
+      "text": "Perfect. Perfect. Double spend. Yeah."
+    },
+    {
+      "t": 563,
+      "text": "So you you're working on it as a side"
+    },
+    {
+      "t": 565,
+      "text": "project for a number of years. That's a"
+    },
+    {
+      "t": 567,
+      "text": "long time by the way, Sean. Can you"
+    },
+    {
+      "t": 568,
+      "text": "imagine like having a side project"
+    },
+    {
+      "t": 570,
+      "text": "that's a hobby that takes 3 hours a"
+    },
+    {
+      "t": 573,
+      "text": "night with little I mean, two years two"
+    },
+    {
+      "t": 575,
+      "text": "years for two years is kind of a long"
+    },
+    {
+      "t": 576,
+      "text": "time, no? Dude, the only two things I've"
+    },
+    {
+      "t": 578,
+      "text": "ever done that with is this podcast and"
+    },
+    {
+      "t": 580,
+      "text": "my kids. And there's really no way out"
+    },
+    {
+      "t": 581,
+      "text": "of the kids thing. So you know, it's"
+    },
+    {
+      "t": 583,
+      "text": "it's like that."
+    },
+    {
+      "t": 584,
+      "text": "right away. The podcast yeah, gave me"
+    },
+    {
+      "t": 585,
+      "text": "results right away. So it actually"
+    },
+    {
+      "t": 586,
+      "text": "doesn't count. You were doing this"
+    },
+    {
+      "t": 588,
+      "text": "without the kind of like financial"
+    },
+    {
+      "t": 589,
+      "text": "rewards or fame rewards or any other"
+    },
+    {
+      "t": 592,
+      "text": "major rewards during that time. How many"
+    },
+    {
+      "t": 594,
+      "text": "years did you do this side project thing"
+    },
+    {
+      "t": 595,
+      "text": "and what kept it going? You know, 2009"
+    },
+    {
+      "t": 598,
+      "text": "was the original idea. 2011"
+    },
+    {
+      "t": 602,
+      "text": "was the breakthrough and you know, went"
+    },
+    {
+      "t": 604,
+      "text": "viral on on on Hacker News and and then"
+    },
+    {
+      "t": 607,
+      "text": "and that. And I think that was the first"
+    },
+    {
+      "t": 610,
+      "text": "time I felt like a little bit of a fame,"
+    },
+    {
+      "t": 612,
+      "text": "a little bit of"
+    },
+    {
+      "t": 614,
+      "text": "return on investment. Uh, like I"
+    },
+    {
+      "t": 616,
+      "text": "remember Brendan Eich, the inventor of"
+    },
+    {
+      "t": 619,
+      "text": "JavaScript and was the CTO at Mozilla,"
+    },
+    {
+      "t": 622,
+      "text": "like tweeting about it. I was like, wow,"
+    },
+    {
+      "t": 624,
+      "text": "this is amazing. Like, you know, you"
+    },
+    {
+      "t": 626,
+      "text": "know, kid in Jordan like made this like"
+    },
+    {
+      "t": 628,
+      "text": "fundamental breakthrough and like, you"
+    },
+    {
+      "t": 630,
+      "text": "know, browser tech and like I'm getting"
+    },
+    {
+      "t": 632,
+      "text": "this recognition. That's pretty cool."
+    },
+    {
+      "t": 634,
+      "text": "And also some articles wrote about it."
+    },
+    {
+      "t": 638,
+      "text": "It was people talked about it in"
+    },
+    {
+      "t": 639,
+      "text": "conferences. And so all that was"
+    },
+    {
+      "t": 641,
+      "text": "evidence for my O-1 visa to come to the"
+    },
+    {
+      "t": 644,
+      "text": "States. Basically, my entire adult life"
+    },
+    {
+      "t": 646,
+      "text": "I'm working in this."
+    },
+    {
+      "t": 648,
+      "text": "Uh, which is crazy, right? Like I don't"
+    },
+    {
+      "t": 649,
+      "text": "know."
+    },
+    {
+      "t": 650,
+      "text": "I am uh, 36."
+    },
+    {
+      "t": 654,
+      "text": "Wow."
+    },
+    {
+      "t": 654,
+      "text": "Uh, I think. Uh, and uh, you know, I I I"
+    },
+    {
+      "t": 657,
+      "text": "20 Well, let's just say that you've been"
+    },
+    {
+      "t": 658,
+      "text": "working on this since you're uh, 20 21"
+    },
+    {
+      "t": 660,
+      "text": "or I think."
+    },
+    {
+      "t": 661,
+      "text": "Yeah, 21."
+    },
+    {
+      "t": 663,
+      "text": "Yeah, I mean that's a that's a while."
+    },
+    {
+      "t": 664,
+      "text": "That's your whole life. Your whole adult"
+    },
+    {
+      "t": 666,
+      "text": "life. It it and you know, it it"
+    },
+    {
+      "t": 668,
+      "text": "continued to like, you know,"
+    },
+    {
+      "t": 670,
+      "text": "incrementally improve my life. So it"
+    },
+    {
+      "t": 672,
+      "text": "wasn't wasn't this, you know, working in"
+    },
+    {
+      "t": 674,
+      "text": "a in a room for 11 years and and nothing"
+    },
+    {
+      "t": 676,
+      "text": "happened. So I get this visa to the"
+    },
+    {
+      "t": 678,
+      "text": "United States. Uh, and I go work at"
+    },
+    {
+      "t": 681,
+      "text": "Codecademy and they used the open source"
+    },
+    {
+      "t": 684,
+      "text": "work that that that we did, right? And a"
+    },
+    {
+      "t": 686,
+      "text": "bunch of companies in the US there was"
+    },
+    {
+      "t": 688,
+      "text": "like a this boom and like MOOCs."
+    },
+    {
+      "t": 690,
+      "text": "Uh, if you remember that, Udacity,"
+    },
+    {
+      "t": 692,
+      "text": "Coursera, whatever. And a lot of them"
+    },
+    {
+      "t": 694,
+      "text": "used the open source version of Replit"
+    },
+    {
+      "t": 696,
+      "text": "to create interactive courses."
+    },
+    {
+      "t": 699,
+      "text": "Right."
+    },
+    {
+      "t": 700,
+      "text": "Um, and and suddenly like the the world"
+    },
+    {
+      "t": 702,
+      "text": "open up open up to me. I'm getting job"
+    },
+    {
+      "t": 704,
+      "text": "offers uh, all over the place and I and"
+    },
+    {
+      "t": 707,
+      "text": "have choices where to go and and so we"
+    },
+    {
+      "t": 709,
+      "text": "decided to go in to New York."
+    },
+    {
+      "t": 712,
+      "text": "All right, so a lot of people watch and"
+    },
+    {
+      "t": 714,
+      "text": "listen to this show because they want to"
+    },
+    {
+      "t": 715,
+      "text": "hear us just tell them exactly what to"
+    },
+    {
+      "t": 717,
+      "text": "do when it comes to starting or growing"
+    },
+    {
+      "t": 719,
+      "text": "a business. And really a lot of people"
+    },
+    {
+      "t": 721,
+      "text": "who are listening they have a full-time"
+    },
+    {
+      "t": 722,
+      "text": "job and they want to start something on"
+    },
+    {
+      "t": 724,
+      "text": "the side, a side hustle. Now a lot of"
+    },
+    {
+      "t": 725,
+      "text": "people message Shawn and I and they say,"
+    },
+    {
+      "t": 727,
+      "text": "all right, I want to start something on"
+    },
+    {
+      "t": 728,
+      "text": "the side. Is this a good idea? Is that a"
+    },
+    {
+      "t": 730,
+      "text": "good idea? And again, what they're"
+    },
+    {
+      "t": 732,
+      "text": "really just saying is just give me the"
+    },
+    {
+      "t": 734,
+      "text": "ideas. Well, my friends,"
+    },
+    {
+      "t": 736,
+      "text": "you're in luck. So my old company, The"
+    },
+    {
+      "t": 738,
+      "text": "Hustle, they put together a hundred"
+    },
+    {
+      "t": 740,
+      "text": "different side hustle ideas and they"
+    },
+    {
+      "t": 742,
+      "text": "have appropriately called it the side"
+    },
+    {
+      "t": 745,
+      "text": "hustle idea database. It's a list of a"
+    },
+    {
+      "t": 747,
+      "text": "hundred pretty good ideas, frankly. I"
+    },
+    {
+      "t": 749,
+      "text": "went through them. They're awesome. And"
+    },
+    {
+      "t": 750,
+      "text": "it gives you how to start them, how to"
+    },
+    {
+      "t": 752,
+      "text": "grow them, things like that. Gives you a"
+    },
+    {
+      "t": 754,
+      "text": "little bit of inspiration. So check it"
+    },
+    {
+      "t": 755,
+      "text": "out. It's called the side hustle idea"
+    },
+    {
+      "t": 758,
+      "text": "database. It's in the description below."
+    },
+    {
+      "t": 760,
+      "text": "You'll see the link. Click it, check it"
+    },
+    {
+      "t": 761,
+      "text": "out. Let me know the comments what you"
+    },
+    {
+      "t": 762,
+      "text": "think."
+    },
+    {
+      "t": 764,
+      "text": "Naval has this great quote where he says"
+    },
+    {
+      "t": 766,
+      "text": "uh, people always ask him about like,"
+    },
+    {
+      "t": 767,
+      "text": "you know, how to build a great network"
+    },
+    {
+      "t": 769,
+      "text": "or networking. What are your tips for"
+    },
+    {
+      "t": 770,
+      "text": "networking? And he's like, my only tip"
+    },
+    {
+      "t": 772,
+      "text": "for networking is do something great and"
+    },
+    {
+      "t": 774,
+      "text": "watch your network will appear"
+    },
+    {
+      "t": 776,
+      "text": "overnight. People will immediately come"
+    },
+    {
+      "t": 778,
+      "text": "to you because you've done something"
+    },
+    {
+      "t": 779,
+      "text": "great, right? You didn't go try to get a"
+    },
+    {
+      "t": 781,
+      "text": "coffee with Brendan Eich. You built"
+    },
+    {
+      "t": 783,
+      "text": "something really cool that the creator"
+    },
+    {
+      "t": 784,
+      "text": "of JavaScript and Mozilla browser was"
+    },
+    {
+      "t": 786,
+      "text": "like, hey, that's awesome. I want to"
+    },
+    {
+      "t": 788,
+      "text": "reach out and get to know you. And I"
+    },
+    {
+      "t": 789,
+      "text": "think that's actually how you"
+    },
+    {
+      "t": 790,
+      "text": "back to the YC thing. I think that's how"
+    },
+    {
+      "t": 791,
+      "text": "you ended up getting into YC later was"
+    },
+    {
+      "t": 793,
+      "text": "Paul Graham actually just thought what"
+    },
+    {
+      "t": 795,
+      "text": "you were doing was cool. But like, let's"
+    },
+    {
+      "t": 796,
+      "text": "go to the YC part. So you you quit the"
+    },
+    {
+      "t": 798,
+      "text": "Facebook job, half the money in Bitcoin,"
+    },
+    {
+      "t": 801,
+      "text": "half the money in your startup, apply to"
+    },
+    {
+      "t": 803,
+      "text": "YC, rejected. That was the first"
+    },
+    {
+      "t": 805,
+      "text": "rejection. What were the other"
+    },
+    {
+      "t": 806,
+      "text": "rejections?"
+    },
+    {
+      "t": 808,
+      "text": "Um, uh, VCs kind of wouldn't uh,"
+    },
+    {
+      "t": 811,
+      "text": "wouldn't talk to us. Or you know, we"
+    },
+    {
+      "t": 813,
+      "text": "we'd get meetings with VCs. Some of them"
+    },
+    {
+      "t": 815,
+      "text": "are like yawning and and I think at one"
+    },
+    {
+      "t": 817,
+      "text": "of them slept. Um, and it was just like"
+    },
+    {
+      "t": 820,
+      "text": "not interesting to them. Dude, I had"
+    },
+    {
+      "t": 822,
+      "text": "that happen one time as well. Like a guy"
+    },
+    {
+      "t": 824,
+      "text": "a guy literally fell It was like"
+    },
+    {
+      "t": 827,
+      "text": "he was literally 80 and it was Friday at"
+    },
+    {
+      "t": 829,
+      "text": "4:00 and it was warm in the office and"
+    },
+    {
+      "t": 831,
+      "text": "he like fell asleep mid mid pitch. Like"
+    },
+    {
+      "t": 833,
+      "text": "it was"
+    },
+    {
+      "t": 835,
+      "text": "Yeah, it was like a cold day and it was"
+    },
+    {
+      "t": 837,
+      "text": "warm inside. So I was like,"
+    },
+    {
+      "t": 838,
+      "text": "yeah, I mean like what do you"
+    },
+    {
+      "t": 840,
+      "text": "Yeah,"
+    },
+    {
+      "t": 842,
+      "text": "I was like, you deserve this. But dude,"
+    },
+    {
+      "t": 844,
+      "text": "what what what did they not see in you?"
+    },
+    {
+      "t": 845,
+      "text": "Because like it's so easy to be to look"
+    },
+    {
+      "t": 848,
+      "text": "back in the past, but like you seem like"
+    },
+    {
+      "t": 850,
+      "text": "you got the it factor. This seems like"
+    },
+    {
+      "t": 851,
+      "text": "such an obvious idea. You worked on it"
+    },
+    {
+      "t": 852,
+      "text": "for two years. Smart people are talking"
+    },
+    {
+      "t": 855,
+      "text": "about it. Like"
+    },
+    {
+      "t": 855,
+      "text": "you what were you missing? What was the"
+    },
+    {
+      "t": 856,
+      "text": "case against it? Well, I I I think, you"
+    },
+    {
+      "t": 859,
+      "text": "know, Silicon Valley is like probably"
+    },
+    {
+      "t": 861,
+      "text": "the most meritocratic place in the"
+    },
+    {
+      "t": 863,
+      "text": "world. But it is also status driven. At"
+    },
+    {
+      "t": 866,
+      "text": "least then it was very status driven."
+    },
+    {
+      "t": 868,
+      "text": "Like if you look at the white, you know,"
+    },
+    {
+      "t": 870,
+      "text": "people who got into YC like with"
+    },
+    {
+      "t": 871,
+      "text": "Stanford dropouts and and things like"
+    },
+    {
+      "t": 873,
+      "text": "that. And I think since then YC has has"
+    },
+    {
+      "t": 875,
+      "text": "has improved and you know, gets"
+    },
+    {
+      "t": 877,
+      "text": "international people and all of that."
+    },
+    {
+      "t": 879,
+      "text": "But but you know, my background wasn't"
+    },
+    {
+      "t": 881,
+      "text": "wasn't really interesting to to them."
+    },
+    {
+      "t": 883,
+      "text": "You know, I didn't have any fancy"
+    },
+    {
+      "t": 885,
+      "text": "colleges or or any of that. Also uh,"
+    },
+    {
+      "t": 888,
+      "text": "being married uh, couple was was somehow"
+    },
+    {
+      "t": 891,
+      "text": "like something that that they thought it"
+    },
+    {
+      "t": 893,
+      "text": "was a disadvantage. You you didn't match"
+    },
+    {
+      "t": 895,
+      "text": "the patterns. You didn't match the"
+    },
+    {
+      "t": 897,
+      "text": "Stanford pattern. You didn't match the"
+    },
+    {
+      "t": 899,
+      "text": "co-founder relationship pattern. You"
+    },
+    {
+      "t": 901,
+      "text": "didn't match the uh, the trend of of"
+    },
+    {
+      "t": 904,
+      "text": "what categories have big exits. You"
+    },
+    {
+      "t": 906,
+      "text": "weren't on trend at that time. Right."
+    },
+    {
+      "t": 908,
+      "text": "Yeah. And so continued to apply to YC"
+    },
+    {
+      "t": 911,
+      "text": "every season of YC we'll we'll send in"
+    },
+    {
+      "t": 913,
+      "text": "the the application and you know, our"
+    },
+    {
+      "t": 915,
+      "text": "thesis developed more and we felt like"
+    },
+    {
+      "t": 918,
+      "text": "um, we had started making some money."
+    },
+    {
+      "t": 921,
+      "text": "Some people started paying for our"
+    },
+    {
+      "t": 922,
+      "text": "service. We had an API at the time that"
+    },
+    {
+      "t": 924,
+      "text": "people paid for. A lot of educators and"
+    },
+    {
+      "t": 927,
+      "text": "and people learning to code started to"
+    },
+    {
+      "t": 929,
+      "text": "to pay pay for Replit. What was the"
+    },
+    {
+      "t": 931,
+      "text": "revenue when you got in?"
+    },
+    {
+      "t": 933,
+      "text": "Like maybe 10 grand a month. Mhm. It was"
+    },
+    {
+      "t": 936,
+      "text": "enough to sustain us at that at that"
+    },
+    {
+      "t": 938,
+      "text": "point. It was like the ramen"
+    },
+    {
+      "t": 939,
+      "text": "profitability. Um, but before YC that"
+    },
+    {
+      "t": 942,
+      "text": "the person who who actually uh, the"
+    },
+    {
+      "t": 944,
+      "text": "first one to to bet on us was Roy Bahat"
+    },
+    {
+      "t": 947,
+      "text": "from Bloomberg Beta."
+    },
+    {
+      "t": 949,
+      "text": "So I knew him from my Codecademy days"
+    },
+    {
+      "t": 952,
+      "text": "and and it was such a the meeting with"
+    },
+    {
+      "t": 955,
+      "text": "him was so refreshing. Like he he was"
+    },
+    {
+      "t": 958,
+      "text": "like just a straight shooter. He he"
+    },
+    {
+      "t": 960,
+      "text": "would tell me like, he here's where I"
+    },
+    {
+      "t": 962,
+      "text": "think"
+    },
+    {
+      "t": 964,
+      "text": "you know, the idea or the category is is"
+    },
+    {
+      "t": 967,
+      "text": "hard. You know, he here is where I think"
+    },
+    {
+      "t": 970,
+      "text": "the valuation should be. And it was like"
+    },
+    {
+      "t": 971,
+      "text": "the first meeting he just gave me"
+    },
+    {
+      "t": 973,
+      "text": "everything he was thinking about. He"
+    },
+    {
+      "t": 974,
+      "text": "didn't obscure anything and I was I was"
+    },
+    {
+      "t": 976,
+      "text": "feeling really good about it. And so"
+    },
+    {
+      "t": 978,
+      "text": "yeah, he gave us 500"
+    },
+    {
+      "t": 980,
+      "text": "uh, thousand dollars on a on a 6 million"
+    },
+    {
+      "t": 982,
+      "text": "valuation. So that was the first check"
+    },
+    {
+      "t": 984,
+      "text": "we got. Nice."
+    },
+    {
+      "t": 986,
+      "text": "And uh,"
+    },
+    {
+      "t": 988,
+      "text": "And then how did the how did you"
+    },
+    {
+      "t": 989,
+      "text": "eventually get into YC?"
+    },
+    {
+      "t": 991,
+      "text": "So uh, basically um, you know, we're"
+    },
+    {
+      "t": 994,
+      "text": "grinding and and and and the product was"
+    },
+    {
+      "t": 997,
+      "text": "getting better every every week. And I"
+    },
+    {
+      "t": 999,
+      "text": "started writing articles about what"
+    },
+    {
+      "t": 1001,
+      "text": "we're solving. So we're so we're solving"
+    },
+    {
+      "t": 1003,
+      "text": "pretty hard problems. And so this"
+    },
+    {
+      "t": 1005,
+      "text": "articles kept going on Hacker News."
+    },
+    {
+      "t": 1007,
+      "text": "Um, and Hacker News was really excited"
+    },
+    {
+      "t": 1009,
+      "text": "about what we're doing. And Paul Graham"
+    },
+    {
+      "t": 1011,
+      "text": "reads Hacker News a lot. Probably still"
+    },
+    {
+      "t": 1013,
+      "text": "to this day."
+    },
+    {
+      "t": 1014,
+      "text": "And one day like December 2017 I wake"
+    },
+    {
+      "t": 1019,
+      "text": "up, there's a DM uh, on on my phone and"
+    },
+    {
+      "t": 1022,
+      "text": "it is Sam Altman."
+    },
+    {
+      "t": 1024,
+      "text": "And he's like, hey, I run YC. And we're"
+    },
+    {
+      "t": 1028,
+      "text": "interested in what you're doing. I'm"
+    },
+    {
+      "t": 1029,
+      "text": "like, dude, I know who you are. You"
+    },
+    {
+      "t": 1031,
+      "text": "don't have to tell me you run YC. And"
+    },
+    {
+      "t": 1033,
+      "text": "he's like, okay, let's let's meet. You"
+    },
+    {
+      "t": 1035,
+      "text": "know, come to this address. And it"
+    },
+    {
+      "t": 1036,
+      "text": "wasn't the YC address. I was like a"
+    },
+    {
+      "t": 1038,
+      "text": "little confused and so I I go there. And"
+    },
+    {
+      "t": 1041,
+      "text": "it was the OpenAI office in the in the"
+    },
+    {
+      "t": 1043,
+      "text": "mission."
+    },
+    {
+      "t": 1044,
+      "text": "Uh, and so I I meet him there and and"
+    },
+    {
+      "t": 1047,
+      "text": "you know, we're talking a little bit and"
+    },
+    {
+      "t": 1048,
+      "text": "then he's like he turns his computer"
+    },
+    {
+      "t": 1051,
+      "text": "around. He's like, this is"
+    },
+    {
+      "t": 1053,
+      "text": "this Paul's email. Uh, he emailed Sam"
+    },
+    {
+      "t": 1056,
+      "text": "and told him this this company is very"
+    },
+    {
+      "t": 1058,
+      "text": "important. You should reach out to them."
+    },
+    {
+      "t": 1060,
+      "text": "And he's like, okay, talk to to PG. I'm"
+    },
+    {
+      "t": 1062,
+      "text": "going to give you his email. Talk to him"
+    },
+    {
+      "t": 1065,
+      "text": "and then maybe you can maybe we can work"
+    },
+    {
+      "t": 1067,
+      "text": "on something to get you into YC. So I"
+    },
+    {
+      "t": 1069,
+      "text": "started this email relationship with"
+    },
+    {
+      "t": 1071,
+      "text": "with Paul. Which was really fascinating."
+    },
+    {
+      "t": 1073,
+      "text": "I mean, he he's a great writer, right?"
+    },
+    {
+      "t": 1075,
+      "text": "And so we talked about uh, we talked"
+    },
+    {
+      "t": 1077,
+      "text": "about Replit. We talked about the the"
+    },
+    {
+      "t": 1079,
+      "text": "the problems of setting up an"
+    },
+    {
+      "t": 1081,
+      "text": "environment, the problems of hosting an"
+    },
+    {
+      "t": 1083,
+      "text": "application. It turns out after he sold"
+    },
+    {
+      "t": 1086,
+      "text": "Viaweb, he started working on on"
+    },
+    {
+      "t": 1090,
+      "text": "something like Replit. He started"
+    },
+    {
+      "t": 1091,
+      "text": "working on like an editor. You write"
+    },
+    {
+      "t": 1093,
+      "text": "some Lisp, of course, cuz he like likes"
+    },
+    {
+      "t": 1095,
+      "text": "this this very obscure programming"
+    },
+    {
+      "t": 1097,
+      "text": "languages. And but by the way, Paul"
+    },
+    {
+      "t": 1098,
+      "text": "Graham is the founder of YC. At the time"
+    },
+    {
+      "t": 1100,
+      "text": "he was starting to to retire and and Sam"
+    },
+    {
+      "t": 1102,
+      "text": "was was running YC."
+    },
+    {
+      "t": 1104,
+      "text": "And uh, and so you know, we had this"
+    },
+    {
+      "t": 1107,
+      "text": "email relationship where he wrote me"
+    },
+    {
+      "t": 1108,
+      "text": "essays essentially on on on the problem"
+    },
+    {
+      "t": 1111,
+      "text": "we're solving. By the way, were you were"
+    },
+    {
+      "t": 1113,
+      "text": "you intimidated? I you know, Paul Graham"
+    },
+    {
+      "t": 1114,
+      "text": "writing essays to you privately, uh, are"
+    },
+    {
+      "t": 1117,
+      "text": "you like"
+    },
+    {
+      "t": 1118,
+      "text": "is that high stakes replies there for"
+    },
+    {
+      "t": 1119,
+      "text": "you?"
+    },
+    {
+      "t": 1120,
+      "text": "Yes. Like I I would spend hours kind of"
+    },
+    {
+      "t": 1123,
+      "text": "crafting the the emails and uh, and"
+    },
+    {
+      "t": 1125,
+      "text": "trying to like be as good of a writer as"
+    },
+    {
+      "t": 1128,
+      "text": "as I can."
+    },
+    {
+      "t": 1129,
+      "text": "Um, but you know, one thing about me is"
+    },
+    {
+      "t": 1132,
+      "text": "like I was never like nervous about"
+    },
+    {
+      "t": 1135,
+      "text": "meeting like famous and established"
+    },
+    {
+      "t": 1137,
+      "text": "people. And I think that helped me over"
+    },
+    {
+      "t": 1140,
+      "text": "time because like"
+    },
+    {
+      "t": 1142,
+      "text": "you know, I can be myself and I like can"
+    },
+    {
+      "t": 1144,
+      "text": "talk to them at the same level as"
+    },
+    {
+      "t": 1146,
+      "text": "opposed to like being a fanboy or or Why"
+    },
+    {
+      "t": 1148,
+      "text": "why was that? What what were you just"
+    },
+    {
+      "t": 1150,
+      "text": "oblivious to it or you just had a"
+    },
+    {
+      "t": 1152,
+      "text": "different mindset about it? What what"
+    },
+    {
+      "t": 1153,
+      "text": "was the reason?"
+    },
+    {
+      "t": 1155,
+      "text": "Yeah, I I I felt like my life was was"
+    },
+    {
+      "t": 1160,
+      "text": "taking on this trajectory"
+    },
+    {
+      "t": 1163,
+      "text": "that was not to be too superstitious,"
+    },
+    {
+      "t": 1165,
+      "text": "but like it was this force. Um, and and"
+    },
+    {
+      "t": 1168,
+      "text": "I felt like everything's going to be"
+    },
+    {
+      "t": 1170,
+      "text": "great. And you know, it's going to be"
+    },
+    {
+      "t": 1172,
+      "text": "hard, but you know, I'm meeting all"
+    },
+    {
+      "t": 1174,
+      "text": "these people."
+    },
+    {
+      "t": 1175,
+      "text": "Uh, things are opening up to us. And um,"
+    },
+    {
+      "t": 1178,
+      "text": "and so when when I go and and and meet"
+    },
+    {
+      "t": 1180,
+      "text": "people, my mindset is like uh, I want to"
+    },
+    {
+      "t": 1183,
+      "text": "impress them and I want to be able to,"
+    },
+    {
+      "t": 1185,
+      "text": "you know, get money from them or like I"
+    },
+    {
+      "t": 1187,
+      "text": "have a goal. And I think having a goal"
+    },
+    {
+      "t": 1189,
+      "text": "when you're when you're meeting someone"
+    },
+    {
+      "t": 1191,
+      "text": "actually puts you in a very different"
+    },
+    {
+      "t": 1193,
+      "text": "mindset than than again like fan boy and"
+    },
+    {
+      "t": 1195,
+      "text": "and"
+    },
+    {
+      "t": 1197,
+      "text": "just being very excited about the"
+    },
+    {
+      "t": 1198,
+      "text": "meeting."
+    },
+    {
+      "t": 1199,
+      "text": "Dude, have you guys seen that you guys"
+    },
+    {
+      "t": 1201,
+      "text": "know the director Guy Ritchie? He's that"
+    },
+    {
+      "t": 1203,
+      "text": "like British director. He's got this"
+    },
+    {
+      "t": 1205,
+      "text": "great story. He was on some podcast and"
+    },
+    {
+      "t": 1207,
+      "text": "he told Rogan and he was like, you know,"
+    },
+    {
+      "t": 1209,
+      "text": "I just want to be the director of of my"
+    },
+    {
+      "t": 1212,
+      "text": "own life. And I want to live my life"
+    },
+    {
+      "t": 1214,
+      "text": "like a movie and what you're describing"
+    },
+    {
+      "t": 1216,
+      "text": "is sort of like that where you're like I"
+    },
+    {
+      "t": 1218,
+      "text": "just I am destined for greatness and"
+    },
+    {
+      "t": 1220,
+      "text": "like we are taking on this"
+    },
+    {
+      "t": 1222,
+      "text": "amazing"
+    },
+    {
+      "t": 1223,
+      "text": "problem and like we are going to do"
+    },
+    {
+      "t": 1225,
+      "text": "wonderful things and it will be hard but"
+    },
+    {
+      "t": 1227,
+      "text": "we will triumph and I think that's a"
+    },
+    {
+      "t": 1229,
+      "text": "that's actually great. That's a great"
+    },
+    {
+      "t": 1230,
+      "text": "story to tell yourself and I think it's"
+    },
+    {
+      "t": 1232,
+      "text": "very motivating and it makes life more"
+    },
+    {
+      "t": 1235,
+      "text": "exciting. I think that's really cool."
+    },
+    {
+      "t": 1237,
+      "text": "Yeah, so I actually wrote a"
+    },
+    {
+      "t": 1239,
+      "text": "blog post. The title is do what makes"
+    },
+    {
+      "t": 1242,
+      "text": "the best story."
+    },
+    {
+      "t": 1244,
+      "text": "And and the idea is like when you're"
+    },
+    {
+      "t": 1246,
+      "text": "faced with decisions where there's no"
+    },
+    {
+      "t": 1249,
+      "text": "obvious answer like the a fork in the"
+    },
+    {
+      "t": 1252,
+      "text": "road where the pros and cons are sort of"
+    },
+    {
+      "t": 1254,
+      "text": "the same."
+    },
+    {
+      "t": 1255,
+      "text": "The heuristic I use in my life is like"
+    },
+    {
+      "t": 1257,
+      "text": "what is a more interesting story? And"
+    },
+    {
+      "t": 1260,
+      "text": "obviously like Elon talks about this"
+    },
+    {
+      "t": 1262,
+      "text": "like the most"
+    },
+    {
+      "t": 1263,
+      "text": "the most entertaining outcome is is most"
+    },
+    {
+      "t": 1265,
+      "text": "likely."
+    },
+    {
+      "t": 1266,
+      "text": "Yeah, I wasn't thinking about it in"
+    },
+    {
+      "t": 1269,
+      "text": "terms of entertaining but in terms of"
+    },
+    {
+      "t": 1270,
+      "text": "like what makes a story interesting if"
+    },
+    {
+      "t": 1272,
+      "text": "if my life was a movie"
+    },
+    {
+      "t": 1274,
+      "text": "what would what would be exciting about"
+    },
+    {
+      "t": 1277,
+      "text": "about that story?"
+    },
+    {
+      "t": 1278,
+      "text": "For example, when when I was in college"
+    },
+    {
+      "t": 1282,
+      "text": "I was like coding all the time and I"
+    },
+    {
+      "t": 1283,
+      "text": "wasn't really going to class and so so I"
+    },
+    {
+      "t": 1287,
+      "text": "I was failing a lot not because I was"
+    },
+    {
+      "t": 1289,
+      "text": "failing the exam because you know that"
+    },
+    {
+      "t": 1291,
+      "text": "they would bar me from the exam because"
+    },
+    {
+      "t": 1293,
+      "text": "I wasn't showing up."
+    },
+    {
+      "t": 1294,
+      "text": "And and I decided to to hack the"
+    },
+    {
+      "t": 1298,
+      "text": "university to change my grades. And"
+    },
+    {
+      "t": 1301,
+      "text": "we're not talking like metaphorically"
+    },
+    {
+      "t": 1303,
+      "text": "like a life hack. You actually hacked"
+    },
+    {
+      "t": 1305,
+      "text": "into the servers and changed your grade."
+    },
+    {
+      "t": 1307,
+      "text": "Is that what happened? Yeah, I I went"
+    },
+    {
+      "t": 1309,
+      "text": "into into the basement. I spent like two"
+    },
+    {
+      "t": 1311,
+      "text": "weeks. I did the what's his name the"
+    },
+    {
+      "t": 1313,
+      "text": "famous inventor Michelangelo or"
+    },
+    {
+      "t": 1315,
+      "text": "something like that. I did his sleep"
+    },
+    {
+      "t": 1316,
+      "text": "polyphasic sleep where you work four"
+    },
+    {
+      "t": 1319,
+      "text": "hours and then you sleep 15 minutes."
+    },
+    {
+      "t": 1322,
+      "text": "And it was it was sort of like I was"
+    },
+    {
+      "t": 1324,
+      "text": "writing on the wall. I was like it was"
+    },
+    {
+      "t": 1326,
+      "text": "like a full on insanity."
+    },
+    {
+      "t": 1329,
+      "text": "Were you angry? Why did you decide to"
+    },
+    {
+      "t": 1332,
+      "text": "I know so many smart people who work so"
+    },
+    {
+      "t": 1334,
+      "text": "much harder to cheat or get around the"
+    },
+    {
+      "t": 1336,
+      "text": "thing than just doing the thing and and"
+    },
+    {
+      "t": 1339,
+      "text": "there's like a 50% of the time they end"
+    },
+    {
+      "t": 1341,
+      "text": "up being like losers and then 50% of the"
+    },
+    {
+      "t": 1343,
+      "text": "time they are in fact like the greatest."
+    },
+    {
+      "t": 1346,
+      "text": "They're on this podcast. Yeah."
+    },
+    {
+      "t": 1348,
+      "text": "Well, I think it is like some ADHD,"
+    },
+    {
+      "t": 1350,
+      "text": "right? Like you can't sit you can't sit"
+    },
+    {
+      "t": 1352,
+      "text": "in class but if you're interested in"
+    },
+    {
+      "t": 1354,
+      "text": "something you're going to like hack and"
+    },
+    {
+      "t": 1356,
+      "text": "like work on a ton, right? And I almost"
+    },
+    {
+      "t": 1359,
+      "text": "got away with it."
+    },
+    {
+      "t": 1361,
+      "text": "But the servers at the"
+    },
+    {
+      "t": 1364,
+      "text": "at the university crashed."
+    },
+    {
+      "t": 1367,
+      "text": "And it crashed on my record. So the one"
+    },
+    {
+      "t": 1370,
+      "text": "of the administrators there gave me a"
+    },
+    {
+      "t": 1372,
+      "text": "call."
+    },
+    {
+      "t": 1374,
+      "text": "And he he said"
+    },
+    {
+      "t": 1376,
+      "text": "look there's like this"
+    },
+    {
+      "t": 1379,
+      "text": "there's some anomaly in your in the"
+    },
+    {
+      "t": 1381,
+      "text": "record"
+    },
+    {
+      "t": 1383,
+      "text": "of your exam and in school and it's"
+    },
+    {
+      "t": 1385,
+      "text": "crashing our databases. Do you know"
+    },
+    {
+      "t": 1386,
+      "text": "anything about it? And I was like what's"
+    },
+    {
+      "t": 1388,
+      "text": "the anomaly? And he's like"
+    },
+    {
+      "t": 1390,
+      "text": "you know there's a field"
+    },
+    {
+      "t": 1393,
+      "text": "in the database that says you're barred"
+    },
+    {
+      "t": 1395,
+      "text": "from the exam"
+    },
+    {
+      "t": 1397,
+      "text": "and your grade should be"
+    },
+    {
+      "t": 1399,
+      "text": "should be 35. That's that's the default"
+    },
+    {
+      "t": 1401,
+      "text": "grade of of failing the the exam."
+    },
+    {
+      "t": 1404,
+      "text": "And instead my grades were like you know"
+    },
+    {
+      "t": 1406,
+      "text": "75 90 whatever."
+    },
+    {
+      "t": 1409,
+      "text": "That's the that's what I entered into"
+    },
+    {
+      "t": 1411,
+      "text": "there. And I didn't understand that"
+    },
+    {
+      "t": 1413,
+      "text": "there was another field. By the way that"
+    },
+    {
+      "t": 1415,
+      "text": "you know that's not good good design for"
+    },
+    {
+      "t": 1418,
+      "text": "for a database."
+    },
+    {
+      "t": 1421,
+      "text": "And so since then I"
+    },
+    {
+      "t": 1423,
+      "text": "you know I had"
+    },
+    {
+      "t": 1424,
+      "text": "there was a fork in the road. I could"
+    },
+    {
+      "t": 1426,
+      "text": "lie and I think I could get get away"
+    },
+    {
+      "t": 1428,
+      "text": "with it and you know and and just say"
+    },
+    {
+      "t": 1430,
+      "text": "that that's a bug on your side and"
+    },
+    {
+      "t": 1433,
+      "text": "but I was like what's the most"
+    },
+    {
+      "t": 1434,
+      "text": "interesting story? Is they they catch me"
+    },
+    {
+      "t": 1438,
+      "text": "and it becomes a story that people talk"
+    },
+    {
+      "t": 1440,
+      "text": "about. And and I was like okay I'm just"
+    },
+    {
+      "t": 1443,
+      "text": "going to I'm just going to like come"
+    },
+    {
+      "t": 1444,
+      "text": "clean and just tell them what I did."
+    },
+    {
+      "t": 1447,
+      "text": "So you're like better better than"
+    },
+    {
+      "t": 1449,
+      "text": "getting the grade would be getting the"
+    },
+    {
+      "t": 1450,
+      "text": "reputation. Yes."
+    },
+    {
+      "t": 1453,
+      "text": "Exactly."
+    },
+    {
+      "t": 1454,
+      "text": "So you tell them and then what happened?"
+    },
+    {
+      "t": 1455,
+      "text": "They kick you out?"
+    },
+    {
+      "t": 1457,
+      "text": "No, so"
+    },
+    {
+      "t": 1458,
+      "text": "you know I"
+    },
+    {
+      "t": 1460,
+      "text": "I'm kind of a convincing person so I um"
+    },
+    {
+      "t": 1463,
+      "text": "I go the next day and it's like all the"
+    },
+    {
+      "t": 1466,
+      "text": "deans there and they're discussing my"
+    },
+    {
+      "t": 1468,
+      "text": "case and they're like trying to find out"
+    },
+    {
+      "t": 1470,
+      "text": "what what I did and and they're all"
+    },
+    {
+      "t": 1472,
+      "text": "computer science deans."
+    },
+    {
+      "t": 1474,
+      "text": "So I went in there and I changed the"
+    },
+    {
+      "t": 1476,
+      "text": "subject to technical aspects of the"
+    },
+    {
+      "t": 1478,
+      "text": "hack."
+    },
+    {
+      "t": 1479,
+      "text": "And I drew on the whiteboard and showed"
+    },
+    {
+      "t": 1481,
+      "text": "them what I did and and all of that and"
+    },
+    {
+      "t": 1484,
+      "text": "they were very impressed. It's like a"
+    },
+    {
+      "t": 1486,
+      "text": "Goodwill Hunting moment. Yeah and like"
+    },
+    {
+      "t": 1489,
+      "text": "my reputation back then is like I'm a"
+    },
+    {
+      "t": 1490,
+      "text": "I'm a loser and failing everything,"
+    },
+    {
+      "t": 1492,
+      "text": "right? I don't show up to class."
+    },
+    {
+      "t": 1494,
+      "text": "And and it is it is kind of like"
+    },
+    {
+      "t": 1496,
+      "text": "Goodwill Hunting. And then um"
+    },
+    {
+      "t": 1499,
+      "text": "you know I"
+    },
+    {
+      "t": 1500,
+      "text": "they say okay you have to go talk to the"
+    },
+    {
+      "t": 1502,
+      "text": "president because I think he's going to"
+    },
+    {
+      "t": 1503,
+      "text": "make the final call."
+    },
+    {
+      "t": 1505,
+      "text": "So I I go to the president and and he's"
+    },
+    {
+      "t": 1509,
+      "text": "a very intellectual person and we talk"
+    },
+    {
+      "t": 1511,
+      "text": "and I"
+    },
+    {
+      "t": 1512,
+      "text": "you know I tell him like look you know I"
+    },
+    {
+      "t": 1514,
+      "text": "have this talent and I feel like it was"
+    },
+    {
+      "t": 1516,
+      "text": "undiscovered and I feel like I was"
+    },
+    {
+      "t": 1518,
+      "text": "treated unfairly and and I I used the"
+    },
+    {
+      "t": 1521,
+      "text": "the you know I used the university as my"
+    },
+    {
+      "t": 1524,
+      "text": "sandbox. Like I didn't like you know I"
+    },
+    {
+      "t": 1526,
+      "text": "came clean. I didn't you know mean to to"
+    },
+    {
+      "t": 1528,
+      "text": "do anything anything bad and and and and"
+    },
+    {
+      "t": 1532,
+      "text": "he gave me this Spider-Man line. He's"
+    },
+    {
+      "t": 1533,
+      "text": "like with great power comes great"
+    },
+    {
+      "t": 1535,
+      "text": "responsibility. And it actually affected"
+    },
+    {
+      "t": 1538,
+      "text": "me and I was like okay you know you know"
+    },
+    {
+      "t": 1540,
+      "text": "I think uh"
+    },
+    {
+      "t": 1541,
+      "text": "you know I you know I"
+    },
+    {
+      "t": 1543,
+      "text": "I need to do something in order to to to"
+    },
+    {
+      "t": 1546,
+      "text": "to kind of pay back and I told them I'm"
+    },
+    {
+      "t": 1549,
+      "text": "going to work this summer for free to to"
+    },
+    {
+      "t": 1552,
+      "text": "make sure I secure your your databases."
+    },
+    {
+      "t": 1554,
+      "text": "And so they they let me off the hook and"
+    },
+    {
+      "t": 1556,
+      "text": "they're like okay"
+    },
+    {
+      "t": 1558,
+      "text": "What a great story dude. That is an"
+    },
+    {
+      "t": 1559,
+      "text": "amazing story. Sam by the way would you"
+    },
+    {
+      "t": 1561,
+      "text": "ever want to compete with I don't at"
+    },
+    {
+      "t": 1563,
+      "text": "anything? No, this is like this"
+    },
+    {
+      "t": 1566,
+      "text": "mentality. This is uh"
+    },
+    {
+      "t": 1568,
+      "text": "it's scary. Like yeah, I would not want"
+    },
+    {
+      "t": 1570,
+      "text": "to. You're like excuse me Dean have you"
+    },
+    {
+      "t": 1572,
+      "text": "heard of the word prodigy?"
+    },
+    {
+      "t": 1575,
+      "text": "You're like Yeah, you're like you're"
+    },
+    {
+      "t": 1577,
+      "text": "like I have my talents haven't been used"
+    },
+    {
+      "t": 1580,
+      "text": "well at this university. I accept your"
+    },
+    {
+      "t": 1582,
+      "text": "apology Dean. I accept your apology."
+    },
+    {
+      "t": 1585,
+      "text": "It's like why are you failing me?"
+    },
+    {
+      "t": 1587,
+      "text": "Yes."
+    },
+    {
+      "t": 1588,
+      "text": "Yes. That's so good. Okay, so I love the"
+    },
+    {
+      "t": 1590,
+      "text": "principle do what makes the best story."
+    },
+    {
+      "t": 1592,
+      "text": "I love the hack story. That's that's"
+    },
+    {
+      "t": 1594,
+      "text": "amazing. Where how did we get here? We"
+    },
+    {
+      "t": 1596,
+      "text": "were talking about um YC."
+    },
+    {
+      "t": 1598,
+      "text": "YC okay sorry. Let's get to the story of"
+    },
+    {
+      "t": 1601,
+      "text": "YC because that's where we started."
+    },
+    {
+      "t": 1602,
+      "text": "Okay. So Sam is like yeah you should do"
+    },
+    {
+      "t": 1605,
+      "text": "YC. Actually the batch starts tomorrow."
+    },
+    {
+      "t": 1608,
+      "text": "Why don't you fill an application? It's"
+    },
+    {
+      "t": 1609,
+      "text": "just a it's just a you know process you"
+    },
+    {
+      "t": 1612,
+      "text": "have to do and we can do a later"
+    },
+    {
+      "t": 1613,
+      "text": "interview tomorrow."
+    },
+    {
+      "t": 1615,
+      "text": "And I'm like [\u00a0__\u00a0] I want to fill the"
+    },
+    {
+      "t": 1616,
+      "text": "application again. Like you made me do"
+    },
+    {
+      "t": 1618,
+      "text": "it like four times. Like I don't want to"
+    },
+    {
+      "t": 1620,
+      "text": "do it again. And so you know I I kind of"
+    },
+    {
+      "t": 1623,
+      "text": "do a bare bones application about about"
+    },
+    {
+      "t": 1625,
+      "text": "roughly. And then there's the video."
+    },
+    {
+      "t": 1628,
+      "text": "I'm like yeah man I don't want to I"
+    },
+    {
+      "t": 1630,
+      "text": "don't want to do the video. So so I I"
+    },
+    {
+      "t": 1632,
+      "text": "pasted"
+    },
+    {
+      "t": 1633,
+      "text": "a YouTube link and we go the next day"
+    },
+    {
+      "t": 1637,
+      "text": "Hian and I."
+    },
+    {
+      "t": 1638,
+      "text": "By the way for people who don't know the"
+    },
+    {
+      "t": 1639,
+      "text": "YC application is like one page. It's"
+    },
+    {
+      "t": 1641,
+      "text": "like six or seven questions but then"
+    },
+    {
+      "t": 1642,
+      "text": "they say upload a video two or three"
+    },
+    {
+      "t": 1644,
+      "text": "minutes you talking about your startup."
+    },
+    {
+      "t": 1646,
+      "text": "So that's the video part. And then the"
+    },
+    {
+      "t": 1648,
+      "text": "interview is 10 minutes where they're"
+    },
+    {
+      "t": 1650,
+      "text": "just rapid fire. So you have like 10"
+    },
+    {
+      "t": 1652,
+      "text": "minutes and it's like this make or break"
+    },
+    {
+      "t": 1654,
+      "text": "thing. It's less than a lunch you know"
+    },
+    {
+      "t": 1656,
+      "text": "like it's less than a job interview."
+    },
+    {
+      "t": 1657,
+      "text": "It's more intense. So you're waiting"
+    },
+    {
+      "t": 1659,
+      "text": "around for that. Yeah, I mean my view"
+    },
+    {
+      "t": 1661,
+      "text": "was they recruited us to YC. Like why"
+    },
+    {
+      "t": 1664,
+      "text": "are you making us do do do this stuff,"
+    },
+    {
+      "t": 1666,
+      "text": "right? And and so Yeah, I was going to"
+    },
+    {
+      "t": 1668,
+      "text": "ask that. Like they're ask they're"
+    },
+    {
+      "t": 1669,
+      "text": "acting like you know Paul Graham's like"
+    },
+    {
+      "t": 1671,
+      "text": "you know maybe I could pull some"
+    },
+    {
+      "t": 1672,
+      "text": "strings. Like I know a guy. Yeah, like"
+    },
+    {
+      "t": 1675,
+      "text": "you're the guy. So I"
+    },
+    {
+      "t": 1677,
+      "text": "I don't understand what they're uh"
+    },
+    {
+      "t": 1680,
+      "text": "What what they're bullshitting? I don't"
+    },
+    {
+      "t": 1681,
+      "text": "get it."
+    },
+    {
+      "t": 1683,
+      "text": "Well, I I think they they wanted to to"
+    },
+    {
+      "t": 1686,
+      "text": "just like go through the process. It's"
+    },
+    {
+      "t": 1687,
+      "text": "like the process applies to everyone and"
+    },
+    {
+      "t": 1689,
+      "text": "I I respect that."
+    },
+    {
+      "t": 1691,
+      "text": "So"
+    },
+    {
+      "t": 1692,
+      "text": "you know the"
+    },
+    {
+      "t": 1694,
+      "text": "they call us to to the interview. And"
+    },
+    {
+      "t": 1697,
+      "text": "and I walk in and and there was"
+    },
+    {
+      "t": 1699,
+      "text": "Jared and Adora and and and all these"
+    },
+    {
+      "t": 1703,
+      "text": "amazing YC partners and there was"
+    },
+    {
+      "t": 1705,
+      "text": "Michael. He was the CEO at the time."
+    },
+    {
+      "t": 1707,
+      "text": "And I shake their hands and I shake"
+    },
+    {
+      "t": 1709,
+      "text": "Michael's hand and and I felt like his"
+    },
+    {
+      "t": 1711,
+      "text": "grip was was a little too hard. I was"
+    },
+    {
+      "t": 1713,
+      "text": "like okay that's fine."
+    },
+    {
+      "t": 1715,
+      "text": "And then I I go sit down on the chair"
+    },
+    {
+      "t": 1717,
+      "text": "and and the moment I sit down Michael"
+    },
+    {
+      "t": 1720,
+      "text": "looks at me. Why did you recall us?"
+    },
+    {
+      "t": 1722,
+      "text": "Oh my god. And and I'm like you know we"
+    },
+    {
+      "t": 1726,
+      "text": "we applied several times and and I"
+    },
+    {
+      "t": 1728,
+      "text": "thought it'd be fun to do and and you"
+    },
+    {
+      "t": 1731,
+      "text": "know I thought this this interview was"
+    },
+    {
+      "t": 1733,
+      "text": "just"
+    },
+    {
+      "t": 1734,
+      "text": "was just you know formality and and and"
+    },
+    {
+      "t": 1737,
+      "text": "he's like that's not how you get into"
+    },
+    {
+      "t": 1739,
+      "text": "YC. And he was he was very very angry."
+    },
+    {
+      "t": 1742,
+      "text": "Well, turns out when we're sitting"
+    },
+    {
+      "t": 1743,
+      "text": "outside they were getting recalled"
+    },
+    {
+      "t": 1745,
+      "text": "inside. Right? So so imagine their"
+    },
+    {
+      "t": 1747,
+      "text": "mindset looking at the application"
+    },
+    {
+      "t": 1751,
+      "text": "and and getting the the the recall song."
+    },
+    {
+      "t": 1754,
+      "text": "And and then they give us a very tough"
+    },
+    {
+      "t": 1756,
+      "text": "interview. In that moment did you it's"
+    },
+    {
+      "t": 1759,
+      "text": "like and that's when I realized I [\u00a0__\u00a0]"
+    },
+    {
+      "t": 1761,
+      "text": "up. Like did you did you realize like"
+    },
+    {
+      "t": 1763,
+      "text": "Yes. how I'm coming across? Like what"
+    },
+    {
+      "t": 1765,
+      "text": "what was your mindset there? Like they"
+    },
+    {
+      "t": 1767,
+      "text": "must be thinking I was nervous. I was"
+    },
+    {
+      "t": 1768,
+      "text": "very nervous and I was"
+    },
+    {
+      "t": 1771,
+      "text": "regretful"
+    },
+    {
+      "t": 1772,
+      "text": "immediately. Cuz you probably it's like"
+    },
+    {
+      "t": 1774,
+      "text": "oh here's this"
+    },
+    {
+      "t": 1775,
+      "text": "entitled I just another just another"
+    },
+    {
+      "t": 1778,
+      "text": "tech entitled guy when they don't know"
+    },
+    {
+      "t": 1779,
+      "text": "you're like"
+    },
+    {
+      "t": 1780,
+      "text": "immigrant from Jordan who's like scraped"
+    },
+    {
+      "t": 1782,
+      "text": "his way here, right? They don't"
+    },
+    {
+      "t": 1785,
+      "text": "reality and how you were coming across"
+    },
+    {
+      "t": 1786,
+      "text": "weren't connected in that moment. No,"
+    },
+    {
+      "t": 1788,
+      "text": "they they weren't at all. And"
+    },
+    {
+      "t": 1791,
+      "text": "and so"
+    },
+    {
+      "t": 1792,
+      "text": "and so I you know, we go outside and and"
+    },
+    {
+      "t": 1795,
+      "text": "I tell back"
+    },
+    {
+      "t": 1798,
+      "text": "to work. Like we don't have we don't"
+    },
+    {
+      "t": 1799,
+      "text": "need to get into YC. So I call an Uber."
+    },
+    {
+      "t": 1802,
+      "text": "And just before I arrive I receive a"
+    },
+    {
+      "t": 1805,
+      "text": "call and and I I take the call and it's"
+    },
+    {
+      "t": 1808,
+      "text": "like, \"Hey, it's Adora. You got in. Come"
+    },
+    {
+      "t": 1810,
+      "text": "back. The the the kickoff is about to"
+    },
+    {
+      "t": 1813,
+      "text": "start.\""
+    },
+    {
+      "t": 1814,
+      "text": "And I'm like, \"What?"
+    },
+    {
+      "t": 1816,
+      "text": "Are you sure?\" She's like, \"Yeah, come"
+    },
+    {
+      "t": 1818,
+      "text": "back. Sign sign the paperwork and get"
+    },
+    {
+      "t": 1819,
+      "text": "started.\" So I was stunned the whole"
+    },
+    {
+      "t": 1821,
+      "text": "day. Like it was you know, we start we"
+    },
+    {
+      "t": 1823,
+      "text": "go to the dinner and I'm like you know,"
+    },
+    {
+      "t": 1825,
+      "text": "you know, phased out and and and all but"
+    },
+    {
+      "t": 1827,
+      "text": "but like it was really exciting. And you"
+    },
+    {
+      "t": 1830,
+      "text": "know, people who who who's never been to"
+    },
+    {
+      "t": 1831,
+      "text": "the YC office and in Mountain View, it's"
+    },
+    {
+      "t": 1834,
+      "text": "all orange like bright orange and and"
+    },
+    {
+      "t": 1836,
+      "text": "the lights and everything. It feels like"
+    },
+    {
+      "t": 1839,
+      "text": "a cult-like environment. Isn't it like I"
+    },
+    {
+      "t": 1842,
+      "text": "think I've seen the inside. Doesn't it"
+    },
+    {
+      "t": 1843,
+      "text": "like a like a they have like a staple or"
+    },
+    {
+      "t": 1845,
+      "text": "is it like one of the rooms that like is"
+    },
+    {
+      "t": 1847,
+      "text": "a"
+    },
+    {
+      "t": 1848,
+      "text": "triangle like a church almost?"
+    },
+    {
+      "t": 1849,
+      "text": "Yeah, yeah. Exactly. And Sam gets up and"
+    },
+    {
+      "t": 1852,
+      "text": "tells us what what the experience is"
+    },
+    {
+      "t": 1855,
+      "text": "going to be. It's like, \"This is the"
+    },
+    {
+      "t": 1856,
+      "text": "hardest time you're going to work. You"
+    },
+    {
+      "t": 1858,
+      "text": "know, you better tell your friends and"
+    },
+    {
+      "t": 1859,
+      "text": "family that you're going to go away for"
+    },
+    {
+      "t": 1861,
+      "text": "3 months. You can't help them move or or"
+    },
+    {
+      "t": 1863,
+      "text": "all of that. You just got to be focused"
+    },
+    {
+      "t": 1865,
+      "text": "on on work.\" So Hay and I like took it"
+    },
+    {
+      "t": 1867,
+      "text": "very seriously. Okay, I was like, \"Okay,"
+    },
+    {
+      "t": 1869,
+      "text": "this these 3 months are are are very"
+    },
+    {
+      "t": 1872,
+      "text": "important for for the success of the"
+    },
+    {
+      "t": 1874,
+      "text": "company.\" And we transformed the product"
+    },
+    {
+      "t": 1876,
+      "text": "in these 3 months. It went from a simple"
+    },
+    {
+      "t": 1878,
+      "text": "sort of editor output to a place where"
+    },
+    {
+      "t": 1881,
+      "text": "you can host applications and build real"
+    },
+    {
+      "t": 1883,
+      "text": "things and all in 3 months. They were"
+    },
+    {
+      "t": 1886,
+      "text": "working you know, 12-hour, 13-hour days"
+    },
+    {
+      "t": 1888,
+      "text": "and and and it was it was only"
+    },
+    {
+      "t": 1892,
+      "text": "three of us at the time. Our first"
+    },
+    {
+      "t": 1894,
+      "text": "employee actually was um"
+    },
+    {
+      "t": 1897,
+      "text": "was sort of a runaway kid. He grew up in"
+    },
+    {
+      "t": 1899,
+      "text": "California"
+    },
+    {
+      "t": 1901,
+      "text": "little down down south. And"
+    },
+    {
+      "t": 1904,
+      "text": "and he didn't want to go to school. And"
+    },
+    {
+      "t": 1906,
+      "text": "so he leaves his home. He goes to Hack"
+    },
+    {
+      "t": 1908,
+      "text": "Reactor. And and he becomes he becomes a"
+    },
+    {
+      "t": 1912,
+      "text": "programmer. And he was 18. He was"
+    },
+    {
+      "t": 1914,
+      "text": "looking for a job. I knew the guys at"
+    },
+    {
+      "t": 1915,
+      "text": "Hack Reactor. They use Replit. And I'm"
+    },
+    {
+      "t": 1918,
+      "text": "like, \"Send me your best programmer.\""
+    },
+    {
+      "t": 1920,
+      "text": "And he's like, \"Look, this kid is a"
+    },
+    {
+      "t": 1921,
+      "text": "little awkward, but he's the best.\" And"
+    },
+    {
+      "t": 1923,
+      "text": "so he comes in and he nails our"
+    },
+    {
+      "t": 1924,
+      "text": "interview."
+    },
+    {
+      "t": 1925,
+      "text": "Music to my ears. Yeah,"
+    },
+    {
+      "t": 1927,
+      "text": "and basically I like him cuz you know,"
+    },
+    {
+      "t": 1928,
+      "text": "it mirrors kind of my life story a"
+    },
+    {
+      "t": 1930,
+      "text": "little bit. Where is this guy now? We"
+    },
+    {
+      "t": 1933,
+      "text": "got him we got him some liquidity. After"
+    },
+    {
+      "t": 1936,
+      "text": "6 years of working"
+    },
+    {
+      "t": 1937,
+      "text": "I felt that's the right thing to do and"
+    },
+    {
+      "t": 1939,
+      "text": "because he was kind of burnt out and"
+    },
+    {
+      "t": 1941,
+      "text": "didn't want to continue."
+    },
+    {
+      "t": 1942,
+      "text": "So I I called my I called my brother in"
+    },
+    {
+      "t": 1945,
+      "text": "Jordan. I'm like, \"Look, you got to you"
+    },
+    {
+      "t": 1947,
+      "text": "got to come out here. We're in YC. You"
+    },
+    {
+      "t": 1948,
+      "text": "need to and he's a programmer. I taught"
+    },
+    {
+      "t": 1950,
+      "text": "him programming when he was a kid and I"
+    },
+    {
+      "t": 1952,
+      "text": "was like, \"You got to you got to come"
+    },
+    {
+      "t": 1954,
+      "text": "come help us.\" And he's still with us"
+    },
+    {
+      "t": 1955,
+      "text": "today. And I called my friend from"
+    },
+    {
+      "t": 1957,
+      "text": "Codecademy, Moody. He's still with us"
+    },
+    {
+      "t": 1959,
+      "text": "today as well. I'm like, \"You got you"
+    },
+    {
+      "t": 1961,
+      "text": "got to help us like"
+    },
+    {
+      "t": 1962,
+      "text": "like you know, you can do it remotely.\""
+    },
+    {
+      "t": 1964,
+      "text": "And so we assembled like a team of five"
+    },
+    {
+      "t": 1966,
+      "text": "people essentially. And so we we go"
+    },
+    {
+      "t": 1969,
+      "text": "really hard and we were like one of the"
+    },
+    {
+      "t": 1971,
+      "text": "hottest companies in YC at the time."
+    },
+    {
+      "t": 1974,
+      "text": "And"
+    },
+    {
+      "t": 1975,
+      "text": "can you give some sense of the scale of"
+    },
+    {
+      "t": 1977,
+      "text": "it now like"
+    },
+    {
+      "t": 1978,
+      "text": "you know,"
+    },
+    {
+      "t": 1979,
+      "text": "I invested in it"
+    },
+    {
+      "t": 1981,
+      "text": "a year ago or so 2 years ago or"
+    },
+    {
+      "t": 1983,
+      "text": "something like that. I don't know when."
+    },
+    {
+      "t": 1985,
+      "text": "But the numbers were off"
+    },
+    {
+      "t": 1986,
+      "text": "you had user growth first your graph"
+    },
+    {
+      "t": 1988,
+      "text": "looked like a hockey stick because you"
+    },
+    {
+      "t": 1990,
+      "text": "zoom out and you you you you"
+    },
+    {
+      "t": 1993,
+      "text": "ignore all of the little like years"
+    },
+    {
+      "t": 1995,
+      "text": "where nothing was really going on. But"
+    },
+    {
+      "t": 1996,
+      "text": "you have this crazy growth, but the"
+    },
+    {
+      "t": 1997,
+      "text": "crazy thing about it is that your growth"
+    },
+    {
+      "t": 1999,
+      "text": "was developers. So it's like you know,"
+    },
+    {
+      "t": 2001,
+      "text": "one developer user is worth I don't"
+    },
+    {
+      "t": 2004,
+      "text": "know, 10, 20 times just like a normal"
+    },
+    {
+      "t": 2006,
+      "text": "internet user. But you had this crazy"
+    },
+    {
+      "t": 2009,
+      "text": "hockey stick growth of developers. Can"
+    },
+    {
+      "t": 2010,
+      "text": "you talk about can you just say a couple"
+    },
+    {
+      "t": 2012,
+      "text": "of like permission to brag? Can you say"
+    },
+    {
+      "t": 2014,
+      "text": "a couple of brag-worthy stats that would"
+    },
+    {
+      "t": 2016,
+      "text": "impress us? Yeah, so so Replit was very"
+    },
+    {
+      "t": 2018,
+      "text": "easy to get started with and so people"
+    },
+    {
+      "t": 2020,
+      "text": "would start start using it in college or"
+    },
+    {
+      "t": 2023,
+      "text": "high school and continue using it for"
+    },
+    {
+      "t": 2025,
+      "text": "many years."
+    },
+    {
+      "t": 2026,
+      "text": "And so it was sticky for especially"
+    },
+    {
+      "t": 2028,
+      "text": "junior developers when they're starting"
+    },
+    {
+      "t": 2030,
+      "text": "out. And"
+    },
+    {
+      "t": 2032,
+      "text": "and it was it was spreading honestly on"
+    },
+    {
+      "t": 2035,
+      "text": "like word of mouth. You know, there was"
+    },
+    {
+      "t": 2038,
+      "text": "a viral component to it. People can"
+    },
+    {
+      "t": 2039,
+      "text": "share URL and then suddenly you're in"
+    },
+    {
+      "t": 2042,
+      "text": "the same environment as them, right?"
+    },
+    {
+      "t": 2043,
+      "text": "Like and then we have this like"
+    },
+    {
+      "t": 2045,
+      "text": "multiplayer coding experience. And so"
+    },
+    {
+      "t": 2047,
+      "text": "people were collaborating and"
+    },
+    {
+      "t": 2050,
+      "text": "and also COVID was really great for us"
+    },
+    {
+      "t": 2052,
+      "text": "because we were I think the only"
+    },
+    {
+      "t": 2054,
+      "text": "collaborative editor experience on the"
+    },
+    {
+      "t": 2057,
+      "text": "web at the time. And so a lot of people"
+    },
+    {
+      "t": 2058,
+      "text": "were remote and and needed something to"
+    },
+    {
+      "t": 2061,
+      "text": "work with with each other. And so"
+    },
+    {
+      "t": 2064,
+      "text": "Replit was adopted at the time and so"
+    },
+    {
+      "t": 2066,
+      "text": "the the growth was was off the chart and"
+    },
+    {
+      "t": 2069,
+      "text": "the servers were going down and the"
+    },
+    {
+      "t": 2071,
+      "text": "marginal user of any web app is sort of"
+    },
+    {
+      "t": 2073,
+      "text": "like zero zero cost. But for us it was"
+    },
+    {
+      "t": 2077,
+      "text": "you know, we we tried to optimize it a"
+    },
+    {
+      "t": 2078,
+      "text": "lot, but it was still on the order of"
+    },
+    {
+      "t": 2080,
+      "text": "like 1 to 5 dollars like a month. And"
+    },
+    {
+      "t": 2083,
+      "text": "you know, the the growth was off the"
+    },
+    {
+      "t": 2084,
+      "text": "charts. But I I you know, I have to"
+    },
+    {
+      "t": 2086,
+      "text": "admit it was hard to monetize at the"
+    },
+    {
+      "t": 2088,
+      "text": "time."
+    },
+    {
+      "t": 2089,
+      "text": "Because developers are actually not used"
+    },
+    {
+      "t": 2092,
+      "text": "to pay for things. Now they kind of are"
+    },
+    {
+      "t": 2094,
+      "text": "paying for things because of AI. But at"
+    },
+    {
+      "t": 2097,
+      "text": "the time they they weren't"
+    },
+    {
+      "t": 2100,
+      "text": "they weren't paying and then um"
+    },
+    {
+      "t": 2102,
+      "text": "you know, as as we added limits and"
+    },
+    {
+      "t": 2104,
+      "text": "things like that that they felt like"
+    },
+    {
+      "t": 2106,
+      "text": "they they can like move on and set up"
+    },
+    {
+      "t": 2108,
+      "text": "their own developer environment. It so"
+    },
+    {
+      "t": 2110,
+      "text": "took a lot of you know, creative"
+    },
+    {
+      "t": 2114,
+      "text": "thinking to figure out how to charge for"
+    },
+    {
+      "t": 2116,
+      "text": "people. And ultimately AI was the thing"
+    },
+    {
+      "t": 2119,
+      "text": "that that people"
+    },
+    {
+      "t": 2120,
+      "text": "are paying for. And the reason is like"
+    },
+    {
+      "t": 2122,
+      "text": "the productivity benefit of AI is like"
+    },
+    {
+      "t": 2125,
+      "text": "is like obvious. And people is like,"
+    },
+    {
+      "t": 2128,
+      "text": "\"Okay, this saves me time and makes me a"
+    },
+    {
+      "t": 2130,
+      "text": "better developer.\" And so people are"
+    },
+    {
+      "t": 2132,
+      "text": "paying for it right now. Well, can you"
+    },
+    {
+      "t": 2134,
+      "text": "give any indication on how many users or"
+    },
+    {
+      "t": 2136,
+      "text": "how many how much revenue the business"
+    },
+    {
+      "t": 2138,
+      "text": "does? You know, sign-ups we get we have"
+    },
+    {
+      "t": 2140,
+      "text": "like more than 30 million. I think 35"
+    },
+    {
+      "t": 2142,
+      "text": "million users right now. In terms of"
+    },
+    {
+      "t": 2145,
+      "text": "active users it kind of fluctuates, but"
+    },
+    {
+      "t": 2148,
+      "text": "you know, three you know, two to three"
+    },
+    {
+      "t": 2150,
+      "text": "million a month."
+    },
+    {
+      "t": 2152,
+      "text": "Probably 100,000 apps hosted hosted on"
+    },
+    {
+      "t": 2155,
+      "text": "Replit. Because you can build an app and"
+    },
+    {
+      "t": 2158,
+      "text": "and and deploy it all in in one"
+    },
+    {
+      "t": 2160,
+      "text": "environment. In"
+    },
+    {
+      "t": 2163,
+      "text": "terms of revenue I can't share right"
+    },
+    {
+      "t": 2165,
+      "text": "now, but like"
+    },
+    {
+      "t": 2166,
+      "text": "especially this year it's been like"
+    },
+    {
+      "t": 2168,
+      "text": "exponential growth. Sam, check this out."
+    },
+    {
+      "t": 2172,
+      "text": "This agent thing. I got to show you"
+    },
+    {
+      "t": 2173,
+      "text": "this. So"
+    },
+    {
+      "t": 2174,
+      "text": "you you haven't used this, right, Sam?"
+    },
+    {
+      "t": 2176,
+      "text": "No."
+    },
+    {
+      "t": 2177,
+      "text": "so so watch this. So yesterday I was"
+    },
+    {
+      "t": 2179,
+      "text": "like I'm I'm going to mess around. I was"
+    },
+    {
+      "t": 2181,
+      "text": "doing research for this, but I was like"
+    },
+    {
+      "t": 2182,
+      "text": "I I just got like sucked into Replit and"
+    },
+    {
+      "t": 2184,
+      "text": "I started doing that. Stopped doing"
+    },
+    {
+      "t": 2185,
+      "text": "research. So I go and I I go to Replit"
+    },
+    {
+      "t": 2188,
+      "text": "and it's changed cuz now when you before"
+    },
+    {
+      "t": 2190,
+      "text": "when you would go it would be like,"
+    },
+    {
+      "t": 2192,
+      "text": "\"Here's a coding screen with a blinking"
+    },
+    {
+      "t": 2194,
+      "text": "cursor.\" And it's like, \"Write some"
+    },
+    {
+      "t": 2196,
+      "text": "code.\" And I'd be like, \"Oh, cool. I"
+    },
+    {
+      "t": 2198,
+      "text": "don't really write code, so I don't know"
+    },
+    {
+      "t": 2201,
+      "text": "how to use this product exactly. Maybe I"
+    },
+    {
+      "t": 2202,
+      "text": "could learn to code. Maybe I could you"
+    },
+    {
+      "t": 2205,
+      "text": "know, pay somebody to to build something"
+    },
+    {
+      "t": 2206,
+      "text": "on here, but whatever. I was stuck. So"
+    },
+    {
+      "t": 2209,
+      "text": "now you open up Replit Replit and it"
+    },
+    {
+      "t": 2211,
+      "text": "just it's like ChatGPT. It just goes,"
+    },
+    {
+      "t": 2214,
+      "text": "\"So what would you like me to create?\""
+    },
+    {
+      "t": 2216,
+      "text": "And so I go on there. Watch this. So I"
+    },
+    {
+      "t": 2217,
+      "text": "go I'll give you the exact prompt. I"
+    },
+    {
+      "t": 2219,
+      "text": "said, \"Build me an app that will text me"
+    },
+    {
+      "t": 2221,
+      "text": "every morning asking how I ate"
+    },
+    {
+      "t": 2223,
+      "text": "yesterday. Let me answer via text"
+    },
+    {
+      "t": 2224,
+      "text": "message and then track the results on a"
+    },
+    {
+      "t": 2226,
+      "text": "monthly calendar grid."
+    },
+    {
+      "t": 2228,
+      "text": "If texting doesn't work you could also"
+    },
+    {
+      "t": 2229,
+      "text": "use WhatsApp or something else.\" Okay,"
+    },
+    {
+      "t": 2230,
+      "text": "so basically on the right here is just"
+    },
+    {
+      "t": 2232,
+      "text": "like the chat. And it just goes,"
+    },
+    {
+      "t": 2234,
+      "text": "\"Absolutely. Let me propose what we'll"
+    },
+    {
+      "t": 2236,
+      "text": "build.\" And then it just kind of like"
+    },
+    {
+      "t": 2237,
+      "text": "explains to me like a project manager."
+    },
+    {
+      "t": 2239,
+      "text": "It goes, \"I'm going to help you create a"
+    },
+    {
+      "t": 2240,
+      "text": "food tracking app through SMS messaging"
+    },
+    {
+      "t": 2242,
+      "text": "with a calendar visualizations. We'll"
+    },
+    {
+      "t": 2243,
+      "text": "start with the SMS. Later we can add"
+    },
+    {
+      "t": 2245,
+      "text": "WhatsApp as an alternative.\" It's like,"
+    },
+    {
+      "t": 2247,
+      "text": "\"Okay, okay, prioritizing things. That's"
+    },
+    {
+      "t": 2249,
+      "text": "interesting.\" And then it goes, \"The app"
+    },
+    {
+      "t": 2251,
+      "text": "will send daily messages blah blah"
+    },
+    {
+      "t": 2252,
+      "text": "blah.\" And then it goes, \"How would you"
+    },
+    {
+      "t": 2253,
+      "text": "like me to proceed?\" And it's like there"
+    },
+    {
+      "t": 2255,
+      "text": "was like, you know, add more features,"
+    },
+    {
+      "t": 2257,
+      "text": "change the instructions or like go ahead"
+    },
+    {
+      "t": 2259,
+      "text": "and build the prototype. So I clicked"
+    },
+    {
+      "t": 2260,
+      "text": "build the initial prototype. And then"
+    },
+    {
+      "t": 2262,
+      "text": "literally I don't know if you can see"
+    },
+    {
+      "t": 2263,
+      "text": "this, but like"
+    },
+    {
+      "t": 2264,
+      "text": "it starts like auto scrolling as it's"
+    },
+    {
+      "t": 2267,
+      "text": "writing code. Like this is all just a"
+    },
+    {
+      "t": 2269,
+      "text": "code it's generating. So like you know,"
+    },
+    {
+      "t": 2270,
+      "text": "like I'm not doing anything. I'm"
+    },
+    {
+      "t": 2272,
+      "text": "literally sitting back with popcorn"
+    },
+    {
+      "t": 2273,
+      "text": "while this is happening."
+    },
+    {
+      "t": 2275,
+      "text": "So it's like \"Here's your calendar"
+    },
+    {
+      "t": 2277,
+      "text": "grid.\""
+    },
+    {
+      "t": 2278,
+      "text": "And it's like, \"Hey, I need I'm going to"
+    },
+    {
+      "t": 2280,
+      "text": "use Twilio for the SMS.\" It decides."
+    },
+    {
+      "t": 2282,
+      "text": "I'll use Twilio for the SMS. Can you go"
+    },
+    {
+      "t": 2283,
+      "text": "to Twilio and give me your account and"
+    },
+    {
+      "t": 2285,
+      "text": "your phone number so that it'll like"
+    },
+    {
+      "t": 2287,
+      "text": "we use Twilio for sending SMS. So I go"
+    },
+    {
+      "t": 2290,
+      "text": "to Twilio. I give it my SMS. And then"
+    },
+    {
+      "t": 2292,
+      "text": "it's like it's made. It literally made"
+    },
+    {
+      "t": 2294,
+      "text": "the thing exactly how I wanted it."
+    },
+    {
+      "t": 2297,
+      "text": "now? Yeah, I actually got stuck on the"
+    },
+    {
+      "t": 2299,
+      "text": "Twilio step because Twilio has to verify"
+    },
+    {
+      "t": 2301,
+      "text": "my phone number. So it like was it"
+    },
+    {
+      "t": 2303,
+      "text": "hasn't verified it yet, but I can go"
+    },
+    {
+      "t": 2304,
+      "text": "into I into it I see it tries to send me"
+    },
+    {
+      "t": 2307,
+      "text": "the message and it's just says awaiting"
+    },
+    {
+      "t": 2308,
+      "text": "Twilio verification till I be able to"
+    },
+    {
+      "t": 2310,
+      "text": "use this."
+    },
+    {
+      "t": 2311,
+      "text": "So I'm like a little bit stuck there,"
+    },
+    {
+      "t": 2313,
+      "text": "which is like a common thing with agents"
+    },
+    {
+      "t": 2314,
+      "text": "I feel. It's like"
+    },
+    {
+      "t": 2315,
+      "text": "almost absolutely incredible and then"
+    },
+    {
+      "t": 2319,
+      "text": "kind of frustrating at some point where"
+    },
+    {
+      "t": 2320,
+      "text": "you have to like you know, fight through"
+    },
+    {
+      "t": 2322,
+      "text": "some walls. Well, I think I'm just"
+    },
+    {
+      "t": 2323,
+      "text": "reading I think he said I want people to"
+    },
+    {
+      "t": 2325,
+      "text": "be able to build an app faster than they"
+    },
+    {
+      "t": 2327,
+      "text": "can just Google the answer to a"
+    },
+    {
+      "t": 2328,
+      "text": "question. And that's exactly what"
+    },
+    {
+      "t": 2330,
+      "text": "happened here. Well, that's insane. So"
+    },
+    {
+      "t": 2332,
+      "text": "this screenshot is the agent looking at"
+    },
+    {
+      "t": 2335,
+      "text": "the result. It's trying to verify. This"
+    },
+    {
+      "t": 2337,
+      "text": "is this is not the running app. If you"
+    },
+    {
+      "t": 2339,
+      "text": "click run you can get the running app."
+    },
+    {
+      "t": 2340,
+      "text": "the top. Took a screenshot and then it"
+    },
+    {
+      "t": 2342,
+      "text": "shows it to me. It's like, \"Hey, is this"
+    },
+    {
+      "t": 2343,
+      "text": "how you want it?\" And I was like, \"Oh.\""
+    },
+    {
+      "t": 2345,
+      "text": "Cuz before it had it where it was like"
+    },
+    {
+      "t": 2347,
+      "text": "not the right month on top. I go, \"Oh,"
+    },
+    {
+      "t": 2348,
+      "text": "put the month on top. Like don't say"
+    },
+    {
+      "t": 2349,
+      "text": "monthly food tracker. Write December.\""
+    },
+    {
+      "t": 2352,
+      "text": "And then it also said like, \"Hey, would"
+    },
+    {
+      "t": 2353,
+      "text": "you like any other style improvements I"
+    },
+    {
+      "t": 2355,
+      "text": "can make it broader. I can change the"
+    },
+    {
+      "t": 2356,
+      "text": "color scheme.\""
+    },
+    {
+      "t": 2358,
+      "text": "And I'm like, \"Dude, this is literally"
+    },
+    {
+      "t": 2359,
+      "text": "better than an employee, right?\" Like"
+    },
+    {
+      "t": 2361,
+      "text": "first it's instantaneous. Second, I"
+    },
+    {
+      "t": 2364,
+      "text": "could you know, I don't have to pay"
+    },
+    {
+      "t": 2366,
+      "text": "pay somebody to sit in the desk to sit"
+    },
+    {
+      "t": 2368,
+      "text": "around waiting for me to do something. I"
+    },
+    {
+      "t": 2370,
+      "text": "had a"
+    },
+    {
+      "t": 2370,
+      "text": "idea on a whim. Go to Replit and did the"
+    },
+    {
+      "t": 2373,
+      "text": "thing it with the agent. This was a"
+    },
+    {
+      "t": 2375,
+      "text": "like there's been a few like"
+    },
+    {
+      "t": 2377,
+      "text": "mind-blowing moments for me in my like"
+    },
+    {
+      "t": 2378,
+      "text": "tech career. You know, like"
+    },
+    {
+      "t": 2381,
+      "text": "I graduated 2010. So I'll start at that"
+    },
+    {
+      "t": 2383,
+      "text": "point where it's like the first time I"
+    },
+    {
+      "t": 2384,
+      "text": "took an Uber, I was like, \"Holy [\u00a0__\u00a0]"
+    },
+    {
+      "t": 2387,
+      "text": "that was amazing.\" I pushed a button, a"
+    },
+    {
+      "t": 2389,
+      "text": "car showed up, the guy got in, I didn't"
+    },
+    {
+      "t": 2391,
+      "text": "even have to pay for like it just paid"
+    },
+    {
+      "t": 2392,
+      "text": "through my phone. That was magic. And I"
+    },
+    {
+      "t": 2394,
+      "text": "could see it on I could see him on an"
+    },
+    {
+      "t": 2395,
+      "text": "app getting closer and closer to the"
+    },
+    {
+      "t": 2396,
+      "text": "restaurant. That was like one of them."
+    },
+    {
+      "t": 2399,
+      "text": "You know, Chat GPT for sure was another"
+    },
+    {
+      "t": 2401,
+      "text": "where I could just, you know, tell it to"
+    },
+    {
+      "t": 2402,
+      "text": "make something and it would write"
+    },
+    {
+      "t": 2403,
+      "text": "something it would write it for me. This"
+    },
+    {
+      "t": 2404,
+      "text": "is another one of them. This is the"
+    },
+    {
+      "t": 2406,
+      "text": "first AI"
+    },
+    {
+      "t": 2408,
+      "text": "agent thing that has like been a"
+    },
+    {
+      "t": 2410,
+      "text": "mind-blowing moment for me where um I am"
+    },
+    {
+      "t": 2413,
+      "text": "not a programmer, I'm not a coder, but I"
+    },
+    {
+      "t": 2416,
+      "text": "can now create software. This is like"
+    },
+    {
+      "t": 2418,
+      "text": "amazing. Can I ask a blunt crude"
+    },
+    {
+      "t": 2420,
+      "text": "question? How can I use your software to"
+    },
+    {
+      "t": 2422,
+      "text": "become a billionaire? Because like I see"
+    },
+    {
+      "t": 2425,
+      "text": "this and I'm like"
+    },
+    {
+      "t": 2426,
+      "text": "You you know, like the the the"
+    },
+    {
+      "t": 2429,
+      "text": "ridiculous analogy that I use is I'm"
+    },
+    {
+      "t": 2431,
+      "text": "like"
+    },
+    {
+      "t": 2432,
+      "text": "I feel like an artist sometimes where"
+    },
+    {
+      "t": 2434,
+      "text": "like I feel like I have the ability to"
+    },
+    {
+      "t": 2436,
+      "text": "conceptualize certain things, but I"
+    },
+    {
+      "t": 2437,
+      "text": "can't paint. It's like I can't [\u00a0__\u00a0]"
+    },
+    {
+      "t": 2440,
+      "text": "paint what I want to paint that's in my"
+    },
+    {
+      "t": 2441,
+      "text": "head like because I literally don't have"
+    },
+    {
+      "t": 2442,
+      "text": "that skill set sometimes. And so like"
+    },
+    {
+      "t": 2444,
+      "text": "I'll be working on stuff and I'm like,"
+    },
+    {
+      "t": 2445,
+      "text": "\"Dude, I want this to do this, but I got"
+    },
+    {
+      "t": 2447,
+      "text": "to go talk to this developer and I don't"
+    },
+    {
+      "t": 2449,
+      "text": "want to have this conversation and"
+    },
+    {
+      "t": 2450,
+      "text": "that's just like a pain in the ass.\" And"
+    },
+    {
+      "t": 2452,
+      "text": "so like you basically are making it so I"
+    },
+    {
+      "t": 2454,
+      "text": "can finally express myself easily. I"
+    },
+    {
+      "t": 2457,
+      "text": "like how you're on the first date you're"
+    },
+    {
+      "t": 2458,
+      "text": "like, \"How can I get you to take the"
+    },
+    {
+      "t": 2460,
+      "text": "clothes off?\""
+    },
+    {
+      "t": 2462,
+      "text": "You're like, \"How do I use your thing to"
+    },
+    {
+      "t": 2464,
+      "text": "get really rich?\" Yeah. I mean that's"
+    },
+    {
+      "t": 2466,
+      "text": "basically like like and you had on the"
+    },
+    {
+      "t": 2468,
+      "text": "document you're like here's just here's"
+    },
+    {
+      "t": 2470,
+      "text": "the opportunities. Just use Replit to do"
+    },
+    {
+      "t": 2471,
+      "text": "X Y and Z. I and"
+    },
+    {
+      "t": 2473,
+      "text": "I want to go through that. Because this"
+    },
+    {
+      "t": 2475,
+      "text": "is like amazing. This is actually you"
+    },
+    {
+      "t": 2477,
+      "text": "know, there's like there's like a viral"
+    },
+    {
+      "t": 2479,
+      "text": "clip on YouTube or Twitter like a lot of"
+    },
+    {
+      "t": 2480,
+      "text": "places where it's like the the headline"
+    },
+    {
+      "t": 2483,
+      "text": "which we probably have used which is"
+    },
+    {
+      "t": 2484,
+      "text": "like billion-dollar one-person companies"
+    },
+    {
+      "t": 2486,
+      "text": "or something like this. You're the"
+    },
+    {
+      "t": 2488,
+      "text": "closest person to this probably"
+    },
+    {
+      "t": 2491,
+      "text": "to that question. To answer that"
+    },
+    {
+      "t": 2492,
+      "text": "question."
+    },
+    {
+      "t": 2493,
+      "text": "Yeah, so there are apps built on Replit"
+    },
+    {
+      "t": 2497,
+      "text": "agent that otherwise would take probably"
+    },
+    {
+      "t": 2500,
+      "text": "$100,000 of of developer time."
+    },
+    {
+      "t": 2504,
+      "text": "And and you can build it like in you"
+    },
+    {
+      "t": 2506,
+      "text": "know, $25 paid to paid to Replit. I will"
+    },
+    {
+      "t": 2509,
+      "text": "say that there there's limitations,"
+    },
+    {
+      "t": 2511,
+      "text": "right? It it is not it is not perfect."
+    },
+    {
+      "t": 2513,
+      "text": "This is like the worst it's it's it's"
+    },
+    {
+      "t": 2514,
+      "text": "going to be. It it sometimes gets stuck"
+    },
+    {
+      "t": 2517,
+      "text": "with problems. You can you need to have"
+    },
+    {
+      "t": 2519,
+      "text": "some skill in prompting to coax it to"
+    },
+    {
+      "t": 2522,
+      "text": "like uh figure it out. And it sort of"
+    },
+    {
+      "t": 2525,
+      "text": "like teaches you over time because it"
+    },
+    {
+      "t": 2526,
+      "text": "tells you what it's doing as it's"
+    },
+    {
+      "t": 2528,
+      "text": "editing the code. And so over time"
+    },
+    {
+      "t": 2530,
+      "text": "you're learning how to use it. You're"
+    },
+    {
+      "t": 2531,
+      "text": "actually learning how code works. You're"
+    },
+    {
+      "t": 2533,
+      "text": "learning how Maybe you're not learning"
+    },
+    {
+      "t": 2535,
+      "text": "how to exactly type code, but you're"
+    },
+    {
+      "t": 2537,
+      "text": "learning the different components and"
+    },
+    {
+      "t": 2539,
+      "text": "where things could go wrong. You're"
+    },
+    {
+      "t": 2541,
+      "text": "learning about database. We have like"
+    },
+    {
+      "t": 2542,
+      "text": "database. You can go in and look at the"
+    },
+    {
+      "t": 2544,
+      "text": "tables and look at oh, what's happening."
+    },
+    {
+      "t": 2547,
+      "text": "And so you know, the the vision for this"
+    },
+    {
+      "t": 2549,
+      "text": "is that that's all you need. That's all"
+    },
+    {
+      "t": 2551,
+      "text": "you need to build an entire startup. And"
+    },
+    {
+      "t": 2555,
+      "text": "you know, every day we're inching"
+    },
+    {
+      "t": 2556,
+      "text": "towards that. You know, I and I I talked"
+    },
+    {
+      "t": 2558,
+      "text": "about like pushing the boulder up up the"
+    },
+    {
+      "t": 2561,
+      "text": "hill. And I think that's one of my one"
+    },
+    {
+      "t": 2564,
+      "text": "of my talents is like, \"Okay, what are"
+    },
+    {
+      "t": 2566,
+      "text": "the problems that you can make progress"
+    },
+    {
+      "t": 2568,
+      "text": "on every day and every week such that,"
+    },
+    {
+      "t": 2571,
+      "text": "you know, in a year's time you have this"
+    },
+    {
+      "t": 2573,
+      "text": "exponential progress and the product is"
+    },
+    {
+      "t": 2575,
+      "text": "is so much better.\" The other thing is"
+    },
+    {
+      "t": 2578,
+      "text": "we're riding this wave of the foundation"
+    },
+    {
+      "t": 2580,
+      "text": "models getting better. So, every time"
+    },
+    {
+      "t": 2582,
+      "text": "they get better we plug in a new"
+    },
+    {
+      "t": 2583,
+      "text": "foundation model and the product is is"
+    },
+    {
+      "t": 2585,
+      "text": "suddenly better. So, you're riding this"
+    },
+    {
+      "t": 2588,
+      "text": "you know, two exponential curves which"
+    },
+    {
+      "t": 2589,
+      "text": "is like the engineering we're doing, but"
+    },
+    {
+      "t": 2591,
+      "text": "also the underlying models and"
+    },
+    {
+      "t": 2592,
+      "text": "infrastructure is is is getting better."
+    },
+    {
+      "t": 2595,
+      "text": "So, I I think in a in a year's time it's"
+    },
+    {
+      "t": 2597,
+      "text": "going to be really mind-blowing. In a"
+    },
+    {
+      "t": 2599,
+      "text": "couple years time, I think we're going"
+    },
+    {
+      "t": 2601,
+      "text": "to see stories"
+    },
+    {
+      "t": 2603,
+      "text": "like someone getting super rich making"
+    },
+    {
+      "t": 2605,
+      "text": "an app in Replit that that sort of goes"
+    },
+    {
+      "t": 2607,
+      "text": "viral and So, we're adding Stripe"
+    },
+    {
+      "t": 2609,
+      "text": "integration right now. You can you can"
+    },
+    {
+      "t": 2612,
+      "text": "already use kind of Stripe on on Replit,"
+    },
+    {
+      "t": 2614,
+      "text": "but we're adding integration that makes"
+    },
+    {
+      "t": 2615,
+      "text": "it super easy to start monetizing your"
+    },
+    {
+      "t": 2618,
+      "text": "app. So, so Sam said, \"How do I get"
+    },
+    {
+      "t": 2620,
+      "text": "rich?\" And you're like, \"Disclaimer,"
+    },
+    {
+      "t": 2621,
+      "text": "it's not fully there yet.\" But"
+    },
+    {
+      "t": 2625,
+      "text": "now you still have to answer the"
+    },
+    {
+      "t": 2626,
+      "text": "question."
+    },
+    {
+      "t": 2627,
+      "text": "I mean the question is like what kind of"
+    },
+    {
+      "t": 2629,
+      "text": "applications? It's like what are the"
+    },
+    {
+      "t": 2630,
+      "text": "ideas? What kind of applications you can"
+    },
+    {
+      "t": 2632,
+      "text": "build? I would say AI applications are"
+    },
+    {
+      "t": 2634,
+      "text": "are growing really fast. Like the"
+    },
+    {
+      "t": 2636,
+      "text": "revenue ramp in some of those AI"
+    },
+    {
+      "t": 2638,
+      "text": "applications is kind of crazy. Can you"
+    },
+    {
+      "t": 2641,
+      "text": "can you tell the story of Magic School?"
+    },
+    {
+      "t": 2643,
+      "text": "I thought this was really interesting."
+    },
+    {
+      "t": 2644,
+      "text": "Yeah. So, Magic School is like an AI"
+    },
+    {
+      "t": 2647,
+      "text": "application for educators."
+    },
+    {
+      "t": 2650,
+      "text": "It's It's basically like helping them"
+    },
+    {
+      "t": 2652,
+      "text": "use foundation models and LLMs to do"
+    },
+    {
+      "t": 2655,
+      "text": "their work, to do assignments for for"
+    },
+    {
+      "t": 2658,
+      "text": "kids, to have an interactive like AI"
+    },
+    {
+      "t": 2661,
+      "text": "experience. And so it's like a full"
+    },
+    {
+      "t": 2663,
+      "text": "suite of AI for educators. The guy who"
+    },
+    {
+      "t": 2666,
+      "text": "created it is a was a teacher, right?"
+    },
+    {
+      "t": 2668,
+      "text": "The guy who created was a teacher. He"
+    },
+    {
+      "t": 2670,
+      "text": "took some time during COVID to to learn"
+    },
+    {
+      "t": 2672,
+      "text": "how to code and he started using Replit."
+    },
+    {
+      "t": 2674,
+      "text": "And him and and I think another person"
+    },
+    {
+      "t": 2678,
+      "text": "built the initial thing totally on"
+    },
+    {
+      "t": 2681,
+      "text": "Replit. And because you can go from an"
+    },
+    {
+      "t": 2683,
+      "text": "idea all the way to deployment and and"
+    },
+    {
+      "t": 2687,
+      "text": "immediately started growing."
+    },
+    {
+      "t": 2689,
+      "text": "Like"
+    },
+    {
+      "t": 2690,
+      "text": "you know, people these AI apps like when"
+    },
+    {
+      "t": 2693,
+      "text": "when the adoption starts happening it"
+    },
+    {
+      "t": 2694,
+      "text": "goes super viral. You don't need"
+    },
+    {
+      "t": 2696,
+      "text": "a ton of marketing and the revenue ramp"
+    },
+    {
+      "t": 2698,
+      "text": "was was one of the craziest ones I've"
+    },
+    {
+      "t": 2700,
+      "text": "seen especially for education. Yeah, it"
+    },
+    {
+      "t": 2702,
+      "text": "was like a known thing. It was like"
+    },
+    {
+      "t": 2704,
+      "text": "hardest thing you could do sell into"
+    },
+    {
+      "t": 2705,
+      "text": "schools, into teachers. They're"
+    },
+    {
+      "t": 2706,
+      "text": "overworked, they're underpaid, that they"
+    },
+    {
+      "t": 2709,
+      "text": "don't have the time to like figure out"
+    },
+    {
+      "t": 2710,
+      "text": "your new tool. But this thing is great."
+    },
+    {
+      "t": 2712,
+      "text": "So, if you if you go to it, it's"
+    },
+    {
+      "t": 2713,
+      "text": "basically like"
+    },
+    {
+      "t": 2715,
+      "text": "because teachers spends a lot of their"
+    },
+    {
+      "t": 2716,
+      "text": "time not in the classroom. It's after"
+    },
+    {
+      "t": 2718,
+      "text": "after school is done, they have to grade"
+    },
+    {
+      "t": 2720,
+      "text": "papers, they have to create the lesson"
+    },
+    {
+      "t": 2722,
+      "text": "plan for the next day, they have to"
+    },
+    {
+      "t": 2723,
+      "text": "create the quizzes or the"
+    },
+    {
+      "t": 2725,
+      "text": "multiple-choice tests and they have to"
+    },
+    {
+      "t": 2726,
+      "text": "like So, they have to constantly do"
+    },
+    {
+      "t": 2728,
+      "text": "this. And there was these platforms like"
+    },
+    {
+      "t": 2729,
+      "text": "Teacher Pay Teachers where I could just"
+    },
+    {
+      "t": 2732,
+      "text": "if I don't want to make it myself cuz"
+    },
+    {
+      "t": 2733,
+      "text": "I'm tired after the school day, I might"
+    },
+    {
+      "t": 2735,
+      "text": "be able to go buy one for nine bucks"
+    },
+    {
+      "t": 2737,
+      "text": "from another teacher who teaches fifth"
+    },
+    {
+      "t": 2739,
+      "text": "grade science in some other state and I"
+    },
+    {
+      "t": 2741,
+      "text": "would take that and I would I would buy"
+    },
+    {
+      "t": 2742,
+      "text": "it that way. What Magic School did was"
+    },
+    {
+      "t": 2744,
+      "text": "it was like, \"Cool, generate a You just"
+    },
+    {
+      "t": 2746,
+      "text": "say like I want to I teach, you know,"
+    },
+    {
+      "t": 2748,
+      "text": "fifth grade biology. I want to do a pop"
+    },
+    {
+      "t": 2751,
+      "text": "quiz about you know, how this how"
+    },
+    {
+      "t": 2754,
+      "text": "mitosis works.\" And then it'll basically"
+    },
+    {
+      "t": 2756,
+      "text": "create either a lesson plan or a quiz or"
+    },
+    {
+      "t": 2758,
+      "text": "you know,"
+    },
+    {
+      "t": 2759,
+      "text": "a"
+    },
+    {
+      "t": 2760,
+      "text": "a student like interactive like, you"
+    },
+    {
+      "t": 2762,
+      "text": "know, workbook that they need to create"
+    },
+    {
+      "t": 2763,
+      "text": "or whatever. And so it lets a teacher"
+    },
+    {
+      "t": 2765,
+      "text": "not have to spend, you know, four hours"
+    },
+    {
+      "t": 2768,
+      "text": "a night creating the materials that they"
+    },
+    {
+      "t": 2770,
+      "text": "need to to teach class cuz AI can do it"
+    },
+    {
+      "t": 2772,
+      "text": "for them. And this thing looks"
+    },
+    {
+      "t": 2774,
+      "text": "I don't know these guys. I don't know"
+    },
+    {
+      "t": 2775,
+      "text": "anything about them, but it says"
+    },
+    {
+      "t": 2776,
+      "text": "you know, over 4 million educators are"
+    },
+    {
+      "t": 2778,
+      "text": "using this."
+    },
+    {
+      "t": 2780,
+      "text": "Which 4 million educators and their"
+    },
+    {
+      "t": 2781,
+      "text": "students which I don't I don't know if"
+    },
+    {
+      "t": 2782,
+      "text": "they're counting the"
+    },
+    {
+      "t": 2782,
+      "text": "Well, if you go on SimilarWeb, they have"
+    },
+    {
+      "t": 2784,
+      "text": "millions of monthly uniques. So, that's"
+    },
+    {
+      "t": 2786,
+      "text": "like Really impressive. I think they"
+    },
+    {
+      "t": 2787,
+      "text": "raised like 20 million bucks too off of"
+    },
+    {
+      "t": 2789,
+      "text": "that."
+    },
+    {
+      "t": 2789,
+      "text": "Yeah, so I mean that's like a pretty"
+    },
+    {
+      "t": 2789,
+      "text": "huge signal."
+    },
+    {
+      "t": 2791,
+      "text": "So, they they launched in"
+    },
+    {
+      "t": 2794,
+      "text": "like I want to say July 2023. So,"
+    },
+    {
+      "t": 2796,
+      "text": "they're like a little over over a year."
+    },
+    {
+      "t": 2799,
+      "text": "And do you know these like SaaS metrics"
+    },
+    {
+      "t": 2801,
+      "text": "are like how long to get to whatever"
+    },
+    {
+      "t": 2804,
+      "text": "like"
+    },
+    {
+      "t": 2805,
+      "text": "100 million or whatever. The AI apps and"
+    },
+    {
+      "t": 2809,
+      "text": "I would say Magic School is on that"
+    },
+    {
+      "t": 2810,
+      "text": "trajectory is like just like that. You"
+    },
+    {
+      "t": 2813,
+      "text": "know, the the curve is like you know,"
+    },
+    {
+      "t": 2815,
+      "text": "all the way straight up. This is kind of"
+    },
+    {
+      "t": 2817,
+      "text": "weird, but maybe this is like a feature"
+    },
+    {
+      "t": 2819,
+      "text": "of yours that you helped this company"
+    },
+    {
+      "t": 2823,
+      "text": "become potentially one of the"
+    },
+    {
+      "t": 2824,
+      "text": "faster-growing companies of all time and"
+    },
+    {
+      "t": 2826,
+      "text": "you only earned $20 a month from that."
+    },
+    {
+      "t": 2829,
+      "text": "Yeah, so so So, Replit had you know,"
+    },
+    {
+      "t": 2832,
+      "text": "always a problem of of value capture."
+    },
+    {
+      "t": 2835,
+      "text": "Honestly, that's why like VCs struggled"
+    },
+    {
+      "t": 2837,
+      "text": "with it for a long time. So, that"
+    },
+    {
+      "t": 2839,
+      "text": "there's some logic for why why it is"
+    },
+    {
+      "t": 2841,
+      "text": "hard to monetize these things and like"
+    },
+    {
+      "t": 2843,
+      "text": "capture some of the value."
+    },
+    {
+      "t": 2845,
+      "text": "I will say I you know, I invested in"
+    },
+    {
+      "t": 2847,
+      "text": "Magic School. So, there's some of that."
+    },
+    {
+      "t": 2851,
+      "text": "And uh"
+    },
+    {
+      "t": 2852,
+      "text": "with AI, I think we're going to be able"
+    },
+    {
+      "t": 2854,
+      "text": "to you know,"
+    },
+    {
+      "t": 2856,
+      "text": "you know, capture at least a little bit"
+    },
+    {
+      "t": 2857,
+      "text": "more of that value. If people are"
+    },
+    {
+      "t": 2859,
+      "text": "monetizing these apps on Replit via the"
+    },
+    {
+      "t": 2861,
+      "text": "agent,"
+    },
+    {
+      "t": 2863,
+      "text": "there's a way I think where we can"
+    },
+    {
+      "t": 2865,
+      "text": "potentially take a cut out of that"
+    },
+    {
+      "t": 2867,
+      "text": "especially if we make it like super"
+    },
+    {
+      "t": 2868,
+      "text": "simple to start monetizing an app. And"
+    },
+    {
+      "t": 2871,
+      "text": "also like if once we reach scale, you"
+    },
+    {
+      "t": 2873,
+      "text": "know, it is like ChatGPT. Like you don't"
+    },
+    {
+      "t": 2876,
+      "text": "need a lot of skill to do that and it's"
+    },
+    {
+      "t": 2877,
+      "text": "going to get easier and easier. Once we"
+    },
+    {
+      "t": 2879,
+      "text": "reach scale and you have you know,"
+    },
+    {
+      "t": 2880,
+      "text": "millions of people paying for this and"
+    },
+    {
+      "t": 2882,
+      "text": "it's not just like 20 bucks you're going"
+    },
+    {
+      "t": 2884,
+      "text": "to pay incremental uh after you finish"
+    },
+    {
+      "t": 2887,
+      "text": "your credits. So, we give you monthly"
+    },
+    {
+      "t": 2888,
+      "text": "credits and then afterwards if you want"
+    },
+    {
+      "t": 2890,
+      "text": "to continue, you can like buy more"
+    },
+    {
+      "t": 2892,
+      "text": "credits. Are there other companies like"
+    },
+    {
+      "t": 2894,
+      "text": "Magic School like cool companies like"
+    },
+    {
+      "t": 2896,
+      "text": "that you've seen that maybe we haven't"
+    },
+    {
+      "t": 2897,
+      "text": "heard of that are using AI? Yes."
+    },
+    {
+      "t": 2901,
+      "text": "So, um"
+    },
+    {
+      "t": 2902,
+      "text": "you know, I'm I'm very excited about"
+    },
+    {
+      "t": 2904,
+      "text": "agents right now. And uh you know, I I"
+    },
+    {
+      "t": 2907,
+      "text": "think I I predicted earlier this year on"
+    },
+    {
+      "t": 2910,
+      "text": "a on a podcast that you know, this this"
+    },
+    {
+      "t": 2912,
+      "text": "is going to be the year where like"
+    },
+    {
+      "t": 2913,
+      "text": "agents are born and next year is like"
+    },
+    {
+      "t": 2915,
+      "text": "where agents are are going to scale."
+    },
+    {
+      "t": 2918,
+      "text": "Um so, there's this company called"
+    },
+    {
+      "t": 2920,
+      "text": "ElevenLabs. And ElevenLabs creates AI"
+    },
+    {
+      "t": 2923,
+      "text": "SDRs."
+    },
+    {
+      "t": 2925,
+      "text": "Uh and so basically you don't need to"
+    },
+    {
+      "t": 2927,
+      "text": "hire SDRs. Like there are some companies"
+    },
+    {
+      "t": 2929,
+      "text": "that feel like you know, they can they"
+    },
+    {
+      "t": 2932,
+      "text": "can bootstrap their sales without SDR."
+    },
+    {
+      "t": 2935,
+      "text": "You can have like one AE and that AE"
+    },
+    {
+      "t": 2937,
+      "text": "account executive is like running these"
+    },
+    {
+      "t": 2940,
+      "text": "like tens of AI SDRs. Um and and the"
+    },
+    {
+      "t": 2945,
+      "text": "revenue ramp on ElevenLabs was also"
+    },
+    {
+      "t": 2948,
+      "text": "crazy. It is pretty wild how fast these"
+    },
+    {
+      "t": 2950,
+      "text": "companies are scaling. I don't think in"
+    },
+    {
+      "t": 2952,
+      "text": "the history of Silicon Valley we've seen"
+    },
+    {
+      "t": 2953,
+      "text": "anything like that even in the like web"
+    },
+    {
+      "t": 2955,
+      "text": "2.0 era. So, what is like a fast ramp"
+    },
+    {
+      "t": 2958,
+      "text": "for AI Maybe not ElevenLabs"
+    },
+    {
+      "t": 2960,
+      "text": "specifically, but just for an AI"
+    },
+    {
+      "t": 2961,
+      "text": "company. What's like what's what's"
+    },
+    {
+      "t": 2964,
+      "text": "impressive that kind of broke the frame"
+    },
+    {
+      "t": 2966,
+      "text": "of what how long things would take, but"
+    },
+    {
+      "t": 2967,
+      "text": "you've seen it now? Yeah. So, I I would"
+    },
+    {
+      "t": 2970,
+      "text": "say reaching a 10 million in three to"
+    },
+    {
+      "t": 2973,
+      "text": "four months."
+    },
+    {
+      "t": 2975,
+      "text": "ARR. Oh my god."
+    },
+    {
+      "t": 2976,
+      "text": "That's wild."
+    },
+    {
+      "t": 2979,
+      "text": "Yeah, we I invested in"
+    },
+    {
+      "t": 2981,
+      "text": "Jasper, which was like one of the early"
+    },
+    {
+      "t": 2983,
+      "text": "kind of chat GPT wrapper type of"
+    },
+    {
+      "t": 2985,
+      "text": "companies where there was like, \"Hey,"
+    },
+    {
+      "t": 2986,
+      "text": "like"
+    },
+    {
+      "t": 2987,
+      "text": "marketing, you know, you need to write a"
+    },
+    {
+      "t": 2989,
+      "text": "blog post. You need to write a"
+    },
+    {
+      "t": 2990,
+      "text": "description for a product or whatever.\""
+    },
+    {
+      "t": 2992,
+      "text": "And so you could use it for writing any"
+    },
+    {
+      "t": 2994,
+      "text": "kind of marketing copy. And their"
+    },
+    {
+      "t": 2997,
+      "text": "graph was I'd never seen anything It was"
+    },
+    {
+      "t": 2999,
+      "text": "like in 10 months or 11 months they"
+    },
+    {
+      "t": 3001,
+      "text": "scaled to like 50 million in annual"
+    },
+    {
+      "t": 3003,
+      "text": "recurring revenue. It was It was like"
+    },
+    {
+      "t": 3004,
+      "text": "I've never seen anything even remotely"
+    },
+    {
+      "t": 3006,
+      "text": "close to that."
+    },
+    {
+      "t": 3008,
+      "text": "It was It brought up a question like,"
+    },
+    {
+      "t": 3009,
+      "text": "\"Is this sustainable? Is this like what"
+    },
+    {
+      "t": 3011,
+      "text": "what is happening here?\" Like this is"
+    },
+    {
+      "t": 3013,
+      "text": "I've just doesn't compute. But it"
+    },
+    {
+      "t": 3015,
+      "text": "definitely broke my frame of what is"
+    },
+    {
+      "t": 3016,
+      "text": "possible because I'd been working, you"
+    },
+    {
+      "t": 3018,
+      "text": "know, in Silicon Valley since you know,"
+    },
+    {
+      "t": 3020,
+      "text": "2011 11 12 and uh"
+    },
+    {
+      "t": 3023,
+      "text": "that just did That wasn't a thing. You"
+    },
+    {
+      "t": 3024,
+      "text": "could You would never see a graph like"
+    },
+    {
+      "t": 3025,
+      "text": "that. What are some other companies that"
+    },
+    {
+      "t": 3027,
+      "text": "have gotten to that like 10-ish or"
+    },
+    {
+      "t": 3030,
+      "text": "10-ish million or similar trajectory in"
+    },
+    {
+      "t": 3031,
+      "text": "three month type of businesses? Yeah. So"
+    },
+    {
+      "t": 3034,
+      "text": "this is I I wanted to kind of give a dis"
+    },
+    {
+      "t": 3037,
+      "text": "you know, sort of a disclaimer about"
+    },
+    {
+      "t": 3039,
+      "text": "this, which is"
+    },
+    {
+      "t": 3040,
+      "text": "the big question in the investor"
+    },
+    {
+      "t": 3042,
+      "text": "community right now is like the the"
+    },
+    {
+      "t": 3044,
+      "text": "moats question."
+    },
+    {
+      "t": 3045,
+      "text": "Uh and that that started around the time"
+    },
+    {
+      "t": 3047,
+      "text": "that you chat GPT kind of came out and"
+    },
+    {
+      "t": 3050,
+      "text": "there was these GPT wrappers uh sort of"
+    },
+    {
+      "t": 3052,
+      "text": "this condescending way of of looking at"
+    },
+    {
+      "t": 3054,
+      "text": "a lot of these companies. It's like,"
+    },
+    {
+      "t": 3056,
+      "text": "\"Ah, if you can create GPT wrapper, you"
+    },
+    {
+      "t": 3058,
+      "text": "know, in in in a month, then then you"
+    },
+    {
+      "t": 3060,
+      "text": "know, a lot of other people will create"
+    },
+    {
+      "t": 3061,
+      "text": "GPT wrappers in a month and you're going"
+    },
+    {
+      "t": 3063,
+      "text": "to be competing on price and the margins"
+    },
+    {
+      "t": 3066,
+      "text": "uh go down and yes, the ARR is great,"
+    },
+    {
+      "t": 3069,
+      "text": "but you're but Anthropic is capturing or"
+    },
+    {
+      "t": 3071,
+      "text": "or OpenAI is capturing most of the ARR,"
+    },
+    {
+      "t": 3073,
+      "text": "not you. You're kind of a you're kind of"
+    },
+    {
+      "t": 3075,
+      "text": "like a middle man and you're going to"
+    },
+    {
+      "t": 3076,
+      "text": "have like a hard time having having"
+    },
+    {
+      "t": 3079,
+      "text": "margins.\" And and I think it's it's"
+    },
+    {
+      "t": 3081,
+      "text": "totally"
+    },
+    {
+      "t": 3082,
+      "text": "a valid question. Um you know, I think"
+    },
+    {
+      "t": 3085,
+      "text": "you know, moats develop over time"
+    },
+    {
+      "t": 3088,
+      "text": "through strategy and technical"
+    },
+    {
+      "t": 3090,
+      "text": "excellence. So I mean, some of these"
+    },
+    {
+      "t": 3092,
+      "text": "companies can go down pretty fast and"
+    },
+    {
+      "t": 3094,
+      "text": "there are examples of that right now. Um"
+    },
+    {
+      "t": 3098,
+      "text": "but but I think if you"
+    },
+    {
+      "t": 3101,
+      "text": "you know, you can have you can start"
+    },
+    {
+      "t": 3102,
+      "text": "building technical like with Replit,"
+    },
+    {
+      "t": 3104,
+      "text": "again, this like idea of like pushing a"
+    },
+    {
+      "t": 3106,
+      "text": "boulder up a hill. You know, we have"
+    },
+    {
+      "t": 3109,
+      "text": "this a runtime environment, we have like"
+    },
+    {
+      "t": 3111,
+      "text": "this infrastructure, we have the"
+    },
+    {
+      "t": 3113,
+      "text": "deployments, we have databases, we have"
+    },
+    {
+      "t": 3115,
+      "text": "all these integrations."
+    },
+    {
+      "t": 3116,
+      "text": "I mean,"
+    },
+    {
+      "t": 3117,
+      "text": "it's the only one in the world that is"
+    },
+    {
+      "t": 3119,
+      "text": "like an end-to-end environment to to"
+    },
+    {
+      "t": 3121,
+      "text": "make software. And like to catch up with"
+    },
+    {
+      "t": 3123,
+      "text": "that, it it's going to take years,"
+    },
+    {
+      "t": 3125,
+      "text": "right? But technical advantage is also"
+    },
+    {
+      "t": 3128,
+      "text": "not a long-term moat."
+    },
+    {
+      "t": 3131,
+      "text": "And so so again, it's a big question. I"
+    },
+    {
+      "t": 3133,
+      "text": "don't think it's answered yet. You know,"
+    },
+    {
+      "t": 3134,
+      "text": "there there are strategic things you"
+    },
+    {
+      "t": 3135,
+      "text": "could do if you reach scale, if the"
+    },
+    {
+      "t": 3137,
+      "text": "switching costs are high, you know, that"
+    },
+    {
+      "t": 3139,
+      "text": "that may be like a way to to to have"
+    },
+    {
+      "t": 3141,
+      "text": "sustainable moats, but but it is"
+    },
+    {
+      "t": 3143,
+      "text": "definitely a big question."
+    },
+    {
+      "t": 3144,
+      "text": "You know what's crazy, Sean? Like for"
+    },
+    {
+      "t": 3146,
+      "text": "the long I I hate using the D word,"
+    },
+    {
+      "t": 3148,
+      "text": "democratize. I think that's like such an"
+    },
+    {
+      "t": 3150,
+      "text": "overused like Silicon Valley word."
+    },
+    {
+      "t": 3152,
+      "text": "Don't do it. But this is actually one of"
+    },
+    {
+      "t": 3155,
+      "text": "those few few examples where like for"
+    },
+    {
+      "t": 3157,
+      "text": "the longest time"
+    },
+    {
+      "t": 3159,
+      "text": "building a website or a web app, like"
+    },
+    {
+      "t": 3161,
+      "text": "you just literally couldn't. And so now"
+    },
+    {
+      "t": 3164,
+      "text": "you are making the technology that"
+    },
+    {
+      "t": 3166,
+      "text": "everyone can do it. And so what I think"
+    },
+    {
+      "t": 3167,
+      "text": "is like guys like Sean and me or people"
+    },
+    {
+      "t": 3170,
+      "text": "like us who have an audience, it's like"
+    },
+    {
+      "t": 3173,
+      "text": "why don't we just why aren't we like"
+    },
+    {
+      "t": 3174,
+      "text": "constantly launching like companies"
+    },
+    {
+      "t": 3176,
+      "text": "using this technology because like our"
+    },
+    {
+      "t": 3178,
+      "text": "ability to get users cuz we just get on"
+    },
+    {
+      "t": 3180,
+      "text": "the microphone and talk about it, that's"
+    },
+    {
+      "t": 3182,
+      "text": "like actually a competitive advantage"
+    },
+    {
+      "t": 3185,
+      "text": "whereas"
+    },
+    {
+      "t": 3186,
+      "text": "being technical is no longer it's still"
+    },
+    {
+      "t": 3189,
+      "text": "an advantage, but it's not"
+    },
+    {
+      "t": 3191,
+      "text": "as much as before. It's like getting"
+    },
+    {
+      "t": 3192,
+      "text": "customers now is actually the only hard"
+    },
+    {
+      "t": 3194,
+      "text": "part which is still hard, but it's way"
+    },
+    {
+      "t": 3196,
+      "text": "easier if you're popular. Yeah, so so"
+    },
+    {
+      "t": 3199,
+      "text": "you know, the the playbook I would use"
+    },
+    {
+      "t": 3201,
+      "text": "is like I would go into some inefficient"
+    },
+    {
+      "t": 3206,
+      "text": "market or industry. So a deal from from"
+    },
+    {
+      "t": 3209,
+      "text": "magic school went into this hugely"
+    },
+    {
+      "t": 3211,
+      "text": "inefficient"
+    },
+    {
+      "t": 3213,
+      "text": "you know, industry which is which is uh"
+    },
+    {
+      "t": 3216,
+      "text": "you know, schools and education. Uh and"
+    },
+    {
+      "t": 3219,
+      "text": "by the way, by the way, another product"
+    },
+    {
+      "t": 3220,
+      "text": "is Synthesis Tutor which is which is"
+    },
+    {
+      "t": 3223,
+      "text": "also going going viral right now and and"
+    },
+    {
+      "t": 3225,
+      "text": "and and they they they they have also"
+    },
+    {
+      "t": 3227,
+      "text": "this revenue ramp that's kind of crazy."
+    },
+    {
+      "t": 3230,
+      "text": "Both Sean and I invested in in that"
+    },
+    {
+      "t": 3231,
+      "text": "company."
+    },
+    {
+      "t": 3232,
+      "text": "all three of us did. Yeah."
+    },
+    {
+      "t": 3234,
+      "text": "Yeah."
+    },
+    {
+      "t": 3234,
+      "text": "Yeah, and for a while they they had like"
+    },
+    {
+      "t": 3237,
+      "text": "this this thing where like you know,"
+    },
+    {
+      "t": 3239,
+      "text": "they had they had educators on the"
+    },
+    {
+      "t": 3240,
+      "text": "payroll and and whatever. They replaced"
+    },
+    {
+      "t": 3242,
+      "text": "all of that with AI. Now like you you"
+    },
+    {
+      "t": 3245,
+      "text": "know, the kids sit in front of the the"
+    },
+    {
+      "t": 3247,
+      "text": "iPad and they're talking to the AI and"
+    },
+    {
+      "t": 3249,
+      "text": "like learning really fast and it's much"
+    },
+    {
+      "t": 3250,
+      "text": "better than the previous product. Right."
+    },
+    {
+      "t": 3253,
+      "text": "So so ba- basically like find an"
+    },
+    {
+      "t": 3256,
+      "text": "industry where you're familiar with and"
+    },
+    {
+      "t": 3258,
+      "text": "just like build a GPT wrapper to like"
+    },
+    {
+      "t": 3260,
+      "text": "automate some of the work there and like"
+    },
+    {
+      "t": 3262,
+      "text": "you you could do it like a hundred times"
+    },
+    {
+      "t": 3264,
+      "text": "and one of them will take off."
+    },
+    {
+      "t": 3266,
+      "text": "Yeah, it's the era of the idea guy now."
+    },
+    {
+      "t": 3268,
+      "text": "It's our turn. It's our turn to shine,"
+    },
+    {
+      "t": 3271,
+      "text": "right? Cuz now the limits and the the"
+    },
+    {
+      "t": 3273,
+      "text": "kind of the the value creation is"
+    },
+    {
+      "t": 3275,
+      "text": "do you understand a problem well enough"
+    },
+    {
+      "t": 3277,
+      "text": "to know how to take this really powerful"
+    },
+    {
+      "t": 3279,
+      "text": "magic wand and point it at that problem"
+    },
+    {
+      "t": 3281,
+      "text": "and be able to make that more efficient"
+    },
+    {
+      "t": 3282,
+      "text": "and then of course do all of the other"
+    },
+    {
+      "t": 3284,
+      "text": "hard things. Go get customers, make it"
+    },
+    {
+      "t": 3286,
+      "text": "sustainable, build a good team, you"
+    },
+    {
+      "t": 3287,
+      "text": "know, like do all the normal"
+    },
+    {
+      "t": 3289,
+      "text": "entrepreneurship stuff, but it seems"
+    },
+    {
+      "t": 3291,
+      "text": "like more than ever"
+    },
+    {
+      "t": 3292,
+      "text": "having a great idea is the kind of like"
+    },
+    {
+      "t": 3295,
+      "text": "key unlock to doing these things because"
+    },
+    {
+      "t": 3298,
+      "text": "building has become easier. And I'll"
+    },
+    {
+      "t": 3299,
+      "text": "give you kind of my my personal epiphany"
+    },
+    {
+      "t": 3301,
+      "text": "that I had while I was doing this. So I"
+    },
+    {
+      "t": 3303,
+      "text": "invested in Replit mostly when I just"
+    },
+    {
+      "t": 3305,
+      "text": "thought you seemed really smart and I"
+    },
+    {
+      "t": 3308,
+      "text": "saw a growth curve of developers using"
+    },
+    {
+      "t": 3310,
+      "text": "it and I thought, \"Oh, cool. Like I've"
+    },
+    {
+      "t": 3311,
+      "text": "experienced this problem before. Like"
+    },
+    {
+      "t": 3313,
+      "text": "a one-stop place where I can"
+    },
+    {
+      "t": 3316,
+      "text": "come in, write the code, host it, all"
+    },
+    {
+      "t": 3318,
+      "text": "all the all the stuff you talked about."
+    },
+    {
+      "t": 3320,
+      "text": "Like don't have to download Java, don't"
+    },
+    {
+      "t": 3321,
+      "text": "have to do any of that [\u00a0__\u00a0] That That"
+    },
+    {
+      "t": 3323,
+      "text": "appealed to me at the time. I think"
+    },
+    {
+      "t": 3324,
+      "text": "actually in the same way that Synthesis"
+    },
+    {
+      "t": 3326,
+      "text": "like took AI and actually almost like"
+    },
+    {
+      "t": 3329,
+      "text": "really like 10x the value prop of the"
+    },
+    {
+      "t": 3332,
+      "text": "business."
+    },
+    {
+      "t": 3333,
+      "text": "Um I think you guys are doing the same"
+    },
+    {
+      "t": 3334,
+      "text": "as well. So here's my my quick pitch,"
+    },
+    {
+      "t": 3336,
+      "text": "which is now that I think of Replit as"
+    },
+    {
+      "t": 3338,
+      "text": "um"
+    },
+    {
+      "t": 3340,
+      "text": "like"
+    },
+    {
+      "t": 3341,
+      "text": "basically what Shopify was for creating,"
+    },
+    {
+      "t": 3344,
+      "text": "you know, like online stores, I think"
+    },
+    {
+      "t": 3346,
+      "text": "Replit is that for creating software. So"
+    },
+    {
+      "t": 3348,
+      "text": "to me you guys are Shopify for software."
+    },
+    {
+      "t": 3350,
+      "text": "just brightened when you said"
+    },
+    {
+      "t": 3352,
+      "text": "for software. So like I'll give you my"
+    },
+    {
+      "t": 3354,
+      "text": "example. I recently celebrated a"
+    },
+    {
+      "t": 3355,
+      "text": "milestone that was both I was proud of"
+    },
+    {
+      "t": 3357,
+      "text": "it and really embarrassed also. So"
+    },
+    {
+      "t": 3360,
+      "text": "a few years ago I started a e-commerce"
+    },
+    {
+      "t": 3362,
+      "text": "brand and we just crossed 50 million in"
+    },
+    {
+      "t": 3365,
+      "text": "revenue like kind of like cumulative"
+    },
+    {
+      "t": 3367,
+      "text": "lifetime revenue. Half of it was like,"
+    },
+    {
+      "t": 3368,
+      "text": "you know, this year, but but 50 million"
+    },
+    {
+      "t": 3370,
+      "text": "total. And I was like, \"Wow, like 50"
+    },
+    {
+      "t": 3371,
+      "text": "million, that's great. Like that's"
+    },
+    {
+      "t": 3373,
+      "text": "I had never created a business that had"
+    },
+    {
+      "t": 3374,
+      "text": "done 50 million in revenue, so that was"
+    },
+    {
+      "t": 3375,
+      "text": "like a personal pride point. And at the"
+    },
+    {
+      "t": 3378,
+      "text": "same time I was telling it to to a"
+    },
+    {
+      "t": 3380,
+      "text": "friend of mine who's not an"
+    },
+    {
+      "t": 3381,
+      "text": "entrepreneur."
+    },
+    {
+      "t": 3382,
+      "text": "He's like, \"Yeah, man, I would love to"
+    },
+    {
+      "t": 3384,
+      "text": "learn how to, you know, like make"
+    },
+    {
+      "t": 3384,
+      "text": "websites and like make products and"
+    },
+    {
+      "t": 3386,
+      "text": "manufacturing.\""
+    },
+    {
+      "t": 3388,
+      "text": "And I was like, \"Oh, I don't know how to"
+    },
+    {
+      "t": 3389,
+      "text": "do any of that.\" Like I was"
+    },
+    {
+      "t": 3391,
+      "text": "I was like, \"This"
+    },
+    {
+      "t": 3392,
+      "text": "this brand that is in a 50 million in"
+    },
+    {
+      "t": 3394,
+      "text": "revenue for me, I don't I just stacked"
+    },
+    {
+      "t": 3398,
+      "text": "Alibaba times Shopify. I've never"
+    },
+    {
+      "t": 3400,
+      "text": "manufactured a product in my life, still"
+    },
+    {
+      "t": 3402,
+      "text": "don't know how to."
+    },
+    {
+      "t": 3403,
+      "text": "And I've never made a website that's"
+    },
+    {
+      "t": 3405,
+      "text": "like, you know, actually used by"
+    },
+    {
+      "t": 3406,
+      "text": "customers, still don't know how to. But"
+    },
+    {
+      "t": 3408,
+      "text": "I was able to I was able to skip all the"
+    },
+    {
+      "t": 3411,
+      "text": "work and get to the brand part, like do"
+    },
+    {
+      "t": 3413,
+      "text": "the thing where we created a product"
+    },
+    {
+      "t": 3414,
+      "text": "that people liked and you know, it's a"
+    },
+    {
+      "t": 3415,
+      "text": "successful company now. And I thought,"
+    },
+    {
+      "t": 3417,
+      "text": "\"Wow, Replit's going to do that for the"
+    },
+    {
+      "t": 3419,
+      "text": "software space.\" And I was like, \"It"
+    },
+    {
+      "t": 3421,
+      "text": "used to be that the job was software"
+    },
+    {
+      "t": 3424,
+      "text": "engineer"
+    },
+    {
+      "t": 3425,
+      "text": "and now it's going to be software"
+    },
+    {
+      "t": 3426,
+      "text": "creator.\" It's like I can be a creator"
+    },
+    {
+      "t": 3429,
+      "text": "of software without being a programmer"
+    },
+    {
+      "t": 3430,
+      "text": "myself. That little shift is a big shift"
+    },
+    {
+      "t": 3433,
+      "text": "because the way I think about it, I"
+    },
+    {
+      "t": 3435,
+      "text": "don't know how many developers there"
+    },
+    {
+      "t": 3436,
+      "text": "are. I think GitHub has like a hundred"
+    },
+    {
+      "t": 3438,
+      "text": "million or two hundred million accounts,"
+    },
+    {
+      "t": 3440,
+      "text": "so I'll just use that. Like there's"
+    },
+    {
+      "t": 3442,
+      "text": "two hundred million, let's say,"
+    },
+    {
+      "t": 3443,
+      "text": "developer you know, software engineers"
+    },
+    {
+      "t": 3445,
+      "text": "in the world."
+    },
+    {
+      "t": 3446,
+      "text": "Um well now there's going to be two"
+    },
+    {
+      "t": 3448,
+      "text": "hundred two billion people that can"
+    },
+    {
+      "t": 3450,
+      "text": "create software. Cuz if you got the"
+    },
+    {
+      "t": 3451,
+      "text": "internet, you got your phone, you can"
+    },
+    {
+      "t": 3452,
+      "text": "create software now. You can just tell"
+    },
+    {
+      "t": 3454,
+      "text": "the agent \"Make me an app that does"
+    },
+    {
+      "t": 3456,
+      "text": "this. Make a tool that does this.\" And"
+    },
+    {
+      "t": 3458,
+      "text": "so you 10x the number of people that can"
+    },
+    {
+      "t": 3460,
+      "text": "create software in the same way that"
+    },
+    {
+      "t": 3462,
+      "text": "Shopify and Alibaba"
+    },
+    {
+      "t": 3464,
+      "text": "10x or more the number of people who"
+    },
+    {
+      "t": 3466,
+      "text": "could create products and go sell them,"
+    },
+    {
+      "t": 3468,
+      "text": "like hard goods. Um that's how I see"
+    },
+    {
+      "t": 3470,
+      "text": "what you're doing."
+    },
+    {
+      "t": 3472,
+      "text": "Yeah. So so you know, even at the start"
+    },
+    {
+      "t": 3474,
+      "text": "of Replit uh uh you know, there's our"
+    },
+    {
+      "t": 3478,
+      "text": "initial seed deck and the deck kind of"
+    },
+    {
+      "t": 3480,
+      "text": "has this Elon Musk style like you know,"
+    },
+    {
+      "t": 3483,
+      "text": "master plan."
+    },
+    {
+      "t": 3485,
+      "text": "And it was like we we build a you know,"
+    },
+    {
+      "t": 3487,
+      "text": "we build a platform, we grow it and then"
+    },
+    {
+      "t": 3489,
+      "text": "AI is going to make the thing a lot more"
+    },
+    {
+      "t": 3492,
+      "text": "accessible because our mission was uh"
+    },
+    {
+      "t": 3494,
+      "text": "make programming accessible, then we"
+    },
+    {
+      "t": 3496,
+      "text": "updated our mission, it was uh create a"
+    },
+    {
+      "t": 3498,
+      "text": "billion programmers. And then so the"
+    },
+    {
+      "t": 3500,
+      "text": "moment that, you know, you know, even"
+    },
+    {
+      "t": 3503,
+      "text": "GPT-3 came out, I was like, \"This is"
+    },
+    {
+      "t": 3505,
+      "text": "this is a thing.\" And I wrote this"
+    },
+    {
+      "t": 3507,
+      "text": "thread on Twitter about how AI agents"
+    },
+    {
+      "t": 3510,
+      "text": "will just change how programmers work."
+    },
+    {
+      "t": 3512,
+      "text": "Yeah. This is the deck. So 2015, this is"
+    },
+    {
+      "t": 3515,
+      "text": "I don't even know if OpenAI was a"
+    },
+    {
+      "t": 3516,
+      "text": "research lab at that time, maybe."
+    },
+    {
+      "t": 3519,
+      "text": "Definitely, you know, there was no chat"
+    },
+    {
+      "t": 3520,
+      "text": "GPT, but this is your master plan deck,"
+    },
+    {
+      "t": 3522,
+      "text": "so we're going to grow by building tools"
+    },
+    {
+      "t": 3524,
+      "text": "for teachers and students. We're going"
+    },
+    {
+      "t": 3526,
+      "text": "to build a simple network and"
+    },
+    {
+      "t": 3527,
+      "text": "AI-assisted interface that blurs the"
+    },
+    {
+      "t": 3528,
+      "text": "distinction between learning and"
+    },
+    {
+      "t": 3529,
+      "text": "building."
+    },
+    {
+      "t": 3530,
+      "text": "Evolve a new platform where people can"
+    },
+    {
+      "t": 3532,
+      "text": "learn, build, explore, and host"
+    },
+    {
+      "t": 3533,
+      "text": "applications. Like talking about AI back"
+    },
+    {
+      "t": 3535,
+      "text": "in 2015 in your in your actual pitch"
+    },
+    {
+      "t": 3537,
+      "text": "deck. Dude, it's also clear how"
+    },
+    {
+      "t": 3540,
+      "text": "Codecademy was highly influential to you"
+    },
+    {
+      "t": 3542,
+      "text": "because I remember"
+    },
+    {
+      "t": 3543,
+      "text": "years ago Sean said everyone tries to"
+    },
+    {
+      "t": 3545,
+      "text": "learn how to code. I used Codecademy and"
+    },
+    {
+      "t": 3547,
+      "text": "it was a pretty cool interface and it's"
+    },
+    {
+      "t": 3549,
+      "text": "very similar to what you're describing."
+    },
+    {
+      "t": 3551,
+      "text": "You know, at some point I kind of lost"
+    },
+    {
+      "t": 3554,
+      "text": "hope in in courses."
+    },
+    {
+      "t": 3557,
+      "text": "Um because like, you know, we have 100"
+    },
+    {
+      "t": 3559,
+      "text": "days of code. We're telling users that"
+    },
+    {
+      "t": 3562,
+      "text": "to use our application, you need to you"
+    },
+    {
+      "t": 3564,
+      "text": "need to invest 100 days."
+    },
+    {
+      "t": 3566,
+      "text": "And that's kind of crazy. Like there"
+    },
+    {
+      "t": 3568,
+      "text": "there isn't any like successful company"
+    },
+    {
+      "t": 3570,
+      "text": "in the world where you need 100 days to"
+    },
+    {
+      "t": 3573,
+      "text": "learn it."
+    },
+    {
+      "t": 3574,
+      "text": "And and so that's when I kind of changed"
+    },
+    {
+      "t": 3577,
+      "text": "my mindset and I said, \"Okay, it needs"
+    },
+    {
+      "t": 3579,
+      "text": "to be chat GPT like. It needs to be just"
+    },
+    {
+      "t": 3582,
+      "text": "a prompt.\""
+    },
+    {
+      "t": 3583,
+      "text": "Um and we started building that earlier"
+    },
+    {
+      "t": 3586,
+      "text": "this year. And and now that's all we're"
+    },
+    {
+      "t": 3588,
+      "text": "focused on. We want to create new"
+    },
+    {
+      "t": 3589,
+      "text": "programmers."
+    },
+    {
+      "t": 3591,
+      "text": "You know, existing developers, great."
+    },
+    {
+      "t": 3593,
+      "text": "They have a lot of tools."
+    },
+    {
+      "t": 3595,
+      "text": "But we want to we want to go after the"
+    },
+    {
+      "t": 3596,
+      "text": "citizen developer, right? Everyone is a"
+    },
+    {
+      "t": 3598,
+      "text": "developer. And I think that's you know,"
+    },
+    {
+      "t": 3601,
+      "text": "that's what we're you're talking about."
+    },
+    {
+      "t": 3602,
+      "text": "You go from like 100 million"
+    },
+    {
+      "t": 3604,
+      "text": "developers in the world. Well, I think"
+    },
+    {
+      "t": 3605,
+      "text": "it it overstates the number. It's"
+    },
+    {
+      "t": 3607,
+      "text": "probably more 30 million."
+    },
+    {
+      "t": 3609,
+      "text": "And then you 10x that."
+    },
+    {
+      "t": 3610,
+      "text": "And so what what does the world look"
+    },
+    {
+      "t": 3612,
+      "text": "like when anyone with an idea could"
+    },
+    {
+      "t": 3615,
+      "text": "could make something? And one of my"
+    },
+    {
+      "t": 3617,
+      "text": "favorite books is The Sovereign"
+    },
+    {
+      "t": 3619,
+      "text": "Individual."
+    },
+    {
+      "t": 3620,
+      "text": "The thing I really was excited about is"
+    },
+    {
+      "t": 3623,
+      "text": "this idea of ideas become wealth."
+    },
+    {
+      "t": 3625,
+      "text": "And so you no longer have the bottleneck"
+    },
+    {
+      "t": 3628,
+      "text": "of making something. That's where we're"
+    },
+    {
+      "t": 3629,
+      "text": "headed. And this is what you're talking"
+    },
+    {
+      "t": 3631,
+      "text": "about, Shawn, is is like the"
+    },
+    {
+      "t": 3634,
+      "text": "the it's it's the time for idea guy. And"
+    },
+    {
+      "t": 3637,
+      "text": "like maybe that's you know, tongue in"
+    },
+    {
+      "t": 3639,
+      "text": "cheek and like maybe the way to to talk"
+    },
+    {
+      "t": 3641,
+      "text": "about it in more precise terms"
+    },
+    {
+      "t": 3645,
+      "text": "is that people who can find these gaps"
+    },
+    {
+      "t": 3649,
+      "text": "in in markets. People who have"
+    },
+    {
+      "t": 3652,
+      "text": "expertise in certain areas"
+    },
+    {
+      "t": 3655,
+      "text": "that they can tell there's inefficiency"
+    },
+    {
+      "t": 3657,
+      "text": "and they can like create a AI"
+    },
+    {
+      "t": 3659,
+      "text": "application that"
+    },
+    {
+      "t": 3660,
+      "text": "can immediately plug like I saw this"
+    },
+    {
+      "t": 3662,
+      "text": "video on Twitter the other day it was of"
+    },
+    {
+      "t": 3664,
+      "text": "a snake that got its head chopped off"
+    },
+    {
+      "t": 3667,
+      "text": "and it like floated around and bit the"
+    },
+    {
+      "t": 3670,
+      "text": "bit like the tail of its own body and"
+    },
+    {
+      "t": 3672,
+      "text": "then like the body like reacted. Your"
+    },
+    {
+      "t": 3674,
+      "text": "employees are they thinking that this"
+    },
+    {
+      "t": 3676,
+      "text": "sort of doing that to themselves where"
+    },
+    {
+      "t": 3678,
+      "text": "they're like"
+    },
+    {
+      "t": 3680,
+      "text": "like when you make jokes or like when"
+    },
+    {
+      "t": 3682,
+      "text": "you"
+    },
+    {
+      "t": 3682,
+      "text": "when you like talk like you know like"
+    },
+    {
+      "t": 3684,
+      "text": "you don't need to hire all these"
+    },
+    {
+      "t": 3685,
+      "text": "programmers to do all this stuff. Are"
+    },
+    {
+      "t": 3687,
+      "text": "they like sitting there with their heads"
+    },
+    {
+      "t": 3688,
+      "text": "in their pocket like"
+    },
+    {
+      "t": 3690,
+      "text": "like does that be nice?"
+    },
+    {
+      "t": 3692,
+      "text": "You know, I I always wanted the company"
+    },
+    {
+      "t": 3694,
+      "text": "to be super lean."
+    },
+    {
+      "t": 3696,
+      "text": "And so"
+    },
+    {
+      "t": 3697,
+      "text": "for a long time we're like 10 people."
+    },
+    {
+      "t": 3699,
+      "text": "But but like now we're like 70 people."
+    },
+    {
+      "t": 3702,
+      "text": "That's still nothing. Yeah, so so I I"
+    },
+    {
+      "t": 3704,
+      "text": "I'd rather not hire a lot more people"
+    },
+    {
+      "t": 3706,
+      "text": "because I think that again the"
+    },
+    {
+      "t": 3707,
+      "text": "efficiency"
+    },
+    {
+      "t": 3709,
+      "text": "for programmers is So look, citizen"
+    },
+    {
+      "t": 3712,
+      "text": "developers are going to go from zero to"
+    },
+    {
+      "t": 3714,
+      "text": "like say 10x."
+    },
+    {
+      "t": 3715,
+      "text": "But also existing software engineer"
+    },
+    {
+      "t": 3717,
+      "text": "going to go from 10x to 100x."
+    },
+    {
+      "t": 3719,
+      "text": "Right? And so and so they're going to be"
+    },
+    {
+      "t": 3722,
+      "text": "become more and more productive."
+    },
+    {
+      "t": 3724,
+      "text": "The moment we"
+    },
+    {
+      "t": 3726,
+      "text": "we automate all of software engineering"
+    },
+    {
+      "t": 3729,
+      "text": "I think that's sort of like the moment"
+    },
+    {
+      "t": 3731,
+      "text": "of AGI. So I think it's like a little"
+    },
+    {
+      "t": 3733,
+      "text": "far away."
+    },
+    {
+      "t": 3735,
+      "text": "And the reason I say this is because"
+    },
+    {
+      "t": 3737,
+      "text": "once you automate software"
+    },
+    {
+      "t": 3739,
+      "text": "then the agents can rebuild themselves"
+    },
+    {
+      "t": 3741,
+      "text": "and you go into this"
+    },
+    {
+      "t": 3743,
+      "text": "into this loop of you know, increased"
+    },
+    {
+      "t": 3746,
+      "text": "intelligence."
+    },
+    {
+      "t": 3748,
+      "text": "Every version builds its next version,"
+    },
+    {
+      "t": 3750,
+      "text": "builds its next version and so this is"
+    },
+    {
+      "t": 3752,
+      "text": "what they call intelligence explosion"
+    },
+    {
+      "t": 3753,
+      "text": "that would lead to the singularity,"
+    },
+    {
+      "t": 3755,
+      "text": "right? So it's like a pretty crazy time"
+    },
+    {
+      "t": 3757,
+      "text": "when we automate all of software"
+    },
+    {
+      "t": 3758,
+      "text": "engineering. And so I I I think I think"
+    },
+    {
+      "t": 3761,
+      "text": "it's coming. I don't know if it's 10"
+    },
+    {
+      "t": 3763,
+      "text": "years or 15 years."
+    },
+    {
+      "t": 3764,
+      "text": "But I think that's the time where the"
+    },
+    {
+      "t": 3766,
+      "text": "world really radically changes."
+    },
+    {
+      "t": 3769,
+      "text": "Have you met anybody in kind of the tech"
+    },
+    {
+      "t": 3772,
+      "text": "industry that"
+    },
+    {
+      "t": 3774,
+      "text": "blew you away either personally or maybe"
+    },
+    {
+      "t": 3776,
+      "text": "read about them maybe met a friend of a"
+    },
+    {
+      "t": 3778,
+      "text": "friend told you a story cuz I saw a"
+    },
+    {
+      "t": 3779,
+      "text": "picture of you with Jensen"
+    },
+    {
+      "t": 3781,
+      "text": "you know, you've met Paul Graham. I know"
+    },
+    {
+      "t": 3783,
+      "text": "that you're like connected in the AI"
+    },
+    {
+      "t": 3784,
+      "text": "circles. You met Sam Altman."
+    },
+    {
+      "t": 3787,
+      "text": "In addition to building the tech, I love"
+    },
+    {
+      "t": 3788,
+      "text": "the characters and I love the stories is"
+    },
+    {
+      "t": 3790,
+      "text": "why every you know, Elon snippet of how"
+    },
+    {
+      "t": 3792,
+      "text": "he runs his companies goes viral and"
+    },
+    {
+      "t": 3793,
+      "text": "[\u00a0__\u00a0] like that. What are your favorite"
+    },
+    {
+      "t": 3796,
+      "text": "kind of inspiring stories or crazy"
+    },
+    {
+      "t": 3797,
+      "text": "stories that you've you've either"
+    },
+    {
+      "t": 3799,
+      "text": "experienced directly or or read?"
+    },
+    {
+      "t": 3801,
+      "text": "You know, one of the craziest story when"
+    },
+    {
+      "t": 3803,
+      "text": "we're"
+    },
+    {
+      "t": 3804,
+      "text": "raising from A16Z"
+    },
+    {
+      "t": 3806,
+      "text": "Mark invites me to to breakfast at like"
+    },
+    {
+      "t": 3808,
+      "text": "10:00 a.m. at his house."
+    },
+    {
+      "t": 3810,
+      "text": "And so so I go there and I expect like"
+    },
+    {
+      "t": 3812,
+      "text": "I'm going to talk about the business."
+    },
+    {
+      "t": 3814,
+      "text": "And so we we spend like two or three"
+    },
+    {
+      "t": 3816,
+      "text": "hours talking about politics"
+    },
+    {
+      "t": 3818,
+      "text": "and the world and like all sorts of"
+    },
+    {
+      "t": 3820,
+      "text": "things that are interesting to to him."
+    },
+    {
+      "t": 3823,
+      "text": "And I thought like this guy is like"
+    },
+    {
+      "t": 3825,
+      "text": "is like more than just a technologist."
+    },
+    {
+      "t": 3827,
+      "text": "He's like a philosopher. And so right"
+    },
+    {
+      "t": 3829,
+      "text": "now he's he's going out and he's talking"
+    },
+    {
+      "t": 3831,
+      "text": "about this stuff. Like his Joe Rogan"
+    },
+    {
+      "t": 3832,
+      "text": "interview went super viral. And he's"
+    },
+    {
+      "t": 3835,
+      "text": "been always have like these interesting"
+    },
+    {
+      "t": 3836,
+      "text": "ideas about about the world. And the"
+    },
+    {
+      "t": 3838,
+      "text": "interesting thing about A16Z is his"
+    },
+    {
+      "t": 3841,
+      "text": "partner is is sort of like the executor"
+    },
+    {
+      "t": 3843,
+      "text": "sort of the executive, right? He wrote"
+    },
+    {
+      "t": 3845,
+      "text": "The Hard Thing About Hard Things where"
+    },
+    {
+      "t": 3847,
+      "text": "like he teaches you like about what it"
+    },
+    {
+      "t": 3849,
+      "text": "means to run a company."
+    },
+    {
+      "t": 3851,
+      "text": "It's painful. It's hard. And what it"
+    },
+    {
+      "t": 3853,
+      "text": "means to hire executives or what it"
+    },
+    {
+      "t": 3854,
+      "text": "means to scale a company. And so so you"
+    },
+    {
+      "t": 3857,
+      "text": "have this this duo of like"
+    },
+    {
+      "t": 3859,
+      "text": "the doer and the like the philosopher."
+    },
+    {
+      "t": 3862,
+      "text": "And I think I think that's really"
+    },
+    {
+      "t": 3864,
+      "text": "amazing and I think they're they're they"
+    },
+    {
+      "t": 3866,
+      "text": "have really big plans"
+    },
+    {
+      "t": 3868,
+      "text": "and and they're almost just getting"
+    },
+    {
+      "t": 3869,
+      "text": "started."
+    },
+    {
+      "t": 3870,
+      "text": "I just hate the philosopher. Like are"
+    },
+    {
+      "t": 3871,
+      "text": "you going to do anything? What are you"
+    },
+    {
+      "t": 3873,
+      "text": "what are you talking about politics for"
+    },
+    {
+      "t": 3874,
+      "text": "right now? It's got to be the worst to"
+    },
+    {
+      "t": 3876,
+      "text": "be the doer and the doer philosopher"
+    },
+    {
+      "t": 3877,
+      "text": "relationship."
+    },
+    {
+      "t": 3881,
+      "text": "You know, I I think I think Sam is is"
+    },
+    {
+      "t": 3884,
+      "text": "was interesting to kind of meet him talk"
+    },
+    {
+      "t": 3886,
+      "text": "to him cuz he's very effective."
+    },
+    {
+      "t": 3889,
+      "text": "Like he like the first time I met I met"
+    },
+    {
+      "t": 3891,
+      "text": "him or like"
+    },
+    {
+      "t": 3893,
+      "text": "maybe not the first time but like he was"
+    },
+    {
+      "t": 3896,
+      "text": "on his computer as as I'm talking."
+    },
+    {
+      "t": 3899,
+      "text": "And so I'm talking it was like yeah,"
+    },
+    {
+      "t": 3900,
+      "text": "we're fundraising. I want to"
+    },
+    {
+      "t": 3901,
+      "text": "talk to you know, A16Z. I'm like really"
+    },
+    {
+      "t": 3905,
+      "text": "big fan of Mark and he was typing on his"
+    },
+    {
+      "t": 3907,
+      "text": "computer. Okay, I'll introduce you to"
+    },
+    {
+      "t": 3909,
+      "text": "Mark. And"
+    },
+    {
+      "t": 3911,
+      "text": "and and then you know, when when you"
+    },
+    {
+      "t": 3913,
+      "text": "send Sam emails it's like pretty quickly"
+    },
+    {
+      "t": 3916,
+      "text": "replies with like a you know, a couple"
+    },
+    {
+      "t": 3918,
+      "text": "words or like a couple sentences. So I"
+    },
+    {
+      "t": 3921,
+      "text": "saw how effective and fast you can be"
+    },
+    {
+      "t": 3924,
+      "text": "and that that I'm not like that. You"
+    },
+    {
+      "t": 3926,
+      "text": "know, I'm trying to be more like that"
+    },
+    {
+      "t": 3928,
+      "text": "but I'm someone who really values"
+    },
+    {
+      "t": 3932,
+      "text": "the quietness like to think about ideas"
+    },
+    {
+      "t": 3936,
+      "text": "and to think about strategy and things"
+    },
+    {
+      "t": 3938,
+      "text": "like that. So I'm not always in top of"
+    },
+    {
+      "t": 3939,
+      "text": "communication. It actually makes me like"
+    },
+    {
+      "t": 3941,
+      "text": "a little you know, it's overwhelming. Um"
+    },
+    {
+      "t": 3945,
+      "text": "but but"
+    },
+    {
+      "t": 3946,
+      "text": "but I think I think seeing these people"
+    },
+    {
+      "t": 3948,
+      "text": "at least you know, it inspired me to be"
+    },
+    {
+      "t": 3950,
+      "text": "a little more like that."
+    },
+    {
+      "t": 3952,
+      "text": "You you tweeted out the story that I"
+    },
+    {
+      "t": 3953,
+      "text": "loved about"
+    },
+    {
+      "t": 3955,
+      "text": "you said the most gangster story in"
+    },
+    {
+      "t": 3957,
+      "text": "Silicon Valley is Steve Jobs buying"
+    },
+    {
+      "t": 3958,
+      "text": "Pixar for 5 million"
+    },
+    {
+      "t": 3960,
+      "text": "investing 50 million and operating at a"
+    },
+    {
+      "t": 3962,
+      "text": "loss for a decade so much so that he had"
+    },
+    {
+      "t": 3964,
+      "text": "to cut personal checks to make payroll"
+    },
+    {
+      "t": 3967,
+      "text": "and somehow turning it around to a 7"
+    },
+    {
+      "t": 3968,
+      "text": "billion dollar exit."
+    },
+    {
+      "t": 3971,
+      "text": "Why why do you like that story? You"
+    },
+    {
+      "t": 3973,
+      "text": "know,"
+    },
+    {
+      "t": 3974,
+      "text": "there are people who are overrated in"
+    },
+    {
+      "t": 3976,
+      "text": "Silicon Valley and I think there are"
+    },
+    {
+      "t": 3977,
+      "text": "people who are underrated. Like I think"
+    },
+    {
+      "t": 3980,
+      "text": "people think about Steve Jobs in terms"
+    },
+    {
+      "t": 3981,
+      "text": "of like yeah, the flashy things iPhone,"
+    },
+    {
+      "t": 3983,
+      "text": "iPod, you know, coming on stage and and"
+    },
+    {
+      "t": 3985,
+      "text": "doing that."
+    },
+    {
+      "t": 3987,
+      "text": "The thing I like about the Steve Jobs"
+    },
+    {
+      "t": 3988,
+      "text": "story is when he was lost in the desert"
+    },
+    {
+      "t": 3991,
+      "text": "for 10 years."
+    },
+    {
+      "t": 3992,
+      "text": "So he left he was fired from Apple."
+    },
+    {
+      "t": 3997,
+      "text": "And then he created two companies that"
+    },
+    {
+      "t": 3999,
+      "text": "were failing the whole time."
+    },
+    {
+      "t": 4001,
+      "text": "Like NeXT Computing, NeXT computers and"
+    },
+    {
+      "t": 4004,
+      "text": "Pixar were literally failing. Like they"
+    },
+    {
+      "t": 4006,
+      "text": "didn't do anything. They weren't"
+    },
+    {
+      "t": 4008,
+      "text": "selling. He was just like investing more"
+    },
+    {
+      "t": 4010,
+      "text": "and more of his money."
+    },
+    {
+      "t": 4012,
+      "text": "Like I think he was going to go broke if"
+    },
+    {
+      "t": 4015,
+      "text": "but he kept going for 10 years. Like how"
+    },
+    {
+      "t": 4017,
+      "text": "do you do that?"
+    },
+    {
+      "t": 4019,
+      "text": "And I you know, I'm a person who like we"
+    },
+    {
+      "t": 4021,
+      "text": "talked about in my story where I want to"
+    },
+    {
+      "t": 4023,
+      "text": "be able to go the distance. I think"
+    },
+    {
+      "t": 4025,
+      "text": "going the distance is is an advantage"
+    },
+    {
+      "t": 4028,
+      "text": "for for entrepreneurs. And Pixar became"
+    },
+    {
+      "t": 4031,
+      "text": "this hugely valuable company. And it"
+    },
+    {
+      "t": 4033,
+      "text": "goes from making no revenue to making"
+    },
+    {
+      "t": 4036,
+      "text": "billions of dollars and going public"
+    },
+    {
+      "t": 4038,
+      "text": "over over a couple of years."
+    },
+    {
+      "t": 4040,
+      "text": "And NeXT NeXT NeXT computers saved"
+    },
+    {
+      "t": 4044,
+      "text": "Apple. Apple was having a problem with"
+    },
+    {
+      "t": 4047,
+      "text": "OS. Like Intel, you know, they had the"
+    },
+    {
+      "t": 4050,
+      "text": "chip before. I don't know they made it"
+    },
+    {
+      "t": 4052,
+      "text": "internally or something like that."
+    },
+    {
+      "t": 4054,
+      "text": "And then everyone was moving to Intel."
+    },
+    {
+      "t": 4056,
+      "text": "Intel was the best computing chip and"
+    },
+    {
+      "t": 4059,
+      "text": "they wanted their computers to be fast."
+    },
+    {
+      "t": 4061,
+      "text": "And so they needed a new operating"
+    },
+    {
+      "t": 4063,
+      "text": "system."
+    },
+    {
+      "t": 4064,
+      "text": "And they tried to buy they went to the"
+    },
+    {
+      "t": 4066,
+      "text": "market. They tried to acquire companies."
+    },
+    {
+      "t": 4068,
+      "text": "They couldn't find a great operating"
+    },
+    {
+      "t": 4069,
+      "text": "system."
+    },
+    {
+      "t": 4070,
+      "text": "And NeXT Computing had the had had a"
+    },
+    {
+      "t": 4072,
+      "text": "great operating system. And that became"
+    },
+    {
+      "t": 4075,
+      "text": "Mac OS."
+    },
+    {
+      "t": 4076,
+      "text": "So they they bought"
+    },
+    {
+      "t": 4077,
+      "text": "know that. I thought NeXT was just a"
+    },
+    {
+      "t": 4078,
+      "text": "failure. I didn't I didn't even realize"
+    },
+    {
+      "t": 4080,
+      "text": "it actually I thought they just bought"
+    },
+    {
+      "t": 4082,
+      "text": "Steve back Apple hire but it wasn't an"
+    },
+    {
+      "t": 4083,
+      "text": "acqui- it wasn't just an acquire. No, I"
+    },
+    {
+      "t": 4085,
+      "text": "mean Objective-C for example,"
+    },
+    {
+      "t": 4088,
+      "text": "you know, NeXT Computing was really"
+    },
+    {
+      "t": 4091,
+      "text": "obsessed with this idea of"
+    },
+    {
+      "t": 4092,
+      "text": "object-oriented programming and they"
+    },
+    {
+      "t": 4093,
+      "text": "innovated a lot on what that means. And"
+    },
+    {
+      "t": 4096,
+      "text": "you know, it is based on Unix but it has"
+    },
+    {
+      "t": 4098,
+      "text": "a lot of interesting features on top of"
+    },
+    {
+      "t": 4100,
+      "text": "that. So Apple they it saved Apple cuz"
+    },
+    {
+      "t": 4103,
+      "text": "Apple was otherwise not going to be"
+    },
+    {
+      "t": 4104,
+      "text": "competitive without these new chips."
+    },
+    {
+      "t": 4107,
+      "text": "Right. Well, dude I know we kept you"
+    },
+    {
+      "t": 4109,
+      "text": "half an hour over. I apologize for that."
+    },
+    {
+      "t": 4112,
+      "text": "But this was amazing. This was one of my"
+    },
+    {
+      "t": 4114,
+      "text": "favorite episodes in a long time."
+    },
+    {
+      "t": 4116,
+      "text": "And I'm not just saying that. You can go"
+    },
+    {
+      "t": 4117,
+      "text": "check all the other episodes. I don't"
+    },
+    {
+      "t": 4118,
+      "text": "say that at the end. So"
+    },
+    {
+      "t": 4120,
+      "text": "this was awesome. Thanks so much for"
+    },
+    {
+      "t": 4121,
+      "text": "coming on. Where should people Twitter"
+    },
+    {
+      "t": 4124,
+      "text": "is the best place to follow you? Yeah,"
+    },
+    {
+      "t": 4126,
+      "text": "Twitter"
+    },
+    {
+      "t": 4127,
+      "text": "Amjad"
+    },
+    {
+      "t": 4129,
+      "text": "on Twitter. And and Replit handle on"
+    },
+    {
+      "t": 4133,
+      "text": "Twitter as well. Just just r e p l."
+    },
+    {
+      "t": 4135,
+      "text": "Dude, thank you very much. You're the"
+    },
+    {
+      "t": 4136,
+      "text": "best. Of course. Of course my pleasure."
+    }
+  ],
+  "transcript_chars": 71283
+}
