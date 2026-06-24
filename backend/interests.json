@@ -1,5 +1,5 @@
 {
-  "_comment": "Discovery corpus for NUGGET. Heavily AI-weighted, plus building/entrepreneurship and short-term rental. Educational only. The pipeline searches each query (relevance, view+duration filtered) and RSS-pulls promoted channels. Edit freely; the Discovery-Coverage eval-loop tunes it.",
+  "_comment": "Discovery corpus for NUGGET. Daily monitoring draws newest 2026 uploads from the three channel lists below (ai_channels / build_channels / str_channels), tagged by area. The topic-search queries are a secondary lane (discover()). Educational only. All channel_ids verified via yt-dlp + confirmed posting in 2026.",
   "filters": { "min_views": 15000, "min_duration_s": 360, "max_duration_s": 9000 },
   "areas": {
     "ai": {
@@ -40,7 +40,8 @@
   "promoted_channels": [
     { "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg", "name": "Y Combinator" }
   ],
-  "_ai_channels_comment": "Reputable AI channels — the recency pull (discover_recent) draws newest uploads from these.",
+
+  "_channels_comment": "Monitored daily (discover_recent -> monitored_channels). All verified June 2026, posting in 2026.",
   "ai_channels": [
     { "channel_id": "UCawZsQWqfGSbCI5yjkdVkTA", "name": "Matthew Berman" },
     { "channel_id": "UCNJ1Ymd5yFuUPtn21xtRbbw", "name": "AI Explained" },
@@ -54,6 +55,54 @@
     { "channel_id": "UC6r0JH23PKZfogSwn2Q-oMw", "name": "bycloud" },
     { "channel_id": "UCrXSVX9a1mj8l0CMLwKgMVw", "name": "AI Jason" },
     { "channel_id": "UCHhYXsLBEVVnbvsq57n1MTQ", "name": "The AI Advantage" },
-    { "channel_id": "UC0m81bQuthaQZmFbXEY9QSw", "name": "AICodeKing" }
+    { "channel_id": "UC0m81bQuthaQZmFbXEY9QSw", "name": "AICodeKing" },
+    { "channel_id": "UC2ojq-nuP8ceeHqiroeKhBA", "name": "Nate Herk" },
+    { "channel_id": "UCPGrgwfbkjTIgPoOh2q1BAg", "name": "David Ondrej" },
+    { "channel_id": "UCWTyktbw5JYoSBduu8LsBgQ", "name": "Mervin Praison" },
+    { "channel_id": "UCDq7SjbgRKty5TgGafW8Clg", "name": "Prompt Engineering" },
+    { "channel_id": "UCbDZFHUjTCCUKyXgcp3g50Q", "name": "AI Makerspace" },
+    { "channel_id": "UCtatfZMf-8EkIwASXM4ts0A", "name": "AssemblyAI" },
+    { "channel_id": "UCMcoud_ZW7cfxeIugBflSBw", "name": "Riley Brown" },
+    { "channel_id": "UCui4jxDaMb53Gdh-AZUTPAg", "name": "Liam Ottley" },
+    { "channel_id": "UC2WmuBuFq6gL08QYG-JjXKw", "name": "WorldofAI" },
+    { "channel_id": "UCfzlCWGWYyIQ0aLC5w48gBQ", "name": "sentdex" },
+    { "channel_id": "UC6YYHJzM6PhZ2Yey9BQiUaw", "name": "Cursor" },
+    { "channel_id": "UCbRP3c757lWg9M-U7TyEkXA", "name": "Theo t3.gg" },
+    { "channel_id": "UCsBjURrPoezykLs9EqgamOA", "name": "Fireship" },
+    { "channel_id": "UCiHVTkJtWSdc9N3h0nUGWLg", "name": "n8n" },
+    { "channel_id": "UC4JX40jDee_tINbkjycV4Sg", "name": "Tech With Tim" }
+  ],
+  "build_channels": [
+    { "channel_id": "UCcefcZRL2oaA_uBNeo5UOWg", "name": "Y Combinator" },
+    { "channel_id": "UCyaN6mg5u8Cjy2ZI4ikWaug", "name": "My First Million" },
+    { "channel_id": "UCPjNBjflYl0-HQtUvOx0Ibw", "name": "Greg Isenberg" },
+    { "channel_id": "UChhw6DlKKTQ9mYSpTfXUYqA", "name": "Starter Story" },
+    { "channel_id": "UCLbKt4FZKk41HwZ2A3Mnz4Q", "name": "Starter Story Build" },
+    { "channel_id": "UCxZhukqVghThCjzZuvP7pfA", "name": "Acquiring Minds" },
+    { "channel_id": "UCXCYKT-PaZyMjTrFa9dYpZw", "name": "Acquisitions Anonymous" },
+    { "channel_id": "UC5fI3kxC-ewZ6ZXEYgznM7g", "name": "Codie Sanchez" },
+    { "channel_id": "UCdMrj5kezVrTiqZoFRqGxAg", "name": "BigDeal" },
+    { "channel_id": "UC12JO2IPlEViR-o6SLXKx1A", "name": "Marc Lou" },
+    { "channel_id": "UCJ4E393uI8mWRlSqgoeUKKw", "name": "Nathan Latka" },
+    { "channel_id": "UC6t1O76G0jYXOAoYCm153dA", "name": "Lennys Podcast" },
+    { "channel_id": "UCf0PBRjhf0rF8fWBIxTuoWA", "name": "20VC" },
+    { "channel_id": "UC4bq21IPPbpu0Qrsl7LW0sw", "name": "Slidebean" },
+    { "channel_id": "UCUyDOdBWhC1MCxEjC46d-zw", "name": "Alex Hormozi" },
+    { "channel_id": "UCyFqFYfTW2VoIQKylJ04Rtw", "name": "Acquired" }
+  ],
+  "str_channels": [
+    { "channel_id": "UCHnwvtvqsfFG2S1d5x5B4HQ", "name": "John Bianchi" },
+    { "channel_id": "UCp1yC2wHlSi0ConX65ODGqg", "name": "AirDNA" },
+    { "channel_id": "UCGqs04TvoYA-WSVBhT2gdKg", "name": "Michael Chang" },
+    { "channel_id": "UCvwmrPfn8ff-rTlc9YoH7Bg", "name": "Sean Rakidzich" },
+    { "channel_id": "UCwKwfQEYlbTCUynJHqjDmUA", "name": "Optimize My Airbnb" },
+    { "channel_id": "UC743mBwYcmpRdxMi8juvJ4g", "name": "Bailey Kramer" },
+    { "channel_id": "UC2x-yFc6Dbtzul2eN_Iskgw", "name": "Jesse Vasquez" },
+    { "channel_id": "UC17mi738WbdXCVg8BuNZdZQ", "name": "The Short Term Shop" },
+    { "channel_id": "UCdIM_XmhsVYbBhl3pgPq3dA", "name": "Robuilt" },
+    { "channel_id": "UCdAqMyNIw-0gRDH-2Rpe89Q", "name": "Thanks For Visiting" },
+    { "channel_id": "UCrlrD_9lehxMmLxfli4ANZA", "name": "Mark Simpson Boostly" },
+    { "channel_id": "UCnheh3vx0hT5Y7uHWhBs8kA", "name": "Bill Faeth" },
+    { "channel_id": "UCG5MtfqUDmDCi-6hF76Rp-Q", "name": "Kylee and Steven" }
   ]
 }

@@ -6,14 +6,15 @@ name: NUGGET daily pull
 
 on:
   schedule:
-    # 12:00 UTC = 7:00 AM US Central (CDT). GitHub cron is UTC and does NOT shift for daylight
-    # saving, so in winter (CST) this fires at 6:00 AM. Edit the hour below to re-pin it.
-    - cron: "0 12 * * *"
+    # 3x/day, UTC (GitHub cron does NOT shift for daylight saving). In summer (CDT, UTC-5):
+    - cron: "0 11 * * *"   # 6:00 AM Central
+    - cron: "0 17 * * *"   # 12:00 PM Central
+    - cron: "0 23 * * *"   # 6:00 PM Central
   workflow_dispatch:        # adds a "Run workflow" button so you can fire it on demand
     inputs:
       limit:
-        description: "How many videos to pull"
-        default: "5"
+        description: "Max videos to pull this run"
+        default: "20"
       hours:
         description: "Look-back window in hours"
         default: "24"
@@ -46,5 +47,5 @@ jobs:
       - name: Pull, extract, write to feed
         run: |
           python backend/pipeline.py recent \
-            --limit "${{ github.event.inputs.limit || '5' }}" \
+            --limit "${{ github.event.inputs.limit || '20' }}" \
             --hours "${{ github.event.inputs.hours || '24' }}"

@@ -163,9 +163,20 @@ def discover():
     print(f"[discover] queued {len(rows)} new videos")
     return len(rows)
 
+def monitored_channels():
+    """All channels we monitor daily, tagged by area. Merges the three vertical lists in
+    interests.json (ai_channels / build_channels / str_channels)."""
+    out = []
+    for area, key in (("ai", "ai_channels"), ("build", "build_channels"), ("str", "str_channels")):
+        for ch in CORPUS.get(key, []):
+            out.append({"channel_id": ch["channel_id"], "name": ch["name"], "area": area})
+    return out
+
+ONLY_YEAR = 2026  # hard rule: every video pulled (daily or backfill) must be published in 2026
+
 def discover_recent(hours=24, limit=5):
-    """Pull the newest uploads from the reputable AI channels (interests.json -> ai_channels)
-    published within the last `hours`, dedupe, take the `limit` most recent, queue them."""
+    """Pull the newest uploads from ALL monitored channels (ai/build/str) published within the last
+    `hours` AND in 2026, dedupe, take the `limit` most recent, queue them with their area."""
     from datetime import datetime, timezone, timedelta
     client = sb()
     seen = load_seen()
@@ -174,21 +185,23 @@ def discover_recent(hours=24, limit=5):
     skip = seen | existing | queued
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     cands = []
-    for ch in CORPUS.get("ai_channels", []):
+    for ch in monitored_channels():
         try:
             for v in channel_recent(ch["channel_id"], ch["name"]):
                 if v["video_id"] in skip:
                     continue
                 pub = datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
+                if pub.year != ONLY_YEAR:
+                    continue
                 if pub >= cutoff:
-                    v["pub"] = pub
+                    v["pub"] = pub; v["area"] = ch["area"]
                     cands.append(v)
         except Exception:
             continue
     cands.sort(key=lambda x: x["pub"], reverse=True)
     picked = cands[:limit]
-    rows = [{"video_id": v["video_id"], "title": v["title"], "source": "ai_channel_recent",
-             "found_via": v["channel"], "interest_area": "ai", "seed_score": 1e9} for v in picked]
+    rows = [{"video_id": v["video_id"], "title": v["title"], "source": "channel_recent",
+             "found_via": v["channel"], "interest_area": v["area"], "seed_score": 1e9} for v in picked]
     if rows:
         client.table("discovery_queue").upsert(rows, on_conflict="video_id").execute()
         for v in picked:
@@ -439,12 +452,12 @@ def list_recent(limit=5, hours=24):
     def pick(hrs):
         cutoff = datetime.now(timezone.utc) - timedelta(hours=hrs)
         out = []
-        for ch in CORPUS.get("ai_channels", []):
+        for ch in monitored_channels():
             try:
                 for v in channel_recent(ch["channel_id"], ch["name"]):
                     pub = datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
-                    if pub >= cutoff:
-                        out.append({**v, "pub": pub})
+                    if pub.year == ONLY_YEAR and pub >= cutoff:
+                        out.append({**v, "pub": pub, "area": ch["area"]})
             except Exception:
                 continue
         out.sort(key=lambda x: x["pub"], reverse=True)
