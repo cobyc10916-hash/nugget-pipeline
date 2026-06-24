@@ -1,0 +1,42 @@
+name: NUGGET learn from notes
+
+# Once a day: read Coby's new free-write Notes, distill them into TASTE.md's "Learned specifics"
+# (which the extractor reads on every pull), and commit the change back. This is the feedback loop
+# that makes FUTURE videos' nuggets reflect his stated taste. Costs nothing when there are no notes.
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 8:00 AM US Central (after the morning pulls)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Distill notes into TASTE.md
+        run: python backend/pipeline.py learn
+      - name: Commit TASTE.md if it changed
+        run: |
+          if ! git diff --quiet -- TASTE.md; then
+            git config user.name "nugget-bot"
+            git config user.email "264545911+cobyc10916-hash@users.noreply.github.com"
+            git add TASTE.md
+            git commit -m "learn: refine TASTE.md from feedback notes"
+            git push
+          else
+            echo "No new taste signal; TASTE.md unchanged."
+          fi

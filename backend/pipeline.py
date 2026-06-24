@@ -411,6 +411,56 @@ def taste_digest():
     if not fb:
         print("(no notes yet)")
 
+def learn():
+    """THE feedback loop. Read Coby's un-digested free-write notes, distill them into durable
+    'Learned specifics' bullets in TASTE.md (which the extractor reads on every run), mark the notes
+    learned, and report whether TASTE.md changed. Run daily; costs nothing when there are no new
+    notes. This is what makes future videos' nuggets reflect Coby's stated taste."""
+    import requests
+    from datetime import datetime, timezone
+    client = sb()
+    notes = client.table("feedback").select("id,note_text,nugget_id,video_id") \
+        .eq("action", "note").is_("learned_at", "null").execute().data
+    notes = [n for n in notes if (n.get("note_text") or "").strip()]
+    if not notes:
+        print("[learn] no new notes — TASTE.md unchanged"); return
+    ids = [n["nugget_id"] for n in notes if n.get("nugget_id")]
+    hooks = {}
+    if ids:
+        hooks = {r["id"]: r["hook"] for r in client.table("nuggets").select("id,hook").in_("id", ids).execute().data}
+    lines = [f'- "{n["note_text"].strip()}"  (on: {hooks.get(n.get("nugget_id"), n.get("video_id","a video"))})' for n in notes]
+    taste_path = HERE.parent / "TASTE.md"
+    current = taste_path.read_text()
+    existing_learned = current.split("## Learned specifics")[-1][:1800]
+    prompt = (
+        "Coby leaves free-write notes on nuggets in his personal learning feed. Distill his NEW notes "
+        "into 1-3 concise, DURABLE bullets for the 'Learned specifics' section of his taste file, so the "
+        "extractor pulls better nuggets for FUTURE videos. Capture the generalizable preference (what to "
+        "pull back on or lean into), not the single nugget. Read each note for its underlying reason. "
+        "NO em dashes. Output ONLY the bullet line(s), each starting with '- ', nothing else. If the notes "
+        "contain no generalizable signal, output the single word NONE.\n\n"
+        "NEW NOTES:\n" + "\n".join(lines) +
+        "\n\nExisting learned bullets (do NOT duplicate these):\n" + existing_learned
+    )
+    model = "gemini-3.1-flash-lite"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
+    r = requests.post(url, params={"key": GEMINI_KEY},
+                      json={"contents": [{"parts": [{"text": prompt}]}],
+                            "generationConfig": {"maxOutputTokens": 700, "temperature": 0.3}}, timeout=90)
+    out = ""
+    if r.status_code == 200:
+        out = "".join(p.get("text", "") for p in r.json()["candidates"][0].get("content", {}).get("parts", [])).strip()
+    bullets = "\n".join(l for l in out.splitlines() if l.strip().startswith("- "))
+    now = datetime.now(timezone.utc)
+    if bullets and out.strip().upper() != "NONE":
+        stamp = now.date().isoformat()
+        taste_path.write_text(current.rstrip() + f"\n- {stamp} (from notes):\n" + bullets + "\n")
+        print(f"[learn] appended {len(bullets.splitlines())} bullet(s) to TASTE.md from {len(notes)} note(s)")
+    else:
+        print(f"[learn] {len(notes)} note(s) had no generalizable signal; TASTE.md unchanged")
+    for n in notes:
+        client.table("feedback").update({"learned_at": now.isoformat()}).eq("id", n["id"]).execute()
+
 def _process_pending(client, limit):
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
@@ -481,7 +531,7 @@ def list_recent(limit=5, hours=24):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste"])
+    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn"])
     ap.add_argument("--limit", type=int, default=20)
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
@@ -490,4 +540,5 @@ if __name__ == "__main__":
     elif a.cmd == "list-recent": list_recent(a.limit, a.hours)
     elif a.cmd == "embed": embed_new()
     elif a.cmd == "taste": taste_digest()
+    elif a.cmd == "learn": learn()
     else: run(a.limit)
