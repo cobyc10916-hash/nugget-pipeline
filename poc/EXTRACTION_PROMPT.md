@@ -35,10 +35,15 @@ real number/benchmark, or a concrete example with the mechanism.
   **not** cap. A 6-min how-to may yield 4; a 70-min podcast may yield 20+. Quantity follows
   substance.
 - **Each nugget must be usable by someone who did NOT watch the video.** This is the bar.
-  If the payload assumes you know a tool, term, or setup from the video, ADD that context.
-  Write `context` (1 sentence) framing *what this thing is* whenever the hook/payload
-  references something a smart-but-unfamiliar reader wouldn't already know (a tool, a feature,
-  a named concept). Skip `context` only when the nugget is fully self-evident.
+- **Define the unfamiliar — HARD RULE.** Whenever a nugget names a *technical term / jargon /
+  tool / acronym* OR a *specific person, company, or product*, the `context` field MUST identify
+  it in ONE plain sentence, so a smart reader who has never heard of it isn't lost. This is the
+  little "what/who is this" line the owner relies on — do not skip it when a name or term is present.
+  - Term: "MCP (Model Context Protocol) is a standard that lets AI models call external tools."
+  - Person: "Andrej Karpathy is a founding member of OpenAI and former head of AI at Tesla."
+  - Company/product: "Cursor is an AI-native code editor built on VS Code."
+  Set `context` to null ONLY when the nugget names nothing a smart-but-unfamiliar reader would
+  need explained (it is fully self-evident). When in doubt, write the definition.
 - The `payload` should give enough to ACT: the what, the *why it matters*, and the *how* —
   typically 2-4 sentences. Not a terse one-liner, not a wall of text. Concrete over abstract
   ("DM 100 people who complained on Reddit" not "do customer research"). The reader should
@@ -106,7 +111,7 @@ before the reader swipes into the nuggets):
   "nuggets": [
     {
       "hook": "string",                 // sharp one-line scroll-stopper
-      "context": "string|null",         // 1 sentence: what the tool/term/concept IS (if needed)
+      "context": "string|null",         // REQUIRED 1-sentence definition when a term/person/company is named; null only if none
       "payload": "string",              // 2-4 sentences: what + why it matters + how to use it
       "timestamp_hint": 0,
       "topic_tags": ["string"],
