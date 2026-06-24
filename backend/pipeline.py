@@ -330,7 +330,8 @@ def write_video(client, q, data):
         return 0
     area = data.get("interest_area") or q.get("interest_area") or "other"
     client.table("videos").upsert({
-        "video_id": vid, "title": q["title"], "url": f"https://www.youtube.com/watch?v={vid}",
+        "video_id": vid, "title": q["title"], "channel_name": q.get("found_via"),
+        "url": f"https://www.youtube.com/watch?v={vid}",
         "thumbnail_url": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
         "duration_s": q.get("duration_s"), "views_at_fetch": q.get("raw_views"),
         "published_at": published_date(vid),
