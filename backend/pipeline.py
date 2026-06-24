@@ -341,7 +341,9 @@ def write_video(client, q, data):
     if len(nuggets) < 3:
         client.table("discovery_queue").update({"status": "low_yield"}).eq("video_id", vid).execute()
         return 0
-    area = data.get("interest_area") or q.get("interest_area") or "other"
+    # The channel's curated vertical is AUTHORITATIVE for the feed filter (we hand-sorted every
+    # channel into ai/build/str). Gemini's per-video guess is only a fallback for un-tagged sources.
+    area = q.get("interest_area") or data.get("interest_area") or "other"
     client.table("videos").upsert({
         "video_id": vid, "title": q["title"], "channel_name": q.get("found_via"),
         "url": f"https://www.youtube.com/watch?v={vid}",
