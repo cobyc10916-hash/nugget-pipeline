@@ -88,37 +88,59 @@ def search(query, _retry=True):
 def rss(channel_id, max_n=6):
     import xml.etree.ElementTree as ET
     import requests
-    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=30, proxies=RPROXIES)
+    r = requests.get(f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}", timeout=30, proxies=RPROXIES, headers=RSS_HEADERS)
     ids = re.findall(r"<yt:videoId>([^<]+)</yt:videoId>", r.text)[:max_n]
     titles = re.findall(r"<media:title>([^<]+)</media:title>", r.text)[:max_n]
     return [{"video_id": v, "title": t, "channel_id": channel_id} for v, t in zip(ids, titles)]
 
-def channel_recent(channel_id, name):
-    """Newest uploads from a channel via its RSS feed (with published timestamps). Tries a DIRECT
-    fetch first (YouTube RSS rarely IP-blocks, even from datacenters), then the Webshare proxy as a
-    fallback. Prints the reason and returns [] only if BOTH fail, so failures are never silent."""
+# YouTube's RSS endpoint soft-rate-limits PER IP: identical requests intermittently 404/500 once an
+# IP gets warm, then recover. (Confirmed 2026-06-25 — not a User-Agent issue; every UA behaves the
+# same.) The real defenses are below: hit the rotating Webshare proxy FIRST (fresh IP per request),
+# retry with backoff, and throttle between channels. The browser UA is just hygiene.
+RSS_HEADERS = {
+    "User-Agent": ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+                   "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"),
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+class FeedFetchError(Exception):
+    """A channel's RSS could not be fetched after all retries. Distinct from 'fetched fine, no new
+    uploads' so callers can tell a YouTube/proxy OUTAGE apart from a simply-quiet channel."""
+
+def channel_recent(channel_id, name, tries=2):
+    """Newest uploads from a channel via its RSS feed (with published timestamps). Hits the rotating
+    Webshare proxy FIRST (a fresh residential IP each attempt dodges YouTube's per-IP RSS rate-limit),
+    falling back to a DIRECT fetch (GitHub's datacenter IP, usually blocked), and retries the whole
+    pair with backoff. RAISES FeedFetchError if every attempt fails, so an outage surfaces loudly
+    instead of looking like 'no new videos'."""
     import requests
     url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-    attempts = [("direct", None)] + ([("proxy", RPROXIES)] if RPROXIES else [])
+    paths = ([("proxy", RPROXIES)] if RPROXIES else []) + [("direct", None)]
     last = "no attempt"
-    for how, proxies in attempts:
-        try:
-            r = requests.get(url, timeout=30, proxies=proxies)
-            if r.status_code == 200 and "<yt:videoId>" in r.text:
-                out = []
-                for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
-                    vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
-                    title = re.search(r"<media:title>([^<]+)</media:title>", e)
-                    pub = re.search(r"<published>([^<]+)</published>", e)
-                    if vid and pub:
-                        out.append({"video_id": vid.group(1), "title": title.group(1) if title else "",
-                                    "channel": name, "published": pub.group(1)})
-                return out
-            last = f"{how} status={r.status_code} bytes={len(r.text)}"
-        except Exception as ex:
-            last = f"{how} {type(ex).__name__}: {str(ex)[:80]}"
+    for attempt in range(tries):
+        for how, proxies in paths:
+            try:
+                # 15s timeout keeps worst-case runtime bounded (29 channels x tries x paths) under
+                # the 25-min job cap even when every request hangs.
+                r = requests.get(url, timeout=15, proxies=proxies, headers=RSS_HEADERS)
+                if r.status_code == 200 and "<yt:videoId>" in r.text:
+                    out = []
+                    for e in re.findall(r"<entry>(.*?)</entry>", r.text, re.S):
+                        vid = re.search(r"<yt:videoId>([^<]+)</yt:videoId>", e)
+                        title = re.search(r"<media:title>([^<]+)</media:title>", e)
+                        pub = re.search(r"<published>([^<]+)</published>", e)
+                        if vid and pub:
+                            out.append({"video_id": vid.group(1), "title": title.group(1) if title else "",
+                                        "channel": name, "published": pub.group(1)})
+                    return out
+                last = f"{how} status={r.status_code} bytes={len(r.text)}"
+            except Exception as ex:
+                last = f"{how} {type(ex).__name__}: {str(ex)[:80]}"
+        if attempt < tries - 1:
+            time.sleep(1.5 * (attempt + 1))  # 1.5s, 3s between full direct+proxy rounds
     print(f"  [rss] {name}: FAILED ({last})")
-    return []
+    raise FeedFetchError(f"{name}: {last}")
 
 def published_date(vid):
     """Best-effort upload date (YYYY-MM-DD) via yt-dlp; None on failure (proxy-aware)."""
@@ -189,20 +211,32 @@ def discover_recent(hours=24):
     skip = seen | existing | queued
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     cands = []
-    for ch in monitored_channels():
+    ok = failed = 0
+    chans = monitored_channels()
+    for i, ch in enumerate(chans):
+        if i:
+            time.sleep(1.0)  # throttle between channels: stay under YouTube's per-IP RSS rate-limit
         try:
-            for v in channel_recent(ch["channel_id"], ch["name"]):
-                if v["video_id"] in skip:
-                    continue
-                pub = datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
-                if pub.year != ONLY_YEAR:
-                    continue
-                if pub >= cutoff:
-                    v["pub"] = pub; v["area"] = ch["area"]
-                    cands.append(v)
-                    skip.add(v["video_id"])  # guard against the same id across two channels in one run
+            feed = channel_recent(ch["channel_id"], ch["name"])
+            ok += 1
         except Exception:
+            failed += 1
             continue
+        for v in feed:
+            if v["video_id"] in skip:
+                continue
+            pub = datetime.fromisoformat(v["published"].replace("Z", "+00:00"))
+            if pub.year != ONLY_YEAR:
+                continue
+            if pub >= cutoff:
+                v["pub"] = pub; v["area"] = ch["area"]
+                cands.append(v)
+                skip.add(v["video_id"])  # guard against the same id across two channels in one run
+    # Fail LOUD on a total outage: queued==0 is normal (no new uploads), but every channel failing to
+    # fetch is a YouTube/proxy outage and must exit non-zero so the green checkmark can't hide it.
+    if ok == 0 and failed:
+        sys.exit(f"[discover_recent] ABORT: all {failed} channels failed RSS -- YouTube/proxy outage, nothing fetched")
+    print(f"[discover_recent] fetched {ok} channels ok, {failed} failed")
     cands.sort(key=lambda x: x["pub"], reverse=True)
     rows = [{"video_id": v["video_id"], "title": v["title"], "source": "channel_recent",
              "found_via": v["channel"], "interest_area": v["area"], "seed_score": 1e9} for v in cands]
