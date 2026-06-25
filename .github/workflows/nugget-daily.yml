@@ -15,10 +15,10 @@ on:
   workflow_dispatch:        # adds a "Run workflow" button so you can fire it on demand
     inputs:
       limit:
-        description: "Max videos to pull this run"
-        default: "20"
+        description: "Backstop: max videos to EXTRACT this run (discovery queues every new in-window post regardless)"
+        default: "50"
       hours:
-        description: "Look-back window in hours"
+        description: "Strict look-back window in hours (no auto-widen)"
         default: "24"
 
 concurrency:

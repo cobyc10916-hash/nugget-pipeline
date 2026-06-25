@@ -176,9 +176,11 @@ CHANNEL_ID_BY_NAME = {c["name"]: c["channel_id"] for c in monitored_channels()}
 
 ONLY_YEAR = 2026  # hard rule: every video pulled (daily or backfill) must be published in 2026
 
-def discover_recent(hours=24, limit=5):
-    """Pull the newest uploads from ALL monitored channels (ai/build/str) published within the last
-    `hours` AND in 2026, dedupe, take the `limit` most recent, queue them with their area."""
+def discover_recent(hours=24):
+    """Queue EVERY new upload from the monitored channels published within the last `hours` (and in
+    2026) that we have not already seen / queued / extracted. No per-run cap: each run picks up all
+    the new in-window posts. The Supabase dedupe (existing videos + already-queued) persists across
+    runs, so this is exactly 'whatever the channels posted since the last run'."""
     from datetime import datetime, timezone, timedelta
     client = sb()
     seen = load_seen()
@@ -198,19 +200,19 @@ def discover_recent(hours=24, limit=5):
                 if pub >= cutoff:
                     v["pub"] = pub; v["area"] = ch["area"]
                     cands.append(v)
+                    skip.add(v["video_id"])  # guard against the same id across two channels in one run
         except Exception:
             continue
     cands.sort(key=lambda x: x["pub"], reverse=True)
-    picked = cands[:limit]
     rows = [{"video_id": v["video_id"], "title": v["title"], "source": "channel_recent",
-             "found_via": v["channel"], "interest_area": v["area"], "seed_score": 1e9} for v in picked]
+             "found_via": v["channel"], "interest_area": v["area"], "seed_score": 1e9} for v in cands]
     if rows:
         client.table("discovery_queue").upsert(rows, on_conflict="video_id").execute()
-        for v in picked:
+        for v in cands:
             seen.add(v["video_id"])
         save_seen(seen)
-    print(f"[discover_recent] queued {len(picked)} of {len(cands)} candidates from last {hours}h")
-    return len(picked)
+    print(f"[discover_recent] queued {len(cands)} new videos posted in the last {hours}h")
+    return len(cands)
 
 # ---------------- transcript ----------------
 def transcript(video_id, retries=2):
@@ -497,12 +499,13 @@ def run(limit):
     discover()
     _process_pending(sb(), limit)
 
-def run_recent(limit=5, hours=24):
-    """PoC / daily path: newest uploads from reputable AI channels, last `hours`, extract top `limit`."""
-    n = discover_recent(hours, limit)
-    if n < limit:
-        discover_recent(48, limit)  # widen if a strict 24h window is thin
-    _process_pending(sb(), limit)
+def run_recent(hours=24, max_extract=200):
+    """Daily path: queue EVERY new monitored-channel upload from the strict last-`hours` window, then
+    extract them. No 48h widen (the window is exactly what was asked for) and no per-run cap on
+    discovery, so each run picks up precisely the videos posted since the previous run. `max_extract`
+    is only a runaway-cost backstop on how many pending videos one run will transcribe + extract."""
+    discover_recent(hours)
+    _process_pending(sb(), max_extract)
 
 def list_recent(limit=5, hours=24):
     """Print the newest AI-channel uploads as JSON. No Supabase / no API key — used by the $0 Max
@@ -536,7 +539,7 @@ if __name__ == "__main__":
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
     if a.cmd == "discover": discover()
-    elif a.cmd == "recent": run_recent(a.limit, a.hours)
+    elif a.cmd == "recent": run_recent(a.hours, a.limit)
     elif a.cmd == "list-recent": list_recent(a.limit, a.hours)
     elif a.cmd == "embed": embed_new()
     elif a.cmd == "taste": taste_digest()
