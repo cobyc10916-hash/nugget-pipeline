@@ -770,7 +770,7 @@ REDDIT_FEED_SUBS = [
     ("AirBnB", "str"), ("ShortTermRentals", "str"),
 ]
 
-def ingest_reddit(hours=24, per_sub=5, max_comments=8, max_extract=40):
+def ingest_reddit(hours=24, per_sub=4, max_comments=6, max_extract=40):
     """Mine curated subreddits (post selftext + top comments) into FEED nuggets (source_type='reddit'),
     same extractor + TASTE + brain as everything else. Apify-backed (free RSS lacks full text). Recall
     window = last `hours`; dedups against existing items + nugget payloads."""
@@ -785,7 +785,10 @@ def ingest_reddit(hours=24, per_sub=5, max_comments=8, max_extract=40):
     try:
         posts = af.reddit_posts([s for s, _ in REDDIT_FEED_SUBS], per_sub=per_sub, max_comments=max_comments)
     except Exception as e:
-        sys.exit(f"[reddit] ABORT: Apify fetch failed: {type(e).__name__}: {str(e)[:140]}")
+        # Reddit is one optional source: never fail the whole job (articles already ran) on a flaky
+        # Apify run. Log loudly and move on.
+        print(f"[reddit] Apify fetch failed, skipping this run: {type(e).__name__}: {str(e)[:140]}")
+        return 0
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     cands = []
     for p in posts:

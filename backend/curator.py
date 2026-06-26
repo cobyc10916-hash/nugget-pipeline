@@ -187,7 +187,7 @@ TOOLS = [
      "input_schema": {"type": "object", "required": ["dimension", "key", "anchor", "reason"],
          "properties": {
              "dimension": {"type": "string", "enum": ["area", "scope", "tag", "channel"]},
-             "key": {"type": "string", "description": "e.g. area 'ai'|'build'|'str'; scope 'tactical'|'macro'|'mixed'; a tag; or a channel_id"},
+             "key": {"type": "string", "description": "For dimension 'area' the key MUST be exactly one of: ai, build, str (nothing else — finer interests go under dimension 'tag'). scope: tactical|macro|mixed. tag: any topic tag. channel: a channel_id."},
              "anchor": {"type": "number", "description": "0.3-2.5. >1 = lean in (durably), <1 = pull back, 1 = neutral"},
              "reason": {"type": "string"}}}},
     {"name": "nudge_weight",

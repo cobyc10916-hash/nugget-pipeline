@@ -15,7 +15,7 @@ Env:
   APIFY_X_ACTOR         (default apidojo~tweet-scraper)
 """
 from __future__ import annotations
-import json, os, urllib.request
+import json, os, time, urllib.request, urllib.error
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN")
 REDDIT_ACTOR = os.environ.get("APIFY_REDDIT_ACTOR", "trudax~reddit-scraper-lite")
@@ -24,25 +24,47 @@ X_ACTOR = os.environ.get("APIFY_X_ACTOR", "apidojo~tweet-scraper")
 class ApifyError(Exception):
     pass
 
-def _run(actor: str, inp: dict, timeout: int = 240) -> list:
-    """Run an actor synchronously and return its dataset items. Raises ApifyError on failure."""
-    if not APIFY_TOKEN:
-        raise ApifyError("APIFY_TOKEN not set")
-    url = (f"https://api.apify.com/v2/acts/{actor}/run-sync-get-dataset-items"
-           f"?token={APIFY_TOKEN}&timeout={timeout}")
-    req = urllib.request.Request(url, data=json.dumps(inp).encode(),
-                                 headers={"Content-Type": "application/json"})
+def _http(url: str, payload=None):
+    data = json.dumps(payload).encode() if payload is not None else None
+    headers = {"Content-Type": "application/json"} if data else {}
+    req = urllib.request.Request(url, data=data, headers=headers, method=("POST" if data else "GET"))
     try:
-        with urllib.request.urlopen(req, timeout=timeout + 30) as r:
-            data = json.loads(r.read().decode("utf-8", "replace"))
+        with urllib.request.urlopen(req, timeout=60) as r:
+            return json.loads(r.read().decode("utf-8", "replace"))
     except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", "replace")[:200] if hasattr(e, "read") else ""
+        body = ""
+        try:
+            body = e.read().decode("utf-8", "replace")[:200]
+        except Exception:
+            pass
         raise ApifyError(f"HTTP {e.code}: {body}")
     except Exception as e:
         raise ApifyError(f"{type(e).__name__}: {str(e)[:160]}")
-    if not isinstance(data, list):
-        raise ApifyError(f"unexpected payload: {str(data)[:160]}")
-    return data
+
+def _run(actor: str, inp: dict, run_timeout: int = 420, wall: int = 480, poll: int = 6) -> list:
+    """Start an actor run async, poll to completion, return its dataset items. Avoids the run-sync
+    HTTP cap that kills longer multi-source scrapes, and tolerates a partial / TIMED-OUT run by
+    returning whatever items the dataset already holds (recall over abort)."""
+    if not APIFY_TOKEN:
+        raise ApifyError("APIFY_TOKEN not set")
+    start = _http(f"https://api.apify.com/v2/acts/{actor}/runs?token={APIFY_TOKEN}&timeout={run_timeout}", inp)
+    d = (start or {}).get("data") or {}
+    run_id, ds, status = d.get("id"), d.get("defaultDatasetId"), d.get("status")
+    if not run_id:
+        raise ApifyError(f"no run id: {str(start)[:160]}")
+    waited = 0
+    while status in (None, "READY", "RUNNING") and waited < wall:
+        time.sleep(poll); waited += poll
+        d = (_http(f"https://api.apify.com/v2/actor-runs/{run_id}?token={APIFY_TOKEN}") or {}).get("data") or {}
+        status, ds = d.get("status"), (d.get("defaultDatasetId") or ds)
+    if not ds:
+        raise ApifyError(f"no dataset (status={status})")
+    items = _http(f"https://api.apify.com/v2/datasets/{ds}/items?token={APIFY_TOKEN}&clean=true")
+    if not isinstance(items, list):
+        raise ApifyError(f"dataset not a list (status={status})")
+    if not items and status != "SUCCEEDED":
+        raise ApifyError(f"run {status}, no items")
+    return items  # partial items from a TIMED-OUT run are acceptable
 
 def _g(d: dict, *keys, default=None):
     """First non-empty value among keys (actors name fields inconsistently)."""
@@ -55,7 +77,7 @@ def _g(d: dict, *keys, default=None):
     return default
 
 # ---------------- Reddit: posts + top comments -> feed-mining text ----------------
-def reddit_posts(subreddits, per_sub=5, max_comments=8, sort="top", t="day") -> list[dict]:
+def reddit_posts(subreddits, per_sub=4, max_comments=6, sort="top", t="day") -> list[dict]:
     start = [{"url": f"https://www.reddit.com/r/{s}/{sort}/?t={t}"} for s in subreddits]
     inp = {
         "startUrls": start,
