@@ -107,7 +107,36 @@ def parse_date(s: str):
             continue
     return None
 
-def importance(item: dict, published_dt, now, strong_tags) -> float:
+# words too generic to be a useful interest signal when split out of a priority phrase
+_STOP = {"with", "that", "what", "this", "into", "from", "your", "their", "about", "have", "more",
+         "than", "then", "they", "them", "will", "when", "which", "just", "like", "make", "need",
+         "want", "real", "good", "next", "early", "based", "apply", "stuff", "things", "genuinely"}
+
+def _brain_keywords(client) -> dict:
+    """Phrase -> weight map of what Coby actually cares about, from his anchored/strong tag dials and
+    his stated priorities. This is what makes Pulse selection PERSONAL: his lanes rise above generic
+    velocity, instead of a tiny afterthought nudge."""
+    kw = {}
+    try:
+        tw = client.table("taste_weights").select("key,weight").eq("dimension", "tag").gt("weight", 1.05).execute().data or []
+        for r in tw:
+            k = (r.get("key") or "").lower().replace("-", " ").strip()
+            if k:
+                kw[k] = max(kw.get(k, 0), min(0.6, (float(r.get("weight") or 1) - 1) + 0.2))
+    except Exception:
+        pass
+    try:
+        prof = client.table("app_profile").select("priorities").eq("id", 1).execute().data
+        for p in ((prof[0].get("priorities") if prof else []) or []):
+            for tok in re.findall(r"[a-z][a-z\-]{3,}", (p or "").lower()):
+                tok = tok.replace("-", " ")
+                if tok not in _STOP:
+                    kw[tok] = max(kw.get(tok, 0), 0.25)
+    except Exception:
+        pass
+    return kw
+
+def importance(item: dict, published_dt, now, kw) -> float:
     st = SRC_W.get(item.get("category"), 1.0)
     v = item.get("velocity")
     vel_norm = min(math.log1p(v) / 8.0, 1.0) if isinstance(v, (int, float)) and v > 0 else 0.0
@@ -115,24 +144,22 @@ def importance(item: dict, published_dt, now, strong_tags) -> float:
     if published_dt:
         hrs = (now - published_dt).total_seconds() / 3600.0
         rec = max(0.0, 1.0 - hrs / 48.0)
-    taste = 1.0
-    text = (item.get("title", "") + " " + (item.get("summary", "") or "")).lower()
-    for tag in strong_tags:
-        if tag and tag in text:
-            taste = min(taste * 1.05, 1.25)  # light nudge only; never hides anything
-    return round((st + 1.5 * vel_norm + 1.0 * rec) * taste, 4)
+    text = (item.get("title", "") + " " + (item.get("summary", "") or "")).lower().replace("-", " ")
+    personal = 0.0
+    for phrase, w in kw.items():
+        if phrase and phrase in text:
+            personal += w
+    personal = min(personal, 1.5)
+    # personal is the LEAD signal (his lanes rise to the top); velocity + recency keep genuinely big
+    # news visible even when it's outside his lanes ("my lanes first, then big news").
+    return round((st + 1.2 * vel_norm + 1.0 * rec) * (1 + 1.3 * personal), 4)
 
 # ---------------- ingest ----------------
 def ingest(max_per_source=15, no_social=False, with_x=False):
     client = sb()
     now = datetime.now(timezone.utc)
-    # Light personalization: tags the user has up-weighted (only used to ORDER, never to filter).
-    strong_tags = []
-    try:
-        tw = client.table("taste_weights").select("key,weight").eq("dimension", "tag").gt("weight", 1.2).execute().data
-        strong_tags = [r["key"] for r in tw if r.get("key")]
-    except Exception:
-        pass
+    # Personalization signal: his anchored interests + priorities drive which items rise (not a tiny nudge).
+    kw = _brain_keywords(client)
 
     out_dir = str(HERE / "state" / "radar_cache")
     items, status = rf.collect(max_per_source=max_per_source, no_social=no_social, out_dir=out_dir) \
@@ -182,7 +209,7 @@ def ingest(max_per_source=15, no_social=False, with_x=False):
             "area": area,
             "velocity": it.get("velocity") if isinstance(it.get("velocity"), (int, float)) else None,
             "velocity_kind": velocity_kind(it.get("source_key", "")),
-            "importance_score": importance(it, pub, now, strong_tags),
+            "importance_score": importance(it, pub, now, kw),
             "published_at": pub.isoformat() if pub else None,
             # NOTE: fetched_at intentionally omitted -> DB default now() on insert, untouched on conflict
             "raw": it,
@@ -235,25 +262,84 @@ def _area_mix(rows):
     return m
 
 # ---------------- synthesize ----------------
-def _build_system(profile_md, priorities, strong_tags):
+def _build_system(profile_md, priorities, leaning):
     pri = "\n".join(f"- {p}" for p in (priorities or [])) or "- (none set)"
-    tags = ", ".join(strong_tags) if strong_tags else "(none yet)"
+    lean = ", ".join(leaning) if leaning else "(nothing strong yet)"
     return (
-        "You are Coby's personal daily AI intelligence analyst. Your job is to be his FILTER: from the "
-        "raw items, select and synthesize ONLY what actually matters to him, and frame each by the "
-        "so-what FOR HIM. Most items should not make the cut. This is the one tab he checks daily to "
-        "know what he needs to know, so it must be tight, high-signal, and genuinely useful, not a list.\n\n"
+        "You are Coby's personal AI intelligence analyst. Produce his daily brief as a TIGHT, CURATED, "
+        "PERSONAL digest where EVERY item visibly earns its place for HIM. Most candidates should not "
+        "make the cut. This is the one tab he checks daily, so each item must feel deliberate.\n\n"
         "WHO COBY IS:\n" + (profile_md or "") + "\n\nHIS PRIORITIES (lead with these):\n" + pri +
-        "\nTopics he has recently leaned into: " + tags + "\n\n"
-        "OUTPUT (GitHub-flavored markdown only, no preamble or sign-off):\n"
-        "- A 1-2 sentence **TL;DR** of the day for him.\n"
-        "- Then 3-5 themed sections: '### Theme' + 2-5 tight bullets.\n"
-        "- Each bullet: name the thing, the so-what for Coby, and a [link](url) when useful.\n"
-        "- Group related items. Cut generic hype/awareness stats, motivational founder lore, and anything "
-        "he would find too basic. If something is a genuinely big deal even outside his priorities, still "
-        "include it (recall matters), but most of the brief should serve his goals.\n"
-        "- No em dashes. Aim for a focused briefing he can read in about 2 minutes."
+        "\nHe has been leaning into: " + lean + "\n\n"
+        "RULES:\n"
+        "- LEAD with what is squarely in his lanes (agentic coding / Claude Code, AI building tactics, "
+        "AI-native business + distribution with a real mechanism, short-term-rental / real-estate edges, "
+        "early signal on what is worth building). THEN, in a clearly separate section, include ONLY "
+        "genuinely MAJOR general AI news even if outside his lanes, so he never misses something big.\n"
+        "- CUT hype, generic awareness stats, funding-as-spectacle, motivational lore, and anything he "
+        "would find basic. If an item is not worth his attention, leave it out entirely.\n"
+        "- For EVERY item the 'why' must be SPECIFIC TO HIM and concrete: e.g. 'fewer tokens on your big "
+        "agent loops' or 'a pricing mechanic you can copy', NOT 'important for developers'. No em dashes.\n"
+        "- Be tight: about 6 to 10 items total across 2 to 4 sections, readable in ~90 seconds. Group "
+        "related items; never list the same story twice.\n\n"
+        "OUTPUT: return ONLY valid JSON (no markdown, no code fences, no preamble) of this exact shape:\n"
+        "{\n"
+        '  "headline": "one tight sentence: the state of his day",\n'
+        '  "sections": [\n'
+        '    {"title": "short section name", "items": [\n'
+        '      {"title": "the thing itself", "why": "why it matters to Coby, specific and concrete", '
+        '"source": "source name", "url": "link or empty string", "area": "ai|build|str|other"}\n'
+        "    ]}\n"
+        "  ]\n"
+        "}"
     )
+
+def _parse_brief(raw):
+    """Parse the model's JSON brief, tolerating code fences / stray prose. Returns a sanitized
+    {headline, sections:[{title, items:[{title,why,source,url,area}]}]} or None if unusable."""
+    s = (raw or "").strip()
+    if s.startswith("```"):
+        s = re.sub(r"^```[a-zA-Z]*\n?", "", s)
+        s = re.sub(r"\n?```$", "", s).strip()
+    a, b = s.find("{"), s.rfind("}")
+    if a >= 0 and b > a:
+        s = s[a:b + 1]
+    try:
+        obj = json.loads(s)
+    except Exception:
+        return None
+    if not isinstance(obj, dict) or not isinstance(obj.get("sections"), list):
+        return None
+    secs = []
+    for sec in obj["sections"]:
+        if not isinstance(sec, dict):
+            continue
+        items = []
+        for it in (sec.get("items") or []):
+            if not isinstance(it, dict) or not it.get("title"):
+                continue
+            items.append({
+                "title": str(it.get("title") or "").strip(),
+                "why": str(it.get("why") or "").strip(),
+                "source": str(it.get("source") or "").strip(),
+                "url": str(it.get("url") or "").strip(),
+                "area": it.get("area") if it.get("area") in ("ai", "build", "str", "other") else "ai",
+            })
+        if items:
+            secs.append({"title": str(sec.get("title") or "").strip(), "items": items})
+    if not secs:
+        return None
+    return {"headline": str(obj.get("headline") or "").strip(), "sections": secs}
+
+def _brief_to_md(obj):
+    """Readable markdown fallback (old clients / safety), derived from the structured brief."""
+    out = [obj.get("headline", "")]
+    for s in obj.get("sections", []):
+        out.append("\n### " + s.get("title", ""))
+        for it in s.get("items", []):
+            link = f" [{it['source']}]({it['url']})" if it.get("url") else (f" ({it['source']})" if it.get("source") else "")
+            out.append(f"- **{it['title']}** — {it['why']}{link}")
+    return "\n".join(out)
 
 def synthesize(hours=24, top_n=90):
     client = sb()
@@ -261,7 +347,6 @@ def synthesize(hours=24, top_n=90):
     items = client.rpc("get_pulse_items", {"p_hours": hours, "p_area": None, "p_limit": top_n}).execute().data or []
     if not items:
         print("[pulse-synthesize] no items in window — nothing to synthesize"); return
-    # Pull Coby's profile + the topics he's leaned into so the brief is curated FOR him.
     profile_md, priorities = "", []
     try:
         prof = client.table("app_profile").select("profile_md,priorities").eq("id", 1).execute().data
@@ -270,37 +355,40 @@ def synthesize(hours=24, top_n=90):
             priorities = prof[0].get("priorities") or []
     except Exception:
         pass
-    strong_tags = []
-    try:
-        tw = client.table("taste_weights").select("key,weight").eq("dimension", "tag").gt("weight", 1.2).execute().data
-        strong_tags = [r["key"] for r in tw if r.get("key")][:20]
-    except Exception:
-        pass
-    system = _build_system(profile_md, priorities, strong_tags)
+    leaning = list(_brain_keywords(client).keys())[:18]
+    system = _build_system(profile_md, priorities, leaning)
 
     lines = []
     for it in items:
         vel = f" [{it.get('velocity_kind')}={it.get('velocity')}]" if it.get("velocity") else ""
         lines.append(f"- ({it.get('source_name')}) {it.get('title')}{vel} {it.get('url') or ''}\n    {(it.get('summary') or '')[:200]}")
-    user_msg = (f"Here are the {len(items)} most important items from the last {hours}h. "
-                "Be the filter: synthesize the daily brief for Coby.\n\n" + "\n".join(lines))
+    user_msg = (f"Here are the {len(items)} candidate items from the last {hours}h, pre-ranked by fit to him. "
+                "Curate his brief now. Return ONLY the JSON.\n\n" + "\n".join(lines))
 
-    brief, model_used = _synth_call(system, user_msg)
-    if not brief:
+    raw, model_used = _synth_call(system, user_msg)
+    if not raw:
         sys.exit("[pulse-synthesize] model returned nothing")
 
+    brief_obj = _parse_brief(raw)
     by_source = {}
     for it in items:
         by_source[it.get("source_name")] = by_source.get(it.get("source_name"), 0) + 1
     stats = {"total_in_window": len(items), "by_source": by_source}
     today = now.date().isoformat()
-    client.table("pulse_digest").upsert({
-        "digest_date": today,
-        "generated_at": now.isoformat(),
-        "window_start": None, "window_end": now.isoformat(),
-        "brief_md": brief, "model": model_used, "stats": stats,
-    }, on_conflict="digest_date").execute()
-    print(f"[pulse-synthesize] wrote digest for {today} ({model_used}, {len(brief)} chars, {len(items)} items)")
+    row = {"digest_date": today, "generated_at": now.isoformat(), "window_start": None,
+           "window_end": now.isoformat(), "model": model_used, "stats": stats}
+    if brief_obj:
+        n_items = sum(len(s.get("items") or []) for s in brief_obj["sections"])
+        row["sections"] = brief_obj
+        row["brief_md"] = _brief_to_md(brief_obj)
+        client.table("pulse_digest").upsert(row, on_conflict="digest_date").execute()
+        print(f"[pulse-synthesize] wrote STRUCTURED digest for {today} "
+              f"({model_used}, {n_items} items, {len(brief_obj['sections'])} sections)")
+    else:
+        row["sections"] = None
+        row["brief_md"] = raw
+        client.table("pulse_digest").upsert(row, on_conflict="digest_date").execute()
+        print(f"[pulse-synthesize] JSON parse failed; stored raw markdown fallback for {today}")
 
 def _synth_call(system, user_msg):
     """Strong model for the synthesis (Claude by default). Falls back to Gemini if no Anthropic key."""
