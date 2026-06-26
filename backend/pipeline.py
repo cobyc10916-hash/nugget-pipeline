@@ -497,6 +497,91 @@ def learn():
     for n in notes:
         client.table("feedback").update({"learned_at": now.isoformat()}).eq("id", n["id"]).execute()
 
+def _apply_nudge(client, dim, key, factor):
+    """Multiply a taste_weights dial by `factor`, clamped to [0.2, 3.0]; create it at the clamped
+    factor if it does not exist yet. Mirrors the in-DB _taste_nudge() the trigger uses, so the note
+    path and the save/dismiss path move the dials the same way."""
+    from datetime import datetime, timezone
+    if not key:
+        return
+    factor = max(0.2, min(3.0, float(factor)))
+    cur = client.table("taste_weights").select("weight").eq("dimension", dim).eq("key", key).execute().data
+    new = max(0.2, min(3.0, (cur[0]["weight"] if cur else 1.0) * factor))
+    client.table("taste_weights").upsert(
+        {"dimension": dim, "key": key, "weight": new, "updated_at": datetime.now(timezone.utc).isoformat()},
+        on_conflict="dimension,key").execute()
+
+def _note_to_nudges(note_text, nug):
+    """Ask the model how a free-write note should retune the feed. It may ONLY touch this nugget's own
+    area/scope/tags (so it can't invent dials), and only within [0.8, 1.2] per note. Returns a list of
+    {dimension, key, factor}. Fails soft to [] on any error."""
+    import requests
+    area = nug.get("interest_area") or ""
+    scope = nug.get("scope") or "mixed"
+    tags = nug.get("topic_tags") or []
+    allowed = f"area: {area}\nscope: {scope}\ntags: {', '.join(tags)}"
+    prompt = (
+        "Coby left a NOTE on a nugget in his learning feed. Decide how it should retune his feed "
+        "ranking. You may ONLY adjust these existing dimensions of THIS nugget:\n" + allowed + "\n\n"
+        "Return STRICT JSON: {\"nudges\":[{\"dimension\":\"area|scope|tag\",\"key\":\"<one listed above>\","
+        "\"factor\":<number 0.80-1.20>}],\"reason\":\"<short>\"}\n"
+        "factor > 1 = show more like this; < 1 = show less. Only include dimensions the note actually "
+        "implicates. Praise -> push its tags (and scope) up. 'Too basic / too macro / not useful' -> "
+        "push the relevant tags/scope down. If there is no ranking signal, return {\"nudges\":[],\"reason\":\"none\"}.\n\n"
+        f"NOTE: \"{(note_text or '').strip()}\"\nNUGGET: \"{nug.get('hook','')}\""
+    )
+    url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent"
+    try:
+        r = requests.post(url, params={"key": GEMINI_KEY},
+                          json={"contents": [{"parts": [{"text": prompt}]}],
+                                "generationConfig": {"responseMimeType": "application/json",
+                                                     "maxOutputTokens": 500, "temperature": 0.2}}, timeout=60)
+        if r.status_code != 200:
+            print(f"  [note-reflex] model {r.status_code}: {r.text[:120]}"); return []
+        txt = "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"])
+        data = json.loads(txt)
+    except Exception as e:
+        print(f"  [note-reflex] interpret failed: {type(e).__name__}: {str(e)[:100]}"); return []
+    allowed_keys = {("area", area), ("scope", scope)} | {("tag", t) for t in tags}
+    out = []
+    for nd in (data.get("nudges") or []):
+        d, k = nd.get("dimension"), nd.get("key")
+        try:
+            f = float(nd.get("factor", 1.0))
+        except (TypeError, ValueError):
+            continue
+        if (d, k) in allowed_keys and abs(f - 1.0) > 0.01:
+            out.append({"dimension": d, "key": k, "factor": max(0.8, min(1.2, f))})
+    return out
+
+def note_reflex():
+    """Near-real-time half of the feedback loop: read NEW free-write notes and immediately retune the
+    LIVE taste_weights dials from each note's meaning, so the feed reflects the note within minutes
+    (run every ~15 min via GitHub Actions). Independent of learn() (which distills notes into TASTE.md
+    for the EXTRACTOR); this one moves the FEED. Marks each note with reflex_at so it runs once. Costs
+    nothing when there are no new notes."""
+    from datetime import datetime, timezone
+    client = sb()
+    notes = client.table("feedback").select("id,note_text,nugget_id,video_id") \
+        .eq("action", "note").is_("reflex_at", "null").execute().data
+    notes = [n for n in notes if (n.get("note_text") or "").strip()]
+    if not notes:
+        print("[note-reflex] no new notes - taste_weights unchanged"); return
+    ids = [n["nugget_id"] for n in notes if n.get("nugget_id")]
+    nmap = {}
+    if ids:
+        nmap = {r["id"]: r for r in client.table("nuggets")
+                .select("id,hook,interest_area,scope,topic_tags").in_("id", ids).execute().data}
+    applied = 0
+    for n in notes:
+        nug = nmap.get(n.get("nugget_id"))
+        for nd in (_note_to_nudges(n["note_text"], nug) if nug else []):
+            _apply_nudge(client, nd["dimension"], nd["key"], nd["factor"])
+            applied += 1
+            print(f"  [note-reflex] {nd['dimension']}:{nd['key']} *= {nd['factor']:.2f}")
+        client.table("feedback").update({"reflex_at": datetime.now(timezone.utc).isoformat()}).eq("id", n["id"]).execute()
+    print(f"[note-reflex] processed {len(notes)} note(s), applied {applied} weight nudge(s)")
+
 def _process_pending(client, limit):
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
@@ -568,7 +653,7 @@ def list_recent(limit=5, hours=24):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn"])
+    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex"])
     ap.add_argument("--limit", type=int, default=20)
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
@@ -578,4 +663,5 @@ if __name__ == "__main__":
     elif a.cmd == "embed": embed_new()
     elif a.cmd == "taste": taste_digest()
     elif a.cmd == "learn": learn()
+    elif a.cmd == "note-reflex": note_reflex()
     else: run(a.limit)

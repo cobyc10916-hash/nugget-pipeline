@@ -1,0 +1,33 @@
+name: NUGGET note reflex
+
+# Near-real-time half of the feedback loop. Every ~15 min: read Coby's NEW free-write Notes and
+# immediately retune the LIVE taste_weights ranking dials from each note's meaning, so the feed
+# reflects a note within minutes (not once a day). Independent of nugget-learn.yml (which distills
+# notes into TASTE.md for the extractor). Costs ~nothing when there are no new notes. Free public repo.
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # every 15 minutes
+  workflow_dispatch:          # "Run workflow" button to verify on demand
+
+concurrency:
+  group: nugget-note-reflex
+  cancel-in-progress: false
+
+jobs:
+  reflex:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Retune taste_weights from new notes
+        run: python backend/pipeline.py note-reflex
