@@ -1,0 +1,43 @@
+name: NUGGET curator (operator agent)
+
+# The standing operator of the system. Twice a day it reads the whole picture (brain, saves, notes,
+# dismissals, the area mix served, what's in feed + pulse) and tunes everything: consolidates the
+# learned profile (so it sharpens, not bloats), sets durable anchors, makes small nudges, and flags
+# gaps. It is a Claude tool-use loop, not a one-shot call. Writes an operator_log Coby can read.
+
+on:
+  schedule:
+    - cron: "0 14,23 * * *"   # ~10am & 7pm Eastern (after the morning + afternoon ingests)
+  workflow_dispatch:
+    inputs:
+      dry:
+        description: "dry run (reason only, write nothing): true | false"
+        default: "false"
+
+concurrency:
+  group: nugget-curator
+  cancel-in-progress: false
+
+jobs:
+  curate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CURATOR_MODEL: claude-sonnet-4-6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Run the operator pass
+        run: |
+          if [ "${{ github.event.inputs.dry }}" = "true" ]; then
+            python backend/curator.py run --dry
+          else
+            python backend/curator.py run
+          fi

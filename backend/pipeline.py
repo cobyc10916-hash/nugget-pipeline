@@ -273,15 +273,37 @@ _taste = HERE.parent / "TASTE.md"
 if _taste.exists():
     SYSTEM += "\n\n---\n# COBY'S TASTE — apply this; drop what he dislikes, score what he likes high\n\n" + _taste.read_text()
 
+SYSTEM += ("\n\n---\n# RELEVANCE SCORING\nAlso rate this WHOLE piece's relevance to Coby in the "
+           "'relevance' field (0-10), using who he is (profile below): 10 = squarely on his stated "
+           "priorities AND non-obvious to him; 5 = tangential or partly known; 0 = off-topic or "
+           "beneath his level. This only re-orders his feed, it never hides anything, so judge "
+           "honestly. Add a one-line 'relevance_reason'.")
+
+# The unified brain (declared profile + operator-maintained learned notes) is the strategic layer.
+# It's fetched once per run via load_brain() and appended to the extraction system on every call, so
+# the operator's evolving understanding of Coby drives both what gets kept and the relevance score.
+_BRAIN = ""
+def load_brain(client):
+    global _BRAIN
+    try:
+        rows = client.table("app_profile").select("profile_md").eq("id", 1).execute().data
+        md = (rows[0].get("profile_md") if rows else "") or ""
+        _BRAIN = ("\n\n---\n# WHO COBY IS (his profile — use for relevance + what to keep)\n\n" + md) if md.strip() else ""
+        print(f"  [brain] loaded profile ({len(md)} chars)")
+    except Exception as e:
+        print(f"  [brain] load failed: {type(e).__name__}: {str(e)[:80]}"); _BRAIN = ""
+
 SCHEMA = {
     "type": "object", "additionalProperties": False,
-    "required": ["interest_area", "worth_full_watch", "watch_reason", "gist", "cover_bullets", "nuggets"],
+    "required": ["interest_area", "worth_full_watch", "watch_reason", "gist", "cover_bullets", "relevance", "relevance_reason", "nuggets"],
     "properties": {
         "interest_area": {"type": "string", "enum": ["ai", "build", "str", "other"]},
         "worth_full_watch": {"type": "boolean"},
         "watch_reason": {"type": ["string", "null"]},
         "gist": {"type": "string"},
         "cover_bullets": {"type": "array", "items": {"type": "string"}},
+        "relevance": {"type": "integer"},
+        "relevance_reason": {"type": ["string", "null"]},
         "nuggets": {"type": "array", "items": {
             "type": "object", "additionalProperties": False,
             "required": ["hook", "context", "payload", "timestamp_hint", "topic_tags", "quality", "type", "actionability", "scope"],
@@ -337,7 +359,7 @@ def _extract_anthropic(title, channel, text):
     client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
     msg = client.messages.create(
         model=EXTRACT_MODEL, max_tokens=8000,
-        system=[{"type": "text", "text": SYSTEM, "cache_control": {"type": "ephemeral"}}],
+        system=[{"type": "text", "text": SYSTEM + _BRAIN, "cache_control": {"type": "ephemeral"}}],
         output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
         messages=[{"role": "user", "content": USER_MSG.format(t=title, c=channel, x=text)}],
     )
@@ -347,7 +369,7 @@ def _extract_gemini(title, channel, text):
     import requests
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{EXTRACT_MODEL}:generateContent"
     body = {
-        "systemInstruction": {"parts": [{"text": SYSTEM}]},
+        "systemInstruction": {"parts": [{"text": SYSTEM + _BRAIN}]},
         "contents": [{"role": "user", "parts": [{"text": USER_MSG.format(t=title, c=channel, x=text)}]}],
         "generationConfig": {
             "responseMimeType": "application/json",
@@ -397,7 +419,7 @@ def write_video(client, q, data):
         "interest_area": area, "worth_full_watch": data.get("worth_full_watch", False),
         "watch_reason": data.get("watch_reason"),
         "gist": data.get("gist"), "cover_bullets": data.get("cover_bullets"),
-        "nugget_count": len(nuggets),
+        "nugget_count": len(nuggets), "relevance": data.get("relevance"),
     }, on_conflict="video_id").execute()
     client.table("nuggets").insert([{
         "video_id": vid, "hook": n["hook"], "context": n.get("context"), "payload": n["payload"],
@@ -625,7 +647,8 @@ def _parse_pub(s):
             return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
     except Exception:
         pass
-    for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%d"):
+    for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.%f%z",
+                "%Y-%m-%dT%H:%M:%S.%fZ", "%Y-%m-%d"):
         try:
             dt = datetime.strptime(s.strip(), fmt)
             return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
@@ -660,9 +683,9 @@ def _article_entries(url, max_n=6):
             out.append({"title": title, "link": link, "published": pub, "text": body[:18000]})
     return out
 
-def _write_item(client, c, data):
-    """Write a non-YouTube feed item (source_type) + its nuggets, skipping nugget payloads we already
-    have (cross-source exact-dedup via dedup_hash). Mirrors write_video for the article path."""
+def _write_item(client, c, data, source_type="article"):
+    """Write a non-YouTube feed item (source_type='article'|'reddit'|...) + its nuggets, skipping
+    nugget payloads we already have (cross-source exact-dedup via dedup_hash). Mirrors write_video."""
     vid = c["video_id"]
     keep = [n for n in data["nuggets"] if n.get("quality", 0) >= 5]
     if len(keep) < 3:
@@ -676,12 +699,13 @@ def _write_item(client, c, data):
     if len(fresh) < 3:
         return 0
     client.table("videos").upsert({
-        "video_id": vid, "title": c["title"], "channel_name": c["source"], "source_type": "article",
+        "video_id": vid, "title": c["title"], "channel_name": c["source"], "source_type": source_type,
         "url": c["url"], "thumbnail_url": None, "duration_s": None,
         "published_at": c["published_at"].isoformat() if c["published_at"] else None,
         "interest_area": area, "worth_full_watch": data.get("worth_full_watch", False),
         "watch_reason": data.get("watch_reason"), "gist": data.get("gist"),
         "cover_bullets": data.get("cover_bullets"), "nugget_count": len(fresh),
+        "relevance": data.get("relevance"),
     }, on_conflict="video_id").execute()
     client.table("nuggets").insert([{
         "video_id": vid, "hook": n["hook"], "context": n.get("context"), "payload": n["payload"],
@@ -696,6 +720,7 @@ def ingest_articles(hours=48, max_per_feed=6, max_extract=40):
     TASTE.md as YouTube. Recall window = last `hours`; dedups against existing items + nugget payloads."""
     from datetime import datetime, timezone, timedelta
     client = sb()
+    load_brain(client)  # who-Coby-is drives relevance + what to keep
     existing = {r["video_id"] for r in client.table("videos").select("video_id").execute().data}
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     cands, ok, failed = [], 0, 0
@@ -736,7 +761,67 @@ def ingest_articles(hours=48, max_per_feed=6, max_extract=40):
     print(f"[articles] extracted ~{total} nuggets from {len(cands)} articles")
     return total
 
+# ---------------- Reddit -> feed nuggets (via Apify: full selftext + top comments) ----------------
+# Curated, on-profile subreddits only (cost + signal). area drives the feed filter; Apify is used
+# wisely: small per-sub caps, top/day, dedup against existing items.
+REDDIT_FEED_SUBS = [
+    ("LocalLLaMA", "ai"), ("ClaudeAI", "ai"), ("OpenAI", "ai"), ("MachineLearning", "ai"),
+    ("SaaS", "build"), ("startups", "build"), ("indiehackers", "build"), ("EntrepreneurRideAlong", "build"),
+    ("AirBnB", "str"), ("ShortTermRentals", "str"),
+]
+
+def ingest_reddit(hours=24, per_sub=5, max_comments=8, max_extract=40):
+    """Mine curated subreddits (post selftext + top comments) into FEED nuggets (source_type='reddit'),
+    same extractor + TASTE + brain as everything else. Apify-backed (free RSS lacks full text). Recall
+    window = last `hours`; dedups against existing items + nugget payloads."""
+    from datetime import datetime, timezone, timedelta
+    from sources import apify_fetch as af
+    if not os.environ.get("APIFY_TOKEN"):
+        print("[reddit] APIFY_TOKEN not set; skipped"); return 0
+    client = sb()
+    load_brain(client)
+    existing = {r["video_id"] for r in client.table("videos").select("video_id").execute().data}
+    area_by_sub = {s.lower(): a for s, a in REDDIT_FEED_SUBS}
+    try:
+        posts = af.reddit_posts([s for s, _ in REDDIT_FEED_SUBS], per_sub=per_sub, max_comments=max_comments)
+    except Exception as e:
+        sys.exit(f"[reddit] ABORT: Apify fetch failed: {type(e).__name__}: {str(e)[:140]}")
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+    cands = []
+    for p in posts:
+        vid = "rdt_" + hashlib.md5((p["url"] or p["title"]).encode()).hexdigest()[:16]
+        if vid in existing:
+            continue
+        pub = _parse_pub(str(p.get("created"))) if p.get("created") else None
+        if pub and pub < cutoff:
+            continue
+        sub = (p.get("subreddit") or "").strip()
+        area = area_by_sub.get(sub.lower(), "ai")
+        cands.append({"video_id": vid, "title": p["title"], "url": p["url"],
+                      "source": (f"Reddit r/{sub}" if sub else "Reddit"), "area": area,
+                      "published_at": pub, "text": p["text"]})
+    cands = cands[:max_extract]
+    print(f"[reddit] {len(posts)} posts fetched; {len(cands)} new in-window to extract")
+    if not cands:
+        return 0
+    need_key = GEMINI_KEY if EXTRACT_MODEL.startswith("gemini") else ANTHROPIC_KEY
+    if not need_key:
+        print(f"[reddit] missing API key for {EXTRACT_MODEL}; skipped"); return 0
+    total = 0
+    for c in cands:
+        try:
+            data = extract(c["title"], c["source"], c["text"])
+            n = _write_item(client, c, data, source_type="reddit")
+            total += n
+            print(f"  [ok] {c['source']}: {n} nuggets - {c['title'][:48]}")
+        except Exception as e:
+            print(f"  ! {c['source']} {c['title'][:36]}: {type(e).__name__}: {str(e)[:90]}")
+    embed_new()
+    print(f"[reddit] extracted ~{total} nuggets from {len(cands)} posts")
+    return total
+
 def _process_pending(client, limit):
+    load_brain(client)  # who-Coby-is drives relevance + what to keep
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
     need_key = GEMINI_KEY if EXTRACT_MODEL.startswith("gemini") else ANTHROPIC_KEY
@@ -807,7 +892,7 @@ def list_recent(limit=5, hours=24):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex", "decay-weights", "ingest-articles"])
+    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex", "decay-weights", "ingest-articles", "ingest-reddit"])
     ap.add_argument("--limit", type=int, default=20)
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
@@ -820,4 +905,5 @@ if __name__ == "__main__":
     elif a.cmd == "note-reflex": note_reflex()
     elif a.cmd == "decay-weights": decay_weights()
     elif a.cmd == "ingest-articles": ingest_articles(a.hours)
+    elif a.cmd == "ingest-reddit": ingest_reddit(a.hours)
     else: run(a.limit)

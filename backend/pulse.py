@@ -39,6 +39,9 @@ ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY")
 SYNTH_MODEL = os.environ.get("PULSE_SYNTH_MODEL", "claude-sonnet-4-6")
 
+# Curated X/Twitter watchlist, pulled via Apify when APIFY_TOKEN is set (free syndication blocks CI IPs).
+X_HANDLES = ["sama", "karpathy", "gdb", "AnthropicAI", "alexalbert__", "swyx", "levelsio", "simonw"]
+
 def sb():
     from supabase import create_client
     if not (SUPABASE_URL and SUPABASE_KEY):
@@ -125,6 +128,17 @@ def ingest(max_per_source=15, no_social=False):
     out_dir = str(HERE / "state" / "radar_cache")
     items, status = rf.collect(max_per_source=max_per_source, no_social=no_social, out_dir=out_dir) \
         if hasattr(rf, "collect") else _collect_fallback(max_per_source, no_social, out_dir)
+
+    # X/Twitter via Apify — the one source whose free syndication blocks CI datacenter IPs. Best-effort
+    # bonus (used wisely: ~8 handles, ~3 each); it never fails the run on its own.
+    if not no_social and os.environ.get("APIFY_TOKEN"):
+        try:
+            from sources import apify_fetch as af
+            xt = af.x_tweets(X_HANDLES, per=3, max_items=30)
+            items.extend(xt)
+            status.append(("OK", "X/Twitter (Apify)", f"{len(xt)} tweets"))
+        except Exception as e:
+            status.append(("FAIL", "X/Twitter (Apify)", f"{type(e).__name__}: {str(e)[:80]}"))
 
     ok = sum(1 for s in status if s[0] == "OK")
     failed = sum(1 for s in status if s[0] == "FAIL")

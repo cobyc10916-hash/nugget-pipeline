@@ -1,12 +1,13 @@
-name: NUGGET feed sources (articles)
+name: NUGGET feed sources (articles + reddit)
 
-# Phase 3: mine full-text newsletters/blogs into FEED nuggets (source_type='article'), using the same
-# extractor + TASTE.md as the YouTube path. Daily. Proxy-first so Substack's datacenter-IP 403 doesn't
-# block fetches. Distinct from the Pulse ingest (which only summarizes); this extracts deep nuggets.
+# Mine full-text newsletters/blogs AND curated subreddits into FEED nuggets (source_type='article'|
+# 'reddit'), using the same extractor + TASTE + brain as the YouTube path. Twice daily. Proxy-first
+# for Substack; Reddit full-text comes via Apify. Distinct from Pulse ingest (which only summarizes);
+# this extracts deep nuggets.
 
 on:
   schedule:
-    - cron: "0 12 * * *"   # ~7am US Central daily
+    - cron: "0 12,21 * * *"   # ~8am & 5pm Eastern
   workflow_dispatch:
     inputs:
       hours:
@@ -27,6 +28,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       EXTRACT_MODEL: gemini-3.1-flash-lite
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # Reddit full-text (selftext + top comments)
       RADAR_PROXY: http://${{ secrets.WEBSHARE_PROXY_USERNAME }}-rotate:${{ secrets.WEBSHARE_PROXY_PASSWORD }}@p.webshare.io:80
     steps:
       - uses: actions/checkout@v4
@@ -37,3 +39,5 @@ jobs:
         run: pip install -r backend/requirements.txt
       - name: Mine newsletters/blogs into feed nuggets
         run: python backend/pipeline.py ingest-articles --hours "${{ github.event.inputs.hours || '48' }}"
+      - name: Mine curated subreddits into feed nuggets
+        run: python backend/pipeline.py ingest-reddit --hours "${{ github.event.inputs.hours || '48' }}"

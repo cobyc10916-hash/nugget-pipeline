@@ -1,12 +1,13 @@
 name: NUGGET pulse
 
-# The recall-first 24h AI digest. Ingest ALL free sources every 2h into pulse_items; synthesize the
-# daily brief twice a day (12:00 & 22:00 UTC = ~7am/5pm Central). Free for this public repo; reuses
-# the existing secrets. Ingest is keyless except the Supabase service key; synthesis uses Claude.
+# The recall-first 24h AI digest. Ingest ALL sources HOURLY during the day (skips overnight) into
+# pulse_items; synthesize the brief 3x/day. Ingest is cheap (keyless except Supabase; ~no model cost),
+# so hourly keeps Pulse fresh for nearly free. Synthesis uses Claude. X/Twitter comes via Apify.
 
 on:
   schedule:
-    - cron: "0 */2 * * *"     # every 2 hours
+    # Hourly 6am-11pm Eastern (skips ~midnight-5am EDT = 04:00-09:59 UTC). Cheap, keeps Pulse fresh.
+    - cron: "0 0-3,10-23 * * *"
   workflow_dispatch:
     inputs:
       mode:
@@ -27,6 +28,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       PULSE_SYNTH_MODEL: claude-sonnet-4-6
+      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # X/Twitter for Pulse (free syndication blocks CI IPs)
       # Rotating residential proxy for SOURCE fetches only (recovers datacenter-IP-blocked feeds:
       # AlphaSignal, Import AI, Reddit, X). Scoped via RADAR_PROXY so it never touches Supabase/Anthropic.
       RADAR_PROXY: http://${{ secrets.WEBSHARE_PROXY_USERNAME }}-rotate:${{ secrets.WEBSHARE_PROXY_PASSWORD }}@p.webshare.io:80
@@ -45,12 +47,12 @@ jobs:
           else
             python backend/pulse.py ingest
           fi
-      - name: Synthesize daily brief (2x/day on schedule, or on demand)
+      - name: Synthesize brief (3x/day on schedule, or on demand)
         run: |
           MODE="${{ github.event.inputs.mode || 'schedule' }}"
           H=$(date -u +%H)
-          if [ "$MODE" = "synthesize" ] || [ "$MODE" = "both" ] || { [ "$MODE" = "schedule" ] && { [ "$H" = "12" ] || [ "$H" = "22" ]; }; }; then
+          if [ "$MODE" = "synthesize" ] || [ "$MODE" = "both" ] || { [ "$MODE" = "schedule" ] && { [ "$H" = "11" ] || [ "$H" = "16" ] || [ "$H" = "22" ]; }; }; then
             python backend/pulse.py synthesize
           else
-            echo "Skipping synthesis (mode=$MODE, hour=$H UTC; brief runs at 12 & 22 UTC)."
+            echo "Skipping synthesis (mode=$MODE, hour=$H UTC; brief runs at 11, 16 & 22 UTC = ~7am/12pm/6pm ET)."
           fi
