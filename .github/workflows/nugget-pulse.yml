@@ -1,0 +1,53 @@
+name: NUGGET pulse
+
+# The recall-first 24h AI digest. Ingest ALL free sources every 2h into pulse_items; synthesize the
+# daily brief twice a day (12:00 & 22:00 UTC = ~7am/5pm Central). Free for this public repo; reuses
+# the existing secrets. Ingest is keyless except the Supabase service key; synthesis uses Claude.
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"     # every 2 hours
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "ingest | synthesize | both"
+        default: "both"
+
+concurrency:
+  group: nugget-pulse
+  cancel-in-progress: false
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PULSE_SYNTH_MODEL: claude-sonnet-4-6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Ingest sources -> pulse_items
+        run: |
+          MODE="${{ github.event.inputs.mode || 'schedule' }}"
+          if [ "$MODE" = "synthesize" ]; then
+            echo "mode=synthesize -> skipping ingest"
+          else
+            python backend/pulse.py ingest
+          fi
+      - name: Synthesize daily brief (2x/day on schedule, or on demand)
+        run: |
+          MODE="${{ github.event.inputs.mode || 'schedule' }}"
+          H=$(date -u +%H)
+          if [ "$MODE" = "synthesize" ] || [ "$MODE" = "both" ] || { [ "$MODE" = "schedule" ] && { [ "$H" = "12" ] || [ "$H" = "22" ]; }; }; then
+            python backend/pulse.py synthesize
+          else
+            echo "Skipping synthesis (mode=$MODE, hour=$H UTC; brief runs at 12 & 22 UTC)."
+          fi
