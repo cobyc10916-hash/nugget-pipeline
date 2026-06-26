@@ -211,30 +211,57 @@ def _area_mix(rows):
     return m
 
 # ---------------- synthesize ----------------
-SYNTH_SYSTEM = (
-    "You are Coby's AI intelligence analyst. Write the daily 'Pulse' brief: what actually matters in "
-    "the last 24 hours across AI (with a little startup/founder and real-estate/STR when it shows up). "
-    "Coby is a technical operator and AI builder — skip 101 explainers, surface the non-obvious signal, "
-    "the real releases, the capability shifts, and why each matters. Be concise and scannable. NO em "
-    "dashes. Output GitHub-flavored markdown only: a one-line TL;DR, then 3-6 short themed sections "
-    "(### heading + 2-5 tight bullets, each bullet naming the thing and the so-what). Group related "
-    "items; do not just list everything. No preamble, no sign-off."
-)
+def _build_system(profile_md, priorities, strong_tags):
+    pri = "\n".join(f"- {p}" for p in (priorities or [])) or "- (none set)"
+    tags = ", ".join(strong_tags) if strong_tags else "(none yet)"
+    return (
+        "You are Coby's personal daily AI intelligence analyst. Your job is to be his FILTER: from the "
+        "raw items, select and synthesize ONLY what actually matters to him, and frame each by the "
+        "so-what FOR HIM. Most items should not make the cut. This is the one tab he checks daily to "
+        "know what he needs to know, so it must be tight, high-signal, and genuinely useful, not a list.\n\n"
+        "WHO COBY IS:\n" + (profile_md or "") + "\n\nHIS PRIORITIES (lead with these):\n" + pri +
+        "\nTopics he has recently leaned into: " + tags + "\n\n"
+        "OUTPUT (GitHub-flavored markdown only, no preamble or sign-off):\n"
+        "- A 1-2 sentence **TL;DR** of the day for him.\n"
+        "- Then 3-5 themed sections: '### Theme' + 2-5 tight bullets.\n"
+        "- Each bullet: name the thing, the so-what for Coby, and a [link](url) when useful.\n"
+        "- Group related items. Cut generic hype/awareness stats, motivational founder lore, and anything "
+        "he would find too basic. If something is a genuinely big deal even outside his priorities, still "
+        "include it (recall matters), but most of the brief should serve his goals.\n"
+        "- No em dashes. Aim for a focused briefing he can read in about 2 minutes."
+    )
 
-def synthesize(hours=24, top_n=60):
+def synthesize(hours=24, top_n=90):
     client = sb()
     now = datetime.now(timezone.utc)
     items = client.rpc("get_pulse_items", {"p_hours": hours, "p_area": None, "p_limit": top_n}).execute().data or []
     if not items:
         print("[pulse-synthesize] no items in window — nothing to synthesize"); return
+    # Pull Coby's profile + the topics he's leaned into so the brief is curated FOR him.
+    profile_md, priorities = "", []
+    try:
+        prof = client.table("app_profile").select("profile_md,priorities").eq("id", 1).execute().data
+        if prof:
+            profile_md = prof[0].get("profile_md") or ""
+            priorities = prof[0].get("priorities") or []
+    except Exception:
+        pass
+    strong_tags = []
+    try:
+        tw = client.table("taste_weights").select("key,weight").eq("dimension", "tag").gt("weight", 1.2).execute().data
+        strong_tags = [r["key"] for r in tw if r.get("key")][:20]
+    except Exception:
+        pass
+    system = _build_system(profile_md, priorities, strong_tags)
+
     lines = []
     for it in items:
         vel = f" [{it.get('velocity_kind')}={it.get('velocity')}]" if it.get("velocity") else ""
         lines.append(f"- ({it.get('source_name')}) {it.get('title')}{vel} {it.get('url') or ''}\n    {(it.get('summary') or '')[:200]}")
-    user_msg = (f"Here are the top {len(items)} items from the last {hours}h, already importance-ranked. "
-                "Write the Pulse brief.\n\n" + "\n".join(lines))
+    user_msg = (f"Here are the {len(items)} most important items from the last {hours}h. "
+                "Be the filter: synthesize the daily brief for Coby.\n\n" + "\n".join(lines))
 
-    brief, model_used = _synth_call(user_msg)
+    brief, model_used = _synth_call(system, user_msg)
     if not brief:
         sys.exit("[pulse-synthesize] model returned nothing")
 
@@ -251,14 +278,14 @@ def synthesize(hours=24, top_n=60):
     }, on_conflict="digest_date").execute()
     print(f"[pulse-synthesize] wrote digest for {today} ({model_used}, {len(brief)} chars, {len(items)} items)")
 
-def _synth_call(user_msg):
+def _synth_call(system, user_msg):
     """Strong model for the synthesis (Claude by default). Falls back to Gemini if no Anthropic key."""
     if ANTHROPIC_KEY and SYNTH_MODEL.startswith("claude"):
         try:
             import anthropic
             c = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
             m = c.messages.create(model=SYNTH_MODEL, max_tokens=2500,
-                                  system=SYNTH_SYSTEM,
+                                  system=system,
                                   messages=[{"role": "user", "content": user_msg}])
             return "".join(b.text for b in m.content if b.type == "text").strip(), SYNTH_MODEL
         except Exception as e:
@@ -267,7 +294,7 @@ def _synth_call(user_msg):
         import requests
         url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent"
         r = requests.post(url, params={"key": GEMINI_KEY},
-                          json={"systemInstruction": {"parts": [{"text": SYNTH_SYSTEM}]},
+                          json={"systemInstruction": {"parts": [{"text": system}]},
                                 "contents": [{"role": "user", "parts": [{"text": user_msg}]}],
                                 "generationConfig": {"maxOutputTokens": 2500, "temperature": 0.4}}, timeout=120)
         if r.status_code == 200:
