@@ -114,7 +114,7 @@ def importance(item: dict, published_dt, now, strong_tags) -> float:
     return round((st + 1.5 * vel_norm + 1.0 * rec) * taste, 4)
 
 # ---------------- ingest ----------------
-def ingest(max_per_source=15, no_social=False):
+def ingest(max_per_source=15, no_social=False, with_x=False):
     client = sb()
     now = datetime.now(timezone.utc)
     # Light personalization: tags the user has up-weighted (only used to ORDER, never to filter).
@@ -130,8 +130,9 @@ def ingest(max_per_source=15, no_social=False):
         if hasattr(rf, "collect") else _collect_fallback(max_per_source, no_social, out_dir)
 
     # X/Twitter via Apify — the one source whose free syndication blocks CI datacenter IPs. Best-effort
-    # bonus (used wisely: ~8 handles, ~3 each); it never fails the run on its own.
-    if not no_social and os.environ.get("APIFY_TOKEN"):
+    # bonus (used wisely: ~8 handles, ~3 each, only at brief hours not every hourly ingest); never
+    # fails the run on its own.
+    if with_x and not no_social and os.environ.get("APIFY_TOKEN"):
         try:
             from sources import apify_fetch as af
             xt = af.x_tweets(X_HANDLES, per=3, max_items=30)
@@ -323,8 +324,9 @@ if __name__ == "__main__":
     ap.add_argument("--max-per-source", type=int, default=15)
     ap.add_argument("--hours", type=int, default=24)
     ap.add_argument("--no-social", action="store_true")
+    ap.add_argument("--with-x", action="store_true", help="also pull X/Twitter via Apify (gate to brief hours)")
     a = ap.parse_args()
     if a.cmd == "ingest":
-        ingest(a.max_per_source, a.no_social)
+        ingest(a.max_per_source, a.no_social, with_x=a.with_x)
     else:
         synthesize(a.hours)

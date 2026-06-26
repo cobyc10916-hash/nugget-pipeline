@@ -42,10 +42,14 @@ jobs:
       - name: Ingest sources -> pulse_items
         run: |
           MODE="${{ github.event.inputs.mode || 'schedule' }}"
+          H=$(date -u +%H)
           if [ "$MODE" = "synthesize" ]; then
             echo "mode=synthesize -> skipping ingest"
           else
-            python backend/pulse.py ingest
+            # X via Apify only at the 3 brief hours (or any manual run): keeps hourly ingest cheap.
+            XFLAG=""
+            if [ "$MODE" != "schedule" ] || [ "$H" = "11" ] || [ "$H" = "16" ] || [ "$H" = "22" ]; then XFLAG="--with-x"; fi
+            python backend/pulse.py ingest $XFLAG
           fi
       - name: Synthesize brief (3x/day on schedule, or on demand)
         run: |
