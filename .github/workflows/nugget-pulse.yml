@@ -27,6 +27,9 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       PULSE_SYNTH_MODEL: claude-sonnet-4-6
+      # Rotating residential proxy for SOURCE fetches only (recovers datacenter-IP-blocked feeds:
+      # AlphaSignal, Import AI, Reddit, X). Scoped via RADAR_PROXY so it never touches Supabase/Anthropic.
+      RADAR_PROXY: http://${{ secrets.WEBSHARE_PROXY_USERNAME }}-rotate:${{ secrets.WEBSHARE_PROXY_PASSWORD }}@p.webshare.io:80
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

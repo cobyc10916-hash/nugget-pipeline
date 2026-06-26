@@ -82,6 +82,13 @@ TWITTER_ACCOUNTS = [
 ]
 
 # ── HTTP ──────────────────────────────────────────────────────────────────────
+# Optional rotating residential proxy (Webshare) for SOURCE fetches only. Set RADAR_PROXY to dodge the
+# datacenter-IP 403/429 blocks some feeds (AlphaSignal, Import AI, Reddit, X) apply. Scoped to a
+# dedicated env var (NOT HTTP_PROXY) so it never touches the Supabase / Anthropic clients.
+_RADAR_PROXY = os.environ.get("RADAR_PROXY")
+_OPENER = (urllib.request.build_opener(urllib.request.ProxyHandler({"http": _RADAR_PROXY, "https": _RADAR_PROXY}))
+           if _RADAR_PROXY else urllib.request.build_opener())
+
 def http_get(url, timeout=TIMEOUT, retries=2):
     # Retry transient errors with backoff. YouTube throttles bursts as 404, so 404 is
     # retried too (no source in the catalog returns a *persistent* 404 anymore).
@@ -89,7 +96,7 @@ def http_get(url, timeout=TIMEOUT, retries=2):
     for attempt in range(retries + 1):
         try:
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Encoding": "gzip", "Accept": "*/*"})
-            with urllib.request.urlopen(req, timeout=timeout) as r:
+            with _OPENER.open(req, timeout=timeout) as r:
                 raw = r.read()
                 if r.headers.get("Content-Encoding") == "gzip":
                     raw = gzip.decompress(raw)
