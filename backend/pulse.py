@@ -39,8 +39,17 @@ ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY")
 SYNTH_MODEL = os.environ.get("PULSE_SYNTH_MODEL", "claude-sonnet-4-6")
 
-# Curated X/Twitter watchlist, pulled via Apify when APIFY_TOKEN is set (free syndication blocks CI IPs).
-X_HANDLES = ["sama", "karpathy", "gdb", "AnthropicAI", "alexalbert__", "swyx", "levelsio", "simonw"]
+# Curated X/Twitter watchlist — only the highest-signal voices for Coby's lanes (agentic coding /
+# Claude Code, frontier AI, AI building). Pulled via Apify (free syndication blocks CI IPs). Keep
+# this tight: add/remove a handle here, nothing else changes.
+X_HANDLES = [
+    "AnthropicAI",   # his core stack (Claude / Claude Code) - official signal
+    "alexalbert__",  # Claude Code / Anthropic - his #1 priority, agentic coding
+    "simonw",        # Simon Willison - practical LLM + agentic-coding tooling
+    "swyx",          # AI engineering / agent patterns (Latent Space)
+    "karpathy",      # frontier AI, agents, first-principles
+    "sama",          # Sam Altman - frontier / industry direction
+]
 
 def sb():
     from supabase import create_client

@@ -1,9 +1,9 @@
-name: NUGGET feed sources (articles + reddit)
+name: NUGGET feed sources (articles)
 
-# Mine full-text newsletters/blogs AND curated subreddits into FEED nuggets (source_type='article'|
-# 'reddit'), using the same extractor + TASTE + brain as the YouTube path. Twice daily. Proxy-first
-# for Substack; Reddit full-text comes via Apify. Distinct from Pulse ingest (which only summarizes);
-# this extracts deep nuggets.
+# Mine full-text newsletters/blogs into FEED nuggets (source_type='article'), using the same
+# extractor + TASTE + brain as the YouTube path. Twice daily. Proxy-first for Substack. Distinct
+# from Pulse ingest (which only summarizes); this extracts deep nuggets.
+# (Reddit mining is built but disabled for now: `pipeline.py ingest-reddit` still exists to re-enable.)
 
 on:
   schedule:
@@ -28,7 +28,6 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       EXTRACT_MODEL: gemini-3.1-flash-lite
-      APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}   # Reddit full-text (selftext + top comments)
       RADAR_PROXY: http://${{ secrets.WEBSHARE_PROXY_USERNAME }}-rotate:${{ secrets.WEBSHARE_PROXY_PASSWORD }}@p.webshare.io:80
     steps:
       - uses: actions/checkout@v4
@@ -39,5 +38,3 @@ jobs:
         run: pip install -r backend/requirements.txt
       - name: Mine newsletters/blogs into feed nuggets
         run: python backend/pipeline.py ingest-articles --hours "${{ github.event.inputs.hours || '48' }}"
-      - name: Mine curated subreddits into feed nuggets
-        run: python backend/pipeline.py ingest-reddit --hours "${{ github.event.inputs.hours || '48' }}"
