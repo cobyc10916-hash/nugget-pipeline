@@ -1,0 +1,39 @@
+name: NUGGET feed sources (articles)
+
+# Phase 3: mine full-text newsletters/blogs into FEED nuggets (source_type='article'), using the same
+# extractor + TASTE.md as the YouTube path. Daily. Proxy-first so Substack's datacenter-IP 403 doesn't
+# block fetches. Distinct from the Pulse ingest (which only summarizes); this extracts deep nuggets.
+
+on:
+  schedule:
+    - cron: "0 12 * * *"   # ~7am US Central daily
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: "Look-back window in hours"
+        default: "48"
+
+concurrency:
+  group: nugget-feed-sources
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      EXTRACT_MODEL: gemini-3.1-flash-lite
+      RADAR_PROXY: http://${{ secrets.WEBSHARE_PROXY_USERNAME }}-rotate:${{ secrets.WEBSHARE_PROXY_PASSWORD }}@p.webshare.io:80
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Mine newsletters/blogs into feed nuggets
+        run: python backend/pipeline.py ingest-articles --hours "${{ github.event.inputs.hours || '48' }}"

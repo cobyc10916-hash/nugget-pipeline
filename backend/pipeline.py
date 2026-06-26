@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))  # so `from sources import radar_fetch` resolves (proxy-aware fetch)
 STATE = HERE / "state"; STATE.mkdir(exist_ok=True)
 SEEN = STATE / "seen.json"
 
@@ -590,6 +591,151 @@ def decay_weights(factor=0.97):
     res = client.rpc("decay_taste_weights", {"p_factor": factor}).execute()
     print(f"[decay] pulled {res.data} taste dial(s) toward neutral (factor {factor})")
 
+# ---------------- non-YouTube feed sources (Phase 3): newsletters/blogs -> nuggets ----------------
+# Full-content RSS (Substack/Atom) of nugget-rich AI/founder writers. These put the whole essay in the
+# feed body, so we can mine them for nuggets with the SAME extractor + TASTE.md the YouTube path uses.
+ARTICLE_FEEDS = [
+    ("Latent Space",        "https://www.latent.space/feed",            "ai"),
+    ("Import AI",           "https://importai.substack.com/feed",       "ai"),
+    ("Simon Willison",      "https://simonwillison.net/atom/everything/", "ai"),
+    ("One Useful Thing",    "https://www.oneusefulthing.org/feed",      "ai"),
+    ("Interconnects",       "https://www.interconnects.ai/feed",        "ai"),
+    ("Lenny's Newsletter",  "https://www.lennysnewsletter.com/feed",    "build"),
+    ("The Generalist",      "https://www.generalist.com/feed",          "build"),
+]
+
+def _strip_html(s):
+    from html import unescape
+    s = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", s or "")
+    s = re.sub(r"(?is)<br\s*/?>", "\n", s)
+    s = re.sub(r"(?is)</p>", "\n\n", s)
+    s = re.sub(r"(?s)<[^>]+>", " ", s)
+    s = unescape(s)
+    s = re.sub(r"[ \t]+", " ", s)
+    return re.sub(r"\n{3,}", "\n\n", s).strip()
+
+def _parse_pub(s):
+    from email.utils import parsedate_to_datetime
+    from datetime import datetime, timezone
+    if not s:
+        return None
+    try:
+        dt = parsedate_to_datetime(s.strip())
+        if dt:
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except Exception:
+        pass
+    for fmt in ("%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%d"):
+        try:
+            dt = datetime.strptime(s.strip(), fmt)
+            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+        except Exception:
+            continue
+    return None
+
+def _article_entries(url, max_n=6):
+    """Newest entries from a full-content RSS/Atom feed, with the WHOLE post body (content:encoded /
+    atom content), fetched proxy-first so Substack's datacenter-IP 403 doesn't block us."""
+    import xml.etree.ElementTree as ET
+    from sources import radar_fetch as rf
+    root = ET.fromstring(rf.http_get(url).decode("utf-8", "replace"))
+    lt = lambda el: el.tag.split("}", 1)[-1].lower()
+    out = []
+    for node in [e for e in root.iter() if lt(e) in ("item", "entry")][:max_n]:
+        title = link = pub = body = ""
+        best = 0
+        for c in node:
+            t = lt(c)
+            if t == "title" and not title:
+                title = (c.text or "").strip()
+            elif t == "link" and not link:
+                link = (c.get("href") or c.text or "").strip()
+            elif t in ("pubdate", "published", "updated", "date") and not pub:
+                pub = (c.text or "").strip()
+            elif t in ("encoded", "content", "description", "summary"):
+                txt = _strip_html("".join(c.itertext()) if len(list(c)) else (c.text or ""))
+                if len(txt) > best:
+                    body, best = txt, len(txt)
+        if title and body:
+            out.append({"title": title, "link": link, "published": pub, "text": body[:18000]})
+    return out
+
+def _write_item(client, c, data):
+    """Write a non-YouTube feed item (source_type) + its nuggets, skipping nugget payloads we already
+    have (cross-source exact-dedup via dedup_hash). Mirrors write_video for the article path."""
+    vid = c["video_id"]
+    keep = [n for n in data["nuggets"] if n.get("quality", 0) >= 5]
+    if len(keep) < 3:
+        return 0
+    area = c["area"] or data.get("interest_area") or "other"
+    hashes = [hashlib.md5(re.sub(r"\W+", " ", n["payload"].lower()).encode()).hexdigest()[:16] for n in keep]
+    seen_h = set()
+    if hashes:
+        seen_h = {r["dedup_hash"] for r in client.table("nuggets").select("dedup_hash").in_("dedup_hash", hashes).execute().data}
+    fresh = [(n, h) for n, h in zip(keep, hashes) if h not in seen_h]
+    if len(fresh) < 3:
+        return 0
+    client.table("videos").upsert({
+        "video_id": vid, "title": c["title"], "channel_name": c["source"], "source_type": "article",
+        "url": c["url"], "thumbnail_url": None, "duration_s": None,
+        "published_at": c["published_at"].isoformat() if c["published_at"] else None,
+        "interest_area": area, "worth_full_watch": data.get("worth_full_watch", False),
+        "watch_reason": data.get("watch_reason"), "gist": data.get("gist"),
+        "cover_bullets": data.get("cover_bullets"), "nugget_count": len(fresh),
+    }, on_conflict="video_id").execute()
+    client.table("nuggets").insert([{
+        "video_id": vid, "hook": n["hook"], "context": n.get("context"), "payload": n["payload"],
+        "timestamp_hint": None, "order_in_video": i, "interest_area": area,
+        "topic_tags": n.get("topic_tags", []), "nugget_type": n.get("type"), "quality": n.get("quality", 5),
+        "actionability": n.get("actionability"), "scope": n.get("scope"), "dedup_hash": h,
+    } for i, (n, h) in enumerate(fresh)]).execute()
+    return len(fresh)
+
+def ingest_articles(hours=48, max_per_feed=6, max_extract=40):
+    """Mine full-text newsletters/blogs into feed nuggets (source_type='article'), same extractor +
+    TASTE.md as YouTube. Recall window = last `hours`; dedups against existing items + nugget payloads."""
+    from datetime import datetime, timezone, timedelta
+    client = sb()
+    existing = {r["video_id"] for r in client.table("videos").select("video_id").execute().data}
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
+    cands, ok, failed = [], 0, 0
+    for name, url, area in ARTICLE_FEEDS:
+        try:
+            ents = _article_entries(url, max_per_feed); ok += 1
+        except Exception as e:
+            failed += 1; print(f"  [articles] {name} FAILED: {type(e).__name__}: {str(e)[:90]}"); continue
+        for e in ents:
+            vid = "art_" + hashlib.md5((e["link"] or e["title"]).encode()).hexdigest()[:16]
+            if vid in existing:
+                continue
+            pub = _parse_pub(e["published"])
+            if pub and pub < cutoff:
+                continue
+            cands.append({"video_id": vid, "title": e["title"], "url": e["link"], "source": name,
+                          "area": area, "published_at": pub, "text": e["text"]})
+        time.sleep(0.5)
+    if ok == 0 and failed:
+        sys.exit(f"[articles] ABORT: all {failed} feeds failed — outage")
+    cands = cands[:max_extract]
+    print(f"[articles] feeds ok={ok} failed={failed}; {len(cands)} new in-window articles to extract")
+    if not cands:
+        return 0
+    need_key = GEMINI_KEY if EXTRACT_MODEL.startswith("gemini") else ANTHROPIC_KEY
+    if not need_key:
+        print(f"[articles] missing API key for {EXTRACT_MODEL}; skipped"); return 0
+    total = 0
+    for c in cands:
+        try:
+            data = extract(c["title"], c["source"], c["text"])
+            n = _write_item(client, c, data)
+            total += n
+            print(f"  [ok] {c['source']}: {n} nuggets - {c['title'][:48]}")
+        except Exception as e:
+            print(f"  ! {c['source']} {c['title'][:36]}: {type(e).__name__}: {str(e)[:90]}")
+    embed_new()
+    print(f"[articles] extracted ~{total} nuggets from {len(cands)} articles")
+    return total
+
 def _process_pending(client, limit):
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
@@ -661,7 +807,7 @@ def list_recent(limit=5, hours=24):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex", "decay-weights"])
+    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex", "decay-weights", "ingest-articles"])
     ap.add_argument("--limit", type=int, default=20)
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
@@ -673,4 +819,5 @@ if __name__ == "__main__":
     elif a.cmd == "learn": learn()
     elif a.cmd == "note-reflex": note_reflex()
     elif a.cmd == "decay-weights": decay_weights()
+    elif a.cmd == "ingest-articles": ingest_articles(a.hours)
     else: run(a.limit)
