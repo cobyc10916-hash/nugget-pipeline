@@ -273,11 +273,20 @@ _taste = HERE.parent / "TASTE.md"
 if _taste.exists():
     SYSTEM += "\n\n---\n# COBY'S TASTE — apply this; drop what he dislikes, score what he likes high\n\n" + _taste.read_text()
 
-SYSTEM += ("\n\n---\n# RELEVANCE SCORING\nAlso rate this WHOLE piece's relevance to Coby in the "
-           "'relevance' field (0-10), using who he is (profile below): 10 = squarely on his stated "
-           "priorities AND non-obvious to him; 5 = tangential or partly known; 0 = off-topic or "
-           "beneath his level. This only re-orders his feed, it never hides anything, so judge "
-           "honestly. Add a one-line 'relevance_reason'.")
+SYSTEM += ("\n\n---\n# RELEVANCE SCORING (judge the SUBSTANCE, many levels deep — never the topic alone)\n"
+           "Rate this whole piece's worth-to-Coby in 'relevance' (0-10). 'It's about agents' is NOT a "
+           "reason to score high. Judge the actual information against who he is (profile below):\n"
+           "- Non-obviousness AT HIS LEVEL: would a sharp builder who already knows the basics learn "
+           "something real, or is this 101 / stuff he clearly already knows?\n"
+           "- Depth of insight: a genuine mechanism, a number WITH the why, a hard-won lesson, vs "
+           "surface news, hype, or a restated headline.\n"
+           "- Actionability: can he actually DO something with it.\n"
+           "- Durability: a tactic he'd still value in 6 months scores higher than a dated take.\n"
+           "- Fit to his current priorities and what he's been leaning into.\n"
+           "10 = genuinely important AND non-obvious for HIM; 7 = solid, worth his time; 4 = thin or "
+           "mostly known; 0 = off-topic or beneath his level. Be discriminating, not generous: this "
+           "both orders his feed and decides what is worth resurfacing weeks later. Give a one-line "
+           "'relevance_reason' naming the single best reason it does (or does not) earn his attention.")
 
 # The unified brain (declared profile + operator-maintained learned notes) is the strategic layer.
 # It's fetched once per run via load_brain() and appended to the extraction system on every call, so

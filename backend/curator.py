@@ -89,8 +89,40 @@ def _gather(client) -> dict:
         pulse = []
 
     prior = client.table("operator_log").select("run_at,summary,gaps").order("run_at", desc=True).limit(3).execute().data or []
+
+    # RESURFACE candidates: older (aged out of the 7-day feed), high-relevance items Coby never saw
+    # and never saved, that haven't been resurfaced recently. The operator judges which (if any) are
+    # worth re-floating on their actual substance.
+    res_raw = client.table("videos").select(
+        "video_id,title,gist,relevance,interest_area,published_at,extracted_at,resurfaced_at"
+    ).gte("relevance", 8).order("relevance", desc=True).limit(60).execute().data or []
+    seen_ids = {r["video_id"] for r in (client.table("feedback").select("video_id")
+                .in_("action", ["seen", "trash"]).execute().data or []) if r.get("video_id")}
+    saved_ids = {r["video_id"] for r in (client.table("library").select("video_id")
+                 .neq("status", "archived").execute().data or []) if r.get("video_id")}
+    def _age(v):
+        ts = v.get("published_at") or v.get("extracted_at")
+        try:
+            return (datetime.now(timezone.utc) - datetime.fromisoformat(ts.replace("Z", "+00:00"))).days
+        except Exception:
+            return None
+    res_cands = []
+    for v in res_raw:
+        a = _age(v)
+        if a is None or a < 7 or v["video_id"] in seen_ids or v["video_id"] in saved_ids:
+            continue
+        rs = v.get("resurfaced_at")
+        if rs:
+            try:
+                if (datetime.now(timezone.utc) - datetime.fromisoformat(rs.replace("Z", "+00:00"))).days < 14:
+                    continue
+            except Exception:
+                pass
+        res_cands.append({**v, "age_days": a})
+    res_cands = res_cands[:12]
+
     return {"prof": prof, "dials": dials, "saves": saves, "fb": fb,
-            "exposure": exposure, "feed": feed, "pulse": pulse, "prior": prior}
+            "exposure": exposure, "feed": feed, "pulse": pulse, "prior": prior, "res_cands": res_cands}
 
 def _fmt_context(ctx: dict) -> str:
     p = ctx["prof"]
@@ -136,6 +168,13 @@ def _fmt_context(ctx: dict) -> str:
     for it in ctx["pulse"][:20]:
         out.append(f"- ({it.get('area')}) {str(it.get('title'))[:90]}")
 
+    out.append("\n# RESURFACE CANDIDATES (aged out of the 7-day feed, high-relevance, he never saw or saved):")
+    for v in ctx.get("res_cands", []):
+        out.append(f"- [{v['video_id']}] ({v.get('interest_area')}, rel={v.get('relevance')}, {v.get('age_days')}d old) "
+                   f"{str(v.get('title'))[:80]}\n    {str(v.get('gist') or '')[:160]}")
+    if not ctx.get("res_cands"):
+        out.append("- (none)")
+
     if ctx["prior"]:
         out.append("\n# YOUR LAST RUNS (for continuity — don't repeat yourself):")
         for r in ctx["prior"]:
@@ -168,6 +207,11 @@ Your purpose, every run:
    now ignores, an over-concentration (bubble risk), a stated priority the feed isn't serving, or a
    recurring topic in Pulse he might want pulled into the Feed. Phrase each as a short, direct
    observation or question addressed to Coby.
+6. RESURFACE with resurface: his feed only shows the last 7 days, so genuinely valuable items age out
+   unseen. From the RESURFACE CANDIDATES, re-float the FEW whose actual SUBSTANCE is worth his time
+   even now — a timeless tactic, a mechanism he'd still use, or something newly relevant to what he's
+   leaning into. Judge the content (gist), not the topic. Be strict: resurface AT MOST 2-3 per run,
+   and only true standouts. Most candidates should NOT be resurfaced. The reason shows on the card.
 
 Principles: prefer a few high-confidence changes over many speculative ones. Honor anti-bubble — if
 one area dominates exposure and saves, consider whether other declared priorities are being starved.
@@ -202,6 +246,11 @@ TOOLS = [
      "description": "Flag a blind spot, drift, bubble risk, or suggestion for Coby. Shown in the app. Short and direct.",
      "input_schema": {"type": "object", "required": ["text"],
          "properties": {"text": {"type": "string"}}}},
+    {"name": "resurface",
+     "description": "Re-float an aged-out feed item (from the resurface candidates) because its SUBSTANCE is genuinely worth Coby seeing now. Judge the content, not the topic. At most 2-3 per run; most candidates should NOT be resurfaced.",
+     "input_schema": {"type": "object", "required": ["video_id", "reason"],
+         "properties": {"video_id": {"type": "string"},
+             "reason": {"type": "string", "description": "Short, shown on the card: why it earns his attention now."}}}},
 ]
 
 def _apply_tool(client, name, inp, state, dry):
@@ -232,6 +281,15 @@ def _apply_tool(client, name, inp, state, dry):
         if t:
             state["gaps"].append(t)
         return "gap flagged"
+    if name == "resurface":
+        vid = (inp.get("video_id") or "").strip()
+        reason = (inp.get("reason") or "").strip()
+        if vid and not dry:
+            client.table("videos").update({
+                "resurfaced_at": datetime.now(timezone.utc).isoformat(), "resurface_reason": reason,
+            }).eq("video_id", vid).execute()
+        state["actions"].append({"tool": "resurface", "video_id": vid, "reason": reason})
+        return f"resurfaced {vid}"
     return f"unknown tool {name}"
 
 def run(dry=False):
