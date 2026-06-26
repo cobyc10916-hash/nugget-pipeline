@@ -1,0 +1,31 @@
+name: NUGGET decay weights
+
+# Nightly anti-bubble step: pull every taste dial a notch back toward neutral (1.0). Preferences Coby
+# keeps acting on get re-bumped by the reflex so they persist; stale ones fade (~23-day half-life).
+# This is what stops the feed from locking into a filter bubble. Costs nothing (one SQL call).
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # ~4am US Central
+  workflow_dispatch:
+
+concurrency:
+  group: nugget-decay
+  cancel-in-progress: false
+
+jobs:
+  decay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      SUPABASE_URL: https://ellnuqqlssupsrglxmwn.supabase.co
+      SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install deps
+        run: pip install -r backend/requirements.txt
+      - name: Decay taste weights toward neutral
+        run: python backend/pipeline.py decay-weights

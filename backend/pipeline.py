@@ -582,6 +582,14 @@ def note_reflex():
         client.table("feedback").update({"reflex_at": datetime.now(timezone.utc).isoformat()}).eq("id", n["id"]).execute()
     print(f"[note-reflex] processed {len(notes)} note(s), applied {applied} weight nudge(s)")
 
+def decay_weights(factor=0.97):
+    """Nightly anti-bubble step: pull every taste dial a notch back toward neutral (1.0). Preferences
+    you keep acting on get re-bumped by the reflex so they persist; stale ones fade (~23-day half-life
+    at 0.97). This is what makes the feed self-heal instead of locking into a filter bubble."""
+    client = sb()
+    res = client.rpc("decay_taste_weights", {"p_factor": factor}).execute()
+    print(f"[decay] pulled {res.data} taste dial(s) toward neutral (factor {factor})")
+
 def _process_pending(client, limit):
     pending = client.table("discovery_queue").select("*").eq("status", "pending") \
         .order("seed_score", desc=True).limit(limit).execute().data
@@ -653,7 +661,7 @@ def list_recent(limit=5, hours=24):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex"])
+    ap.add_argument("cmd", choices=["discover", "run", "recent", "list-recent", "embed", "taste", "learn", "note-reflex", "decay-weights"])
     ap.add_argument("--limit", type=int, default=20)
     ap.add_argument("--hours", type=int, default=24)
     a = ap.parse_args()
@@ -664,4 +672,5 @@ if __name__ == "__main__":
     elif a.cmd == "taste": taste_digest()
     elif a.cmd == "learn": learn()
     elif a.cmd == "note-reflex": note_reflex()
+    elif a.cmd == "decay-weights": decay_weights()
     else: run(a.limit)
