@@ -628,11 +628,19 @@ def decay_weights(factor=0.97):
 ARTICLE_FEEDS = [
     ("Latent Space",        "https://www.latent.space/feed",            "ai"),
     ("Import AI",           "https://importai.substack.com/feed",       "ai"),
-    ("Simon Willison",      "https://simonwillison.net/atom/everything/", "ai"),
+    ("Simon Willison",      "https://simonwillison.net/atom/entries/",  "ai"),  # entries-only (full posts); /everything/ was 90% tiny link-blogs that never cleared the >=3-nugget gate
     ("One Useful Thing",    "https://www.oneusefulthing.org/feed",      "ai"),
     ("Interconnects",       "https://www.interconnects.ai/feed",        "ai"),
     ("Lenny's Newsletter",  "https://www.lennysnewsletter.com/feed",    "build"),
     ("The Generalist",      "https://www.generalist.com/feed",          "build"),
+    # STR / vacation-rental — analyst-grade only (deep-research pass, feeds verified to resolve +
+    # yield real body via the excerpt fulltext fallback). Guru/coaching feeds (Boostly, Mashvisor,
+    # Thanks for Visiting) deliberately excluded. AirDNA/PriceLabs/Key Data have NO RSS at all.
+    ("Skift Short-Term Rental", "https://skift.com/vacation-rentals/feed/", "str"),  # institutional industry journalism
+    ("Rental Scale-Up",     "https://www.rentalscaleup.com/feed/",      "str"),  # operator-analyst (PriceLabs-owned): regs, OTA, rev-mgmt
+    ("VRM Intel",           "https://vrmintel.com/feed/",               "str"),  # vacation-rental-manager trade press: M&A, institutional, supply
+    ("Beyond Pricing Blog", "https://www.beyondpricing.com/blog/rss.xml", "str"),  # revenue management / dynamic pricing / ADR-occupancy
+    ("SFR Analytics",       "https://sfranalytics.substack.com/feed",   "str"),  # data-rigorous SFR/MTR analysis (full content)
 ]
 
 def _strip_html(s):
@@ -665,9 +673,29 @@ def _parse_pub(s):
             continue
     return None
 
+def _fetch_fulltext(url):
+    """For EXCERPT-only feeds (Skift, VRM Intel, Beyond, Rental Scale-Up, ...) fetch the article page
+    and pull the main body. Dependency-free readability: prefer an <article> region, then join the
+    substantial <p> blocks (drops nav/caption/boilerplate fragments). Proxy-first via radar_fetch so
+    datacenter-blocked sites still resolve. Returns '' on any failure (caller keeps the feed excerpt)."""
+    from sources import radar_fetch as rf
+    try:
+        html = rf.http_get(url).decode("utf-8", "replace")
+    except Exception:
+        return ""
+    m = re.search(r"(?is)<article[^>]*>(.*?)</article>", html)
+    region = m.group(1) if m else html
+    chunks = []
+    for p in re.findall(r"(?is)<p[^>]*>(.*?)</p>", region):
+        t = _strip_html(p)
+        if len(t) >= 40:
+            chunks.append(t)
+    return "\n\n".join(chunks)
+
 def _article_entries(url, max_n=6):
-    """Newest entries from a full-content RSS/Atom feed, with the WHOLE post body (content:encoded /
-    atom content), fetched proxy-first so Substack's datacenter-IP 403 doesn't block us."""
+    """Newest entries from an RSS/Atom feed with the WHOLE post body (content:encoded / atom content),
+    fetched proxy-first so Substack's datacenter-IP 403 doesn't block us. When a feed only ships an
+    EXCERPT (body < 1500 chars), fall back to fetching the article page for the full text."""
     import xml.etree.ElementTree as ET
     from sources import radar_fetch as rf
     root = ET.fromstring(rf.http_get(url).decode("utf-8", "replace"))
@@ -689,6 +717,10 @@ def _article_entries(url, max_n=6):
                 if len(txt) > best:
                     body, best = txt, len(txt)
         if title and body:
+            if link and len(body) < 1500:  # excerpt-only feed -> fetch the full article page
+                full = _fetch_fulltext(link)
+                if len(full) > len(body):
+                    body = full
             out.append({"title": title, "link": link, "published": pub, "text": body[:18000]})
     return out
 
@@ -724,7 +756,7 @@ def _write_item(client, c, data, source_type="article"):
     } for i, (n, h) in enumerate(fresh)]).execute()
     return len(fresh)
 
-def ingest_articles(hours=48, max_per_feed=6, max_extract=40):
+def ingest_articles(hours=96, max_per_feed=6, max_extract=40):
     """Mine full-text newsletters/blogs into feed nuggets (source_type='article'), same extractor +
     TASTE.md as YouTube. Recall window = last `hours`; dedups against existing items + nugget payloads."""
     from datetime import datetime, timezone, timedelta
