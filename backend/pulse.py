@@ -39,16 +39,44 @@ ANTHROPIC_KEY = os.environ.get("ANTHROPIC_API_KEY")
 GEMINI_KEY = os.environ.get("GEMINI_API_KEY")
 SYNTH_MODEL = os.environ.get("PULSE_SYNTH_MODEL", "claude-sonnet-4-6")
 
-# Curated X/Twitter watchlist — only the highest-signal voices for Coby's lanes (agentic coding /
-# Claude Code, frontier AI, AI building). Pulled via Apify (free syndication blocks CI IPs). Keep
-# this tight: add/remove a handle here, nothing else changes.
+# Curated X/Twitter watchlist — the highest-signal, ahead-of-curve voices for Coby's lanes. Tech X
+# runs ~4-6 months ahead of newsletters; these are the people who leak that direction early. Weighted
+# to his CONFIRMED sharpest focus (loop engineering, harness-over-model, sub-agent orchestration,
+# evals, Claude Code) first, then frontier foresight, then AI-native build/distribution.
+# Verified active June 2026 (deep-research pass). Pulled via Apify (free syndication blocks CI IPs);
+# tagged 'xsignal' on ingest so their EARLY posts surface even before they accumulate likes.
+# Handle-spelling traps already applied: _sholtodouglas, alexalbert__ (2 underscores), _catwu,
+# dannypostmaa (2 a's), karinanguyen_, GeoffreyHuntley (not ghuntley), jxnlco (not jxnl).
+# NOTE (next optimization, not yet wired): pulling these as ONE public X List is cheaper + more
+# reliable than per-handle (apidojo/twitter-list-scraper or twitterapi.io ~$4/mo). See pulse memory.
 X_HANDLES = [
-    "AnthropicAI",   # his core stack (Claude / Claude Code) - official signal
-    "alexalbert__",  # Claude Code / Anthropic - his #1 priority, agentic coding
-    "simonw",        # Simon Willison - practical LLM + agentic-coding tooling
-    "swyx",          # AI engineering / agent patterns (Latent Space)
-    "karpathy",      # frontier AI, agents, first-principles
-    "sama",          # Sam Altman - frontier / industry direction
+    # --- agentic coding / harness / loops / MCP / evals (his core; weight highest) ---
+    "bcherny",          # Boris Cherny - creator/head of Claude Code; harness internals + previews
+    "lydiahallie",      # Lydia Hallie - Claude Code DevX; best daily agentic-coding tactics feed
+    "trq212",           # Thariq Shihipar - Claude Code eng; prompt-caching/MCP harness internals
+    "GeoffreyHuntley",  # the "Ralph loop" / sub-agent orchestration - loop engineering, his sharpest lane
+    "mitsuhiko",        # Armin Ronacher - "The Coming Loop"; agent-driven dev, sharp critique
+    "walden_yan",       # Walden Yan (Cognition) - coined "context engineering"; multi-agent reality
+    "simonw",           # Simon Willison - top independent "what changed & why it matters" practitioner
+    "_sholtodouglas",   # Sholto Douglas (Anthropic) - sharpest public agent/capability foresight
+    "_catwu",           # Cat Wu - Claude Code PM; roadmap intent
+    "jlowin",           # Jeremiah Lowin - FastMCP; live changelog for MCP server design
+    "HamelHusain",      # evals authority - error-analysis-first, agent eval methodology
+    "jxnlco",           # Jason Liu - instructor; structured outputs / evals / RAG-for-agents
+    "swyx",             # Shawn Wang - Latent Space; names trends early; AI-engineering cartographer
+    "ericzakariasson",  # Eric Zakariasson (Cursor) - agent-swarm orchestration tactics
+    "alexalbert__",     # Alex Albert - Anthropic DevRel head; earliest how-to tactics (devrel-leaning)
+    # --- frontier-lab foresight (direction leaks) ---
+    "karpathy",         # Andrej Karpathy - durable architecture/training mental models
+    "polynoamial",      # Noam Brown (OpenAI) - reasoning / test-time-compute / RL direction
+    "natolambert",      # Nathan Lambert - post-training / RL-from-verifiable-rewards foresight
+    "thsottiaux",       # Tibo Sottiaux - Head of Codex (OpenAI); best Codex roadmap-leak account
+    "OfficialLoganK",   # Logan Kilpatrick (Google) - earliest Gemini dev previews (devrel)
+    # --- AI-native business / distribution / indie ("what to build next") ---
+    "levelsio",         # Pieter Levels - solo, real revenue + distribution-loop mechanics
+    "emollick",         # Ethan Mollick - practical LLM-on-work ahead of consensus, low noise
+    "AravSrinivas",     # Aravind Srinivas (Perplexity) - AI-search / GEO distribution shifts (CEO)
+    "dannypostmaa",     # Danny Postma - AI-product GTM / viral-loop mechanics
 ]
 
 def sb():
@@ -60,7 +88,9 @@ def sb():
 # ---------------- normalization ----------------
 # Source-type weights: labs/research/newsletters/claude-ecosystem rank above raw social.
 SRC_W = {"lab": 1.6, "research": 1.3, "newsletter": 1.3, "claude": 1.5, "funding": 1.2,
-         "market": 1.15, "models": 1.1, "repos": 1.1, "longform": 1.05, "social": 0.9}
+         "market": 1.15, "models": 1.1, "repos": 1.1, "longform": 1.05,
+         "xsignal": 1.5,   # curated ahead-of-curve X voices: high-signal, NOT generic social
+         "social": 0.9}
 
 VEL_KIND = {"ghtrend": "stars_today", "hn": "hn_points", "hf": "trendingScore"}
 
@@ -171,7 +201,9 @@ def ingest(max_per_source=15, no_social=False, with_x=False):
     if with_x and not no_social and os.environ.get("APIFY_TOKEN"):
         try:
             from sources import apify_fetch as af
-            xt = af.x_tweets(X_HANDLES, per=3, max_items=30)
+            xt = af.x_tweets(X_HANDLES, per=3, max_items=120)
+            for t in xt:
+                t["category"] = "xsignal"  # rank curated voices as high-signal so early posts surface
             items.extend(xt)
             status.append(("OK", "X/Twitter (Apify)", f"{len(xt)} tweets"))
         except Exception as e:
@@ -266,37 +298,60 @@ def _build_system(profile_md, priorities, leaning):
     pri = "\n".join(f"- {p}" for p in (priorities or [])) or "- (none set)"
     lean = ", ".join(leaning) if leaning else "(nothing strong yet)"
     return (
-        "You are Coby's personal AI intelligence analyst. Produce his daily brief as a TIGHT, CURATED, "
-        "PERSONAL digest where EVERY item visibly earns its place for HIM. Most candidates should not "
-        "make the cut. This is the one tab he checks daily, so each item must feel deliberate.\n\n"
-        "WHO COBY IS:\n" + (profile_md or "") + "\n\nHIS PRIORITIES (lead with these):\n" + pri +
+        "You are Coby's personal AI intelligence analyst. Every day you pick the FIVE things in AI he "
+        "most needs to know and write them so he gets real value in under 90 seconds. This is the FIRST "
+        "thing he sees each morning. Make it feel like the highlight of his day, not a chore: informative, "
+        "digestible, and worth opening daily.\n\n"
+        "WHO COBY IS:\n" + (profile_md or "") + "\n\nHIS PRIORITIES (rank toward these):\n" + pri +
         "\nHe has been leaning into: " + lean + "\n\n"
-        "RULES:\n"
-        "- LEAD with what is squarely in his lanes (agentic coding / Claude Code, AI building tactics, "
-        "AI-native business + distribution with a real mechanism, short-term-rental / real-estate edges, "
-        "early signal on what is worth building). THEN, in a clearly separate section, include ONLY "
-        "genuinely MAJOR general AI news even if outside his lanes, so he never misses something big.\n"
-        "- CUT hype, generic awareness stats, funding-as-spectacle, motivational lore, and anything he "
-        "would find basic. If an item is not worth his attention, leave it out entirely.\n"
-        "- For EVERY item the 'why' must be SPECIFIC TO HIM and concrete: e.g. 'fewer tokens on your big "
-        "agent loops' or 'a pricing mechanic you can copy', NOT 'important for developers'. No em dashes.\n"
-        "- Be tight: about 6 to 10 items total across 2 to 4 sections, readable in ~90 seconds. Group "
-        "related items; never list the same story twice.\n\n"
+        "WHAT TO PICK (exactly 5, ranked most important FIRST):\n"
+        "- Focus on AI. The five are AI developments from roughly the last 24h: frontier model / lab "
+        "releases and capability shifts, agentic coding and dev tooling (his core), concrete AI building "
+        "tactics he can apply, and genuinely MAJOR AI industry or business moves.\n"
+        "- Rank by how much it matters TO HIM (his lanes first), but if something field-moving happened "
+        "even slightly outside his lanes, still include it so he is never blindsided.\n"
+        "- LEAVE OUT: hype, awareness stats, funding-as-spectacle, motivational lore, 101 explainers, "
+        "pure short-term-rental / real-estate (that lives in another tab), and anything he would find "
+        "basic. If fewer than 5 things truly matter today, pick the 5 best available, but never pad with "
+        "filler.\n\n"
+        "HOW TO WRITE EACH ONE (this is the important part):\n"
+        "- title: the thing itself in plain words. Clear, not clickbait, not vague. Someone skimming "
+        "should know what happened from the title alone. e.g. 'Anthropic added sub-agents to Claude Code', "
+        "not 'A big week for agentic dev'.\n"
+        "- body: 2 to 3 sentences (about 35 to 55 words). Say what it actually is AND why it is worth his "
+        "attention, woven together. Write like a sharp friend explaining it clearly, not a press release. "
+        "Plain English, layman's terms: calibrate to someone who already builds with AI (skip the 101) but "
+        "do not assume he has read the paper. Be concrete about the 'so what' for someone building AI apps "
+        "and hunting what to build next. No hype words (revolutionary, game-changer, unprecedented). No em "
+        "dashes. Do not start a sentence with 'This'.\n"
+        "- Substance but tight: he wants to feel informed, not buried. Every sentence earns its place.\n\n"
         "OUTPUT: return ONLY valid JSON (no markdown, no code fences, no preamble) of this exact shape:\n"
         "{\n"
-        '  "headline": "one tight sentence: the state of his day",\n'
-        '  "sections": [\n'
-        '    {"title": "short section name", "items": [\n'
-        '      {"title": "the thing itself", "why": "why it matters to Coby, specific and concrete", '
-        '"source": "source name", "url": "link or empty string", "area": "ai|build|str|other"}\n'
-        "    ]}\n"
+        '  "items": [\n'
+        '    {"title": "the thing itself, plain and clear", "body": "what it is + why it matters to him, '
+        '2-3 plain-English sentences", "source": "source name", "url": "link or empty string", '
+        '"area": "ai|build|str|other"}\n'
         "  ]\n"
-        "}"
+        "}\n"
+        "Exactly 5 items, ordered most important first."
     )
 
+def _norm_item(it):
+    if not isinstance(it, dict) or not it.get("title"):
+        return None
+    return {
+        "title": str(it.get("title") or "").strip(),
+        # new shape carries `body` (substance + why baked in); tolerate legacy `why`.
+        "body": str(it.get("body") or it.get("why") or "").strip(),
+        "source": str(it.get("source") or "").strip(),
+        "url": str(it.get("url") or "").strip(),
+        "area": it.get("area") if it.get("area") in ("ai", "build", "str", "other") else "ai",
+    }
+
 def _parse_brief(raw):
-    """Parse the model's JSON brief, tolerating code fences / stray prose. Returns a sanitized
-    {headline, sections:[{title, items:[{title,why,source,url,area}]}]} or None if unusable."""
+    """Parse the model's JSON brief, tolerating code fences / stray prose. Normalizes to the Top-5
+    shape {items:[{title,body,source,url,area}]}. Also flattens the legacy {sections:[...]} shape so
+    an old-style response still works. Returns None if unusable."""
     s = (raw or "").strip()
     if s.startswith("```"):
         s = re.sub(r"^```[a-zA-Z]*\n?", "", s)
@@ -308,37 +363,27 @@ def _parse_brief(raw):
         obj = json.loads(s)
     except Exception:
         return None
-    if not isinstance(obj, dict) or not isinstance(obj.get("sections"), list):
+    if not isinstance(obj, dict):
         return None
-    secs = []
-    for sec in obj["sections"]:
-        if not isinstance(sec, dict):
-            continue
-        items = []
-        for it in (sec.get("items") or []):
-            if not isinstance(it, dict) or not it.get("title"):
-                continue
-            items.append({
-                "title": str(it.get("title") or "").strip(),
-                "why": str(it.get("why") or "").strip(),
-                "source": str(it.get("source") or "").strip(),
-                "url": str(it.get("url") or "").strip(),
-                "area": it.get("area") if it.get("area") in ("ai", "build", "str", "other") else "ai",
-            })
-        if items:
-            secs.append({"title": str(sec.get("title") or "").strip(), "items": items})
-    if not secs:
+    raw_items = []
+    if isinstance(obj.get("items"), list):
+        raw_items = obj["items"]
+    elif isinstance(obj.get("sections"), list):  # legacy: flatten sections into one ranked list
+        for sec in obj["sections"]:
+            if isinstance(sec, dict):
+                raw_items.extend(sec.get("items") or [])
+    items = [x for x in (_norm_item(it) for it in raw_items) if x]
+    if not items:
         return None
-    return {"headline": str(obj.get("headline") or "").strip(), "sections": secs}
+    return {"items": items}
 
 def _brief_to_md(obj):
-    """Readable markdown fallback (old clients / safety), derived from the structured brief."""
-    out = [obj.get("headline", "")]
-    for s in obj.get("sections", []):
-        out.append("\n### " + s.get("title", ""))
-        for it in s.get("items", []):
-            link = f" [{it['source']}]({it['url']})" if it.get("url") else (f" ({it['source']})" if it.get("source") else "")
-            out.append(f"- **{it['title']}** — {it['why']}{link}")
+    """Readable markdown fallback (old clients / safety), derived from the Top-5 brief."""
+    out = []
+    for i, it in enumerate(obj.get("items", []), 1):
+        link = f" [{it['source']}]({it['url']})" if it.get("url") else (f" ({it['source']})" if it.get("source") else "")
+        body = f" {it['body']}" if it.get("body") else ""
+        out.append(f"{i}. **{it['title']}**{body}{link}")
     return "\n".join(out)
 
 def synthesize(hours=24, top_n=90):
@@ -378,12 +423,11 @@ def synthesize(hours=24, top_n=90):
     row = {"digest_date": today, "generated_at": now.isoformat(), "window_start": None,
            "window_end": now.isoformat(), "model": model_used, "stats": stats}
     if brief_obj:
-        n_items = sum(len(s.get("items") or []) for s in brief_obj["sections"])
-        row["sections"] = brief_obj
+        n_items = len(brief_obj["items"])
+        row["sections"] = brief_obj   # jsonb column reused; now holds the Top-5 {items:[...]} shape
         row["brief_md"] = _brief_to_md(brief_obj)
         client.table("pulse_digest").upsert(row, on_conflict="digest_date").execute()
-        print(f"[pulse-synthesize] wrote STRUCTURED digest for {today} "
-              f"({model_used}, {n_items} items, {len(brief_obj['sections'])} sections)")
+        print(f"[pulse-synthesize] wrote Top-{n_items} digest for {today} ({model_used})")
     else:
         row["sections"] = None
         row["brief_md"] = raw
