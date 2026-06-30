@@ -7,7 +7,11 @@ name: NUGGET pulse
 on:
   schedule:
     # Hourly 6am-11pm Eastern (skips ~midnight-5am EDT = 04:00-09:59 UTC). Cheap, keeps Pulse fresh.
-    - cron: "0 0-3,10-23 * * *"
+    # Split into two crons so the brief windows are identified by WHICH cron fired (github.event.schedule),
+    # NOT the wall-clock hour: GitHub delays scheduled runs 15-60min, which used to push a "22:00" run to
+    # 23:00 and silently skip synthesis + X ingest. Branching on the cron string is immune to that delay.
+    - cron: "0 0-3,10,12-15,17-21,23 * * *"   # ingest-only hours
+    - cron: "0 11,16,22 * * *"                # ingest + X/Twitter + synthesize (the 3 daily briefs)
   workflow_dispatch:
     inputs:
       mode:
@@ -42,21 +46,23 @@ jobs:
       - name: Ingest sources -> pulse_items
         run: |
           MODE="${{ github.event.inputs.mode || 'schedule' }}"
-          H=$(date -u +%H)
+          SCHED="${{ github.event.schedule }}"
+          # Brief window = the dedicated 11/16/22 cron fired (delay-proof, unlike checking the wall clock).
+          IS_BRIEF="no"; [ "$SCHED" = "0 11,16,22 * * *" ] && IS_BRIEF="yes"
           if [ "$MODE" = "synthesize" ]; then
             echo "mode=synthesize -> skipping ingest"
           else
-            # X via Apify only at the 3 brief hours (or any manual run): keeps hourly ingest cheap.
+            # X via Apify only in brief windows (or any manual run): keeps hourly ingest cheap.
             XFLAG=""
-            if [ "$MODE" != "schedule" ] || [ "$H" = "11" ] || [ "$H" = "16" ] || [ "$H" = "22" ]; then XFLAG="--with-x"; fi
+            if [ "$MODE" != "schedule" ] || [ "$IS_BRIEF" = "yes" ]; then XFLAG="--with-x"; fi
             python backend/pulse.py ingest $XFLAG
           fi
       - name: Synthesize brief (3x/day on schedule, or on demand)
         run: |
           MODE="${{ github.event.inputs.mode || 'schedule' }}"
-          H=$(date -u +%H)
-          if [ "$MODE" = "synthesize" ] || [ "$MODE" = "both" ] || { [ "$MODE" = "schedule" ] && { [ "$H" = "11" ] || [ "$H" = "16" ] || [ "$H" = "22" ]; }; }; then
+          SCHED="${{ github.event.schedule }}"
+          if [ "$MODE" = "synthesize" ] || [ "$MODE" = "both" ] || { [ "$MODE" = "schedule" ] && [ "$SCHED" = "0 11,16,22 * * *" ]; }; then
             python backend/pulse.py synthesize
           else
-            echo "Skipping synthesis (mode=$MODE, hour=$H UTC; brief runs at 11, 16 & 22 UTC = ~7am/12pm/6pm ET)."
+            echo "Skipping synthesis (mode=$MODE, schedule='$SCHED'; brief runs on the '0 11,16,22' cron = ~7am/12pm/6pm ET)."
           fi
