@@ -12,7 +12,7 @@ on:
     inputs:
       hours:
         description: "Look-back window in hours"
-        default: "48"
+        default: "96"
 
 concurrency:
   group: nugget-feed-sources
